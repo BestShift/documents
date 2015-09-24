@@ -1,0 +1,10 @@
+# Site settings
+title: BestShift
+description: > # this means to ignore newlines until "baseurl:"
+  Projektpage des Diplomprojekts der Abteilung für Informationstechnologie am Technologischem Gewerbemuseum
+baseurl: "/BestShift/" # the subpath of your site, e.g. /blog/
+url: "http://tgm-hit.github.io/" # the base hostname & protocol for your site
+github_username: TGM-HIT
+
+# Build settings
+markdown: kramdown
