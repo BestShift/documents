@@ -1,0 +1,29 @@
+\chapter{Produktfunktionen}
+
+\section{/LF10/ Hardware und Sensorik}
+\textbf{Geschäftsprozess:}	Verarbeitung der Sensor Daten
+\newline
+\textbf{Akteur:}		CarPC
+\newline
+\textbf{Beschreibung:}	Aufbau von Sensoren zur Erfassung von Fahrdaten und Ansteuerung von Schnittstellen zum Motormanagement in einem einfach zu installierenden CarPC.
+
+\section{/LF11/ CarPC}
+Es soll ein Single Board Computer (SBC) verwendet werden, welcher alle verwendeten Sensoren unterstützt. Die Montage darf den Fahrer nicht behindern. Idealerweise ist der CarPC mobil auszuführen, damit er in mehreren Fahrzeugen verwendet werden kann. Die Stromversorgung muss über das 12V Bordnetz eines Kfz möglich sein, bei Fixeinbau muss diese mit der Zündung gekoppelt werden.
+
+\section{/LF12/ Anbindung der OBD Schnittstelle an den CarPC}
+Der CarPC soll Motordaten aus der standardisierten Diagnoseschnittstelle des Fahrzeugen auslesen können. Diese Motordaten umfassen beispielsweise die Drehzahl des Motors, die Fahrgeschwindigkeit und wenn möglich auch den eingelegten Gang.
+
+\section{/LF13/ Messung der Fahrzeugbeschleunigung in Fahrzeuglängst- und -querachse}
+Die Beschleunigung in Fahrzeuglängs- (Beschleunigung und Bremsen) sowie die Fahrzeugquerachse (Kurvenbeschleunigung) sollen in die Verbrauchsinformation und Fahrgastbequemlichkeit einfließen.
+
+\section{/LF14/ Messung der Fahrzeugneigung in 3 Raumachsen}
+Die Drehung des Fahrzeug in alle Raumachsen wird mit dem Gyroskop gemessen. Die Bewegung um die Raumachsen heißen bei einem Kfz Kippen, Rollen und Gieren. Diese Informationen werden in weiterer Folge vor allem für die Erkennung eines Hangs eingesetzt, aber auch für die Fahrgastbequemlichkeit.
+
+\section{/LF15/ Messen der geographischen Fahrzeugposition}
+Ein GPS Sensor muss am CarPC angeschlossen sein um den Standort des Fahrzeugs ermitteln zu können und um die Verbrauchs- und Neigungswerte kartieren zu können.
+
+\section{/LF16/Messung des Fahrgastraumklimas}
+Ein Temperatursensor und mögliche weitere Sensoren werden im CarPC integriert um die Fahrgastbequemlichkeit besser beurteilen zu können.
+
+\section{/LF17/ Multifahrzeug-Managment}
+Der Benutzer soll die Möglichkeit haben, ein Fahrzeugprofil auszuwählen (in Verbindung mit der Android-App). Damit soll eine mehrfache Verwendung des CarPCs (so eine mobile Lösung implementiert wurde) in verschiedenen Fahrzeugen gewährleistet werden.
