@@ -1,0 +1,75 @@
+This is makeindex, version 2.15 [TeX Live 2015/W32TeX] (kpathsea + Thai support).
+Scanning input file document.aux...
+!! Input index error (file = document.aux, line = 1):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = document.aux, line = 2):
+   -- Unknown index keyword \providecommand\hyper@newdestlabel[2].
+!! Input index error (file = document.aux, line = 3):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = document.aux, line = 4):
+   -- Unknown index keyword \providecommand\HyperFirstAtBeginDocument.
+!! Input index error (file = document.aux, line = 5):
+   -- Unknown index keyword \HyperFirstAtBeginDocument.
+!! Input index error (file = document.aux, line = 6):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = document.aux, line = 7):
+   -- Unknown index keyword \gdef\contentsline#1#2#3#4.
+!! Input index error (file = document.aux, line = 8):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = document.aux, line = 9):
+   -- Unknown index keyword \gdef\newlabel#1#2.
+!! Input index error (file = document.aux, line = 10):
+   -- Unknown index keyword \gdef\newlabelxx#1#2#3#4#5#6.
+!! Input index error (file = document.aux, line = 11):
+   -- Unknown index keyword \AtEndDocument.
+!! Input index error (file = document.aux, line = 12):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = document.aux, line = 13):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = document.aux, line = 14):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = document.aux, line = 15):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = document.aux, line = 16):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = document.aux, line = 17):
+   -- Unknown index keyword \gdef\HyperFirstAtBeginDocument#1.
+!! Input index error (file = document.aux, line = 18):
+   -- Unknown index keyword \providecommand\HyField@AuxAddToFields[1].
+!! Input index error (file = document.aux, line = 19):
+   -- Unknown index keyword \providecommand\HyField@AuxAddToCoFields[2].
+!! Input index error (file = document.aux, line = 20):
+   -- Unknown index keyword \select@language.
+!! Input index error (file = document.aux, line = 21):
+   -- Unknown index keyword \@writefile.
+!! Input index error (file = document.aux, line = 22):
+   -- Unknown index keyword \@writefile.
+!! Input index error (file = document.aux, line = 23):
+   -- Unknown index keyword \@writefile.
+!! Input index error (file = document.aux, line = 24):
+   -- Unknown index keyword \pgfsyspdfmark.
+!! Input index error (file = document.aux, line = 25):
+   -- Unknown index keyword \pgfsyspdfmark.
+!! Input index error (file = document.aux, line = 26):
+   -- Unknown index keyword \@writefile.
+!! Input index error (file = document.aux, line = 27):
+   -- Unknown index keyword \@input.
+!! Input index error (file = document.aux, line = 28):
+   -- Unknown index keyword \pgfsyspdfmark.
+!! Input index error (file = document.aux, line = 29):
+   -- Unknown index keyword \pgfsyspdfmark.
+!! Input index error (file = document.aux, line = 30):
+   -- Unknown index keyword \@input.
+!! Input index error (file = document.aux, line = 31):
+   -- Unknown index keyword \pgfsyspdfmark.
+!! Input index error (file = document.aux, line = 32):
+   -- Unknown index keyword \pgfsyspdfmark.
+!! Input index error (file = document.aux, line = 33):
+   -- Unknown index keyword \@input.
+!! Input index error (file = document.aux, line = 34):
+   -- Unknown index keyword \pgfsyspdfmark.
+!! Input index error (file = document.aux, line = 35):
+   -- Unknown index keyword \pgfsyspdfmark.
+done (0 entries accepted, 35 rejected).
+Nothing written in document.ind.
+Transcript written in document.ilg.

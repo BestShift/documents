@@ -11,3 +11,9 @@
 \contentsline {section}{\numberline {3.6}/LF15/ Messen der geographischen Fahrzeugposition}{6}{section.3.6}
 \contentsline {section}{\numberline {3.7}/LF16/Messung des Fahrgastraumklimas}{6}{section.3.7}
 \contentsline {section}{\numberline {3.8}/LF17/ Multifahrzeug-Managment}{6}{section.3.8}
+\contentsline {section}{\numberline {3.9}/LF20/ Datenmanagement und Datenanalyse}{7}{section.3.9}
+\contentsline {section}{\numberline {3.10}/LF21/ Sammlung und Speicherung aller Sensordaten und Ablegen in einer strukturierten Form}{7}{section.3.10}
+\contentsline {section}{\numberline {3.11}/LF22/ Interpretation der Rohdaten in Messgr\IeC {\"o}\IeC {\ss }en mit g\IeC {\"a}ngigen Einheiten}{7}{section.3.11}
+\contentsline {section}{\numberline {3.12}/LF23/ Filterung von offensichtlichen Messfehlern}{7}{section.3.12}
+\contentsline {section}{\numberline {3.13}/LF24/ Zusammenfassung von Messgr\IeC {\"o}\IeC {\ss }en}{7}{section.3.13}
+\contentsline {section}{\numberline {3.14}/LF25/ Implementierung einer Schnittstelle zur Kommunikation mit der Android App}{8}{section.3.14}

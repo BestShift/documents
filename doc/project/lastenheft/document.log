@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.21)  24 SEP 2015 18:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.21)  28 SEP 2015 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,7 +1050,7 @@ LaTeX Info: Redefining \nameref on input line 52.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 60.
 
-<images/TGM_Logo.pdf, id=39, 2007.5pt x 1079.03125pt>
+<images/TGM_Logo.pdf, id=79, 2007.5pt x 1079.03125pt>
 File: images/TGM_Logo.pdf Graphic file (type pdf)
 
 <use images/TGM_Logo.pdf>
@@ -1157,7 +1157,6 @@ Overfull \hbox (10.52904pt too wide) in paragraph at lines 23--24
 tan-dort des Fahrzeugs
  []
 
-)
 
 Package Fancyhdr Warning: \headheight is too small (14.0pt): 
  Make it at least 14.49998pt.
@@ -1165,38 +1164,69 @@ Package Fancyhdr Warning: \headheight is too small (14.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
+Overfull \hbox (5.92865pt too wide) in paragraph at lines 34--39
+\T1/futs/b/n/12 Beschreibung: \T1/futs/m/n/12 (-20) Auf-bere-itung und ef-fizie
+nte Spe-icherung von Daten ver-schiedener
+ []
+
+
+Overfull \hbox (27.03519pt too wide) in paragraph at lines 43--43
+ |[]\T1/futs/b/n/17.28 /LF22/ In-ter-pre-ta-tion der Ro-h-daten in Mess-gröÿen
+ []
+
+
+Overfull \hbox (22.73248pt too wide) in paragraph at lines 46--46
+ |[]\T1/futs/b/n/17.28 /LF23/ Fil-terung von of-fen-sichtlichen Mess-fehlern| 
+ []
+
+
+Overfull \hbox (3.18468pt too wide) in paragraph at lines 52--52
+ |[]\T1/futs/b/n/17.28 /LF25/ Im-ple-men-tierung einer Schnittstelle zur
+ []
+
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
  (./document.aux (./chapters/ch1_intro.aux) (./chapters/ch2_einsatz.aux)
 (./chapters/ch3_funktionen.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 102.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
-
-
-Package rerunfilecheck Warning: File `document.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `document.out':
-(rerunfilecheck)             Before: 1923448DDCCDCFC501AC11AB0DE578B5;556
-(rerunfilecheck)             After:  65066FF6E09939EC1F4848BBC11F5CD3;908.
+Package rerunfilecheck Info: File `document.out' has not changed.
+(rerunfilecheck)             Checksum: 68BE39C7F75544960EC3AE22F0902FE6;1576.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
  ) 
 Here is how much of TeX's memory you used:
- 22481 strings out of 493091
- 396612 string characters out of 6138531
- 608637 words of memory out of 5000000
- 25420 multiletter control sequences out of 15000+600000
- 59933 words of font info for 114 fonts, out of 8000000 for 9000
+ 22515 strings out of 493091
+ 396978 string characters out of 6138531
+ 609639 words of memory out of 5000000
+ 25430 multiletter control sequences out of 15000+600000
+ 61013 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,15n,77p,992b,1135s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2015/texm
 f-dist/fonts/type1/adobe/utopia/putb8a.pfb><c:/texlive/2015/texmf-dist/fonts/ty
 pe1/adobe/utopia/putr8a.pfb>
-Output written on document.pdf (10 pages, 94902 bytes).
+Output written on document.pdf (12 pages, 101887 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 9810 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 174 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 9890 words of extra memory for PDF output out of 10000 (max. 10000000)
 
