@@ -8,3 +8,4 @@ github_username: TGM-HIT
 
 # Build settings
 markdown: kramdown
+encoding: utf-8
