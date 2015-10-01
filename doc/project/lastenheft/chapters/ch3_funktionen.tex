@@ -27,3 +27,27 @@ Ein Temperatursensor und mögliche weitere Sensoren werden im CarPC integriert u
 
 \section{/LF17/ Multifahrzeug-Managment}
 Der Benutzer soll die Möglichkeit haben, ein Fahrzeugprofil auszuwählen (in Verbindung mit der Android-App). Damit soll eine mehrfache Verwendung des CarPCs (so eine mobile Lösung implementiert wurde) in verschiedenen Fahrzeugen gewährleistet werden.
+
+\newpage
+
+\section{/LF20/ Datenmanagement und Datenanalyse}
+\textbf{Geschäftsprozess:}	Verarbeitung der Sensor Daten
+\newline
+\textbf{Akteur:}		CarPC, standardisierte informationsschnittstelle
+\newline
+\textbf{Beschreibung:} Aufbereitung und effiziente Speicherung von Daten verschiedener Fahrzeugsensoren und Implementierung von Schnittstellen für weitere Applikationen. 
+
+\section{/LF21/ Sammlung und Speicherung aller Sensordaten und Ablegen in einer strukturierten Form}
+Die Sensordaten müssen gesammelt und so gespeichert werden, dass sie strukturiert und zur Weiterverarbeitung vorbereitet sind.
+
+\section{/LF22/ Interpretation der Rohdaten in Messgrößen mit gängigen Einheiten}
+Alle Rohdaten müssen in einen normierten Wert in einer sinnvollen Einheit umgewandelt werden. Dabei ist besonders zu beachten, ob und wie die Positionierung der Sensoren im Fahrzeug auf die Messwerte einen Einfluss hat.
+
+\section{/LF23/ Filterung von offensichtlichen Messfehlern}
+Bei dieser Funktion ist vor allem die Auswahl was als Messfehler gewertet wird entscheidend. Denn es sollen zwar Messfehler gefunden und entfernt werden, allerdings sollen auch die Maxima der wirklichen Fahrt nicht fälschlicher Weise gefiltert werden. Daher hängt diese Filterung auch sehr nahe mit der Interpretation der Rohdaten zusammen.
+
+\section{/LF24/ Zusammenfassung von Messgrößen}
+Zur einfacheren Weiterverarbeitung sollen Messwerte (wo sinnvoll) schon vom CarPC sinnvoll vorverarbeitet und zusammengefasst werden.
+
+\section{/LF25/ Implementierung einer Schnittstelle zur Kommunikation mit der Android App}
+Die auf dem CarPC gesammelten Daten müssen sich einfach von der Android-App (siehe LF30/40/50) abrufen lassen. Dafür muss eine Schnittstelle entwickelt werden, die energieeffiezient arbeitet, aber auch schnell genug ist, Momentanwerte zeitgerecht zu übertragen.
