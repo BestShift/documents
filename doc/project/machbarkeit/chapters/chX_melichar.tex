@@ -27,8 +27,8 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 
 		\newpage
 		\vfill
-		\subsubsection{Conclusio}
-		Anhand dem folgenden Graphik wird dann die Entscheidung getroffen, welcher Typ von Datenbank den Anforderungen entspricht
+		\subsubsection{Relational vs NoSQL}
+		Anhand dem folgenden Graphik kann man prinzipiell eine Entscheidung treffen - diese sollte dann den Ansprechungen entsprechen.
 		 
 		\begin{figure}[h!]
 			\includegraphics[width=8cm]{decision-flow.jpg}
@@ -79,4 +79,54 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 			Community &  &  &  &  &  &  &		\\ \hline 
 			Usage examples	&  &	&  &  &  &  &					\\ \hline
 		\end{tabular}
+
+	\newpage
+	\subsection{Conclusio}
+	Anhand der Evaluierung wurde die Auswahl auf die folgenden zwei DBMS Systeme beschränkt: Couchbase (NoSQL) und PostgreSQL (Relational). Da die Anforderungen momentan noch nicht fixiert sind wurde eine relationale und eine NoSQL Variante gewählt (STAND: 02. Okt 2015). In den folgendem Abschnitt gehen wir ein wenig detailierter auf die beiden Systeme ein.
+
+		\begin{table}[htb]
+			\begin{tabular}{|l|l|l|}
+			\hline
+			Name & \textbf{Couchbase} & \textbf{PostgreSQL} \\ \hline
+			Description & \begin{tabular}[c]{@{}l@{}}JSON-based document store\\ derived from CouchDB with\\ Memcached-compatible interface\end{tabular} & \begin{tabular}[c]{@{}l@{}}Based on the object relational\\ DBMS Postgres\end{tabular} \\ \hline
+			Database model & Document store & Relational DBMS \\ \hline
+			Website & www.couchbase.com & www.postgresql.org \\ \hline
+			Technical documentation & www.couchbase.com/docs & www.postgresql.docs/manuals \\ \hline
+			Developer & Couchbase, Inc. & \begin{tabular}[c]{@{}l@{}}PostgreSQL Global \\ Development Group\end{tabular} \\ \hline
+			Initial release & 2011 & 1989 \\ \hline
+			Current release & 3.0.3, March 2015 & 9.4.4, June 2015 \\ \hline
+			License & Open Source & Open Source \\ \hline
+			Server operating systems & \begin{tabular}[c]{@{}l@{}}Linux\\ OS X\\ Windows\end{tabular} & \begin{tabular}[c]{@{}l@{}}FreeBSD\\ HP-UX\\ Linux\\ NetBSD\\ OpenBSD\\ OS X\\ Solaris\\ Unix\\ Windows\end{tabular} \\ \hline
+			Data scheme & schema-free & yes \\ \hline
+			Typing (data types) & no & yes \\ \hline
+			Secondary indexes & yes & yes \\ \hline
+			SQL & no & yes \\ \hline
+			\end{tabular}
+			\caption{Couchbase und PostgreSQL (1)}}
+			\label{Couchbase und PostgreSQL (1)}
+		\end{table}
+
+		\newpage
+
+		\begin{table}[htb]
+			\begin{tabular}{|l|l|l|}
+			\hline
+			Name & \textbf{Couchbase} & \textbf{PostgreSQL} \\ \hline
+			\begin{tabular}[c]{@{}l@{}}APIS and other access\\ methods\end{tabular} & \begin{tabular}[c]{@{}l@{}}Memcached protocol\\ RESTful HTTP API\end{tabular} & \begin{tabular}[c]{@{}l@{}}native C library\\ Streaming API for large objects\\ ADO.NET\\ JDBC\\ ODBC\end{tabular} \\ \hline
+			\begin{tabular}[c]{@{}l@{}}Supported programming\\ languages\end{tabular} & \begin{tabular}[c]{@{}l@{}}.NET\\ C\\ Clojure\\ ColdFusion\\ Erlang\\ Go\\ Java\\ JavaScript\\ Perl\\ PHP\\ Python\\ Ruby\\ Scala\\ Tcl\end{tabular} & \begin{tabular}[c]{@{}l@{}}.NET\\ C\\ C++\\ Java\\ Perl\\ Python\\ Tcl\end{tabular} \\ \hline
+			Server-side scripts & View functions in JavaScript & user defined functions \\ \hline
+			Triggers & yes & yes \\ \hline
+			Partitioning methods & Sharding & \begin{tabular}[c]{@{}l@{}}no, but can be realised using\\ table inheritance\end{tabular} \\ \hline
+			Replication methods & \begin{tabular}[c]{@{}l@{}}Master-master replication\\ Master-slave replication\end{tabular} & Master-slave replication \\ \hline
+			MapReduce & yes & no \\ \hline
+			Consistency concepts & \begin{tabular}[c]{@{}l@{}}Eventual Consistency\\ Immediate Consistency\end{tabular} & Immediate Consistency \\ \hline
+			Foreign keys & no & yes \\ \hline
+			Transaction concepts & no & ACID \\ \hline
+			Concurrency & yes & yes \\ \hline
+			Durability & yes & yes \\ \hline
+			User concepts & \begin{tabular}[c]{@{}l@{}}simple password-based access\\ control per bucket\end{tabular} & \begin{tabular}[c]{@{}l@{}}fine grained access rights\\ according to SQL-standard\end{tabular} \\ \hline
+			\end{tabular}
+			\caption{Couchbase und PostgreSQL (2)}}
+			\label{Couchbase und PostgreSQL (2)}
+		\end{table}
 
