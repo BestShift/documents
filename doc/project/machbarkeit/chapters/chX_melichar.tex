@@ -25,18 +25,6 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 				\item Konsistenz: Abhängig vom Product
 			\end{itemize}
 
-		\newpage
-		\vfill
-		\subsubsection{Relational vs NoSQL}
-		Anhand dem folgenden Graphik kann man prinzipiell eine Entscheidung treffen - diese sollte dann den Ansprechungen entsprechen.
-		 
-		\begin{figure}[h!]
-			\includegraphics[width=8cm]{decision-flow.jpg}
-			\centering
-		\end{figure}
-		\newpage
-		\vfill
-
 	\subsection{NoSQL Datenbanken}
 
 		\begin{tabular} {| l | c | c | c | c | c | c |}
@@ -81,8 +69,8 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 		\end{tabular}
 
 	\newpage
-	\subsection{Conclusio}
-	Anhand der Evaluierung wurde die Auswahl auf die folgenden zwei DBMS Systeme beschränkt: Couchbase (NoSQL) und PostgreSQL (Relational). Da die Anforderungen momentan noch nicht fixiert sind wurde eine relationale und eine NoSQL Variante gewählt (STAND: 02. Okt 2015). In den folgendem Abschnitt gehen wir ein wenig detailierter auf die beiden Systeme ein.
+	\subsection{Finale Entscheidung}
+	Anhand der Evaluierung wurde die Auswahl auf die folgenden zwei DBMS Systeme beschränkt: Couchbase (NoSQL) und PostgreSQL (Relational). Die letzendliche Entscheidung beschränkt sich nun also nur auf die NoSQL-Variante mittels Couchbase oder der relationalen Variante mittels PostgreSQL. Im folgenden Abschnitt wird ein wenig detailierter auf die beiden Varianten eingegangen.
 
 		\begin{table}[htb]
 			\begin{tabular}{|l|l|l|}
@@ -129,4 +117,17 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 			\caption{Couchbase und PostgreSQL (2)}}
 			\label{Couchbase und PostgreSQL (2)}
 		\end{table}
+
+		\newpage
+
+		\subsubsection{Conclusio}
+		Aus der Evaluierung ist folgendes heraus gekommen: es wird die NoSQL-Variante Couchbase verwendet. Begründungen hierfür sind die folgenden:
+			\begin{itemize}
+				\item Die OBD-II Schnittstelle zwar generell gesprochen Standartisiert, jedoch fügen viele Hersteller zusätzliche Information hinzu. Das bedeutet das die Daten von Fahrzeug zu Fahrzeug unterschiedlich sind. Ein großer Vorteil von Couchbase ist, dass es kein Datenschema gibt - daher können prinzipiell jegliche Daten problemlos hinzugefügt werden.
+				\item Ein weiterer großer Vorteil von Couchbase gegenüber PostgreSQL ist die Art und Weise wie man auf diese zentralle Schnittstelle zugreifen kann. Obwohl es zwar bei PostgreSQL solche Dinge wie JDBC oder ODBC gibt, sind diese nicht unbedingt für Web-Applikationen geeignet. Couchbase bietet hier eine RESTful Lösung an; mit dieser ist das erstellen einer Web Anwendung, oder einer jeglichen anderen Applikation, einfacher.
+			\end{itemize}
+
+
+
+
 
