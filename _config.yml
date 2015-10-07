@@ -1,11 +1,97 @@
-# Site settings
- title: BestShift
- description: > # this means to ignore newlines until "baseurl:"
-Projektpage des Diplomprojekts der Abteilung für Informationstechnologie am Technologischem Gewerbemuseum
-  baseurl: "/BestShift/" # the subpath of your site, e.g. /blog/
-   url: "http://tgm-hit.github.io/" # the base hostname & protocol for your site
-   github_username: TGM-HIT
+url: http://tgm-hit.github.io
+baseurl: /BestShift/
 
-#   # Build settings
-   markdown: kramdown
-   encoding: utf-8
+# Site settings
+title: BestShift
+email: daniel@melichar.me
+description: "Diplomaprojekt BestShift of the deparment for Information technology at the TGM in Vienna"
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary: 0099ff
+  secondary: 000
+  secondary-dark: 000066
+
+# Team names, titles and social links
+people:
+- name: Bozkurt H&uuml;seyin
+  pic: default_profile
+  position: Developer
+  social:
+    - title: github
+      url: https://github.com/hbozkurt-tgm
+    - title: facebook
+      url: https://www.facebook.com/HDB57
+    - title: xing
+      url: #
+
+- name: Faiku Fitim
+  pic: default_profile
+  position: Developer
+  social:
+    - title: github
+      url: #
+    - title: facebook
+      url: #
+    - title: xing
+      url: #
+
+- name: Melichar Daniel
+  pic: default_profile
+  position: Developer / Product Owner
+  social:
+    - title: github
+      url: https://www.github.com/dmelichar-tgm
+    - title: facebook
+      url: https://www.facebook.com/daniel.melichar.1
+    - title: xing
+      url: https://www.xing.com/profile/Daniel_Melichar3
+
+- name: Perny Tobias
+  pic: default_profile
+  position: Developer
+  social:
+    - title: github
+      url: #
+    - title: facebook
+      url: #
+    - title: xing
+      url: #
+
+- name: Simsek Raphael
+  pic: default_profile
+  position: Developer
+  social:
+    - title: github
+      url: https://github.com/rsimsek-tgm
+    - title: facebook
+      url: https://www.xing.com/profile/Raphael_Simsek
+    - title: xing
+      url: https://www.facebook.com/raphael.simsek
+
+- name: Erhard List
+  pic: default_profile
+  position: Scrum-Master / Stakeholder
+  social:
+    - title: github
+      url: #
+    - title: facebook
+      url: #
+    - title: xing
+      url: #
+
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: github
+    url: http://github.com/tgm-hit
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: Wexstra&szlig;e 19-23
+  - line: 1200 Vienna, Austria
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+encoding: utf-8
