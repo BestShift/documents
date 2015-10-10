@@ -33,6 +33,10 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
+<<<<<<< HEAD
+    text-decoration: none;
+=======
+>>>>>>> fdb5502a353742327ae1761555269408dbe0f904
 }
 
 a {
