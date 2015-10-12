@@ -16,8 +16,8 @@ color:
 people:
 - name: Bozkurt H&uuml;seyin
   pic: default_profile
-  position: Developer
-  social:
+  position: Verbrauchsanalyse
+  social: Zust&auml;ndig f&uuml;r die Darstellung des Spritverbrauchs &uuml;ber Zeit
     - title: github
       url: https://github.com/hbozkurt-tgm
     - title: facebook
@@ -25,8 +25,8 @@ people:
 
 - name: Faiku Fitim
   pic: default_profile
-  position: Developer
-  social:
+  position: Fahrgastkomfort
+  social: Zust&auml;ndig f&uuml; die Darstellung der Sensordaten zur ermittlung des Fahrgastkomforts.
     - title: github
       url: #
     - title: facebook
@@ -36,8 +36,8 @@ people:
 
 - name: Melichar Daniel
   pic: default_profile
-  position: Developer / Product Owner
-  social:
+  position: Data Management - Analysis / Product Owner
+  social: Zust&auml;ndig f&uuml;r die Datenbank und die Lesbarkeit der darin enthaltenen Daten.
     - title: github
       url: https://www.github.com/dmelichar-tgm
     - title: facebook
@@ -47,8 +47,8 @@ people:
 
 - name: Perny Tobias
   pic: default_profile
-  position: Developer
-  social:
+  position: Hardware und Sensorik
+  social: Zust&auml;ndig f&uuml;r den Bau des Car-PC's und das auslesen der Sensordaten.
     - title: github
       url: #
     - title: facebook
@@ -58,8 +58,8 @@ people:
 
 - name: Simsek Raphael
   pic: default_profile
-  position: Developer
-  social:
+  position: Schaltvorhersage
+  social: Zust&auml;ndig f&uuml;r die Berechnung des Zeitpunkts des besten Schaltvorgangs.
     - title: github
       url: https://github.com/rsimsek-tgm
     - title: facebook
