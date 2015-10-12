@@ -63,20 +63,10 @@ people:
     - title: github
       url: https://github.com/rsimsek-tgm
     - title: facebook
-      url: https://www.xing.com/profile/Raphael_Simsek
-    - title: xing
       url: https://www.facebook.com/raphael.simsek
-
-- name: Erhard List
-  pic: default_profile
-  position: Scrum-Master / Stakeholder
-  social:
-    - title: github
-      url: #
-    - title: facebook
-      url: #
     - title: xing
-      url: #
+      url: https://www.xing.com/profile/Raphael_Simse
+
 
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
