@@ -1,0 +1,47 @@
+\chapter{Produktdaten}
+\textit{Alle bisher kursiven Informationen sind zum Zeitpunkt der Verfassung des Dokuments noch nicht sichere Umsetzungen, sofern nicht anders beschrieben.}
+
+Die Produktdaten sind essenziell für das Produkt, da alle Daten dringend benötigt werden um die Applikation vollständig verwenden zu können. Ohne den Daten des CarPC ist die Applikation nämlich nicht in seiner Funktionalität verwendbar. Auch ein Verbindungsproblem zur OBD-II Schnittstelle würde ebenso große Probleme erzeugen, allerdings wäre dadurch die App, durch die vom CarPC zur Verfügung gestellten Daten, noch beschränkt einsetzbar.
+
+Die Daten sollten auf dem CarPC gespeichert werden\textit{, um dann bei einem Shutdown des CarPC die neuen Informationen in die Cloud der Webapplikation zu pushen}.
+
+\section{LD10 - Ausgelesene Motordaten aus OBD-II}
+Motordaten sind vor allem für die Schaltvorschläge und die Verbrauchsanalyse eine unabdingbare Information, weshalb diese Funktion ohne einer funktionierenden Verbindung zur OBD-II Schnittstelle nicht funktionstüchtig sein wird.
+\textit{sicher erhaltende Informationen} aus den Motordaten:
+\begin{itemize}
+	\item Drehzahl des Motors (Mode 01-PID 0C)
+	\item Geschindigkeit des Fahrzeugs (Mode 01-PID 0D)
+	\item Kühlwasser Temperatur des Motors (Mode 01-PID 05)
+	\item Ansaugklappen - Stellung (Mode 01-PID 11)
+	\item Eingangskraftstoff in \% (Mode 01-PID 2F)
+	\item Error Messages/Fehlercodes der OBD-II Schnittstelle (Mode 02)
+\end{itemize}
+Problematischer Weise können genau die Informationen über die Schaltvorgänge selbst nicht aus dem Motormanagement (ECU) ausgelesen werden, weshalb ein Schaltvorgang einzig mittels der Ansaugklappenstellung (Throttle Position) und aufgrund der Drehzahl erkannt werden kann.
+Die Verbrauchsanalyse ist außerdem bezüglich des verbrauchten Kraftstoffs wahrscheinlich nur mittels dem Wert des Fuel Input zu errechnen, es gibt aber keine vorgefertigten Liter/100km Werte.
+
+\section{LD20 - ausgelesene Rohdaten aus den Sensoren im CarPC}
+Die Rohdaten sind Daten welche noch nicht durch Herrn Melichar interpretiert wurden. Diese Rohdaten sind meist Volt-Werte. Sie werden \textit{kurzzeitig in der NOSQL Datenbank abgespeichert}, um danach von Herrn Melichar interpretiert werden zu können.
+
+\section{LD30 - Interpretierte Informationen}
+Informationen, welche nach der Filterung, Normierung, Skalierung und Zuordnung durch Herrn Melichar \textit{oder Herrn Perny} strukturiert in der NOSQL Datenbank abgelegt werden.
+
+\section{LD40 - Konfigurationsdaten}
+Als Konfigurationsdaten, werden diese Daten bezeichnet welche jedenfalls vom Benutzer selbst über die Begebenheiten seines Fahrzeugs eingegeben werden müssen. Auch diese Daten sollen strukturiert in der NOSQL Datenbank abgelegt werden, wobei diese entweder aus den Informationen des Motormanagements oder direkt aus dem Input des Users generiert werden.
+\textbf{Beispiele für Eingaben durch den Benutzer}
+\begin{itemize}
+	\item Ganganzahl des Getriebes [4-7] (Vorraussetzung für Schaltvorhersage)
+	\item \textit{Kraftstoffart [Super/Diesel]}
+	\item Beschleunigung 0-100 km/h [s] (Voraussetzung für die Drehmomentoptimierung)
+	\item \textit{Durchschnittsverbrauch innerorts [1.0-50.0]} 
+	\item \textit{Durchschnittsverbrauch außerorts [1.0-50.0]}	
+	\item Durchschnittsverbrauch kombiniert [1.0-50.0] (Voraussetzung für die Verbrauchsoptimierung)
+	\item \textit{Hubraum [0.1-12.0]}
+	\item \textit{Momentangewicht [300-20000]}
+	\item \textit{zulässiges Gesamtgewicht [300-20000]}
+	\item \textit{Passagiere [1-70]}
+\end{itemize}
+\textit{optionale Informationen}
+
+\section{LD50- Verlaufsinformation, Sensordaten über Zeit}
+Da die Datenmenge von vielen Fahrten auf dem Rasberry Pi2 schnell zu einer unüberschaubaren Menge führen würde, werden die weiter zurück liegenden Informationen und Daten nach dem Prinzip einer Round-Robin-Database in einer verringerten Auflösung bereitgestellt. 
+Aufgrunddessen wird der Nutzer die Möglichkeit haben einzelne interessante Fahrten und Streckendaten zu speichern bzw. zu favorisieren, welche nicht in ihrer Auflösung verringert werden, da dies für alle nicht-markierten Fahrten automatisch passieren wird. Diese favorisierten Streckendaten können dann auch exportiert und auf der Webapplikation analysiert werden.
