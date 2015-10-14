@@ -15,57 +15,82 @@ color:
 # Team names, titles and social links
 people:
 - name: Bozkurt H&uuml;seyin
-  pic: default_profile
-  position: Verbrauchsanalyse
-  social: Zust&auml;ndig f&uuml;r die Darstellung des Spritverbrauchs &uuml;ber Zeit
+  pic: bozzy
+  position: Developer
+  text: 
+  social:
     - title: github
       url: https://github.com/hbozkurt-tgm
     - title: facebook
       url: https://www.facebook.com/HDB57
+    - title: xing
+      url: https://www.xing.com/profile/Hueseyin_Bozkurt23
+    - title: envelope
+      url: mailto:hbozkurt@student.tgm.ac.at
 
 - name: Faiku Fitim
-  pic: default_profile
-  position: Fahrgastkomfort
-  social: Zust&auml;ndig f&uuml;r die Darstellung der Sensordaten zur ermittlung des Fahrgastkomforts.
+  pic: fitim
+  position: Developer
+  text: 
+  social:
     - title: github
       url: #
     - title: facebook
-      url: #
+      url: https://www.facebook.com/fitim.Ka
     - title: xing
       url: #
+    - title: envelope
+      url: mailto:ffaiku@student.tgm.ac.at
 
 - name: Melichar Daniel
-  pic: default_profile
-  position: Data Management - Analysis / Product Owner
-  social: Zust&auml;ndig f&uuml;r die Datenbank und die Lesbarkeit der darin enthaltenen Daten.
+  pic: daniel
+  position: Product Owner & Developer
+  text: Lorem ipsum
+  social:
     - title: github
       url: https://www.github.com/dmelichar-tgm
     - title: facebook
       url: https://www.facebook.com/daniel.melichar.1
     - title: xing
       url: https://www.xing.com/profile/Daniel_Melichar3
+    - title: envelope
+      url: mailto:dmelichar@student.tgm.ac.at
 
 - name: Perny Tobias
-  pic: default_profile
-  position: Hardware und Sensorik
-  social: Zust&auml;ndig f&uuml;r den Bau des Car-PC's und das auslesen der Sensordaten.
+  pic: tobi
+  position: Developer
+  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  social:
     - title: github
       url: #
     - title: facebook
       url: #
     - title: xing
       url: #
+    - title: envelope
+      url: mailto:tperny@student.tgm.ac.at
 
 - name: Simsek Raphael
-  pic: default_profile
-  position: Schaltvorhersage
-  social: Zust&auml;ndig f&uuml;r die Berechnung des Zeitpunkts des besten Schaltvorgangs.
+  pic: raphael
+  position: Developer
+  text: Lorem ipsum
+  social:
     - title: github
       url: https://github.com/rsimsek-tgm
     - title: facebook
       url: https://www.facebook.com/raphael.simsek
     - title: xing
-      url: https://www.xing.com/profile/Raphael_Simse
+      url: https://www.xing.com/profile/Raphael_Simsek
+    - title: envelope
+      url: mailto:rsimsek@student.tgm.ac.at
+
+- name: List Erhard, BSc.
+  pic: erhard-bang
+  position: Stakeholder & Project Owner
+  text: Lorem ipsum
+  social:
+    - title: envelope
+      url: mailto:elist@tgm.ac.at
 
 
 
@@ -77,7 +102,8 @@ social:
 # Postal address (add as many lines as necessary)
 address:
   - line: Wexstra&szlig;e 19-23
-  - line: 1200 Vienna, Austria
+  - line: 1200 Vienna
+  - line: Austria
 
 # Build settings
 markdown: kramdown
