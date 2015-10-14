@@ -1,7 +1,35 @@
+\chapter{Appentwicklung}
 
+\section{Verbrauchsanalyse}
 
+	\subsection{Vergleich Java und Python}
+		\subsubsection{Java}
+			\begin{itemize}
+				\item Charakteristik: Mehrfachverwendung/Mehrfachvererbung eingeschränkt, stark Typisiert
+				\item Syntax: Vor der Kompilierung sehr streng, komplizierte Polymorphie
+				\item Dokumentation: Ausführliche Dokumentation der Methoden in Form von Java API
+				\item Community: Java ist sehr weit verbreitet, rund 3 Milliarden Geräte laufen mit Java.
+				\item Usage: plattformunabhängige Programme, FAT-Client-Anwendungen
+				\item Können im Team: 5/5*, wird seit der 1.Klasse im TGM Unterrichtet.
+			\end{itemize}
 
-
+		\subsubsection{Python}
+			\begin{itemize}
+				\item Charakteristik: Erstellung von Variablen nicht Datentyp abhängig, dynamisch Typisiert.
+				\item Syntax: Einrückung größtes Syntaktisches Problem, daher Geschmackssache im Vergleich zu Java
+				\item Dokumentation: Vorhanden, aber nicht ausführlich.
+				\item Community: Die Community von Python ist ständig am wachsen, ca. 5 Millionen Geräte arbeiten mit Python.
+				\item Usage: Back-End, äußerst schnelle Entwicklung(Rapid Application Development),
+				\item Können im Team: 3/5*, wird ab der 5.Klasse im TGM Unterrichtet.
+			\end{itemize}
+			
+			Aus den Oben genannten Punkten filtern wir heraus, dass Java die bessere Lösung wäre.
+			Die komplette Beherrschung von Python würde einige Wochen dauern. Da diese Zeit im Rahmen
+			des Diplomprojektes nicht gegeben ist, wäre die App-Entwicklung in Python nicht zielführend.
+			Außerdem benutzen Android-Smartphones die Dalvik-VM, welche Java Class Files exekutiert.
+			Dementsprechend wird hier massiv an Umkompilierungszeit erspart, welche für die Echtzeit-Darstellung
+			des Verbrauchs, Kalmans und Schaltvorgangs essentiell ist.
+\subsection{Frameworks}
 \begin{table}[]
 \centering
 \caption{My caption}
