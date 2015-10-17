@@ -5,11 +5,6 @@
  */
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
-
-$(window).load(function() {      //Do the code in the {}s when the window has loaded 
-  $("#loader").fadeOut("fast");  //Fade out the #loader div
-});
-
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
@@ -41,8 +36,28 @@ $('div.modal').on('show.bs.modal', function() {
 	}
 });
 
-//home section image size to window size.
-var height = $(window).height();
-$(".home").css("height",height);
-$(".home_wrap").css("height",height);
-$(".home").css("max-width","100%");
+$(window).load(function() {    
+
+    var theWindow        = $(window),
+        $bg              = $("#bg"),
+        aspectRatio      = $bg.width() / $bg.height();
+                                
+    function resizeBg() {
+        
+        if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+            $bg
+                .removeClass()
+                .addClass('bgheight');
+        } else {
+            $bg
+                .removeClass()
+                .addClass('bgwidth');
+        }
+                    
+    }
+                                
+    theWindow.resize(resizeBg).trigger("resize");
+
+});
+
+
