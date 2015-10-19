@@ -1,22 +1,28 @@
 \chapter{Voruntersuchung}
+
 \section{Ist-Zustand}
-Der momentane Zustand von Hilfsmodulen für FahranfängerInnen, die nachhaltig ihr Fahrverhalten verbessern möchten, hat keine große Bandbreite. Für KFZ-Neulinge ist es besonders schwer, ein richtiges Fahrgefühl zu entwickeln, da die meisten Fahrschulen den Informationsfluss auf die mündliche Weitergabe von Informationen beschränken. Da die Informationen durch den Fahrlehrer weitergegeben werden und nicht immer direkt auf den Fahrschüler eingegangen werden kann, können hier langanhaltende Fehler entstehen. Der Lernprozess der korrekten und dauerhaften Inbetriebnahme eines KFZ ist äußerst komplex. Ebenfalls ist das Übertragen von der Erfahrung auf andere KFZ ist nur eingeschränkt möglich.
-Da ein Neuwagen mit ausgeprägtem Bord-Computer von vielen Fahranfängern nur schwer leistbar ist und ältere Fahrzeugmodelle diese Verbesserungen des Fahrverhaltens nicht anbieten, ist dieses Produkt besonders für Fahranfänger interessant.
+Der momentane Zustand von Hilfsmodulen für FahranfängerInnen, die nachhaltig ihr Fahrverhalten verbessern möchten, hat keine große Bandbreite. Für KFZ-Neulinge ist es besonders schwer, ein richtiges Fahrgefühl zu entwickeln, da die meisten Fahrschulen den Informationsfluss auf die mündliche Weitergabe beschränken. Da die Informationen durch den Fahrlehrer weitergegeben werden und nicht immer direkt auf den Fahrschüler eingegangen werden kann, können hier grundsätzliche Fehler entstehen. Der Lernprozess der korrekten und dauerhaften Inbetriebnahme eines KFZ ist äußerst komplex. Ebenfalls ist das Übertragen von Erfahrung auf andere Fahrer nur eingeschränkt möglich.
+Da ein Neuwagen mit ausgeprägtem Bord-Computer von vielen Fahranfängern finanziel schwer leistbar ist und ältere Fahrzeugmodelle diese Verbesserungen des Fahrverhaltens nicht anbieten, ist dieses Produkt besonders für Fahranfänger interessant.
+
 \section{Soll-Zustand}
-Die Software soll das erlernen und optimieren des Fahrstils des Kunden erleichtern. Durch einen Algorithmus zur Berechnung des optimalen Gangwechsels soll das Prinzip eines manuellen Getriebes und auch die Drehzahlbereiche der eigenen Gangschaltung besser verstanden werden. Die zum Gang passende Drehzahl soll gefunden werden und akustisch und visuell dargestellt werden. Die momentanen Fahreigenschaften (Fahrgastbequemlichkeit und Verbrauch) sollen ebenfalls angezeigt werden. \newpage Nach einer Fahrt werden durch die gesammelten Daten Graphiken erstellt werden und die Maxima der jeweiligen Fahreigenschaften werden mittels eines Overlays auf Kartenmaterial gelegt, um Maxima in den Daten zu lokalisieren. Diese können dann Retrospektiv zu Lernzwecken verwendet werden. Die Fahrgastbequemlichkeit soll in Form von einem Kamm'schen Kreis dargestellt werden, um die momentanen Querbeschleunigungen zu visualisieren, während der Kraftstoffverbrauch mit berechneten Werten angezeigt wird.
+Die Software soll das erlernen und optimieren des Fahrstils des Kunden erleichtern. Durch einen Algorithmus zur Berechnung des optimalen Gangwechsels soll das Prinzip eines manuellen Getriebes und auch die Drehzahlbereiche der eigenen Gangschaltung besser verstanden werden. Die zum Gang passende Drehzahl soll gefunden werden und akustisch und/oder visuell dargestellt werden. Die momentanen Fahreigenschaften (Fahrgastbequemlichkeit und Verbrauch) sollen ebenfalls angezeigt werden. \newpage Nach einer Fahrt werden, mithilfe der gesammelten Daten, Graphen erstellt und die Eigenschaften der Fahrt werden mittels eines Overlays auf eine Karte gelegt. Die Maxima der Daten werden optisch hervorgehoben. Diese können dann Retrospektiv zu Lernzwecken verwendet werden. Die Fahrgastbequemlichkeit soll in Form von einem Kamm'schen Kreis dargestellt werden, um die momentanen Querbeschleunigungen zu visualisieren, während der Kraftstoffverbrauch mit berechneten Werten angezeigt ist.
+
 \section{Ziele}
 \subsection{Einfaches Softwarekonzept}
-Die Android App wird einfach zu bedienen sein. Zusätzlich wird die grafische Oberfläche dieser wenige Eingabefelder haben um Eingabefehler zu vermeiden.
+Die Android App ist einfach zu bedienen sein. Zusätzlich hat die grafische Oberfläche wenige Eingabefelder um Fehler zu vermeiden.
 Da die graphische Oberfläche beim Fahren nicht stören darf, sollen die vorhandenen Eingabefelder möglichst groß und leicht zu bedienen sein. Durch akustische Meldungen soll der Blick des Fahrers nicht von der Fahrbahn abgeleitet werden.
-\subsection{Hohe Stabilität der Software}
-Um einen reibungslosen Ablauf im Fahrbetrieb mit der Software zu ermöglichen, wird besonders auf die Stabilität dieser geachtet. BestShift wird ausgiebig getestet werden, um einen nahezu fehlerfreien Einsatz zu ermöglichen.
+
 \subsection{Abgrenzung von möglichen Fehlerquellen}
-BestShift wird ausdrücklich so entwickelt, dass die Motordaten aus der OBD-II Schnittstelle direkt in eine Datenbank übertragen werden, um sie für die App einbindbar zu machen. Der Vorteil davon ist, dass das System so eine gute Kapselung ausweist.
+BestShift ist ausdrücklich so entwickelt, dass die Motordaten aus der OBD-II Schnittstelle direkt in eine Datenbank übertragen werden, um sie für die App einbindbar zu machen. Der Vorteil davon ist, dass das System so eine gute Kapselung ausweist.
+
+\todo Mehr ziele schrieben
 
 \section{Nicht-Ziele}
+
 \subsection{Portabilität/Limitierung}
-Die Software wird vorerst nicht für alle Automobil-Marken verfügbar sein. Das Konzept besteht für eine gewisse Anzahl von Automobilen, die im Laufe des Projektes zur Realisierung verwendet werden können, da wir keine Fahrzeuge direkt von einem Hersteller zu Verfügung gestellt bekommen, können wir nur mit den Fahrzeugen aus unserem direkten Kreis arbeiten. 
+Die Software wird vorerst nicht für alle Automobil-Marken verfügbar sein. Das Konzept besteht für eine gewisse Anzahl von Automobilen, die im Laufe des Projektes zur Realisierung verwendet werden können. Da wir keine Fahrzeuge direkt von einem Hersteller zu Verfügung gestellt bekommen, können wir nur mit den Fahrzeugen aus unserem direkten Kreis arbeiten. 
+
 \subsection{Netzwerkabhängigkeit}
-Nicht-Ziel von BestShift ist es, die Daten in die Cloud zu laden um sie dann in einer Webapplikation analysieren zu können. Die Daten, die aus dem Motormanagement entnommen werden, werden vor dem Upload in der Datenbank im integrierten CarPC gespeichert. Diese werden auch für die App von dieser Datenbank ausgelesen.
-\subsection{Nutzungsbedingungen}
-Die Quelltexte für BestShift werden nicht freigegeben oder veröffentlicht und dürfen weder Reproduziert werden noch durch externe Firmen gewartet werden. Das gekaufte Produkt enthält daher nur die fertig kompilierten Quelltexte.
+Nicht-Ziel von BestShift ist es, die Daten in die Cloud zu laden um sie dann in einer Webapplikation analysieren zu können. Die Daten, die aus dem Motormanagement entnommen worden sind, können auf den Server synchronisiert  werden. 
+
+\todo Mehr nicht ziele schreiben

@@ -1,11 +1,11 @@
 \chapter{Einleitung}
-BestShift ist ein Projekt das dem Fahrer als oberstes Ziel mehr Informationen während- und nach der Fahrt bieten soll. Deshalb wird in unterschiedlichen Teilen des Projektes bis April 2016 (finale Abgabe der Diplomarbeit) diverse einzelne Komponenten einer hybriden Android Applikation und einer Hardware Schnittstelle für die OBD2 Schnittstelle entwickelt. 
+BestShift ist ein Projekt das dem Fahrer als oberstes Ziel mehr Informationen während- und nach der Fahrt bieten soll. Deshalb werden in unterschiedlichen Teilen des Projektes bis April 2016 (finale Abgabe der Diplomarbeit) diverse einzelne Komponenten einer hybriden Android Applikation und einer Hardware Schnittstelle für die ODB-II Schnittstelle entwickelt. 
+\todo Synonym für Schnittstele
 
-Für die Applikation soll ein Android Framework verwendet werden, während die Hardware aus einem Single Board Computer (SBC) bestehen soll, welcher mittels einem OBD2 zu Bluetooth Chip (ELM237) und Python, Daten aus dem Motormanagement sowie eigene Sensordaten erhält. 
+Für die Applikation wird ein Android Framework verwendet werden, während die Hardware aus einem Single Board Computer (SBC) bestehen soll, welcher mittels einem ODB-II zu Bluetooth Chip (ELM237) und Python, Daten aus dem Motormanagement sowie eigene Sensordaten erhält. 
 
 \section{Projekt-Team}
-\textbf{Tobias Perny}
-Tobias Perny hat als einziger Systemtechniker der Projektgruppe hardwarenäheste Aufgabe des ganzen Projektes. Er soll einen CarPC mit allen nötigen Sensoren, aber allen voran einem GPS-Sensor, Beschleunigungssensor und Gyroskop verwirklichen. Dafür muss der CarPC an das 12V Bordnetz eines PKW angebunden werden, außerdem sollen dessen Daten ausgelesen werden.
+\textbf{Tobias Perny} hat als einziger Systemtechniker der Projektgruppe die hardwarenäheste Aufgabe des ganzen Projektes. Er soll einen CarPC mit allen nötigen Sensoren, aber allen voran einem GPS-Sensor, Beschleunigungssensor und Gyroskop verwirklichen. Dafür muss der CarPC an das 12V Bordnetz eines PKW angebunden werden, außerdem sollen dessen Daten ausgelesen werden.
 \nextline 
 \textit{Fähigkeiten}
 \begin{itemize}
@@ -14,35 +14,26 @@ Tobias Perny hat als einziger Systemtechniker der Projektgruppe hardwarenäheste
 	\item Softwareengineering
 	\item Microsoft Office
 	\item SCRUM
-	\item Data Mining
-	\item \todo{Mehr Fähigkeiten für Tobi einfügen}
+	\item Informationsmanagement
 \end{itemize}
 
-\textbf{Daniel Melichar - Product Owner}
-
-Daniel Melichar ist der perfekte Vertreter des Produktes für den Kunden, welcher momentan unser SCRUM Master und Stakeholder Prof. Erhard List ist und bei Beendigung des Projektes werden mögliche Interessenten die über Mundpropaganda auf das Produkt aufmerksam geworden sind und es gerne kaufen würden mit ihm Kontakt aufnehmen. Herr Melichar ist höchst engagiert für das Projekt und besitzt die Fähigkeiten dieses Engagement in die Tat um zu setzten.
+\textbf{Daniel Melichar} ist der perfekte Vertreter des Produktes für den Kunden, und bei Beendigung des Projektes werden mögliche Interessenten die über diverse Networks auf das Produkt aufmerksam geworden sind und es gerne kaufen würden mit ihm Kontakt aufnehmen. Herr Melichar ist höchst engagiert für das Projekt und besitzt die Fähigkeiten dieses Engagement in die Tat um zu setzten. Herr Melichar ist im Projekt vor allem für die Bereitstellung und Interpretierung der Motor- und Sensordaten zuständig. 
 
 \textit{Fähigkeiten}
 \begin{itemize}
-	\item Projektmanagement
 	\item Servermanagement & Datenmanagement				
 	\item Softwareengineering
-	\item Webentwicklung
-	\item Design
+	\item Webentwicklung & -design
 	\item SCRUM
-	\item Microsoft Office
-	\item Adobe Creative Suite
 	\item Quality Assurance
+	\item MicrosoftOffice
 \end{itemize}
-Herr Melichar ist im Projekt vor allem für die Bereitstellung und Interpretierung der Motor- und Sensordaten zuständig. 
 
 
-\textbf{Raphael Simsek}
-Raphael Simsek hatte gemeinsam mit Herrn Prof. List die Idee für das Projekt und ist grundsätzlich sehr interessiert an Autos, genauso wie Herr Faiku allerdings vorrangig an japanischen Ikonen. Dazu zählen beispielsweise der Toyota Supra, Mazda RX-7 FD, Honda S2000 oder Nissan Skyline R32. Das Teilprojekt von Herrn Simsek umfasst die Berechnung von Schaltvorschlägen mittels Algorithmen für maximales Drehmoment und für kraftstoffsparendes Fahren. Das Wissen über die Algorithmen für diese Berechnungen wird erst erlangt. Das Teilprojekt wird allerdings definitiv für Android programmiert sein und die Drehzahl ebenfalls mittels der Motordaten darstellen.
+\textbf{Raphael Simsek} hatte gemeinsam mit Herrn Prof. List die Idee für das Projekt entwicklet. Das Teilprojekt von Herrn Simsek umfasst die Berechnung von Schaltvorschlägen mittels Algorithmen für maximales Drehmoment und für kraftstoffsparendes Fahren. Das Wissen über die Algorithmen für diese Berechnungen wird erst erlangt. Das Teilprojekt wird allerdings definitiv für Android programmiert sein und die Drehzahl ebenfalls mittels der Motordaten darstellen.
 
 \textit{Fähigkeiten}
 \begin{itemize}
-	\item Projektmanagement
 	\item Servermanagement				
 	\item Softwareengineering
 	\item Webentwicklung
@@ -51,33 +42,25 @@ Raphael Simsek hatte gemeinsam mit Herrn Prof. List die Idee für das Projekt un
 	\item Urheberrechtliches Consulting
 \end{itemize}
 
-\textbf{Hüseyin Bozkurt}
-Hüseyin Bozkurt ist für die Verbrauchsanalyse der App zuständig. Dabei wird eine Anzeige des Momentanverbrauchs und des Durchschnittsverbrauchs der ganzen Fahrt angezeigt. Diese soll sowohl in Werten als auch in Graphiken dargestellt werden. Die Fahrstrecke soll auch auf den Verbrauch bezogen geographisch angezeigt werden. Beispielsweise mittels eines Overlays. Ein Verbrauchsvergleich und eine Social Media Integration ist auch geplant.
-All diese geplanten Features wird Bozzy durch sein erlerntes Wissen am TGM und sein Interesse für die Programmierung mit Bravur umsetzen können. Die hybride Applikation ist besonders für diese Teilbereiche wichtig, da hier eine Webapplikation, um dem User nach einer Fahrt die Möglichkeit zu bieten die aufgenommenen Daten und Graphen genauer zu analysieren, geplant ist.
+\textbf{Hüseyin Bozkurt} ist für die Verbrauchsanalyse der App zuständig. Dabei wird eine Anzeige des Momentanverbrauchs und des Durchschnittsverbrauchs der ganzen Fahrt angezeigt. Diese soll sowohl in Werten mittels Graphiken dargestellt werden. Die Fahrstrecke soll auch auf den Verbrauch bezogen geographisch angezeigt werden. Ein Verbrauchsvergleich und eine Social Media Integration ist auch integriert.
+All diese geplanten Features wird Herr Bozkurt umsetzten. Die hybride Applikation ist besonders für diese Teilbereiche wichtig, da hier eine Webapplikation, um dem User nach einer Fahrt die Möglichkeit zu bieten, die aufgenommenen Daten und Graphen genauer zu analysieren, realisert ist.
 
 \textit{Fähigkeiten}
 \begin{itemize}
-	\item Projektmanagement
-	\item Servermanagement				
+	\item Projektmanagement			
 	\item Softwareengineering
-	\item Webentwicklung
 	\item SCRUM
 	\item Microsoft Office
 	\item Adobe Creative Suite
-	\item Quality Assurance
-	\todo{Mehr Fähigkeiten für Bozzy hinzufügen}
 \end{itemize}
 
-\textbf{Fitim Faiku}
-Fitim Faiku ist für die Analyse der Fahrgastbequemlichkeit zuständig. Die Umsetzung dieses Features ist vor allem mit einem Kamm'schen Kreis geplant, welcher in der App verwendet werden soll um besondere Quer- oder Längsbeschleunigungen anzuzeigen. Der Kreis soll je nach Modus die g-Kraft innerhalb von unterschiedlichen Bereichen darstellen. 
-Herr Faiku, welcher sich selbst sehr für japanische Sportwagen interessiert, insbesondere der Nissan GTR bereitet ihm Freude, ist sehr von Autos begeistert und hat auch die Programmierkenntnisse um die Wünsche des Kunden in die Tat umzusetzen. 
+\textbf{Fitim Faiku} ist für die Analyse der Fahrgastbequemlichkeit zuständig. DDieses Feature wird mithilfe eines Kamm'schen Kreises umgesetzt, welcher in der App abgerufen werden kann. Dieser zeigt Quer- und Längsbeschleunigung an. Der Kreis soll je nach Modus die g-Kraft innerhalb von unterschiedlichen Bereichen darstellen. 
 
 \textit{Fähigkeiten}
 \begin{itemize}
-	\item Projektmanagement
-	\item Servermanagement				
+	\item Projektmanagement			
 	\item Softwareengineering
-	\item Webentwicklung
+	\item SCRUM
 	\item Microsoft Office
 	\item Adobe Creative Suite
 	\todo{Mehr Fähigkeiten für Fitim hinzufügen}
