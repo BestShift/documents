@@ -26,7 +26,8 @@ Rohdaten sind Daten welche noch nicht interpretiert wurden. Diese Rohdaten sind 
 Informationen, welche nach der Filterung, Normierung, Skalierung und Zuordnung strukturiert in der Datenbank abgelegt werden.
 
 \section{LD40 - Konfigurationsdaten}
-Als Konfigurationsdaten, werden diese Daten bezeichnet welche jedenfalls vom Benutzer selbst über die Begebenheiten seines Fahrzeugs eingegeben werden müssen. Auch diese Daten sollen strukturiert in der NOSQL Datenbank abgelegt werden, wobei diese entweder aus den Informationen des Motormanagements oder direkt aus dem Input des Users generiert werden.
+Als Konfigurationsdaten, werden die Daten bezeichnet, welche unvermeindlich vom Benutzer angegeben werden müssen, um Informationen über das Fahrzeug zu erhalten.   Diese Daten sollen strukturiert in der NOSQL Datenbank abgelegt werden, wobei diese entweder aus den Informationen des Motormanagements oder direkt aus dem Input des Users generiert werden.
+\nextline
 \textbf{Beispiele für Eingaben durch den Benutzer}
 \begin{itemize}
 	\item Ganganzahl des Getriebes [4-7] (Vorraussetzung für Schaltvorhersage)
@@ -44,4 +45,4 @@ Als Konfigurationsdaten, werden diese Daten bezeichnet welche jedenfalls vom Ben
 
 \section{LD50- Verlaufsinformation, Sensordaten über Zeit}
 Da die Datenmenge von vielen Fahrten auf dem Rasberry Pi2 schnell zu einer unüberschaubaren Menge führen würde, werden die weiter zurück liegenden Informationen und Daten nach dem Prinzip einer Round-Robin-Database in einer verringerten Auflösung bereitgestellt. 
-Aufgrunddessen wird der Nutzer die Möglichkeit haben einzelne interessante Fahrten und Streckendaten zu speichern bzw. zu favorisieren, welche nicht in ihrer Auflösung verringert werden, da dies für alle nicht-markierten Fahrten automatisch passieren wird. Diese favorisierten Streckendaten können dann auch exportiert und auf der Webapplikation analysiert werden.
+Aufgrunddessen wird der Nutzer die Möglichkeit haben einzelne interessante Fahrten und Streckendaten zu speichern bzw. zu favorisieren, welche nicht in ihrer Auflösung verringert werden, da dies für alle nicht-markierten Fahrten automatisch passieren wird. Diese favorisierten Streckendaten können dann auch exportiert und auf der Webapplikation oder auch mit anderen Daten(Bildern) analysiert werden.
