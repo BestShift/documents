@@ -27,16 +27,20 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 
 	\subsection{NoSQL Datenbanken}
 
-		\begin{tabular} {| l | c | c | c | c | c | c |}
-			\hline
-			& Cassandra & HBase & MongoDB & Riak & MySQL Cluster & Couchbase		\\ \hline \hline
-			Performance &  &	 &  &  &  &  &		\\ \hline
-			Supported languages &  &	 &  &  &  &  &	 			\\ \hline
-			Documentation &  &	 &  &  &  &  &	 		\\ \hline
-			Recent aktivity &  &	 &  &  &  &  &			\\ \hline
-			Community &  &  &  &  &  &  &		\\ \hline 
-			Usage examples	&  &	&  &  &  &  &					\\ \hline
+		\begin{table}[]
+		\centering
+		\caption{NoSQL Datenbanken}
+		\label{NoSQL-Datenbanken}
+		\begin{tabular}{llllll}
+		 & \textbf{Cassandra} & \textbf{Couchbase} & \textbf{HBase} & \textbf{MongoDB} & \textbf{Riak} \\
+		Performance & gut & sehr gut & befridigend & sehr gut & befriedigend \\
+		Supported languages & \begin{tabular}[c]{@{}l@{}}Java\\ Python\\ PHP\\ JavaScript\\ etc.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Java\\ JavaScript\\ PHP\\ Python\\ etc.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Java\\ PHP\\ Python\\ etc.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Java\\ JavaScript\\ PHP\\ Python\\ PowerShell\\ etc.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Java\\ JavaScript\\ PHP\\ Python\\ etc.\end{tabular} \\
+		Documentation & 80\% & 90\% & 80\% & 90\% & 70\% \\
+		Current release & 2.2.2, October 2015 & 4.0, October 2015 & 1.1.0.1, May 2015 & 3.0.6, August 2015 & 2.1.0, April 2015 \\
+		Community & 80\% & 85\% & 90\% & 90\% & 80\% \\
+		Usage examples & \begin{tabular}[c]{@{}l@{}}Cisco\\ eBay\\ PayPal\\ Verizon\\ Walmart\end{tabular} & \begin{tabular}[c]{@{}l@{}}Adobe\\ Facebook\\ Twitter\\ Yahoo\end{tabular} & \begin{tabular}[c]{@{}l@{}}Bosch\\ Forbes\\ Chicago Gov.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Apple\\ Netflix\\ eBay\end{tabular} & 
 		\end{tabular}
+		\end{table}
 
 	\subsection{Rationale Datenbanken}
 		
@@ -60,7 +64,7 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 		\begin{tabular} {| l | c | c | c | c | c | c |}
 			\hline
 			& RapidMiner & WEKA &  R-Programming & Orange & KNIME & NLTK		\\ \hline \hline
-			Performance &  &	 &  &  &  &  &		\\ \hline
+			Performance &  &  &  &  &  &  &		\\ \hline
 			Supported languages &  &	 &  &  &  &  &	 			\\ \hline
 			Documentation &  &	 &  &  &  &  &	 		\\ \hline
 			Recent aktivity &  &	 &  &  &  &  &			\\ \hline
@@ -72,7 +76,7 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 	\subsection{Finale Entscheidung}
 	Anhand der Evaluierung wurde die Auswahl auf die folgenden zwei DBMS Systeme beschränkt: Couchbase (NoSQL) und PostgreSQL (Relational). Die letzendliche Entscheidung beschränkt sich nun also nur auf die NoSQL-Variante mittels Couchbase oder der relationalen Variante mittels PostgreSQL. Im folgenden Abschnitt wird ein wenig detailierter auf die beiden Varianten eingegangen.
 
-		\begin{table}[htb]
+		\begin{table}[!htb]
 			\begin{tabular}{|l|l|l|}
 			\hline
 			Name & \textbf{Couchbase} & \textbf{PostgreSQL} \\ \hline
@@ -90,13 +94,9 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 			Secondary indexes & yes & yes \\ \hline
 			SQL & no & yes \\ \hline
 			\end{tabular}
-			\caption{Couchbase und PostgreSQL (1)}}
-			\label{Couchbase und PostgreSQL (1)}
 		\end{table}
 
-		\newpage
-
-		\begin{table}[htb]
+		\begin{table}[!htb]
 			\begin{tabular}{|l|l|l|}
 			\hline
 			Name & \textbf{Couchbase} & \textbf{PostgreSQL} \\ \hline
@@ -114,8 +114,6 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 			Durability & yes & yes \\ \hline
 			User concepts & \begin{tabular}[c]{@{}l@{}}simple password-based access\\ control per bucket\end{tabular} & \begin{tabular}[c]{@{}l@{}}fine grained access rights\\ according to SQL-standard\end{tabular} \\ \hline
 			\end{tabular}
-			\caption{Couchbase und PostgreSQL (2)}}
-			\label{Couchbase und PostgreSQL (2)}
 		\end{table}
 
 		\newpage
