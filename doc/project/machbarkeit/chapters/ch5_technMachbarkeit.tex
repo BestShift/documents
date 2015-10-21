@@ -237,15 +237,48 @@ User concepts & \begin{tabular}[c]{@{}l@{}}simple password-based access\\ contro
 \newpage
 Aus der Evaluierung ist folgendes heraus gekommen: es wird die NoSQL-Variante Couchbase verwendet. Begründungen hierfür sind die folgenden:
 \begin{itemize}
-\item Die OBD-II Schnittstelle zwar generell gesprochen Standartisiert, jedoch fügen viele Hersteller zusätzliche Information hinzu. Das bedeutet das die Daten von Fahrzeug zu Fahrzeug unterschiedlich sind. Ein großer Vorteil von Couchbase ist, dass es kein Datenschema gibt - daher können prinzipiell jegliche Daten problemlos hinzugefügt werden.
-\item Ein weiterer großer Vorteil von Couchbase gegenüber PostgreSQL ist die Art und Weise wie man auf diese zentralle Schnittstelle zugreifen kann. Obwohl es zwar bei PostgreSQL solche Dinge wie JDBC oder ODBC gibt, sind diese nicht unbedingt für Web-Applikationen geeignet. Couchbase bietet hier eine RESTful Lösung an; mit dieser ist das erstellen einer Web Anwendung, oder einer jeglichen anderen Applikation, einfacher.
+\item Die OBD-II Schnittstelle zwar generell gesprochen Standardisiert, jedoch fügen viele Hersteller zusätzliche Information hinzu. Das bedeutet das die Daten von Fahrzeug zu Fahrzeug unterschiedlich sind. Ein großer Vorteil von Couchbase ist, dass es kein Datenschema gibt - daher können prinzipiell jegliche Daten problemlos hinzugefügt werden.
+\item Ein weiterer großer Vorteil von Couchbase gegenüber PostgreSQL ist die Art und Weise wie man auf diese zentrale Schnittstelle zugreifen kann. Obwohl es zwar bei PostgreSQL solche Dinge wie JDBC oder ODBC gibt, sind diese nicht unbedingt für Web-Applikationen geeignet. Couchbase bietet hier eine RESTful Lösung an; mit dieser ist das erstellen einer Web Anwendung, oder einer jeglichen anderen Applikation, einfacher.
 \end{itemize}
 
+\newpage
+\section{Hardware \& Sensorik}
+\subsection{Gegenüberstellung der Umsetzungsmöglichkeiten}
+\begin{table}[!htb]
+\centering
+\caption{Gegenüberstellung der Umsetzungsmöglichkeiten}
+\label{my-label}
+\begin{tabular}{l|c|c|c|l|}
+\cline{2-5}
+ & RED Brick & Raspberry Pi 2 & Arduino & Erklärung \\ \hline
+\multicolumn{1}{|c|}{Performance} & Gut & Gut & Sehr gut & \begin{tabular}[c]{@{}l@{}}Der Arduino besitzt \\ kein Betriebssystem, \\ darum ist er Performanter \\ als die anderen beiden. \\ Allerdings ist der Arbeits-\\ aufwand bei diesem Höher.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Supported \\ Languages\end{tabular}} & \begin{tabular}[c]{@{}c@{}}C/C++,C\#, \\ Delphi/Lazerus, \\ Java, JavaScript, \\ MATLAB/Octave,\\ Perl, PHP, Python, \\ Ruby, Shell, \\ Visual Basic .NET\end{tabular} & Python, C & \begin{tabular}[c]{@{}c@{}}C/C++, \\ AVR-Assembler \\ (IDE: Java)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Der RED-Brick besitzt \\ die größte Anzahl an \\ unterstützten \\ Programmiersprachen.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Documentation} & 60\% & 90\% & 70\% & \begin{tabular}[c]{@{}l@{}}Das Raspberry besitzt \\ die größte \\ Fangemeinde und \\ die meisten User.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Recent activity} & 07.10.2015 & 07.10.2015 & 04.10.2015 & \begin{tabular}[c]{@{}l@{}}Alle drei Boards \\ sind sehr aktuell.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Community} & 80\% & 80\% & 70\% & \begin{tabular}[c]{@{}l@{}}Die Community ist bei \\ allen sehr nett und \\ sehr Hilfsbereit.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Usage examples} & 70\% & 80\% & 65\% & \begin{tabular}[c]{@{}l@{}}Die Examples beim Raspberry Pi2 sind \\ immer sehr verständlich und sehr gut dokumentiert.\end{tabular} \\ \hline
+\end{tabular}
+\end{table}
 
+\subsection{RED Brick}
+Der RED Brick ist das teuerste Board unter den getesteten. Für dieses Board ist schon vieles vorgegeben und vieles vereinfacht worden, beispielsweise die grafische Oberfläche zum Auslesen der Sensorwerte. Als Ausschlusskriterium des RED Brick ist allerdings der hohe Preis einer Umsetzung mit eines RED Brick zu erwähnen.
+
+\subsection{Raspberry Pi2}
+Der Raspberry Pi hat die größte Dokumentation und die größte Community. Darüber hinaus ist er kostengünstig. Die neueste Version, der Raspberry Pi2 ist ebenfalls kostengünstig, hat weiterhin eine große Community und hat sogar verbesserte Hardware.
+
+\subsection{Arduino}
+Der Arduino ist das schnellste Board unter den getesteten, aufgrund der Tatsache, dass kein Betriebssystem läuft. Der große Arbeitsaufwand ist dafür ein Ausschlusskriterium, weil eine Lösung mit einem Microcontroller auch einen SBC braucht und die Teillösung mit einem Microcontroller sehr aufwändig wäre.
+
+\subsection{Conclusio - Hardware}
+Aufgrund dieser Gegenüberstellung haben wir uns für den Raspberry Pi entschieden. Er ist billiger als der RED Brock und benötigt weniger Arbeitsaufwand zum Programmieren beziehungsweise Einarbeitungszeit bei der Inbetriebnahme. Alles in allem der beste Kompromiss.
+
+\newpage
 \section {Betriebssystem}
 Das Betriebssystem des Rasberry Pi2 ist eine performance-optimierte Version von Debian Linux.
 Das Betriebssystem der App wird Android sein, auch wenn wir durch das Framework das wir verwenden die App auf jedem der mobil vorhandenen App Stores publizieren könnten.
 
+\section {Nutzwertanalyse}
+\includegraphics[scale=0.5]{images/Nutzwert.png}
 
 \section {Conclusio}
 Abschließend wird innerhalb der Festlegung der User Stories vor allem darauf zu achten sein möglichst wenige Eingaben vom User abzuverlangen und möglichst viel direkt aus der OBD2 Schnittstelle mittels der PID's zu bekommen, da dies ein großes Fehlerpotenzial bergen würde. 
