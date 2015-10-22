@@ -42,20 +42,23 @@ Dementsprechend wird hier massiv an Umkompilierungszeit gespart, welche für die
 Kamm'schen Kreises und Schaltvorschlags essentiell ist.
 \subsection{Java-Frameworks(APP)}
 \newline
-		\begin{table}[]
-			\centering
-			\caption{My caption}
-			\label{my-label}
-			\begin{tabular}{lllll}
-			& MPAndroidChart & AChartEngine & HelloChart & Erklärung \\
-			Performance & gut & gut & gut &  \\
-			Supported laguages & IOS 7,8 , App java & java & java & MPAC kann auch weiterverwendet werden für IOS apps \\
-			Documentation & 85% & 70% & 50% & MPAC hat eine sehr gut in kapiteln aufgelistete Dokumentation, Tutorials \\
-			Recent activity & 13 tage zuvor & ein ein halb Jahre zuvor & 6Tage zuvor & MPAC ist sehr aktuell und bringt immer wieder neue bugfixes raus. Hello Chart genau so \\
-			Community & 80% & 60% & 20% & MPAC hat eine sehr übersichtliche Community im Gegensatz zu ACHartEngine. Eine Antwort wird innerhalb von 7 tagen geliefert. HelloCHart hat eine sehr alte bis keine Community \\
-			Usage examples & 85% & 70% & 15% & MPAC hat für jeden Chart ein eigenes Beispiel oder auch Tutorials in Youtube. AChartEngine hat eher mehr Tutorials in Youtube und nicht so viel greifbaren Code wie MPAC.
-		\end{tabular}
-	\end{table}
+\begin{table}[!htb]
+\centering
+\caption{Vergleich der Charting-Frameworks}
+\label{comparisonCharting}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l|c|c|c|l|}
+\cline{2-5}
+ & \begin{tabular}[c]{@{}c@{}}MPAndorid\\ Chart\end{tabular} & \begin{tabular}[c]{@{}c@{}}AChart\\ Engine\end{tabular} & HelloChart & Erklärung \\ \hline
+\multicolumn{1}{|l|}{Performance} & Gut & Gut & Gut &  \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Supported \\ Languages\end{tabular}} & \begin{tabular}[c]{@{}c@{}}iOS 7,8;\\ Java\end{tabular} & Java & Java & \begin{tabular}[c]{@{}l@{}}MPAC kann auch\\ weiterverwendet werden\\ für eine iOS App\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Documentation} & 85\% & 70\% & 50\% & \begin{tabular}[c]{@{}l@{}}MPAC hat eine sehr gute\\ in Kapiteln aufgelistete\\ Dokumentation, Tutorials\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Recent activity} & 19.10.2015 & 26.07.2013 & 5.10.2015 & \begin{tabular}[c]{@{}l@{}}MPAC ist sehr aktuell\\ und bringt immer wieder \\ neue Bugfixes raus.\\ HelloChart ebenso.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Community} & 80\% & 60\% & 20\% & \begin{tabular}[c]{@{}l@{}}Bei MPAC und \\ AChartEngine wird eine\\ Antwort innerhalb von 7 \\ Tagen geliefert.\\ Eine Community bei Hello\\ Chart ist kaum vorhanden.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Usage examples} & 85\% & 70\% & 15\% & \begin{tabular}[c]{@{}l@{}}MPAC hat für jeden Chart\\ ein eigenes Beispiel oder \\ auch Tutorials auf YouTube.\\ AChartEngine weniger \\ verwendbare Codebeispiele.\end{tabular} \\ \hline
+\end{tabular}
+}
+\end{table}
 
 Im Großen und Ganzen ist MPAndroidChart das Beste was man wählen kann, da es eins der besten Dokumentationen hat, weiterhin hat es auch eine sehr gute Community, sehr viel gut gecodete und Dokumentierte Beispiele und ist auch für Erweiterung gut , da die App auch auf einem IPhone programmiert werden kann. 
 AChartEngine hat eine gute Dokumentation doch eine eher schwächere Community und ist leider nicht sehr aktuell. 
@@ -147,6 +150,7 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 \centering
 \caption{Vergleich von NoSQL-Datenbanken}
 \label{Vergleich von NoSQL-Datenbanken}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{l|l|l|l|l|l|}
 \cline{2-6}
  & \textbf{Cassandra} & \textbf{Couchbase} & \textbf{HBase} & \textbf{MongoDB} & \textbf{Riak} \\ \hline
@@ -157,12 +161,14 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 \multicolumn{1}{|l|}{Community} & 80\% & 85\% & 90\% & 90\% & 80\% \\ \hline
 \multicolumn{1}{|l|}{Usage examples} & \begin{tabular}[c]{@{}l@{}}Cisco\\ eBay\\ PayPal\\ Verizon\\ Walmart\end{tabular} & \begin{tabular}[c]{@{}l@{}}Adobe\\ Facebook\\ Twitter\\ Yahoo\end{tabular} & \begin{tabular}[c]{@{}l@{}}Bosch\\ Forbes\\ Chicago Gov.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Apple\\ Netflix\\ eBay\end{tabular} & \begin{tabular}[c]{@{}l@{}}Comcast\\ Xing\\ SendGrid\\ Virgin America\\ McAfee\end{tabular} \\ \hline
 \end{tabular}
+}
 \end{table}
 
 \begin{table}[!htb]
 \centering
 \caption{Vergleich von relationalen Datenbanken}
 \label{Vergleich von relationalen Datenbanken}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{l|l|l|l|l|}
 \cline{2-5}
  & \textbf{MySQL} & \textbf{Oracle} & \textbf{PostgreSQL} & \textbf{SQLite} \\ \hline
@@ -173,6 +179,7 @@ In dem folgenden Kapitel werden einige Technologien, Libaries & Packages, sowie 
 \multicolumn{1}{|l|}{Community} & 90\% & 85\% & 95\% & 90\% \\ \hline
 \multicolumn{1}{|l|}{Usage examples} & \begin{tabular}[c]{@{}l@{}}YouTube\\ Sony\\ Joomla\\ Facebook\\ Twitter\end{tabular} & \begin{tabular}[c]{@{}l@{}}Apple\\ BT\\ Verizon\\ Airbus\\ US Federal Gov.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Debian\\ LAMP\\ SourceForge\\ Red Hat\\ Apple\\ Cisco\end{tabular} &  \\ \hline
 \end{tabular}
+}
 \end{table}
 
 \newpage
@@ -195,6 +202,7 @@ Durch die Sensoren im Auto sowie durch die zusätzlich durch den CarPC angebrach
 Anhand der Evaluierung wurde die Auswahl auf die folgenden zwei DBMS Systeme beschränkt: Couchbase (NoSQL) und PostgreSQL (Relational). Die letzendliche Entscheidung beschränkt sich nun also nur auf die NoSQL-Variante mittels Couchbase oder der relationalen Variante mittels PostgreSQL. Im folgenden Abschnitt wird ein wenig detailierter auf die beiden Varianten eingegangen.
 
 \begin{table}[!htb]
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|l|l|}
 \hline
 Name & \textbf{Couchbase} & \textbf{PostgreSQL} \\ \hline
@@ -212,9 +220,11 @@ Typing (data types) & no & yes \\ \hline
 Secondary indexes & yes & yes \\ \hline
 SQL & no & yes \\ \hline
 \end{tabular}
+}
 \end{table}
 
 \begin{table}[!htb]
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|l|l|}
 \hline
 Name & \textbf{Couchbase} & \textbf{PostgreSQL} \\ \hline
@@ -232,6 +242,7 @@ Concurrency & yes & yes \\ \hline
 Durability & yes & yes \\ \hline
 User concepts & \begin{tabular}[c]{@{}l@{}}simple password-based access\\ control per bucket\end{tabular} & \begin{tabular}[c]{@{}l@{}}fine grained access rights\\ according to SQL-standard\end{tabular} \\ \hline
 \end{tabular}
+}
 \end{table}
 
 \newpage
@@ -247,7 +258,8 @@ Aus der Evaluierung ist folgendes heraus gekommen: es wird die NoSQL-Variante Co
 \begin{table}[!htb]
 \centering
 \caption{Gegenüberstellung der Umsetzungsmöglichkeiten}
-\label{my-label}
+\label{comparisonHardware}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{l|c|c|c|l|}
 \cline{2-5}
  & RED Brick & Raspberry Pi 2 & Arduino & Erklärung \\ \hline
@@ -256,8 +268,9 @@ Aus der Evaluierung ist folgendes heraus gekommen: es wird die NoSQL-Variante Co
 \multicolumn{1}{|l|}{Documentation} & 60\% & 90\% & 70\% & \begin{tabular}[c]{@{}l@{}}Das Raspberry besitzt \\ die größte \\ Fangemeinde und \\ die meisten User.\end{tabular} \\ \hline
 \multicolumn{1}{|l|}{Recent activity} & 07.10.2015 & 07.10.2015 & 04.10.2015 & \begin{tabular}[c]{@{}l@{}}Alle drei Boards \\ sind sehr aktuell.\end{tabular} \\ \hline
 \multicolumn{1}{|l|}{Community} & 80\% & 80\% & 70\% & \begin{tabular}[c]{@{}l@{}}Die Community ist bei \\ allen sehr nett und \\ sehr Hilfsbereit.\end{tabular} \\ \hline
-\multicolumn{1}{|l|}{Usage examples} & 70\% & 80\% & 65\% & \begin{tabular}[c]{@{}l@{}}Die Examples beim Raspberry Pi2 sind \\ immer sehr verständlich und sehr gut dokumentiert.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Usage examples} & 70\% & 80\% & 65\% & \begin{tabular}[c]{@{}l@{}}Die Examples beim Raspberry\\ Pi2 sind immer sehr\\ verständlich und sehr \\gut dokumentiert.\end{tabular} \\ \hline
 \end{tabular}
+}
 \end{table}
 
 \subsection{RED Brick}
