@@ -1,18 +1,16 @@
 ---
 title: Projektwoche
-subtitle: Eine Kurzer Einlick über unsere Projektwoche
+subtitle: Eine Kurzer Einlick
 layout: default
 modal-id: 1
-date: 2014-10-10
-img: placeholder.png
-thumbnail: placeholder.png
+date: 2015-10-22
+img: projektwoche.jpg
+thumbnail: projektwoche.jpg
 alt: image-alt
 project-date: Oktober 2015
-client: Projektwoche
-link: http://jekyllrb.com
-category: Web Development
-description: Während unserer Projektwoche mussten sehr viele Dokumente, wie Lastenheft, Projektantrag und ein ansatz unserer Machbarkeitsstudue erstellt werden. 
-Die Herausforderung nahmen wir gerne an und machten uns ans Werk. 
-Während der einen Woche wurde uns ebenfalls der Umgang mit unserem Projektmitgliedern beigebracht.
+client: TGM
+link: https://www.tgm.ac.at/index.php/newscontenthit/412-projektwoche201516
+category: Organisation
+description: Während unserer Projektwoche mussten sehr viele Dokumente, wie Lastenheft, Projektantrag und ein ansatz unserer Machbarkeitsstudue erstellt werden. Die Herausforderung nahmen wir gerne an und machten uns ans Werk. Während der einen Woche wurde uns ebenfalls der Umgang mit unserem Projektmitgliedern beigebracht.
 
 ---

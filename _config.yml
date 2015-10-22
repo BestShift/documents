@@ -17,7 +17,7 @@ people:
 - name: Bozkurt H&uuml;seyin
   pic: bozzy
   position: Developer
-  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  text: Hüseyin Bozkurt ist für die Verbrauchsanalyse der App zuständig. Dabei wird eine Anzeige desMomentanverbrauchs und des Durchschnittsverbrauchs der ganzen Fahrt angezeigt. Diese soll sowohl inWerten mittelsGraphiken dargestellt werden. Die Fahrstrecke soll auch auf den Verbrauch bezogen geographisch angezeigt werden. Ein Verbrauchsvergleich und eine SocialMedia Integration ist auch integriert. All diese geplanten Features wird Herr Bozkurt umsetzten. Die hybride Applikation ist besonders für diese Teilbereiche wichtig, da hier eine Webapplikation, um dem User nach einer Fahrt die Möglichkeit zu bieten, die aufgenommenen Daten und Graphen genauer zu analysieren, realisert ist. 
   social:
     - title: github
       url: https://github.com/hbozkurt-tgm
@@ -31,7 +31,7 @@ people:
 - name: Faiku Fitim
   pic: fitim
   position: Developer
-  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  text: Fitim Faiku ist für die Analyse der Fahrgastbequemlichkeit zuständig. Dieses Feature wird mithilfe eines Kamm’schen Kreises umgesetzt, welcher in der App abgerufen werden kann. Dieser zeigt Quer- und Längsbeschleunigung an. Der Kreis soll je nachModus die g-Kraft innerhalb von unterschiedlichen Bereichen darstellen.
   social:
     - title: github
       url: #
@@ -45,8 +45,8 @@ people:
 - name: Melichar Daniel
   pic: daniel
   position: Product Owner & Developer
-  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
-  social:
+  text: Daniel Melichar ist der perfekte Vertreter des Produktes für den Kunden, und bei Beendigung des Projektes werden mögliche Interessenten die über diverse Networks auf das Produkt aufmerksam geworden sind und es gerne kaufen würden mit ihm Kontakt aufnehmen. HerrMelichar ist höchst engagiert für das Projekt und besitzt die Fähigkeiten dieses Engagement in die Tat umzu setzten. Herr Melichar ist im Projekt vor allem für die Bereitstellung und Interpretierung der Motor- und Sensordaten zuständig. 
+  social: 
     - title: github
       url: https://www.github.com/dmelichar-tgm
     - title: facebook
@@ -59,7 +59,7 @@ people:
 - name: Perny Tobias
   pic: tobi
   position: Developer
-  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  text: Tobias Perny hat als einziger Systemtechniker der Projektgruppe die hardwarenäheste Aufgabe des ganzen Projektes. Er soll einen CarPC mit allen nötigen Sensoren, aber allen voran einem GPS-Sensor, Beschleunigungssensor und Gyroskop verwirklichen. Dafür muss der CarPC an das 12V Bordnetz eines PKW angebunden werden, außerdem sollen dessen Daten ausgelesen werden.   
   social:
     - title: github
       url: #
@@ -74,7 +74,7 @@ people:
   pic: raphael
   position: Developer
   text: Lorem ipsum
-  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  text: Raphael Simsek hatte gemeinsam mit Herrn Prof. List die Idee für das Projekt entwicklet. Das Teilprojekt von Herrn Simsek umfasst die Berechnung von Schaltvorschlägen mittels Algorithmen für maximales Drehmoment und für kraftstoffsparendes Fahren. DasWissen über die Algorithmen für diese Berechnungen wird erst erlangt. Das Teilprojekt wird allerdings definitiv für Android programmiert sein und die Drehzahl ebenfalls mittels derMotordaten darstellen. 
   social:
     - title: github
       url: https://github.com/rsimsek-tgm
@@ -88,7 +88,7 @@ people:
 - name: List Erhard, BSc.
   pic: erhard-bang
   position: Stakeholder & Project Owner
-  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  text: Prof. Erhard List ist als SCRUM-Master und Stakeholder im Team tätig. Dank seiner jahrelange Erfahrung im Bereichen wie Informationstechnologie, Robotik und Maschienenbau, kann er dem Team auch hierbei in jeglicher Hinsicht Hilfe leisten. Er ist auch ein großer Faktor für den Zusammenhalt, und  die Gemeinschaft des Teams.
   social:
     - title: envelope
       url: mailto:elist@tgm.ac.at
