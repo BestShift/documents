@@ -1,0 +1,28 @@
+  <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; {{ site.title }} 2015</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        {% for network in site.social %}
+                        <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}"></i></a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-4" style="margin-top: 8px">
+                        <a href="#impressum" data-toggle="modal">Impressum</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="https://hit.tgm.ac.at"><img src="img/logos/it_logo2.png" class="img-responsive img-centered" alt=""></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="https://tgm.ac.at"><img src="img/logos/tgm-logo.jpg" class="img-responsive img-centered" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>

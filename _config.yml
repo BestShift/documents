@@ -1,0 +1,112 @@
+url: http://tgm-hit.github.io
+baseurl: /BestShift/
+
+# Site settings
+title: BestShift
+email: daniel@melichar.me
+description: "Diplomaprojekt BestShift of the deparment for Information technology at the TGM in Vienna"
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary: 0099ff
+  secondary: 000
+  secondary-dark: 000066
+
+# Team names, titles and social links
+people:
+- name: Bozkurt H&uuml;seyin
+  pic: bozzy
+  position: Developer
+  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  social:
+    - title: github
+      url: https://github.com/hbozkurt-tgm
+    - title: facebook
+      url: https://www.facebook.com/HDB57
+    - title: xing
+      url: https://www.xing.com/profile/Hueseyin_Bozkurt23
+    - title: envelope
+      url: mailto:hbozkurt@student.tgm.ac.at
+
+- name: Faiku Fitim
+  pic: fitim
+  position: Developer
+  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  social:
+    - title: github
+      url: #
+    - title: facebook
+      url: https://www.facebook.com/fitim.Ka
+    - title: xing
+      url: #
+    - title: envelope
+      url: mailto:ffaiku@student.tgm.ac.at
+
+- name: Melichar Daniel
+  pic: daniel
+  position: Product Owner & Developer
+  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  social:
+    - title: github
+      url: https://www.github.com/dmelichar-tgm
+    - title: facebook
+      url: https://www.facebook.com/daniel.melichar.1
+    - title: xing
+      url: https://www.xing.com/profile/Daniel_Melichar3
+    - title: envelope
+      url: mailto:dmelichar@student.tgm.ac.at
+
+- name: Perny Tobias
+  pic: tobi
+  position: Developer
+  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  social:
+    - title: github
+      url: #
+    - title: facebook
+      url: #
+    - title: xing
+      url: #
+    - title: envelope
+      url: mailto:tperny@student.tgm.ac.at
+
+- name: Simsek Raphael
+  pic: raphael
+  position: Developer
+  text: Lorem ipsum
+  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  social:
+    - title: github
+      url: https://github.com/rsimsek-tgm
+    - title: facebook
+      url: https://www.facebook.com/raphael.simsek
+    - title: xing
+      url: https://www.xing.com/profile/Raphael_Simsek
+    - title: envelope
+      url: mailto:rsimsek@student.tgm.ac.at
+
+- name: List Erhard, BSc.
+  pic: erhard-bang
+  position: Stakeholder & Project Owner
+  text: Kowloon corrupted pistol concrete market convenience store tube sign papier-mache face forwards tiger-team industrial grade math-construct wristwatch realism neon. Euro-pop dead into A.I. render-farm vinyl car kanji shanty town Chiba.
+  social:
+    - title: envelope
+      url: mailto:elist@tgm.ac.at
+
+
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: github
+    url: http://github.com/tgm-hit
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: Wexstra&szlig;e 19-23
+  - line: 1200 Vienna
+  - line: Austria
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+encoding: utf-8

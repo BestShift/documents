@@ -1,0 +1,55 @@
+<!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Das Team</h2>
+                    <h3 class="section-subheading text-muted">Eine kleine Vorstellung des Projekt-Teams</h3>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 50px;">
+                <div class="col-md-6">
+                    {% for member in site.people limit:3 %}
+                        <h4>{{ member.name }} <span class="text-muted" style="font-size:12px;">{{ member.position }}</span></h4> 
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="img/team/{{ member.pic }}.png" class="img-responsive img-circle pull-left" alt="" style="margin-right:10px; margin-bottom:15px;">
+                                <ul class="list-inline social-buttons">
+                                    {% for network in member.social %}
+                                    <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}" style="margin-left:12px;"></i></a></li>
+                                    {% endfor %}
+                                </ul>
+                                <hr>
+                                <span>{{ member.text }}</span>
+                            </div>
+                        </div style="border-bottom: 1px solid #ccc;">
+                    {% endfor %}
+                </div>
+
+                <div class="col-md-6 pull-right">
+                    {% for member in site.people offset:3 %}
+                        <h4>{{ member.name }} <span class="text-muted" style="font-size:12px;">{{ member.position }}</span></h4> 
+                        <div class="row">
+                            <div class="col-md-8">
+                                <ul class="list-inline social-buttons">
+                                    {% for network in member.social %}
+                                    <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}" style="margin-left:12px;"></i></a></li>
+                                    {% endfor %}
+                                </ul>
+                                <hr>
+                                <span>{{ member.text }}</span>
+                            </div>
+                            <img src="img/team/{{ member.pic }}.png" class="img-responsive img-circle pull-right" alt="" style="margin-right:10px; margin-bottom:15px;">
+                        </div style="border-bottom: 1px solid #ccc;">
+                    {% endfor %}
+                </div>
+                <hr>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
