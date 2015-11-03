@@ -1,0 +1,16 @@
+---
+title: Tag der offenen Tür
+subtitle: im TGM
+layout: default
+modal-id: 1
+date: 2015-11-04
+img: tdot.jpg
+thumbnail: tdot.jpg
+alt: image-alt
+project-date: November 2015
+client: BestShift
+link: http://www.bestshift.at
+category: Organisation
+description: Zum Tag der offenen Tür sind Sie eingeladen uns zu besuchen und Einblicke in dem TGM-Alltag und in unsere Arbeit am Projekt zu erhalten
+
+---

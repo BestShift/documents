@@ -1,0 +1,16 @@
+---
+title: Publizierung der Website
+subtitle: Jetzt verfügbar!
+layout: default
+modal-id: 1
+date: 2015-11-04
+img: open.png
+thumbnail: open.png
+alt: image-alt
+project-date: November 2015
+client: BestShift
+link: http://www.bestshift.at
+category: Organisation
+description: Die Website kann nun von jedem im Internet betrachtet werden! Über die kommenden Monate wird es natüzlich Updates zum Projekt-Status geben - also kommen Sie wieder!
+
+---
