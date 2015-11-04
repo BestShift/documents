@@ -1,0 +1,31 @@
+\chapter{Summary}
+Das Projekt BestShift wird wie folgt durchgeführt:
+\section{Zusammenstellung der Aufgabenverteilung}
+ \begin{itemize}
+	 \item Tobias Perny: Hardware und Sensorik in Form eines Raspberry Pi's und verschiedenen Sensoren 
+	 \item Daniel Melichar: Data Mining und Data Management mithilfe von Couchbase in der NoSQL-Variante
+	 \item Hüseyin Bozkurt: Android App mittels ionic, Java Smartphone-/Webapplikation mittels MPAndroidChart, Kapitel Momentane Verbrauchsanalyse mittels verschiedenen Graph-Elementen, welche auch zu Retrospektiven Zwecken verwendet werden können 
+	 \item Raphael Simsek: Grundgerüst der Applikation mit ionic, Java Smartphone-/Webapplikation mittels MPAndroidChart, Kapitel Schaltvorschlag durch die Anzeige der Drehzahl und des optimalen Ganges in einer grafisch ansprechenden art.
+	 \item Fitim Faiku: Grundgerüst der Applikation mit ionic, Java Smartphone-/Webapplikation mittels MPAndroidChart, Kapitel Fahrgastbequemlichkeit fokussiert sich auf die Anzeige der momentanen Querbeschleunigung mittels eines Kamm'schen Kreises
+ \end{itemize}
+\newline
+\section{Workflowdiagramm}
+\includegraphics[scale=0.5]{images/Workflowdiagramm.png}
+
+\newline
+\section{Workflow des Projektes}
+	\subsection{Tobias Perny - Hardware und Sensorik}
+	Tobias Perny ist im Projekt wie bereits erwähnt für die Hardware und Sensorik zuständig. Er arbeitet mit einem Raspberry Pi2 Single Board Computer (SBC) auf welchem verschiedene Sensoren direkt montiert sind, welche dann interpretiert werden. Herr Perny verwendet die Programmiersprache Python um die Sensoren anzusprechen und diese mittels der Datenblätter der Sensoren in Informationen umzuwandeln. Diese Werte werden dann von Herrn Melichar endgültig in Einheiten umgesetzt.
+	Zusätzlich zu den eigenen Sensoren liest der Raspberry Pi2 außerdem die OBD-II Motordaten aus stellt diese zur Speicherung bereit. 
+	Die Auslesung aus dem Motormanagement wird mittels einer Bluetooth Schnittstelle mit einem ELM327-Chip für den OBD-II Port stattfinden.
+
+	\subsection{Daniel Melichar - Datenmanagement und Datenanalyse}
+	Die Speicherung der bereitgestellten Daten übernimmt Daniel Melichar, welcher diese weiterverarbeitet indem er die Daten strukturiert in einer Couchbase NoSQL Implementierung ablegt. Zudem stellt Herr Melichar dann Methoden zur Verfügung mit welchen die aktuellsten Daten und die Daten die in Ihrer Auflösung reduziert wurden bereit gestellt werden. Diese Methoden sind für die App Entwicklung von essenzieller Bedeutung, weil dadurch die Verbindung zur Datenbank für die Entwickler erleichtert wird.
+	Daniel Melichar ist außerdem für die Datenstrukturierung und das Account Management der geplanten Web-Applikation zuständig. Das Account Management wird erneut mit Hilfe der NoSQL Datenbank Couchbase realisiert. Die Datenstrukturierung wird mittels eines Content Management Systems geschehen, für welches Herr Melichar sich um das Hosting und die Rechte auf dem Server kümmern wird. 
+
+	\subsection{Raphael Simsek - Schaltvorgangsvorschlag}
+	Raphael Simsek erstellt das Grundgerüst der App mittels dem Angular JS Framework ionic gemeinsam mit dem App-Team bestehend aus Hüseyin Bozkurt und Fitim Faiku.
+	Mit den von Daniel Melichar erstellten Methoden berechnet Raphael Simsek den effizientesten oder drehmomentintensivsten Gang mittels verschiedener Algorithmen. Diese Gang-Berechnung soll allerdings auf aktuelle Erkenntnisse aus dem Motormanagement eingehen, indem beispielsweise die Informationen des Gyroskops für die Erkenntnis ob der Nutzer sich auf einer steilen oder abfallenden Straße befindet um dadurch unnötige Falschangaben der App zu vermeiden. Die Erkennung ob ein Gang wirklich gewechselt wurde soll mittels der stark abfallenden Drehzahl oder der Fahrgeschwindigkeit passieren.
+	\subsection{Hüseyin Bozkurt - Verbrauchsanalyse}
+
+	\subsection{Fitim Faiku - Fahrkomfortanalyse}
