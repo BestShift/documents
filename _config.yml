@@ -17,7 +17,7 @@ people:
 - name: Bozkurt H&uuml;seyin
   pic: bozzy
   position: Developer
-  text: Hüseyin Bozkurt ist für die Verbrauchsanalyse der App zuständig. Dabei wird eine Anzeige desMomentanverbrauchs und des Durchschnittsverbrauchs der ganzen Fahrt angezeigt. Diese soll sowohl inWerten mittelsGraphiken dargestellt werden. Die Fahrstrecke soll auch auf den Verbrauch bezogen geographisch angezeigt werden. Ein Verbrauchsvergleich und eine SocialMedia Integration ist auch integriert. All diese geplanten Features wird Herr Bozkurt umsetzten. Die hybride Applikation ist besonders für diese Teilbereiche wichtig, da hier eine Webapplikation, um dem User nach einer Fahrt die Möglichkeit zu bieten, die aufgenommenen Daten und Graphen genauer zu analysieren, realisert ist. 
+  text: Hüseyin Bozkurt ist für die Verbrauchsanalyse der App zuständig. Dabei wird eine Anzeige des Momentanverbrauchs und des Durchschnittsverbrauchs der ganzen Fahrt angezeigt. Diese soll sowohl in Werten mittels Graphiken dargestellt werden. Die Fahrstrecke soll auch auf den Verbrauch bezogen geographisch angezeigt werden. All diese geplanten Features wird Herr Bozkurt umsetzten. Die hybride Applikation ist besonders für diese Teilbereiche wichtig, da hier eine Webapplikation, um dem User nach einer Fahrt die Möglichkeit zu bieten, die aufgenommenen Daten und Graphen genauer zu analysieren, realisert ist. 
   social:
     - title: github
       url: https://github.com/hbozkurt-tgm
