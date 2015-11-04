@@ -1,11 +1,11 @@
 ---
-title: Publizierung der Website
+title: Website publik
 subtitle: Jetzt verfügbar!
 layout: default
 modal-id: 1
 date: 2015-11-04
-img: open.png
-thumbnail: open.png
+img: open.jpg
+thumbnail: open.jpg
 alt: image-alt
 project-date: November 2015
 client: BestShift

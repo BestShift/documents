@@ -4,8 +4,8 @@ subtitle: im TGM
 layout: default
 modal-id: 1
 date: 2015-11-04
-img: tdot.jpg
-thumbnail: tdot.jpg
+img: tdot.png
+thumbnail: tdot.png
 alt: image-alt
 project-date: November 2015
 client: BestShift
