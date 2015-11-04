@@ -2,7 +2,7 @@
 title: Website publik
 subtitle: Jetzt verfügbar!
 layout: default
-modal-id: 1
+modal-id: 2
 date: 2015-11-04
 img: open.jpg
 thumbnail: open.jpg

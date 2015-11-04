@@ -2,7 +2,7 @@
 title: Tag der offenen Tür
 subtitle: im TGM
 layout: default
-modal-id: 1
+modal-id: 3
 date: 2015-11-04
 img: tdot.png
 thumbnail: tdot.png
