@@ -1,0 +1,18 @@
+\newpage
+\chapter{Produktdaten}
+Folgende Daten werden für das Projekt BestShift benötigt:
+
+\section{/LD10/ Ausgelesene Motordaten aus OBD-II}
+Motordaten könnten zum Beispiel die Drehzahl des Motors, oder die Ganganzahl des Getriebes sein. Es ist zu erwarten, dass die exakten Möglichkeiten von Fahrzeug zu Fahrzeug variieren.
+
+\section{/LD20/ Rohdaten direkt aus den Sensoren im CarPC}
+Daten die direkt aus den Sensoren ausgelesen werden und noch nicht interpretiert sind. 
+
+\section{/LD30/ Interpretierte Informationen}
+Informationen nach Filterung, Normierung, Skalierung und Zuordnung der Sensorrohdaten.
+
+\section{/LD40/ Konfigurationsdaten}
+Zur Konfiguration zählt beispielsweise auch die händische Eingabe des Nutzers, falls einige die Fahrzeugdaten nicht direkt aus der OBD2 Schnittstelle ausgelesen werden können. 
+
+\section{/LD50/ Verlaufsinformation - Sensordaten über Zeit}
+Um die Menge der gesammelten Daten zu beschränken, soll eine Speicherung mit verringerter Auflösung weiter zurückliegender Daten vorgesehen werden (z.B. über eine Round-Robin-Database). Zusätzlich muss es aber möglich bleiben, bestimmte, für den Fahrer interessante Streckendaten gezielt aufheben/exportieren zu können.

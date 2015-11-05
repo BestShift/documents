@@ -1,0 +1,154 @@
+\chapter{Produktfunktionen}
+
+\section{/LF10/ Hardware und Sensorik}
+\textbf{Geschäftsprozess:}	Verarbeitung der Sensor Daten
+\newline
+\textbf{Akteur:}		CarPC
+\newline
+\textbf{Beschreibung:}	Aufbau von Sensoren zur Erfassung von Fahrdaten und Ansteuerung von Schnittstellen zum Motormanagement in einem einfach zu installierenden CarPC.
+
+\subsection{/LF11/ CarPC}
+Es soll ein Single Board Computer (SBC) verwendet werden, welcher alle verwendeten Sensoren unterstützt. Die Montage darf den Fahrer nicht behindern. Idealerweise ist der CarPC mobil auszuführen, damit er in mehreren Fahrzeugen verwendet werden kann. Die Stromversorgung muss über das 12V Bordnetz eines Kfz möglich sein, bei Fixeinbau muss diese mit der Zündung gekoppelt werden.
+
+\subsection{/LF12/ Anbindung der OBD Schnittstelle an den CarPC}
+Der CarPC soll Motordaten aus der standardisierten Diagnoseschnittstelle des Fahrzeugen auslesen können. Diese Motordaten umfassen beispielsweise die Drehzahl des Motors, die Fahrgeschwindigkeit und wenn möglich auch den eingelegten Gang.
+
+\subsection{/LF13/ Messung der Fahrzeugbeschleunigung in Fahrzeuglängst- und -querachse}
+Die Beschleunigung in Fahrzeuglängs- (Beschleunigung und Bremsen) sowie die Fahrzeugquerachse (Kurvenbeschleunigung) sollen in die Verbrauchsinformation und Fahrgastbequemlichkeit einfließen.
+
+\subsection{/LF14/ Messung der Fahrzeugneigung in 3 Raumachsen}
+Die Drehung des Fahrzeug in alle Raumachsen wird mit dem Gyroskop gemessen. Die Bewegung um die Raumachsen heißen bei einem Kfz Kippen, Rollen und Gieren. Diese Informationen werden in weiterer Folge vor allem für die Erkennung eines Hangs eingesetzt, aber auch für die Fahrgastbequemlichkeit.
+
+\subsection{/LF15/ Messen der geographischen Fahrzeugposition}
+Ein GPS Sensor muss am CarPC angeschlossen sein um den Standort des Fahrzeugs ermitteln zu können und um die Verbrauchs- und Neigungswerte kartieren zu können.
+
+\subsection{/LF16/Messung des Fahrgastraumklimas}
+Ein Temperatursensor und mögliche weitere Sensoren werden im CarPC integriert um die Fahrgastbequemlichkeit besser beurteilen zu können.
+
+\subsection{/LF17/ Multifahrzeug-Managment}
+Der Benutzer soll die Möglichkeit haben, ein Fahrzeugprofil auszuwählen (in Verbindung mit der Android-App). Damit soll eine mehrfache Verwendung des CarPCs (so eine mobile Lösung implementiert wurde) in verschiedenen Fahrzeugen gewährleistet werden.
+
+\newpage
+
+\section{/LF20/ Datenmanagement und Datenanalyse}
+\textbf{Geschäftsprozess:}	Verarbeitung der Sensor Daten
+\newline
+\textbf{Akteur:}		CarPC, standardisierte Informationsschnittstelle
+\newline
+\textbf{Beschreibung:} Aufbereitung und effiziente Speicherung von Daten verschiedener Fahrzeugsensoren und Implementierung von Schnittstellen für weitere Applikationen. 
+
+\subsection{/LF21/ Sammlung und Speicherung aller Sensordaten und Ablegen in einer strukturierten Form}
+Die Sensordaten müssen gesammelt und so gespeichert werden, dass sie strukturiert und zur Weiterverarbeitung vorbereitet sind.
+
+\subsection{/LF22/ Interpretation der Rohdaten in Messgrößen mit gängigen Einheiten}
+Alle Rohdaten müssen in einen normierten Wert in einer sinnvollen Einheit umgewandelt werden. Dabei ist besonders zu beachten, ob und wie die Positionierung der Sensoren im Fahrzeug auf die Messwerte einen Einfluss hat.
+
+\subsection{/LF23/ Filterung von offensichtlichen Messfehlern}
+Bei dieser Funktion ist vor allem die Auswahl was als Messfehler gewertet wird entscheidend. Denn es sollen zwar Messfehler gefunden und entfernt werden, allerdings sollen auch die Maxima der wirklichen Fahrt nicht fälschlicher Weise gefiltert werden. Daher hängt diese Filterung auch sehr nahe mit der Interpretation der Rohdaten zusammen.
+
+\subsection{/LF24/ Zusammenfassung von Messgrößen}
+Zur einfacheren Weiterverarbeitung sollen Messwerte (wo sinnvoll) schon vom CarPC sinnvoll vorverarbeitet und zusammengefasst werden.
+
+\subsection{/LF25/ Implementierung einer Schnittstelle zur Kommunikation mit der Android App}
+Die auf dem CarPC gesammelten Daten müssen sich einfach von der Android-App (siehe LF30/40/50) abrufen lassen. Dafür muss eine Schnittstelle entwickelt werden, die energieeffiezient arbeitet, aber auch schnell genug ist, Momentanwerte zeitgerecht zu übertragen.
+
+\newpage
+
+\section{/LF30/ Schaltvorgangsvorschlag}
+\textbf{Geschäftsprozess:}	Algorithmus zur Berechnung des Kraftstoff sparenden Schaltvorgangs, Algorithmus zur Berechnung des leistungsstärksten Schaltvorgangs
+\newline
+\textbf{Akteur:}		App, standardisierte Informationsschnittstelle
+\newline
+\textbf{Beschreibung:} Auswertung von Fahrdaten in einer Android App, um dem Fahrer visuell und akustisch einen Vorschlag für einen effizienten Schaltzeitpunkt zu geben.
+
+\subsection{/LF31/ umweltschonenden Schaltvorgang ermitteln}
+\newline
+Der Schaltvorschlag soll so berechnet werden, dass eine Befolgung sich möglichst positiv auf den Kraftstoffverbrauch auswirkt und dadurch Kosten gespart und die Umweltbelastung gesenkt werden.
+
+\subsection{/LF32/ Schaltvorschlag für maximales Drehmoment ermitteln}
+\newline
+Der Schaltvorschlag soll so berechnet werden dass laut der Leistungskurve ein hohes Drehmoment gewährleistet bleibt. 
+
+\subsection{/LF33/ Einbindung der Fahrzeugneigung in die Ermittlung der Schaltvorschläge}
+\newline
+Es wird mittels des Gyroskops festgestellt ob sich das Fahrzeug auf einer Steigung oder auf einem Gefälle befindet, auf Basis dieser Information wird dann entschieden ob der Schaltvorgang vorgeschlagen werden soll, um einen Nutzer nicht mitten auf einem Gefälle bei der Benutzung der Motorbremswirkung zu behindern. 
+
+\subsection{/LF34/ Audiovisuelle Schaltaufforderungen}
+\newline
+Der Fahrer soll über einen Schaltvorschlag visuell und/oder auditiv, möglichst ablenkungsfrei, informiert werden. Dies könnte einerseits mit einer Sprachausgabe und andererseits mit einem Schaltlicht und einer simplen Anzeige realisiert werden. Der Benutzer soll dies auch teilweise konfigurieren können (z.B: Ton ausschalten)
+
+\newpage
+\section{/LF40/ Verbrauchsanalyse}
+\textbf{Geschäftsprozess:}	Analyse des Kraftstoffverbrauchs
+\newline
+\textbf{Akteur:}		App, standardisierte Informationsschnittstelle, Datenbank
+\newline
+\textbf{Beschreibung:} Auswertung und visuelle Aufbereitung von Fahrdaten in einer Android App, um Tipps und Feedback zu einer kraftstoffsparenden Fahrweise zu geben.
+
+\subsection{/LF41/ Fahrmodus: Anzeige des Momentanverbrauchs und Durchschnittsverbrauchs der Strecke}
+\newline
+Die Anzeige des Momentanverbrauchs und Durchschnittsverbrauchs muss großflächig und gut ablesbar sein, siedarf  keine Ablenkung beim Lenker des KFZ hervorrufen. 
+
+\subsection{/LF42/ Fahrmodus: Audiovisuelle Tipps zur verbrauchsbezogenen Veränderung des Fahrverhaltens}
+\newline
+Visuell mittels Veränderung der visuellen Gestaltung der App, auditiv mit in der App einzigartigem Warnsignal.
+
+\subsection{/LF43/ Analysemodus: Anzeige des Verbrauchsverlaufs über die Zeit/Fahrstrecke linear und Fahrstrecke geographisch}
+\newline
+Es soll eine Analysemöglichkeit in der App eingebaut werden, welche dafür verwendet werden kann um eine Fahrt bezüglich Verbrauch, Geschwindigkeit und anderen Werten Revue passieren zu lassen. Zusätzlich sollen Informationen welche besonders herausstechen in einem Diagramm und auf einer Karte der Route besonders hervorgehoben werden. Um die Menge der Analysedaten zu reduzieren, sollen ältere Streckeninformationen nur mehr aggregiert zur Verfügung stehen (d.h. die „Auflösung“ der Information nimmt mit zunehmenden Alter der Daten ab). Möchte der Benutzer Daten zu bestimmten Strecken erhalten, so soll eine Exportmöglichkeit geboten werden.\subsection{/LF44/ Analysemodus: Vergleichsmöglichkeit des Verbrauchsverlaufs über mehrere Strecken}
+\newline
+Es gilt zu evaluieren ob diese Vergleichsmöglichkeit nur in der App implementiert werden soll, oder ob diese auch in einer Desktop Version entwickelt werden sollte. \subsection{/LF45/ Analysemodus: Upload eines kommentierten Verbrauchsverlaufs auf SocialMedia-Plattformen}
+\newline
+Die Möglichkeiten, eine Fahrt mit seinen Details auf SocialMedia-Plattformen wie zum Beispiel "Facebook" zu teilen, soll gegeben sein. Diese Daten sollen verschiedene Filterungsmöglichkeiten haben. Die Postings können dann auf verschiedene Datensätze aufbauen, wie zum Beispiel: CO2 Ausstoß, Gefahrene Strecke und Zeit, Maximalgeschwindigkeit und Durchschnittsgeschwindigkeit.\newpage
+\section{/LF50/ Fahrkomfortanalyse}
+\textbf{Geschäftsprozess:}	Analyse verschiedener Fahrdaten in Bezug auf die Fahrgastbequemlichkeit
+\newline
+\textbf{Akteur:}		App, standardisierte Informationsschnittstelle
+\newline
+\textbf{Beschreibung:} Auswertung und visuelle Aufbereitung von Fahrdaten in einer Android App, um Tipps und Feedback über den Fahrkomfort seines Fahrverhaltens zu geben.
+
+\subsection{/LF51/ Fahrmodus: Visualisierung der momentanen Beschleunigungskräfte}\newline
+Es soll eine Anzeige der momentanen Beschleunigungskräfte mittels einer intuitiv ablesbaren Visualisierung angezeigt werden (beispielsweise Kamm'scher Kreis).
+
+\subsection{/LF52/ Fahrmodus: Audiovisuelle Tipps zur Veränderung des Fahrverhaltens im Bezug auf die Fahrgastbequemlichkeit}
+\newline
+Dem Fahrer sollen Tipps zur Erhöhung des Fahrgastkomforts gegeben werden können. Mögliche Umsetzungen: Hinweis auf zu hohe Querbeschleunigungen, Geschwindigkeitsvorschläge aufgrund des zu erwartenden Straßenverlaufs, Umwelteinflüsse im Fahrgastraum.
+
+\subsection{/LF53/ Analysemodus: Anzeigen der Beschleunigungen einer Fahrt}
+\newline
+ Analog zu LF43 sollen die Beschleunigungsdaten einer Fahrt linear und ortsbezogen in verschiedenen Visualisierungen analysiert werden können.
+
+\subsection{/LF54/ Analysemodus: Vergleichsmöglichkeit mit früheren Fahrten}
+\newline
+Es soll hierfür die Möglichkeit geben, Diagramme zu überlagern, sowie Karten-Overlays zu überlagern.
+
+\subsection{/LF55/ Analysemodus: Upload eines kommentierten Beschleunigungsverlaufs auf SocialMedia-Plattformen}
+\newlineDiese Funktion muss in starker Kooperation mit LF45 implementiert werden, da der Nutzer hierfür nicht 2 eigene Implementierungen vorfinden sollte, sondern ein einfaches Bedienelement in welchem er aussuchen kann ob er den Beschleunigungsverlauf oder den Verbrauchsverlauf posten möchte. Die Möglichkeiten bezüglich der Daten die gepostet werden können, können bei LF45 eingesehen werden.
+
+\newpage
+\section{/LF90/ Android App}
+\textbf{Geschäftsprozess:}	Benutzerfreundlichkeit der App, Rechtliche Absicherung
+\newline
+\textbf{Akteur:}		App, standardisierte Informationsschnittstelle
+\newline
+\textbf{Beschreibung:} Aufbereitung und effiziente Speicherung von Daten verschiedener Fahrzeugsensoren und Implementierung von Schnittstellen für weitere Applikationen. 
+
+\subsection{/LF91/ Warnmeldung bei Appstart}
+\newline
+Es muss eine Warnmeldung beim Start der App eingeblendet werden um dem Nutzer darüber in Kenntnis zu setzen, dass die Straßenverkehrsordnung in jedem Fall zu beachten ist und die Beschilderung auf der Straße immer beachtet werden muss (siehe andere Navigationsgeräte).
+
+\subsection{/LF92/ Streckenverwaltung implementieren}
+\newline
+Zu Beginn der Benutzung der App soll der Nutzer entscheiden können ob er eine neue Strecke mit dieser Fahrt beginnen will, oder ob er seine letzte Fahrt an diesem Ort weiterführen möchte.
+
+\subsection{/LF93/ Konfigurieren von Fahrzeugparametern}
+\newline
+Der User soll für die Funktion der App notwendige Konfigurationsdaten hinterlegen können. Dazu werden vermutlich auch einige Fahrzeugparameter gehören, sofern diese nicht automatisch aus dem Fahrzeugmanagement gelesen werden können. Diese Daten sollen in einem Profil abgelegt werden können.
+
+\subsection{/LF94/ Multifahrzeug-Management}
+\newline
+Der Benutzer soll die Möglichkeit haben, ein Fahrzeugprofil auszuwählen. Damit soll eine mehrfache Verwendung der App in verschiedenen Fahrzeugen gewährleistet werden.
+
+\subsection{/LF99/ Integration von OpenStreetMaps um vorrausschauend Tipps für das Fahverhalten geben zu können}
+\newline
+Es gilt zu evaluieren ob eine Einbindung von Kartendaten möglich wäre um beispielsweise Steigungen vorherzusagen, um vor einer Steigung auf einen niedrigeren Gang zu wechseln, damit der Motor nicht mit geringer Leistung und hohem Gang den Berg befahren muss, sondern die Fahrzeugkomponenten geschont werden indem vorher zurück geschalten wird. Besonders praktisch wären diese Daten z.B. besonders bei engen Kurven um einen empfohlenen Gang/Geschwindigkeit für eine Kurve vorzuschlagen.  
