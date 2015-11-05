@@ -90,30 +90,38 @@ Der Fahrer soll über einen Schaltvorschlag visuell und/oder auditiv, möglichst
 \textbf{Akteur:}			App, standardisierte Informationsschnittstelle, Datenbank
 \textbf{Beschreibung:}	Auswertung und visuelle Aufbereitung von Fahrdaten in einer Android App, um Tipps und Feedback zu einer kraftstoffsparenden Fahrweise zu geben.
 
-\subsection{/LF41/ Fahrmodus: Anzeige des Momentanverbrauchs und Durchschnittsverbrauchs der Strecke}
+\subsection{/LF41/ Fahrmodus Smartphone: Anzeige des Momentanverbrauchs und Durchschnittsverbrauchs der Strecke}
 \nextline
 Die Anzeige muss großflächig und gut ablesbar sein, sie darf keine Ablenkung beim Lenker des KFZ hervorrufen. 
 Große Zahlen und große Bedienelemente sind daher für diese Funktion von großer Bedeutung.
 
-\subsection{/LF42/ Fahrmodus: Audiovisuelle Tipps zur verbrauchsbezogenen Veränderung des Fahrverhaltens}
+\subsection{/LF42/ Fahrmodus Smartphone : Audiovisuelle Tipps zur verbrauchsbezogenen Veränderung des Fahrverhaltens}
 \nextline
 Visuell mittels Veränderung der visuellen Gestaltung der App, auditiv mit in der App eindeutigem Warnsignal.
 
-\subsection{/LF43/ Analysemodus: Anzeige des Verbrauchsverlaufs über die Zeit/Fahrstrecke linear und Fahrstrecke geographisch}
+\subsection{/LF43/ Analysemodus Web-Applikation: Anzeige des Verbrauchsverlaufs über die Zeit/Fahrstrecke linear und Fahrstrecke geographisch}
 \nextline
-Es soll eine Analysemöglichkeit in der App eingebaut werden, welche dafür verwendet werden kann um eine Fahrt bezüglich Verbrauch, Geschwindigkeit und anderen Werten Revue passieren zu lassen. Zusätzlich sollen besondere Spitzenwerte in einem Diagramm und auf einer Karte der Route besonders hervorgehoben werden. Um die Menge der Analysedaten zu reduzieren, sollen ältere Streckeninformationen nur mehr aggregiert zur Verfügung stehen (d.h. die „Auflösung“ der Information nimmt mit zunehmenden Alter der Daten ab). Möchte der Benutzer die Daten zu bestimmten Strecken erhalten, so soll eine Exportmöglichkeit geboten werden.
+Es soll eine Analysemöglichkeit in der Web-Applikation eingebaut werden, 
+welche dafür verwendet werden kann um eine Fahrt bezüglich Verbrauch, 
+Geschwindigkeit und anderen Werten Revue passieren zu lassen.
+ Zusätzlich sollen besondere Spitzenwerte in einem Diagramm und auf einer Karte der Route besonders hervorgehoben werden. 
+Alle Fahrten sollen die Möglichkeit haben, auf die Web-Applikation hochgeladen werden zu können. Diese Daten sind dann dort
+verewigt, außer es wird manuell gelöscht.
 
 \includegraphics[scale=0.7]{images/LF43_Diagramm.jpg}
 \nextline
 Hier Wird der Verbrauchsverlauf dargestellt auf der x Achse wird die Zeit eingetragen und auf der y Achse der CO2 Ausstoß
 
-\subsection{/LF44/ Analysemodus: Vergleichsmöglichkeit des Verbrauchsverlaufs über mehrere Strecken}
+\subsection{/LF44/ Analysemodus Web-Applikation: Vergleichsmöglichkeit des Verbrauchsverlaufs über mehrere Strecken}
 \nextline
-Es gilt zu evaluieren ob diese Vergleichsmöglichkeit nur in der App implementiert werden soll, oder ob diese auch in einer Desktop Version entwickelt werden sollte.
-\Todo{Bleibt dieser Verbrauchsvergleich ja/nein?}
+Diese Möglichkeit wird doppelt geboten. Auf der Smartphone-App allerdings nur für die letzte Fahrt und ohne Kartenmaterial.
+Wenn man die gesammelten Daten auf die Cloud ladet, kann man sie dort permanent speichern und abrufen.
+Diese Methode bietet mehr möglichkeiten als auf der Smartphone-App aus Speicher und Leistungsgründen.
+
 
 \subsection{/LF45/ Analysemodus: Upload eines kommentierten Verbrauchsverlaufs auf SocialMedia-Plattformen }
-Der Verbrauchsverlauf kann mit den Minima des Verbrauchs der Fahrt auf SocialMedia posted werden. Dabei kann auch der Verbrauch der ganzen Fahrt posted werden. Es soll dann möglich sein dass der User sich selbst wählt welche Teile der Informationen posted werden sollen.
+Der Verbrauchsverlauf kann mit mit mehreren Eigenschaften der Fahrt auf Facebook geteilt werden. 
+Es soll dann möglich sein dass der User für sich selbst wählt, welche Teile der Informationen geteilt werden sollen.
 \newpage
 
 \section{/LF50/ Fahrkomfortanalyse}
@@ -123,34 +131,34 @@ Der Verbrauchsverlauf kann mit den Minima des Verbrauchs der Fahrt auf SocialMed
 
 Auswertung und visuelle Aufbereitung von Fahrdaten in einer Android App, um Tipps und Feedback über den Fahrkomfort seines Fahrverhaltens zu geben.
 
-\subsection{/LF51/ Fahrmodus: Visualisierung der momentanen Beschleunigungskräfte}
+\subsection{/LF51/ Fahrmodus Smartphone: Visualisierung der momentanen Beschleunigungskräfte}
 \nextline
-Es soll eine Anzeige der momentanen Beschleunigungskräfte mittels einer intuitiv ablesbaren Visualisierung angezeigt werden (beispielsweise kammscher Kreis)
+Es soll eine Anzeige der momentanen Beschleunigungskräfte mittels einer intuitiv ablesbaren Visualisierung angezeigt werden.
 \nextline
 \includegraphics{images/LF51_Beschleunigung.jpg}
 \nextline
 Die Grafik für die Anzeige der Beschleunigungskräfte würde ungefähr so aussehen
 
 \newpage
-\subsection{/LF52/ Fahrmodus: Audiovisuelle Tipps zur Veränderung des Fahrverhaltens im Bezug auf die Fahrgastbequemlichkeit.}
+\subsection{/LF52/ Fahrmodus Smartphone: Audiovisuelle Tipps zur Veränderung des Fahrverhaltens im Bezug auf die Fahrgastbequemlichkeit.}
 \nextline
 Dem Fahrer sollen Tipps zur Erhöhung des Fahrgastkomforts gegeben werden. Mögliche Umsetzungen: Hinweis auf zu hohe Querbeschleunigungen, Geschwindigkeitsvorschläge aufgrund des zu erwartenden Straßenverlaufs und Kurvenverlaufs, Umwelteinflüsse im Fahrgastraum.
 \nextline
 \subsection{/LF53/ Analysemodus: Anzeigen der Beschleunigungen einer Fahrt }
 \nextline
-Analog zu LF43 sollen die Beschleunigungsdaten einer Fahrt linear und ortsbezogen in verschiedenen Visualisierungen analysiert werden können.
+Analog zu LF43 sollen die Beschleunigungsdaten einer Fahrt analysiert werden können, ebenfalls ohne einbindung von Kartenmaterial.
 \nextline
  \includegraphics[scale=0.3]{images/LF53_Kalm.jpg}
  \nextline
 Hier wird das mittels eines Kamm'schen Kreis verwirklicht, welcher mit mehreren Punkten gefüllt wird wodurch sich eine Fläche bildet, die Kreise sind die Grenzen der Beschleunigungskräfte
 
-\subsection{/LF54/ Analysemodus: Vergleichsmöglichkeit mit früheren Fahrten}
+\subsection{/LF54/ Analysemodus Web-Applikation: Vergleichsmöglichkeit mit früheren Fahrten}
 \nextline
 Es soll hierfür die Möglichkeit geben, Diagramme zu überlagern, sowie Karten-Overlays zu überlagern 
 \nextline
  \includegraphics[scale=0.3]{images/LF54_Fahrdaten.jpg}
  \nextline
-Mittels einer Eingabe einer Bestimmten Fahr können Grafiken gespeichert und später gegenüber gestellt werden. 
+Mittels einer Eingabe einer Bestimmten Fahrt können Grafiken gespeichert und später gegenüber gestellt werden. 
 
 \newpage
 
@@ -168,9 +176,6 @@ Es muss eine Warnmeldung beim Start der App eingeblendet werden um dem Nutzer da
 Beim Starten der App sollte der Fahrer darauf aufmerksam gemacht werden, dass die Macher der App nicht für erhöhte Fahrgeschwindigkeit oder Schäden haften
 \emph{„Die Macher und Entwickler dieser App haften für nichts, wird bitten sie die Straßenverkehrsordnungen zu befolgen, um alle andere Fahrer nicht zu gefährden „}
 
-\subsection{/LF62/ Streckenverwaltung implementieren}
-\nextline
-Zu Beginn der Benutzung der App soll der Nutzer entscheiden können ob er eine neue Strecke mit dieser Fahrt beginnen will, oder ob er seine letzte Fahrt an diesem Ort weiterführen möchte.
 
 \subsection{/LF63/ Konfigurieren von Fahrzeugparametern}
 \nextline
@@ -182,4 +187,4 @@ Der Benutzer soll die Möglichkeit haben, ein Fahrzeugprofil auszuwählen. Damit
 
 \subsection{/LF65/ Integration von OpenStreetMaps um vorrausschauend Tipps für das Fahverhalten geben zu können}
 \nextline
-Es gilt zu evaluieren ob eine Einbindung von Kartendaten möglich wäre um beispielsweise Steigungen vorherzusagen, um vor einer Steigung auf einen niedrigeren Gang zu wechseln, damit der Motor nicht mit geringer Leistung und hohem Gang den Berg befahren muss, sondern die Fahrzeugkomponenten geschont werden indem vorher zurück geschalten wird. Besonders praktisch wären diese Daten z.B. besonders bei engen Kurven um einen empfohlenen Gang/Geschwindigkeit für eine Kurve vorzuschlagen.
+Diese Funktion gilt nur für die Web-Applikation. Kartenmaterial in Verbindung mit den gesammelten Fahrdaten können einen erheblichen Lerneffekt auslösen.

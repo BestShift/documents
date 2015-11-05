@@ -1,2 +1,0 @@
-\select@language {english}
-\contentsline {chapter}{Table of Contents}{i}{chapter*.1}

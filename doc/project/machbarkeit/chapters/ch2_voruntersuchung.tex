@@ -1,11 +1,32 @@
 \chapter{Voruntersuchung}
 
 \section{Ist-Zustand}
-Der momentane Zustand von Hilfsmodulen für FahranfängerInnen, die nachhaltig ihr Fahrverhalten verbessern möchten, hat keine große Bandbreite. Für KFZ-Neulinge ist es besonders schwer, ein richtiges Fahrgefühl zu entwickeln, da die meisten Fahrschulen den Informationsfluss auf die mündliche Weitergabe beschränken. Da die Informationen durch den Fahrlehrer weitergegeben werden und nicht immer direkt auf den Fahrschüler eingegangen werden kann, können hier grundsätzliche Fehler entstehen. Der Lernprozess der korrekten und dauerhaften Inbetriebnahme eines KFZ ist äußerst komplex. Ebenfalls ist das Übertragen von Erfahrung auf andere Fahrer nur eingeschränkt möglich.
-Da ein Neuwagen mit ausgeprägtem Bord-Computer von vielen Fahranfängern finanziel schwer leistbar ist und ältere Fahrzeugmodelle diese Verbesserungen des Fahrverhaltens nicht anbieten, ist dieses Produkt besonders für Fahranfänger interessant.
+Der momentane Zustand von Hilfsmodulen für FahranfängerInnen, die nachhaltig ihr Fahrverhalten verbessern möchten, 
+hat keine große Bandbreite. Für KFZ-Neulinge ist es besonders schwer, ein richtiges Fahrgefühl zu entwickeln, 
+da die meisten Fahrschulen den Informationsfluss auf die mündliche Weitergabe beschränken. 
+Da die Informationen durch den Fahrlehrer weitergegeben werden und nicht immer direkt auf den Fahrschüler eingegangen werden kann, 
+können hier grundsätzliche Fehler entstehen. 
+Der Lernprozess der korrekten und dauerhaften Inbetriebnahme eines KFZ ist äußerst komplex. 
+Ebenfalls ist das Übertragen von Erfahrung auf andere Fahrer nur eingeschränkt möglich.
+Da ein Neuwagen mit ausgeprägtem Bord-Computer von vielen Fahranfängern finanziel schwer leistbar ist 
+und ältere Fahrzeugmodelle diese Verbesserungen des Fahrverhaltens nicht anbieten, 
+ist dieses Produkt besonders für Fahranfänger interessant.
 
 \section{Soll-Zustand}
-Die Software soll das erlernen und optimieren des Fahrstils des Kunden erleichtern. Durch einen Algorithmus zur Berechnung des optimalen Gangwechsels soll das Prinzip eines manuellen Getriebes und auch die Drehzahlbereiche der eigenen Gangschaltung besser verstanden werden. Die zum Gang passende Drehzahl soll gefunden werden und akustisch und/oder visuell dargestellt werden. Die momentanen Fahreigenschaften (Fahrgastbequemlichkeit und Verbrauch) sollen ebenfalls angezeigt werden. \newpage Nach einer Fahrt werden, mithilfe der gesammelten Daten, Graphen erstellt und die Eigenschaften der Fahrt werden mittels eines Overlays auf eine Karte gelegt. Die Maxima der Daten werden optisch hervorgehoben. Diese können dann Retrospektiv zu Lernzwecken verwendet werden. Die Fahrgastbequemlichkeit soll in Form von einem Kamm'schen Kreis dargestellt werden, um die momentanen Querbeschleunigungen zu visualisieren, während der Kraftstoffverbrauch mit berechneten Werten angezeigt ist.
+Die Software soll das erlernen und optimieren des Fahrstils des Kunden erleichtern. 
+Durch einen Algorithmus zur Berechnung des optimalen Gangwechsels soll das Prinzip eines manuellen Getriebes und auch die 
+Drehzahlbereiche der eigenen Gangschaltung besser verstanden werden. 
+Die zum Gang passende Drehzahl soll gefunden werden und akustisch und/oder visuell dargestellt werden. Die 
+momentanen Fahreigenschaften (Fahrgastbequemlichkeit und Verbrauch) sollen ebenfalls angezeigt werden. 
+\newpage 
+Nach einer Fahrt soll die Option geboten werden, die gesammelten Daten in die Cloud zu transferieren, um Cache-Speicher am Smartphone zu sparen.
+Bei nicht vorhandener Internet-Verbindung wird vorgesehen, dass die Interne Speicherung von max. einer Fahrt auf die SD-Karte des Smartphones gewährleistet wird.
+Mithilfe der gesammelten Daten, auf die unsere Webapplikation durch ein LogIn-System zugreiffen kann, werden die Graphen erneut erstellt und mit Kartenmaterial
+Verbunden. 
+Die Maxima der Daten werden optisch hervorgehoben. 
+Diese können dann Retrospektiv zu Lernzwecken verwendet werden. 
+Die Fahrgastbequemlichkeit soll in Form von einem Kamm'schen Kreis dargestellt werden, 
+um die momentanen Querbeschleunigungen zu visualisieren, während der Kraftstoffverbrauch mit berechneten Werten angezeigt ist.
 
 \section{Ziele}
 \subsection{Einfaches Softwarekonzept}
@@ -23,8 +44,12 @@ Im Laufe des Projektes werden folgende Sachen mit höchster Priorität dokumenti
 \item Testing
 \end{itemize}
 
-
-\todo Mehr ziele?
+\subsection{Web-Applikation mit Social Network Integration}
+Ziel ist es, eine lauffähige Web-Applikation zu gestalten, die den Benutzern der App mehr Übersicht bietet.
+Die gesammelten Daten des CarPC nach einer Fahrt, können in die Cloud geladen werden, zu welcher die Web-Applikation zugriff hat.
+Durch ein User-Authentification-System wird der individualismus jedes Benutzers erhalten.
+Die Option besteht allerdings, die Daten in kurzfassung auf Facebook hochgeladen.
+Somit können offene Diskussionsrunden entstehen, und erfahrene Nutzer können Fahranfängern ebenfalls Tipps und Tricks weitervererben.
 
 
 \section{Nicht-Ziele}
@@ -32,8 +57,6 @@ Im Laufe des Projektes werden folgende Sachen mit höchster Priorität dokumenti
 \subsection{Portabilität/Limitierung}
 Die Software wird vorerst nicht für alle Automobil-Marken verfügbar sein. Das Konzept besteht für eine gewisse Anzahl von Automobilen, die im Laufe des Projektes zur Realisierung verwendet werden können. Da wir keine Fahrzeuge direkt von einem Hersteller zu Verfügung gestellt bekommen, können wir nur mit den Fahrzeugen aus unserem direkten Kreis arbeiten. 
 
-\subsection{Netzwerkabhängigkeit}
-Nicht-Ziel von BestShift ist es, die Daten in die Cloud zu laden um sie dann in einer Webapplikation analysieren zu können. Die Daten, die aus dem Motormanagement entnommen worden sind, können auf den Server synchronisiert  werden. 
 
 \subsection{Direkte Beeinflussung des Fahrverhaltens}
 Wir distanzieren uns stets von dem Gedanken, dass unser Produkt das Fahrverhalten eines Kunden direkt beeinflusst.
@@ -41,4 +64,3 @@ Es werden lediglich Vorschläge gegeben, die zu den gegebenen Zuständen und Inf
 die aus dem Motormanagement entnommen werden, angepasst sind.
 
 
-\todo Mehr nicht ziele?
