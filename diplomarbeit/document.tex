@@ -1,0 +1,71 @@
+\documentclass[letterpaper, 12pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DEFINITIONS
+\gdef\mytitle{BestShift}
+\gdef\mythema{Diplomarbeit}
+
+\gdef\myauthor{BestShift}
+
+\gdef\myversion{1.0}
+\gdef\mybegin{\today}
+\gdef\myfinish{\today}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SETTINGS
+\input{special/preamble.tex}
+
+\linespread{0.94}
+\lhead{Diplomarbeit}
+\chead{}
+\rhead{Version \myversion}
+\cfoot{\thepage}
+\rfoot{\ccby\hspace{2mm}\myauthor}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT BEGIN
+\begin{document}
+\parindent 0pt
+\parskip 6pt
+
+% TITLE PAGE
+\input{special/title}
+
+% TOC, TABLES, FIGURES, ABSTRACT
+\pagenumbering{Roman} 
+\clearpage
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+\input{abstract.tex}
+\input{anerkennungen.tex}
+ 
+% CONTNET
+\clearpage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\input{sections/ch1_intro.tex}
+\input{sections/ch2_implementation/main.tex}
+\input{sections/ch2_implementation/explaination.tex}
+
+Text \cite{solarfarm} Text.
+
+% BIBL
+\clearpage
+\nocite{*}
+\printbibliography
+
+% APPENDENCIES
+\clearpage
+\begin{appendices}
+	\chapter{Glossar}
+		\printglossary[style=tree]
+\end{appendices}
+
+\end{document}

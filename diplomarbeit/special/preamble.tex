@@ -1,0 +1,241 @@
+\usepackage[in]{fullpage}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx} 
+\usepackage{textcomp}
+\usepackage{sectsty}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{footmisc}
+\usepackage{fancyhdr}
+\usepackage{ccicons}
+\usepackage{suffix}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{filecontents}
+\usepackage{glossaries}
+\usepackage[explicit]{titlesec}
+\usepackage[headsep=1cm,headheight=3cm,hmargin=2cm,vmargin=2.5cm]{geometry}
+\usepackage[nolist]{acronym}
+\usepackage[toc,page]{appendix}
+
+\usepackage[
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black,
+	linktoc=all
+]{hyperref}
+
+\usepackage[
+  	backend=bibtex      	% biber or bibtex
+	%,style=authoryear    	% Alphabeticalsch
+ 	,style=numeric-comp  	% numerical-compressed
+ 	,sorting=none        	% no sorting
+ 	,sortcites=true      	% some other example options ...
+ 	,block=none
+ 	,indexing=false
+ 	,citereset=none
+ 	,isbn=true
+ 	,url=true
+ 	,doi=true            	% prints doi
+ 	,natbib=true         	% if you need natbib functions
+]{biblatex}
+
+\addbibresource{sources.bib}
+\input{glossaries.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Useful commands
+
+% Comments and notes
+\newcommand{\comment}[1]{}
+\newcommand{\ifreport}[1]{#1}
+\newcommand{\todo}{{\bf \colorbox{red}{\color{white}TODO:}}}
+\newcommand{\ie}{{\em i.e.,~}}
+\newcommand{\eg}{{\em e.g.,~}}
+\newcommand{\term}[1]{\mbox{\texttt{#1}}}
+\newcommand{\itl}[1]{\mbox{\textit{#1}}}
+
+% Commas and semicolons
+\newcommand{\comma}{,\,}
+\newcommand{\commadots}{\comma \ldots \comma}
+\newcommand{\semi}{;\mbox{;};}
+\newcommand{\semidots}{\semi \ldots \semi}
+
+% Brackets
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\sbs}[1]{\lquote #1 \rquote}
+
+% Spacing
+\newcommand{\gap}{\quad\quad}
+\newcommand{\biggap}{\quad\quad\quad}
+\newcommand{\nextline}{\\ \\}
+\newcommand{\htabwidth}{0.5cm}
+\newcommand{\tabwidth}{1cm}
+\newcommand{\htab}{\hspace{\htabwidth}}
+\newcommand{\tab}{\hspace{\tabwidth}}
+\newcommand{\linesep}{\ \hrulefill \ \smallskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Settings and tweaks
+
+% use citep instead of cite
+%\let\cite\citep
+\newcommand{\sectionbreak}{\clearpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The following listings environments are provided:
+%%
+%% python     for Python code
+%% xml        for XML code
+%% bash       for BASH code
+%%
+%% This style file is based on original work by Olivier Verdier,
+%% with contributions from Johan Hake.
+%%
+%% Modified for ANS by Anders Logg, 2011.
+%% 
+%% The original can be found here
+%% http://www.math.chalmers.se/Math/Grundutb/CTH/tmv225/1415/dokument/rapportmall/anslistings.sty 
+%%
+%% First added:   2015-02-08
+%% Last modified: 2015-02-08
+
+% Basic setup
+\renewcommand{\lstlistlistingname}{Code Listings}
+\renewcommand{\lstlistingname}{Code Listing}
+\newcommand{\codetitlestyle}[1]{\small\textit{#1}}
+\newcommand{\belowtitleskip}{2pt}
+\newcommand{\captionposition}{t}
+\newcommand{\framemargin}{0.5ex}
+\newcommand{\literatecolour}{\textcolor{literatecolour}}
+
+% Colors
+\definecolor{gray}{gray}{0.5}
+\colorlet{commentcolour}{green!50!black}
+\colorlet{stringcolour}{red!60!black}
+\colorlet{keywordcolour}{magenta!90!black}
+\colorlet{exceptioncolour}{yellow!50!red}
+\colorlet{commandcolour}{blue!60!black}
+\colorlet{numpycolour}{blue!60!green}
+\colorlet{literatecolour}{magenta!90!black}
+\colorlet{promptcolour}{green!50!black}
+\colorlet{specmethodcolour}{violet}
+\colorlet{indendifiercolour}{green!70!white}
+
+%--- Typesetting Python ---
+
+ \lstdefinestyle{pythonstyle}{
+ language=python,
+ showtabs=true,
+ tab=,
+ tabsize=2,
+ basicstyle=\ttfamily\footnotesize,
+ stringstyle=\color{stringcolour},
+ showstringspaces=false,
+ alsoletter={1234567890},
+ otherkeywords={\ , \}, \{, \%, \&, \|},
+ keywordstyle=\color{keywordcolour}\bfseries,
+ emph={and,break,class,continue,def,yield,del,elif ,else,%
+ except,exec,finally,for,from,global,if,import,in,%
+ lambda,not,or,pass,print,raise,return,try,while,assert},
+ emphstyle=\color{blue}\bfseries,
+ emph={[2]True, False, None},
+ emphstyle=[2]\color{keywordcolour},
+ emph={[3]object,type,isinstance,copy,deepcopy,zip,enumerate,reversed,list,len,dict,tuple,xrange,append,execfile,real,imag,reduce,str,repr},
+ emphstyle=[3]\color{commandcolour},
+ emph={Exception,NameError,IndexError,SyntaxError,TypeError,ValueError,OverflowError,ZeroDivisionError},
+ emphstyle=\color{exceptioncolour}\bfseries,
+ commentstyle=\color{commentcolour}\slshape,
+ emph={[4]ode, fsolve, sqrt, exp, sin, cos, arccos, pi,  array, norm, solve, dot, arange, , isscalar, max, sum, flatten, shape, reshape, find, any, all, abs, plot, linspace, legend, quad, polyval,polyfit, hstack, concatenate,vstack,column_stack,empty,zeros,ones,rand,vander,grid,pcolor,eig,eigs,eigvals,svd,qr,tan,det,logspace,roll,min,mean,cumsum,cumprod,diff,vectorize,lstsq,cla,eye,xlabel,ylabel,squeeze},
+ emphstyle=[4]\color{numpycolour},
+ emph={[5]__init__,__add__,__mul__,__div__,__sub__,__call__,__getitem__,__setitem__,__eq__,__ne__,__nonzero__,__rmul__,__radd__,__repr__,__str__,__get__,__truediv__,__pow__,__name__,__future__,__all__},
+ emphstyle=[5]\color{specmethodcolour},
+ emph={[6]assert,range,yield},
+ emphstyle=[6]\color{keywordcolour}\bfseries,
+ literate=*%
+ {:}{{\literatecolour:}}{1}%
+ {=}{{\literatecolour=}}{1}%
+ {-}{{\literatecolour-}}{1}%
+ {+}{{\literatecolour+}}{1}%
+ {*}{{\literatecolour*}}{1}%
+ {/}{{\literatecolour/}}{1}%
+ {!}{{\literatecolour!}}{1}%
+ {[}{{\literatecolour[}}{1}%
+ {]}{{\literatecolour]}}{1}%
+ {<}{{\literatecolour<}}{1}%
+ {>}{{\literatecolour>}}{1}%
+ {>>>}{{\textcolor{promptcolour}{>>>}}}{1}%
+ ,%
+ breaklines=true,
+ breakatwhitespace= true,
+ aboveskip=1ex,
+ frame=trbl,
+ framesep=.3ex,
+ rulecolor=\color{black!40}
+}
+
+\newcommand{\inputpython}[1]{\lstinputlisting[style=pythonstyle,title={\codetitlestyle{Python code }},belowcaptionskip=\belowtitleskip]{#1}}
+\lstnewenvironment{python}[1][]{\lstset{style=pythonstyle,title={\codetitlestyle{Python code }},belowcaptionskip=\belowtitleskip}}{}
+\newcommand{\pyth}{\lstinline[style=pythonstyle,basicstyle=\ttfamily]}
+
+%--- Typesetting XML ---
+
+\lstdefinestyle{xmlstyle}{
+language=xml,
+showtabs=true,
+tab=,
+tabsize=2,
+basicstyle=\ttfamily\footnotesize,
+stringstyle=\color{stringcolour},
+showstringspaces=false,
+alsoletter={1234567890},
+emphstyle=\color{exceptioncolour}\bfseries,
+commentstyle=\color{commentcolour}\slshape,
+breaklines=true,
+breakatwhitespace= true,
+aboveskip=1ex,
+frame=trbl,
+framesep=.3ex,
+rulecolor=\color{black!40}
+}
+
+\newcommand{\inputxml}[1]{\lstinputlisting[style=xmlstyle, title={\codetitlestyle{XML code}}, belowcaptionskip=\belowtitleskip]{#1}}
+\lstnewenvironment{xml}[1][]{\lstset{style=xmlstyle, title={\codetitlestyle{XML code}}, belowcaptionskip=\belowtitleskip}}{}
+
+%--- Typesetting Bash ---
+
+\lstdefinestyle{bashstyle}{
+language=bash,
+showtabs=true,
+tab=,
+tabsize=2,
+basicstyle=\ttfamily\footnotesize,
+stringstyle=\color{stringcolour},
+showstringspaces=false,
+alsoletter={1234567890},
+otherkeywords={\ , \}, \{, \%, \&, \|},
+emphstyle=\color{exceptioncolour}\bfseries,
+commentstyle=\color{commentcolour}\slshape,
+breaklines=true,
+breakatwhitespace= true,
+aboveskip=1ex,
+frame=trbl,
+framesep=.3ex,
+rulecolor=\color{black!40}
+}
+
+\newcommand{\inputbash}[1]{\lstinputlisting[style=bashstyle, title={\codetitlestyle{Bash code}}, belowcaptionskip=\belowtitleskip]{#1}}
+\lstnewenvironment{bash}[1][]{\lstset{style=bashstyle, title={\codetitlestyle{Bash code}}, belowcaptionskip=\belowtitleskip}}{}
+\lstnewenvironment{csh}[1][]{\lstset{style=bashstyle, title={\codetitlestyle{Csh code}}, belowcaptionskip=\belowtitleskip}}{}
