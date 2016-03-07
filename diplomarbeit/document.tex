@@ -39,22 +39,16 @@
 \clearpage
 \tableofcontents
 \clearpage
-\listoffigures
-\clearpage
-\listoftables
-\clearpage
 \input{abstract.tex}
 \input{anerkennungen.tex}
+\input{erklaerung.tex}
  
 % CONTNET
 \clearpage
 \pagenumbering{arabic}
 \pagestyle{fancy}
-\input{sections/ch1_intro.tex}
-\input{sections/ch2_implementation/main.tex}
-\input{sections/ch2_implementation/explaination.tex}
+\input{sections/ch1_introduction/main.tex}
 
-Test test tests \cite{OMG.2014}
 
 % BIBL
 \clearpage
@@ -63,13 +57,23 @@ Test test tests \cite{OMG.2014}
 \bibliographystyle{ieeetr}
 \bibliography{sources.bib}
 \endgroup
-%\bibliography{sources}  
-%\printbibliography
 
 % APPENDENCIES
+\pagenumbering{Roman}
 \clearpage
 \begin{appendices}
-	\chapter{Test}
+	\subsection{Figuren}
+		\makeatletter
+		\@starttoc{lof}% Print List of Figures
+		\makeatother
+	\subsection{Tabellen}
+		\makeatletter
+		\@starttoc{lot}% Print List of Tables
+		\makeatother
+	\subsection{Source code}
+		\makeatletter
+		\@starttoc{lol}% Print List of Listings
+		\makeatother
 \end{appendices}
 
 \end{document}
