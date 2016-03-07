@@ -36,24 +36,6 @@
 	linktoc=all
 ]{hyperref}
 
-\usepackage[
-  	backend=bibtex      	% biber or bibtex
-	%,style=authoryear    	% Alphabeticalsch
- 	,style=numeric-comp  	% numerical-compressed
- 	,sorting=none        	% no sorting
- 	,sortcites=true      	% some other example options ...
- 	,block=none
- 	,indexing=false
- 	,citereset=none
- 	,isbn=true
- 	,url=true
- 	,doi=true            	% prints doi
- 	,natbib=true         	% if you need natbib functions
-]{biblatex}
-
-\addbibresource{sources.bib}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Useful commands
 
@@ -92,6 +74,10 @@
 % use citep instead of cite
 %\let\cite\citep
 \newcommand{\sectionbreak}{\clearpage}
+
+%Bibtex
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The following listings environments are provided:

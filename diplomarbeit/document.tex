@@ -14,6 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SETTINGS
 \input{special/preamble.tex}
+%\input{special/btxmac.tex}
 
 \linespread{0.94}
 \lhead{Diplomarbeit}
@@ -53,12 +54,17 @@
 \input{sections/ch2_implementation/main.tex}
 \input{sections/ch2_implementation/explaination.tex}
 
-Text \cite{solarfarm} Text.
+Test test tests \cite{OMG.2014}
 
 % BIBL
 \clearpage
-%\nocite{*}
-\printbibliography
+\begingroup
+\renewcommand{\section}[2]{}
+\bibliographystyle{ieeetr}
+\bibliography{sources.bib}
+\endgroup
+%\bibliography{sources}  
+%\printbibliography
 
 % APPENDENCIES
 \clearpage
@@ -67,3 +73,4 @@ Text \cite{solarfarm} Text.
 \end{appendices}
 
 \end{document}
+
