@@ -1,96 +1,16 @@
 \chapter{Kurzfassung}
 BestShift ist ein Projekt welches dem Fahrer als oberstes Ziel mehr Informationen während- und nach der Fahrt bietet. 
-Deshalb werden in unterschiedlichen Teilen des Projektes bis April 2016 (finale Abgabe der Diplomarbeit) 
-diverse einzelne Komponenten einer hybriden Android Applikation und einer Hardware Schnittstelle für das ODB-II 
-Interface entwickelt. Der Fokus des Medientechnischen Aspektes dieses Projektes soll allerdings auf der Webapplikation,
-die das Team ebenfalls realisieren wird, liegen. Diese Webapplikation wird die Zentrale Schnittstelle der gesammelten Daten
-und der Retrospektiven Darstellung sein. 
+Dies passiert mittels einer Android Applikation und einer Webapplikation, welche die Daten von einem Single-Board-Computer, verarbeiten und darstellen. 
 
-Für die Smartphone Applikation wird ein Android Framework verwendet, 
-während die Hardware aus einem Single Board Computer (SBC) bestehen soll. 
-Mittels einem ODB-II zu Bluetooth Chip (ELM237) und Python, 
-werden Daten aus dem Motormanagement sowie eigene Sensordaten gesammelt und aufbereitet. 
+\newline
+Wie können wir unser Produkt also vermarkten?
+Der Nutzen wird dabei auf 2 Kundensegmente spezialisiert werden.
+Diese sind einerseits Fahrschulen, die das Projekt benutzen um Ihren Fahrschülern einen leichteren Einstieg in das Autofahren zu bieten, andererseits aber auch Speditionen sein, die durch das Produkt Spritkosten einsparen können.
 
-\newpage
-\section{Projekt-Team}
-\textbf{Tobias Perny} hat als einziger Systemtechniker der Projektgruppe die hardwarenäheste Aufgabe des ganzen Projektes. Er soll einen CarPC mit allen nötigen Sensoren, aber allen voran einem GPS-Sensor, Beschleunigungssensor und Gyroskop verwirklichen. Dafür muss der CarPC an das 12V Bordnetz eines PKW angebunden werden, außerdem sollen dessen Daten ausgelesen werden.
-\nextline 
-\textit{Fähigkeiten}
-\begin{itemize}
-	\item Mikrokontroller
-	\item Ansteuerung von Sensoren		
-	\item Softwareengineering
-	\item Microsoft Office
-	\item SCRUM
-	\item Informationsmanagement
-\end{itemize}
+\newline
+Die Android Applikation zeigt dem Nutzer einen Schaltvorschlag, die Fahrgastbequemlichkeit und die Umweltfreundlichkeit seines Fahrstils in Echtzeit an. 
+Die Webapplikation filtert die, während der Fahrt gesammelten, Daten  und stellt diese für den Nutzer und dessen Freunde ansprechend dar. 
+Der Car-PC verarbeitet und filtert die Daten aus den verbauten Sensoren und  und persistiert diese mittels einer Redis Datenbank. Die Daten werden dann vom Telefon in Echtzeit dargestellt und weiters von diesem in die Cloud hochgeladen. Mittels einem OBD-II zu Bluetooth Chip (ELM327) und Python werden die Daten aus dem Motormanagement verarbeitet und folglich in die Datenbank gespeichert.
 
-\nextline
-
-\textbf{Daniel Melichar} ist der perfekte Vertreter des Produktes für den Kunden, und bei Beendigung des Projektes werden mögliche Interessenten die über diverse Networks auf das Produkt aufmerksam geworden sind und es gerne kaufen würden mit ihm Kontakt aufnehmen. Herr Melichar ist höchst engagiert für das Projekt und besitzt die Fähigkeiten dieses Engagement in die Tat um zu setzten. Herr Melichar ist im Projekt vor allem für die Bereitstellung und Interpretierung der Motor- und Sensordaten zuständig. 
-
-\textit{Fähigkeiten}
-\begin{itemize}
-	\item Servermanagement & Datenmanagement				
-	\item Softwareengineering
-	\item Webentwicklung & -design
-	\item SCRUM
-	\item Quality Assurance
-	\item MicrosoftOffice
-\end{itemize}
-
-\newpage
-
-\textbf{Raphael Simsek} hatte gemeinsam mit Herrn Prof. List die Idee für das Projekt entwicklet. Das Teilprojekt von Herrn Simsek umfasst die Berechnung von Schaltvorschlägen mittels Algorithmen für maximales Drehmoment und für kraftstoffsparendes Fahren. Das Wissen über die Algorithmen für diese Berechnungen wird erst erlangt. Das Teilprojekt wird allerdings definitiv für Android programmiert sein und die Drehzahl ebenfalls mittels der Motordaten darstellen.
-
-\textit{Fähigkeiten}
-\begin{itemize}
-	\item Servermanagement				
-	\item Softwareengineering
-	\item Webentwicklung
-	\item Microsoft Office
-	\item Adobe Creative Suite
-	\item Urheberrechtliches Consulting
-\end{itemize}
-
-\nextline
-
-\textbf{Hüseyin Bozkurt} ist für die Verbrauchsanalyse der App zuständig. Dabei wird eine Anzeige des Momentanverbrauchs und des Durchschnittsverbrauchs der ganzen Fahrt angezeigt. Diese soll sowohl in Werten mittels Graphiken dargestellt werden. Die Fahrstrecke soll auch auf den Verbrauch bezogen geographisch angezeigt werden. Ein Verbrauchsvergleich und eine Social Media Integration ist auch integriert.
-All diese geplanten Features wird Herr Bozkurt umsetzten. Die hybride Applikation ist besonders für diese Teilbereiche wichtig, da hier eine Webapplikation, um dem User nach einer Fahrt die Möglichkeit zu bieten, die aufgenommenen Daten und Graphen genauer zu analysieren, realisert ist.
-
-\textit{Fähigkeiten}
-\begin{itemize}
-	\item Projektmanagement			
-	\item Softwareengineering
-	\item SCRUM
-	\item Microsoft Office
-	\item Adobe Creative Suite
-\end{itemize}
-
-\newpage
-
-\textbf{Fitim Faiku} ist für die Analyse der Fahrgastbequemlichkeit zuständig. DDieses Feature wird mithilfe eines Kamm'schen Kreises umgesetzt, welcher in der App abgerufen werden kann. Dieser zeigt Quer- und Längsbeschleunigung an. Der Kreis soll je nach Modus die g-Kraft innerhalb von unterschiedlichen Bereichen darstellen. 
-
-\textit{Fähigkeiten}
-\begin{itemize}
-	\item Projektmanagement			
-	\item Softwareengineering
-	\item SCRUM
-	\item Microsoft Office
-	\item Adobe Creative Suite
-\end{itemize}
-
-
-\section{Projektbeschreibung}
-In diesem Projekt wird eine Applikation für das mobile Betriebssystem Android implementiert, 
-die dem Fahrer eines KFZ während der Fahrt Informationen zu Fahrgastbequemlichkeit und verbrauchseffizienter Fahrweise gibt. 
-Dazu werden Daten aus dem Motormanagement verwendet. 
-Für weitere benötigte Daten (z.B. Beschleunigungswerte) werden zusätzliche externe Sensoren in einem portablen CarPC integriert. 
-Das Herzstück des Projektes ist aber die Webapplikation, die die Retrospektive Fahrtenanalyse und eine Social Media implentierung beinhaltet.
-Diese Webapplikation wird die Möglichkeit bieten, die gesammelten Daten aller gespeicherten 
-Fahrten für spätere Analysen graphisch einfach aufbereitet anzuzeigen. 
-Die einzelnen Messwerte sollen dabei mit geographischen Informationen verknüpft werden, 
-um dem Fahrer zum Beispiel zu zeigen, welche Stellen der Strecke besonders verbrauchsintensiv oder unbequem für den Fahrgast waren. 
-
-Als weitere Funktion soll die Applikation aus den ermittelten Daten dem Fahrer den 
-momentan am energieeffizientesten oder leistungsstärksten Gang vorschlagen können.
+\newline
+Jeder der Teammitglieder hat über 200 Mannstunden in das Projekt investiert und wir würden uns sehr freuen wenn wir Sie durch unsere Zusammenfassung dazu animieren konnten das vollständige Executive Summary zu lesen.
