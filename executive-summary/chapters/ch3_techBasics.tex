@@ -1,2 +1,21 @@
-\chapter{technische Grundlagen & Implementierung}
+\chapter{Grundlagen \& Implementierung}
+
 \section{CAN-Bus}
+Das Auslesen der Daten aus dem Motormanagement passiert mittels der normierten und standardisierten OBD-II Schnittstelle, welche mittels eines Bluetooth Dongles angesteuert wird. Hierbei bereitete uns insbesondere das Arbeiten mit den, für uns noch nicht bekannten, PID's Sorgen, welche aber schon bald von allen Teammitgliedern verstanden wurden. Es galt ausserdem zu analysieren wie man einen möglichst effizienten Schaltvorschlag, wobei uns Herr Prof. Neuburger aus der Maschinenbau Abteilung zur Hilfe kam und das Motorkennfeld näher erläuterte. Der Schadstoffausstoss wurde folglich eigenständig bearbeitet.
+\section{Mikrocontroller \& DBMS}
+Als Mikrocontroller wurde nach vielen unterschiedlichen Ansätzen, u.a. auch mit einem Arduino Uno, ein Rasberry Pi 2B ausgewählt, welcher mit allen benötigten Sensoren ausgestattet wurde und mit den verwendeten Kommunikationstechnologien bestückt wurde. Dieser \textit{Single Board Computer} wurde dann mit einem Redis Key-Value Store als Cache der Sensor und Motordaten Daten bestückt, worauf das Telefon dann für die Darstellung zugreift. Bevor die Daten in den Redis Cache gespeichert werden, wird jedes Datenset auf fehlerhafte Messungen gefiltert und die Datenmenge verkleinert (ca. auf ein 1/4) der Rohdaten. Dabei wird möglichst verlustfrei gearbeitet. Mit Peristierungsverlust wird erst in der Postgres Datenbank auf dem Root Server gearbeitet.
+
+\newpage
+\section{Android-App Development}
+Bei der Android App stand man zwischen der Entscheidung ob die Applikation als Native Android, HTML5 oder Hybride App realisiert werden sollte. 
+\newline
+Für jede der verschiedenen Varianten wurden Frameworks und Umsetzungsmöglichkeiten evaluiert. Nachdem fest stand dass eine Webapplikation entwickelt werden würde, war klar dass Native Android entwickelt werden sollte, da diese Applikation schnell abgeschlossen werden sollte.
+
+\subsection{Schaltvorschlag}
+Damit ein Schaltvorschlag umgesetzt werden konnte musste zuerst umfassendes Wissen über Thermodynamik und den wichtigen Einheiten für die Wirkungsgradmessung erlernt werden. Schließlich wurde es aber doch geschafft mittels einer Klassenbildung eine funktionstüchtige Umsetzung der vorgeschlagenen Effizienzkurve umzusetzen.
+\subsection{Verbrauchsanalyse}
+Um die Verbrauchsanalyse umsetzen zu können war insbesondere die Auslesung des Verbrauchs aus der OBD-II Schnittstelle von großer Bedeutung, da diese sich als schwerer erwies als erwartet.
+\subsection{Fahrkomfortanalyse}
+Der Fahrkomfort beinhaltet sowohl die Analyse der Beschleunigungskräfte, als auch Tips bezüglich der Temperatur im Fahrzeug. Beides wurde mit Sensoren, die sich direkt am Rasberry Pi befinden realisiert, da diese um viele Magnituden genauer sind als selbige eines modernen \textit{Smartphones}.
+\section{Web-App Development}
+Nachdem sich dafür entschieden wurde dass neben der ursprünglich geplanten Android Applikation, auch eine Web Applikation entwickelt wird, wurde innerhalb des Teams festgelegt dass dies mit AngularJS mittels des Themes Slant als Frontend  und Django als Backend umgesetzt werden würde. Leider konnte die Entwicklung am Backend aufgrund von Zeitmangel noch nicht abgeschlossen werden.
