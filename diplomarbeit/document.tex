@@ -48,13 +48,16 @@
 \pagenumbering{arabic}
 \pagestyle{fancy}
 \input{sections/ch1_introduction/main.tex}
-\input{sections/ch2_technisches_design/main}
+\input{sections/ch2_technische_grundlagen/main.tex}
+\input{sections/ch3_implementierung/main.tex}
+\input{sections/ch4_wirtschaftlichkeit/main.tex}
+\input{sections/ch5_conclusio_outlook/main.tex}
+
 
 % BIBL
 \clearpage
 \begingroup
-\renewcommand{\section}[2]{}
-\bibliographystyle{ieeetr}
+\bibliographystyle{abbrv}
 \bibliography{sources.bib}
 \endgroup
 
@@ -62,18 +65,22 @@
 \pagenumbering{Roman}
 \clearpage
 \begin{appendices}
-	\subsection{Figuren}
+	\section{Figuren}
 		\makeatletter
 		\@starttoc{lof}% Print List of Figures
 		\makeatother
-	\subsection{Tabellen}
+	\section{Tabellen}
 		\makeatletter
 		\@starttoc{lot}% Print List of Tables
 		\makeatother
-	\subsection{Source code}
+	\section{Source code}
 		\makeatletter
-		\@starttoc{lol}% Print List of Listings
+		\@starttoc{lol}% Print List of Listings lol
 		\makeatother
+	\section{Zeitaufzeichnungen}
+		\todo idk if necessary
+	\section{Glossar}
+		\todo this is going to be a female dog.
 \end{appendices}
 
 \end{document}

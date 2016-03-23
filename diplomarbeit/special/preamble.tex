@@ -22,7 +22,7 @@
 \usepackage{xcolor}
 \usepackage{filecontents}
 \usepackage{glossaries}
-\usepackage[explicit]{titlesec}
+\usepackage{titlesec}
 \usepackage[headsep=1cm,headheight=3cm,hmargin=2cm,vmargin=2.5cm]{geometry}
 \usepackage[nolist]{acronym}
 \usepackage[toc,page]{appendix}
@@ -39,10 +39,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Useful commands
 
+
+
 % Comments and notes
-\newcommand{\comment}[1]{}
+
+\newtoggle{devel}
+\toggletrue{devel}
+%\togglefalse{devel}
+
+\iftoggle{devel} {
+	\newcommand{\comment}[1]{{\bf \colorbox{yellow}{\color{black}#1}}}
+	\newcommand{\todo}{{\bf \colorbox{red}{\color{white}TODO:}}}	
+} {
+	\newcommand{\comment}[1]{{}}
+	\newcommand{\todo}{{}}
+}
+
 \newcommand{\ifreport}[1]{#1}
-\newcommand{\todo}{{\bf \colorbox{red}{\color{white}TODO:}}}
 \newcommand{\ie}{{\em i.e.,~}}
 \newcommand{\eg}{{\em e.g.,~}}
 \newcommand{\term}[1]{\mbox{\texttt{#1}}}
@@ -74,6 +87,7 @@
 % use citep instead of cite
 %\let\cite\citep
 \newcommand{\sectionbreak}{\clearpage}
+
 
 %Bibtex
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
