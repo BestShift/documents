@@ -4,11 +4,6 @@
 Die android App wir in Java erstellt wobei die Programmieroberflaeche Android Studio verwendet wird.
 Zu jeder Klasse wird ein XML layout als View angesetzt und somit besteht eine Verbindung zwischen Code und Layout.
 
-
-\lstinputlisting[caption=A HelloWorld Example in Java, style=javastyle]{code/HelloWorld.java}
-
-
-\newpage
 \subsubsection{Code-Dokumetation}
 \lstinputlisting[caption=MyActivity, style=javastyle]{code/MyActivity.java}
  Um die Grafiken bestmoeglich darzustellen und dabei ein weites Spektrum an Usern zu erzielen, haben wir uns entschieden eine Android App zu erstellen.
@@ -17,45 +12,45 @@ Zu jeder Klasse wird ein XML layout als View angesetzt und somit besteht eine Ve
  
  Um die App zu realisieren habe ich mehrere Fragments erstellt zwischen denen man hin und her wischen kann.
  
-\newline
+
 
  Es wird erstmal eine MainActivity Klasse erstellt, welche von FragementActivity erbt und von ActionTabListener implementieret, um die Methoden onTabReselected, onTabselected und onTabunselected zu Ueberschreiben.   
- \newline
+ 
             
 Nachher setzen wir die View der Klasse auf main mit:  
-\newline            
+            
 setContentView(R.layout.main);
-\newline
+
 Wir erstellen ein Objekt von ActionBar und fuegen mehrere Tabs hinzu
 Wir setzen das Layout fuer die Navigation der Tabs mit
  
-\newline
+
 $actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);$
-\newline
+
 Nachher werden  mehrere Tabs hinzugefuegt mit:
-\newline
+
 actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.verbrauchwolke));
-\newline
+
 actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.komfort), true);
-\newline
+
 // Setzen des Tabs auf angeklickt mit True
-\newline
+
 actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.schaltvorschlag));
-\newline
+
 // Weiters werden Icons zu den Tabs hinzugefuegt.
-\newline
+
 
 Nun gehen wir rueber zu unserem Design unter main.xml
-\lstinputlisting[caption=Design main, style=xml]{code/main.xml}
+\lstinputlisting[caption=Design main, style=xmlstyle]{code/main.xml}
 Wir erstellen ein ViewPager Layout welches das Wischen erlaubt mit:
-\newline
+
 <android.support.v4.view.ViewPager> </android.support.v4.view.ViewPager>
-\newline
+
 Wir Uebergeben dem Layout ebenfalls eine id auf die wir von unserer main Activity zugreifen: 
-\newline
+
 android:id="@+id/pager"
 
-\newline
+
 
 Nun erstellen wir eine Fragementadapter Klasse um die einzelnen Tabs den Klassen zuzuteilen. 
 Die Klasse hat einen Kronstruktor welcher von der superklasse FragementManager Objekt Uebergeben bekommt.
@@ -64,26 +59,25 @@ Weiters hat die Klasse eine getIem Methode mit dem Input eines int Wertes.
 
 Hier wird nur geprueft welcher Tab angecklickt wurde dem Teilt er eine Klasse auf welche eine eigene View hat.
 Sie hat noch eine getCount() Methode welches die Anzahl der Tabs zurueckgibt in unserem Fall 3.
-\newline
+
 
 Wir erstellen auf der Main Klasse zwei Objekte 
-\newline
+
 ViewPager viewpager;
-\newline
+
 FragmentPagerAdapter ft;
-\newline
+
 viewpager =(ViewPager) findViewById(R.id.pager);
-\newline
+
 ft = new FragementPageAdapter(getSupportFragmentManager());
-\newline
+
 viewpager.setAdapter(ft);
-\newline
+
 Das wird gemacht um zwischen den Oberflaechen wechseln zu koennen.
-\newline
+
  
 \subsubsection{MPAndroidchart als Tool}
-Um die zwei Grafiken fuer den Emissionsausschussund die Laengstbeschleunigung darzustellen haben wir uns fuer ein Framework entschieden welches uns diese Aufgabe erleichtern sollte.
-
+Um die zwei Grafiken für den Emissionsausshuss und die Längsbeschleunigung darzustellen, haben wir uns für ein Framework entschieden welches und diese Aufgabe erleichterte.
 
  \begin{table}[!htb]
  	\centering
@@ -103,9 +97,9 @@ Um die zwei Grafiken fuer den Emissionsausschussund die Laengstbeschleunigung 
  	}
  \end{table}
 
-Im Großenund Ganzen ist MPAndroidChart das Beste was man waehlen kann, da es eins der besten Dokumentationen hat, weiterhin hat es auch eine sehr gute Community, sehr viel gut gecodete und dokumentierte Beispiele und ist auch fuer Erweiterung gut, da die App auch auf einem IPhone aufgesetzt werden kann.
- \newline
-AChartEngine hat eine gute Dokumentation doch eine eher schwaechere Community und ist leider nicht sehr aktuell. \newline
+Im Großen und Ganzen ist MPAndroidChart das Beste was man wählen kann, da es eins der besten Dokumentationen hat, weiterhin hat es auch eine sehr gute Community, sehr viel gut gecodete und dokumentierte Beispiele und ist auch fuer Erweiterung gut, da die App auch auf einem IPhone aufgesetzt werden kann.
+ 
+AChartEngine hat eine gute Dokumentation doch eine eher schwaechere Community und ist leider nicht sehr aktuell. 
 HelloChart hat eins der schlechtesten Dokumentationen, gar keine Community und sehr wenig gecodete Beispiele, sie sind aber sehr Aktuell wenn es um die Versionen geht .
 
 \subsubsection*{Implementierung von MPAndroidChart}
