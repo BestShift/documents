@@ -1,12 +1,69 @@
 \lfoot{Autor: Daniel Melichar}
-\subsubsection{Relationale und nicht relationale Datenbanken}
-\label{subsec:sql-nosql}
+\subsubsection{Relationale Datenbanken}
+\label{subsec:relationaleDB}
 
+Die relationale Datenbank ist seit dem ersten Erscheinen in 1970 weit gekommen und ist von den meisten Großkonzernen der Welt adaptiert worden. Mit der eigens dafür entwickelten \textit{Programmiersprache} SQL (Structured Query Langauge) war das umgehen mit Datenbanken und Tabellen und der darin gespeicherten Information so einfach wie noch nie.
+
+\begin{figure}[!htb]\centering
+	\includegraphics[width=0.5\textwidth]{images/relationaleTabelle}
+	\caption{Beispiel einer relationalen Datenbank}
+\end{figure}
+
+Features von relationalen DBMS (Achtung: diese sind stark vom eigentlichem DBMS abhängig)
+\begin{itemize}
+\item Unterstützt eine große Menge an Daten
+\item Datensicherheit durch backups, permissions, etc.
+\item Fehler Toleranz und Wiederherstellung
+\end{itemize}
+
+Hinter den Kulissen sorgt das Relational Database Management System (RDBMS) dafür das die Eigenschaften des ACID (Atomicity, Consistency, Isolation, Durability) Prinzips der Transaktionen so funktionieren wie sie sollen. Beachtet man nun auch die anderen Features der Sprache, so wie Constraints (primary and foreign keys, Datentype, etc.) oder Stored Procedures/Functions, erkennt man schnell, dass je mehr Information eine relationale Datenbank enthält, desto langsamer wird sie.
+
+Einige der größten Limitierungen \cite{MELD.CH2-relationaleDB.rdbmsBuch} durch das relationale Datenbank Model sind
+\begin{itemize}
+\item Skalierbarkeit: ab einem gewissen Zeitpunkt muss die Datenbank über mehrere Server laufen da ein Server nicht mehr genügend Ressourcen verfügt um die Daten zu managen
+\item Komplexität: die Daten müssen zu Tabellen strukturiert werden; es ist also ein Schema notwendig
+\item Features: Meist für Datenintegrität aber nicht für Datenverarbeitung 
+\end{itemize}
+
+
+Zusammenfassed kann man also sagen, dass die Verwendung eines RDBMS dann sinn macht, wenn man ein Datenschema erstellen kann. Das bedeutet konkret: wenn man weiß welche Daten man hat und haben wird, wie man diese in eine Tabellen Struktur einbauen kann, und man Anforderungen die sich nur im geringen Maß ändern können ist es sinnvoll ein RDBMS zu verwenden. Die zur Verfügung gestellten Features werden einen Administrator sehr gut unterstützen. 
+
+
+\subsubsection{Nicht relationale Datenbanken (NoSQL)}
+\label{subsec:nichtrelationaleDB}
+
+In diesem Kapitel werden ein Einblick in das Konzept von nicht-relationalen Datenbanken gegeben. Es wird nicht über die ersten Systeme gesprochen die damals dem NoSQL-Movement angehörten (Objekt-Datenbanken, XML-Datenbanken, Datenbanken für spezielle Anwendungsgebiete wie Analyse oder Streamprozessoren) diese sollten aber zumindest erwähnt werden. \nextline
+
+\textbf{Motive und Beweggründe\newline}
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \nextline
+
+\textbf{Techniken und Konzepte\newline}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \nextline
+
+\textbf{Kritik\newline}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \nextline
+
+\textbf{Klassifikation und Vergleich von NoSQL Datenbanken\newline}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \nextline
 
 \clearpage % DO NOT REMOVE
