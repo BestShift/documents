@@ -1,176 +1,117 @@
 \lfoot{Autor: Fitim Faiku}
 \subsection{Android App}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Die android App wir in Java erstellt wobei die Programmieroberflaeche Android Studio verwendet wird.
+Zu jeder Klasse wird ein XML layout als View angesetzt und somit besteht eine Verbindung zwischen Code und Layout.
+
 
 \lstinputlisting[caption=A HelloWorld Example in Java, style=javastyle]{code/HelloWorld.java}
 
 
-% \section*{Android-App}
-
-% Um die Grafiken bestmÃ¶glich daarzustellen und dabei ein weites Spektrum an Usern zu erzielen, haben wir uns entschieden eine Android App zu erstellen. 
-% Dabei haben wir besonders auf die Benutzerfreundlichkeit der App geachtet.
-% Die Wichtigsten Kriterien dabei waren, dass es den Fahrer nicht zu viel an Konzentatrion anverlangt, dass er sehr leicht zwischen den einzelnen Feauters wechseln kann und das Design sehr Informant ist.
-
-% Um die App zu realisieren habe ich mehrere Fragments erstellt zwischen denen man hin und her wischen kann. 
-
-% \subsection*{Code Dokumentation}
-% Wir erstellen erstmal eine MainActivity Klasse in dem wir von FragementActivity erben und von ActionTabListener implementieren um die Methoden onTabReselected, onTabselected und onTabunselected zu ÃŒberschreiben.              
-% Nachher setzen wir die View der Klasse auf main mit:               setContentView(R.layout.main);
-% Wir erstellen ein Objekt von ActionBar und fÃŒgen merere Tabs hinzu
-% Wir sezten weiters das Layout fÃŒr die Navigation der Tabs mit                           // setzen der Navigation fÃŒr die Tabs  
-% actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-% Nachher fÃŒgen wir mehrere Tabs hinzu mit:
-% // Tabs werden hinzugefÃŒgt
-% actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.verbrauchwolke));
-% actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.komfort), true);// Setzen des Tabs auf angeklickt mit True
-% actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.schaltvorschlag));
-% // Weiters werden Icons zu den Tabs hinzugefÃŒgt.
-
-% Nachher gehen wir rÃŒber zu unserem Design unter main.xml
-% Wir erstellen ein ViewPager Layout welches das swipen erlaubt mit:
-% <android.support.v4.view.ViewPager> </android.support.v4.view.ViewPager>
-% Wir ÃŒbergeben dem Layout ebenfalls eine id auf die wir von unserer main Activity zugreiffen: 
-% android:id="@+id/pager"
-
-% Nun erstellen wir eine Fragementadapter Klasse um die einzelnen tabs den Klassen zuzuteilen. 
-% Die Klasse hat einen Kronstruktor welcher von der superklasse FragementManager objekt ÃŒbergeben bekommt.Weiters hat die Klasse eine getIem Methode mit dem Input eines int Wertes. 
-% \inputjava{
-% @Override
-% public Fragment getItem(int arg0) {
-% 	switch (arg0) {
-% 		case 0:
-% 		return new Verbrauch();
-% 		case 1:
-% 		return new Kommfort();
-% 		case 2:
-% 		return new Shift();
-% 		default:
-% 		break;
-% 	}
-% 	return null;
-	
-% }
-% }
-% Hier wird nur geprÃŒft welcher Tab angecklickt wurde dem Teilt er eine Klasse auf welche eine eigene View hat.
-% Sie hat noch eine getCount() Methode welches die Anzahl der Tabs zurÃŒckgibt in unserem Fall 3.
-
-% Wir erstellen auf der Main Klasse zwei Objekte 
-% ViewPager viewpager;
-% FragmentPagerAdapter ft;
-
-
-% viewpager =(ViewPager) findViewById(R.id.pager);
-% ft = new FragementPageAdapter(getSupportFragmentManager());
-
-% viewpager.setAdapter(ft);
-% Das Machen wir um zwischen den OberflÃ€chen wechseln zu kÃ¶nnen.
-
-%  \newpage
+\newpage
+\subsubsection{Code-Dokumetation}
+\lstinputlisting[caption=MyActivity, style=javastyle]{code/MyActivity.java}
+ Um die Grafiken bestmoeglich darzustellen und dabei ein weites Spektrum an Usern zu erzielen, haben wir uns entschieden eine Android App zu erstellen.
+ Dabei haben wir besonders auf die Benutzerfreundlichkeit der App geachtet.
+ Die wichtigsten Kriterien dabei waren, dass es den Fahrer nicht zu viel an Konzentration abverlangt, dass er sehr leicht zwischen den einzelnen Feauters wechseln kann und das Design sehr Informant ist.
  
-% \subsection*{MPAndroidchart als Tool}
-% Um die zwei Grafiken fÃŒr den EmmissionsausschuÃ und die LÃ€ngstbeschleunigung daarzustellen haben wir uns fÃŒr ein Framework entschieden welches uns diese Aufgabe erleichtern sollte. 
+ Um die App zu realisieren habe ich mehrere Fragments erstellt zwischen denen man hin und her wischen kann.
+ 
+\newline
+
+ Es wird erstmal eine MainActivity Klasse erstellt, welche von FragementActivity erbt und von ActionTabListener implementieret, um die Methoden onTabReselected, onTabselected und onTabunselected zu Ueberschreiben.   
+ \newline
+            
+Nachher setzen wir die View der Klasse auf main mit:  
+\newline            
+setContentView(R.layout.main);
+\newline
+Wir erstellen ein Objekt von ActionBar und fuegen mehrere Tabs hinzu
+Wir setzen das Layout fuer die Navigation der Tabs mit
+ 
+\newline
+$actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);$
+\newline
+Nachher werden  mehrere Tabs hinzugefuegt mit:
+\newline
+actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.verbrauchwolke));
+\newline
+actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.komfort), true);
+\newline
+// Setzen des Tabs auf angeklickt mit True
+\newline
+actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.schaltvorschlag));
+\newline
+// Weiters werden Icons zu den Tabs hinzugefuegt.
+\newline
+
+Nun gehen wir rueber zu unserem Design unter main.xml
+\lstinputlisting[caption=Design main, style=xml]{code/main.xml}
+Wir erstellen ein ViewPager Layout welches das Wischen erlaubt mit:
+\newline
+<android.support.v4.view.ViewPager> </android.support.v4.view.ViewPager>
+\newline
+Wir Uebergeben dem Layout ebenfalls eine id auf die wir von unserer main Activity zugreifen: 
+\newline
+android:id="@+id/pager"
+
+\newline
+
+Nun erstellen wir eine Fragementadapter Klasse um die einzelnen Tabs den Klassen zuzuteilen. 
+Die Klasse hat einen Kronstruktor welcher von der superklasse FragementManager Objekt Uebergeben bekommt.
+Weiters hat die Klasse eine getIem Methode mit dem Input eines int Wertes. 
+\lstinputlisting[caption=PageAdapter, style=javastyle]{code/FragementPageAdapter.java}
+
+Hier wird nur geprueft welcher Tab angecklickt wurde dem Teilt er eine Klasse auf welche eine eigene View hat.
+Sie hat noch eine getCount() Methode welches die Anzahl der Tabs zurueckgibt in unserem Fall 3.
+\newline
+
+Wir erstellen auf der Main Klasse zwei Objekte 
+\newline
+ViewPager viewpager;
+\newline
+FragmentPagerAdapter ft;
+\newline
+viewpager =(ViewPager) findViewById(R.id.pager);
+\newline
+ft = new FragementPageAdapter(getSupportFragmentManager());
+\newline
+viewpager.setAdapter(ft);
+\newline
+Das wird gemacht um zwischen den Oberflaechen wechseln zu koennen.
+\newline
+ 
+\subsubsection{MPAndroidchart als Tool}
+Um die zwei Grafiken fuer den Emissionsausschussund die Laengstbeschleunigung darzustellen haben wir uns fuer ein Framework entschieden welches uns diese Aufgabe erleichtern sollte.
 
 
-% \begin{table}[!htb]
-% 	\centering
-% 	\caption{Vergleich der Charting-Frameworks}
-% 	\label{comparisonCharting}
-% 	\resizebox{\columnwidth}{!}{%
-% 		\begin{tabular}{l|c|c|c|l|}
-% 			\cline{2-5}
-% 			& \begin{tabular}[c]{@{}c@{}}MPAndorid\\ Chart\end{tabular} & \begin{tabular}[c]{@{}c@{}}AChart\\ Engine\end{tabular} & HelloChart & ErklÃ€rung \\ \hline
-% 			\multicolumn{1}{|l|}{Performance} & Gut & Gut & Gut &  \\ \hline
-% 			\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Supported \\ Languages\end{tabular}} & \begin{tabular}[c]{@{}c@{}}iOS 7,8;\\ Java\end{tabular} & Java & Java & \begin{tabular}[c]{@{}l@{}}MPAC kann auch\\ weiterverwendet werden\\ fÃŒr eine iOS App\end{tabular} \\ \hline
-% 			\multicolumn{1}{|l|}{Documentation} & 85\% & 70\% & 50\% & \begin{tabular}[c]{@{}l@{}}MPAC hat eine sehr gute\\ in Kapiteln aufgelistete\\ Dokumentation, Tutorials\end{tabular} \\ \hline
-% 			\multicolumn{1}{|l|}{Recent activity} & 19.10.2015 & 26.07.2013 & 5.10.2015 & \begin{tabular}[c]{@{}l@{}}MPAC ist sehr aktuell\\ und bringt immer wieder \\ neue Bugfixes raus.\\ HelloChart ebenso.\end{tabular} \\ \hline
-% 			\multicolumn{1}{|l|}{Community} & 80\% & 60\% & 20\% & \begin{tabular}[c]{@{}l@{}}Bei MPAC und \\ AChartEngine wird eine\\ Antwort innerhalb von 7 \\ Tagen geliefert.\\ Eine Community bei Hello\\ Chart ist kaum vorhanden.\end{tabular} \\ \hline
-% 			\multicolumn{1}{|l|}{Usage examples} & 85\% & 70\% & 15\% & \begin{tabular}[c]{@{}l@{}}MPAC hat fÃŒr jeden Chart\\ ein eigenes Beispiel oder \\ auch Tutorials auf YouTube.\\ AChartEngine weniger \\ verwendbare Codebeispiele.\end{tabular} \\ \hline
-% 		\end{tabular}
-% 	}
-% \end{table}
+ \begin{table}[!htb]
+ 	\centering
+ 	\caption{Vergleich der Charting-Frameworks}
+ 	\label{comparisonCharting}
+ 	\resizebox{\columnwidth}{!}{%
+ 		\begin{tabular}{l|c|c|c|l|}
+ 			\cline{2-5}
+ 			& \begin{tabular}[c]{@{}c@{}}MPAndorid\\ Chart\end{tabular} & \begin{tabular}[c]{@{}c@{}}AChart\\ Engine\end{tabular} & HelloChart & ErklÃ€rung \\ \hline
+ 			\multicolumn{1}{|l|}{Performance} & Gut & Gut & Gut &  \\ \hline
+ 			\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Supported \\ Languages\end{tabular}} & \begin{tabular}[c]{@{}c@{}}iOS 7,8;\\ Java\end{tabular} & Java & Java & \begin{tabular}[c]{@{}l@{}}MPAC kann auch\\ weiterverwendet werden\\ fÃŒr eine iOS App\end{tabular} \\ \hline
+ 			\multicolumn{1}{|l|}{Documentation} & 85\% & 70\% & 50\% & \begin{tabular}[c]{@{}l@{}}MPAC hat eine sehr gute\\ in Kapiteln aufgelistete\\ Dokumentation, Tutorials\end{tabular} \\ \hline
+ 			\multicolumn{1}{|l|}{Recent activity} & 19.10.2015 & 26.07.2013 & 5.10.2015 & \begin{tabular}[c]{@{}l@{}}MPAC ist sehr aktuell\\ und bringt immer wieder \\ neue Bugfixes raus.\\ HelloChart ebenso.\end{tabular} \\ \hline
+ 			\multicolumn{1}{|l|}{Community} & 80\% & 60\% & 20\% & \begin{tabular}[c]{@{}l@{}}Bei MPAC und \\ AChartEngine wird eine\\ Antwort innerhalb von 7 \\ Tagen geliefert.\\ Eine Community bei Hello\\ Chart ist kaum vorhanden.\end{tabular} \\ \hline
+ 			\multicolumn{1}{|l|}{Usage examples} & 85\% & 70\% & 15\% & \begin{tabular}[c]{@{}l@{}}MPAC hat fÃŒr jeden Chart\\ ein eigenes Beispiel oder \\ auch Tutorials auf YouTube.\\ AChartEngine weniger \\ verwendbare Codebeispiele.\end{tabular} \\ \hline
+ 		\end{tabular}
+ 	}
+ \end{table}
 
-% Im GroÃen und Ganzen ist MPAndroidChart das Beste was man wÃ€hlen kann, da es eins der besten Dokumentationen hat, weiterhin hat es auch eine sehr gute Community, sehr viel gut gecodete und Dokumentierte Beispiele und ist auch fÃŒr Erweiterung gut , da die App auch auf einem IPhone programmiert werden kann. 
-% AChartEngine hat eine gute Dokumentation doch eine eher schwÃ€chere Community und ist leider nicht sehr aktuell. 
-% HelloChart hat eins der schlechtesten Dokumentationen, gar keine Community und sehr wenig gecodete Beispiele, sie sind aber sehr Aktuell wenn es um die Versionen geht .
+Im Großenund Ganzen ist MPAndroidChart das Beste was man waehlen kann, da es eins der besten Dokumentationen hat, weiterhin hat es auch eine sehr gute Community, sehr viel gut gecodete und dokumentierte Beispiele und ist auch fuer Erweiterung gut, da die App auch auf einem IPhone aufgesetzt werden kann.
+ \newline
+AChartEngine hat eine gute Dokumentation doch eine eher schwaechere Community und ist leider nicht sehr aktuell. \newline
+HelloChart hat eins der schlechtesten Dokumentationen, gar keine Community und sehr wenig gecodete Beispiele, sie sind aber sehr Aktuell wenn es um die Versionen geht .
 
-% \newpage
+\subsubsection*{Implementierung von MPAndroidChart}
+Als naechstes habe ich mithile der MPAndroidchart Library einige Graphen erstellt und sie mit Daten befuellt 
 
-% \subsubsection{Umsetzung}
-% Als nÃ€chstes habe ich mithile der MPAndroidchart Library einige Graphen erstellt und sie mit Daten befÃŒllt 
-
-% mLineChart = (LineChart) findViewById(R.id.chart1);
-% mLineChart.setOnChartValueSelectedListener(this);
-
-% // no description text
-% mLineChart.setDescription("Beschleunigungskraefte");
-% mLineChart.setNoDataTextDescription("You need to provide data for the chart.");
-
-% // enable highlighting
-% mLineChart.setHighlightEnabled(true);
-
-% Ich habe mir ein mLineChart Objekt erstellt welches auf die FlÃ€che vom layout zugreift. Weiters habe ich den Grafen einige Eigenschaften eingetragen wie Hintergrundfarbe usw. 
-% LineData data = new LineData();
-% data.setValueTextColor(Color.BLACK);
-% LineData data2 = new LineData();
-% data2.setValueTextColor(Color.RED);
-
-% Hier erstelle ich ein LineData object welches die Eigenschaften der Daten beschreibt. 
-
-% {\Large AddEntry} 
-
-% LineData data=mLineChart.getData();
-% if(data != null){
-% 	LineDataSet set= data.getDataSetByIndex(0);
-% 	if(set == null){
-		
-% 		set=createSet();
-% 		data.addDataSet(set);
-% 	}
-% 	//add a new random value
-% 	data.addXValue("" + set.getEntryCount());
-% 	float a=(float) Math.random() * 2 + 0.1f;
-% 	if(a>1.7){
-% 		feedback1();
-% 		mpAudio.start();
-% 	}
-% 	data.addEntry(new Entry(a, set.getEntryCount()), 0);
-	
-% 	mLineChart.notifyDataSetChanged();
-	
-% 	mLineChart.setVisibleXRange(6,0);
-	
-% 	mLineChart.moveViewToX(data.getXValCount() -7);
-% }
-% }
-% Hier habe ich erstmal den Grafen mit zufÃ€lligen Zahlenwerten befÃŒllt und bewege die Sicht immer um eins weiter. 
-
-% {\large Createset } 
-% private LineDataSet createSet() {
-	
-% 	LineDataSet set = new LineDataSet(null, "Realtime Beschleunigungskraefte1");
-% 	set.setDrawCubic(true);
-% 	set.setCubicIntensity(0.2f);
-% 	set.setAxisDependency(YAxis.AxisDependency.LEFT);
-% 	set.setColor(ColorTemplate.getHoloBlue());
-% 	set.setCircleColor(Color.BLACK);
-% 	set.setLineWidth(2f);
-% 	set.setCircleSize(4f);
-% 	set.setFillAlpha(65);
-% 	set.setFillColor(ColorTemplate.getHoloBlue());
-% 	set.setHighLightColor(Color.rgb(244, 117, 117));
-% 	set.setValueTextColor(Color.BLACK);
-% 	set.setValueTextSize(10f);
-% 	return set;
-% }
-
-% Hier habe ich die Eigenschaften der Daten bestimmt und gebe das set aus welches bei der AddEntry Methode aufgerufen wird.
+\lstinputlisting[caption=Liniendiagramm Beispiel, style=javastyle]{code/Beschleunigungskraefte.java}
 
 
  
