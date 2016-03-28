@@ -4,7 +4,7 @@
 
 In diesem Kapitel werden ein Einblick in das Konzept von nicht-relationalen Datenbanken gegeben. Es wird nicht über die ersten Systeme gesprochen die damals dem NoSQL-Movement angehörten (Objekt-Datenbanken, XML-Datenbanken, Datenbanken für spezielle Anwendungsgebiete wie Analyse oder Streamprozessoren) diese sollten aber zumindest erwähnt werden.
 
-\paragraph{Motive und Beweggründe\newline}
+\textbf{Motive und Beweggründe\newline}
 Der Term \textit{NoSQL} wurde erstmalig in 1998 für eine relationale Datenbank, welche ohne der SQL-Sprache funktioniert, verwendet\cite{MELD.CH2-noSQL.firstSQLNaming}. Der Term wurde dann wieder in über die Jahre von verschiedensten Leuten aufgenommen. Unglücklicherweise gab es keine definitive Beschränkung für welche Datenbanksysteme zum NoSQL-Movement gehören. Durch den Blogger und Rackspace Mitarbeiter, Eric Evans, ist der Term ganz besonders bekannt geworden – er sagte hierzu: \cite[\textit{“the whole point of seeking alternatives is that you need to solve a problem that relational databases are a bad fit for”}]{MELD.CH2-noSQL.whatsInAName}. NoSQL Datenbanken wurden hauptsächlich von Großkonzernen für den Eigenbedarf entwickelt (Amazon’s Dynamo, Google’s BigTable, LinkedIn’s Voldemort, Facebook’s Cassandra, Yahoo!’s PNUTS). Diese Großkonzerne haben den relationalen Ansatz nicht komplett verworfen, sie fanden lediglich, dass das Model nicht den Anforderungen entspricht\cite{MELD.CH2-noSQL.capTheoremComp}.
 
 Das bekannte IT und Technologie Magazine \textit{Computerworld} hat in 2009 bei einer NoSQL Konferenz in San Franciso die dort vorhanden Developer befragt wieso NoSQL gegenüber relationalen Datenbanken im Vorteil liegt\cite{MELD.CH2-noSQL.whyItsBetter}.
@@ -37,7 +37,7 @@ Zu diesem Bericht gab es dann auch einen Blog post von Nati Shalom, CTO und Grü
 	 Hier werden sehr oft NoSQL Lösungen verwendet, da dass Limit der Skalierbarkeit sehr hoch, bis sogar unendlich ist, es wenig administrative Tätigkeiten im Umgang mit NoSQL gibt, es viele NoSQL Datenbanken gibt die spezifisch für Datawarehousing entiwckelt worden sind, uvm.
 \end{itemize}
 
-\paragraph{Techniken und Konzepte\newline}
+\textbf{Techniken und Konzepte\newline}
 \htab\textbf{Das CAP-Theorem\newline}
 Das von Eric Brewer im Jahre 2000 entwickelte CAP-Theorem ist heutzutage in vielen Web-Unternehmen (z.B. Amazon) aber auch in der NoSQL Community aufzufinden\cite{MELD.CH2-noSQL.capTheorem}. Der CAP Akronym steht für:
 
@@ -49,7 +49,7 @@ Das von Eric Brewer im Jahre 2000 entwickelte CAP-Theorem ist heutzutage in viel
 	\item \textit{Partition Tolerance:} Anders als bei Availability geht es hier meistens um Netzwerk Partitionen und die Möglichkeit weiter Operationen durchzuführen, wenn zwei Netzwerke im System nicht miteinander kommunizieren können.
 \end{itemize}
 
- Brewer behauptet, dass man nur zwei von diesen drei Eigenschaften in einem \textit{shared-data system} haben kann\cite{MELD.CH2-noSQL.capTheorem}. In seiner Präsentation hat er über die Vor- und Nachteile von ACID und BASE Systemen (siehe nächsten Paragraph) geredet und einige Entscheidungskriterien vorgestellt um sich für eine der beiden Modelle zu entscheiden: wenn ein System, oder Teile eines Systems, konsistent und Partition-Tolerant sein müssen, sind ACID Eigenschaften benötigt; wenn Verfügbarkeit und Partition-Tolerants benötigt werden, sollte das System mittels BASE Eigenschaften erstellt werden. Anhand folgender Tabelle, welche direkt aus seiner Präsentation genommen wurde, lässt es sich am besten veranschaulichen.
+ Brewer behauptet, dass man nur zwei von diesen drei Eigenschaften in einem \textit{shared-data system} haben kann\cite{MELD.CH2-noSQL.capTheorem}. In seiner Präsentation hat er über die Vor- und Nachteile von ACID und BASE Systemen (siehe nächsten Paragraphen) geredet und einige Entscheidungskriterien vorgestellt um sich für eine der beiden Modelle zu entscheiden: wenn ein System, oder Teile eines Systems, konsistent und Partition-Tolerant sein müssen, sind ACID Eigenschaften benötigt; wenn Verfügbarkeit und Partition-Tolerants benötigt werden, sollte das System mittels BASE Eigenschaften erstellt werden. Anhand folgender Tabelle, welche direkt aus seiner Präsentation genommen wurde, lässt es sich am besten veranschaulichen.
 
 \begin{table}[!htb]
 \centering
@@ -70,7 +70,7 @@ Grundsätzlich kann man sagen, dass bei relationalen Datenbanken weniger Availab
 	\caption{CAP-Theorem bei RDBMS und NoSQL\cite{MELD.CH2-noSQL.capTheoremComp}}
 \end{figure}
 
-\tab\textbf{ACID vs BASE\newline}
+\textbf{ACID vs BASE\newline}
 Das Internet erzeugt Tag für Tag für eine enorme Menge an Daten welche verarbeitet, analysiert und bereitgestellt werden müssen. Die Applikationen und Service in diesem Bereich müssen den individuellen Bedarf an Performance, Zuverlässigkeit, Betriebsbereitschaft, und Konsistenz feststellen. Wie bereits beim CAP-Theorem beschrieben können diese Applikationen und Service nur zwei Optionen von Consistency, Availability, und Partition Tolerance, genommen werden. Immer mehr Applikationen und Service bevorzugen die Option von Availability und Partition Tolerance und vernachlässigen somit die strikte Toleranz. Diese Eigenschaften sind schwer mit dem ACID Model zu erreich, jedoch wurde dafür das BASE Model entwickelt. Es gibt kein Model das besser ist, man muss das richtige Model für seine Bedürfnisse wählen.
 
 Das Akronym BASE steht für folgende Eigenschaften
@@ -93,7 +93,7 @@ Brewer stellt den Vergleich zwischen ACID und BASE mit der Darstellung, welche m
 \caption{ACID vs BASE \cite{MELD.CH2-noSQL.capTheorem}}
 \end{table}
 
-\tab\textbf{Partitionierung}
+\textbf{Partitionierung}
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -101,7 +101,7 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\tab\textbf{Speicherungs Layouts}
+\textbf{Speicherungs Layouts}
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -109,7 +109,7 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\tab\textbf{Query Models}
+\textbf{Query Models}
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -117,7 +117,7 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\paragraph{Kritik\newline}
+\textbf{Kritik\newline}
 Selbstverständlich gibt es nicht nur positive Dinge über NoSQL. Auch nicht relationale Systeme haben einige Punkte in welchen es noch Verbesserungsbedarf gibt \cite{MELD.CH2-noSQL.sqlvsnosql}. 
 
 \begin{itemize}
@@ -134,7 +134,7 @@ Selbstverständlich gibt es nicht nur positive Dinge über NoSQL. Auch nicht rel
 	Bei relationalen Datenbanken gibt es zwar auch eine einheitliche Programmiersprache die prinzipiell für alle DBMS funktioniert, aber auch hier gibt es verschiedene Dialekte. Bei NoSQL Datenbanken ist es dem Entwickler überlassen wie er mit der Datenbank kommunizieren will. In den meisten Fällen wird JavScript verwendet, es kann aber auch eine eigene, komplett neue Programmier- oder Skriptsprache sein.
 \end{itemize}
 
-\paragraph{Klassifikation von NoSQL Datenbanken\newline}
+\textbf{Klassifikation von NoSQL Datenbanken\newline}
 Zum Zeitpunkt der Erstellung dieses Dokuments gibt es weit über zweihundert NoSQL Datenbanken\cite{MELD.CH2-noSQL.listOfNoSQLDB}. All diese Datenbanken können in vier Kategorien eingeteilt werden:
 
 \begin{itemize}
