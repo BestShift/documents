@@ -19,9 +19,14 @@ Eine Analyse des Fahrstils, nach Parametern der Fahrgastbequemlichkeit, ist gar 
 \end{figure}
 
 \newpage
-Der bisherige Schaltvorschlag in einem Auto ist, insbesondere bei kostengünstigeren Fahrzeugen, oft äußerst simpel gehalten, wobei ab einer gewissen Drehzahl die darauffolgenden Gänge vorgeschlagen werden oder nur auf den Normzyklus optimiert wird. \cite{SIMR.CH1-Fahrstil-Analyse.Schaltempfehlung} Der Motorwirkungsgrad nach dem Carnot-Prozess, wird dabei aber kaum verwendet. \todo{Insert Carnot-Prozess description, add efficiency graph}\cite{SIMR.CH1-Fahrstil-Analyse.CarnotWirkungsgrad} Genauere Ausführungen zu diesem Thema finden Sie im Kaptiel Thermodynamik \hyperlink{subsubsection.2.1.2}{mehr}. \todo{fix inter-chapter reference}
+Der bisherige Schaltvorschlag in einem Auto ist, insbesondere bei kostengünstigeren Fahrzeugen, oft äußerst simpel gehalten, wobei ab einer gewissen Drehzahl die darauffolgenden Gänge vorgeschlagen werden oder nur auf den Normzyklus optimiert wird. \cite{SIMR.CH1-Fahrstil-Analyse.Schaltempfehlung} Der Motorwirkungsgrad nach dem Carnot-Prozess, wird dabei aber kaum verwendet. Der Carnot-Prozess beschreibt die Errechnung des \textit{theoretisch möglichen} Motorwirkungsgrad, ohne hinzuziehen von Reibung, Temperatur und anderen natürlichen Einflussgrößen. \cite{SIMR.CH1-Fahrstil-Analyse.CarnotWirkungsgrad} Genauere Ausführungen zu diesem Thema finden Sie im Kaptiel \hyperlink{subsubsection.2.1.2}{Thermodynamik} \todo{fix inter-chapter reference} mehr. 
 
-Eine Live-Messung von CO2 Werten während der Fahrt ist momentan eine Schätzung, welche durch die Fahrzeughersteller aufgrund der OBD-II Daten durchgeführt und bei sehr wenigen Modellen als Zusatz angezeigt wird. Echte Grenzwerte oder gar eine Analysefunktionalität gibt es in dieser Hinsicht aber nicht. Die CO2 Werte werden in Zukunft noch weitaus relevanter, weil, wie mein Kollege im folgenden Kapitel ausführlich beschreibt, bis 2020 versucht wird einen Durschnittsaustoss von 95 g/km zu erzielen. \cite{SIMR.CH1-Fahrstil_Analyse.EUVerordCO2}
+\begin{figure}[!htb]\centering
+	\includegraphics[width=0.6\textwidth]{images/motorkennfeld}
+	\caption{Diagramm des Energieverbrauchs beim Otto- und Dieselmotor. Nach rechts ist die Drehzahl aufgespannt, nach oben sieht man die abgegebene Kraft. Man erkennt die niedrigen Verbrauchswerte vor allem bei Volllast. \cite{SIMR.CH1-Fahrstil-Analyse.Motorkennfeld}}\label{Fig:imgMotorkennfeld}
+\end{figure}
+
+Eine Live-Messung von \ce{CO2} Werten während der Fahrt ist momentan eine Schätzung, welche durch die Fahrzeughersteller aufgrund der OBD-II Daten durchgeführt und bei sehr wenigen Modellen als Zusatz angezeigt wird. Echte Grenzwerte oder gar eine Analysefunktionalität gibt es in dieser Hinsicht aber nicht. Die \ce{CO2} Werte werden in Zukunft noch weitaus relevanter, weil, wie mein Kollege im folgenden Kapitel ausführlich beschreibt, bis 2020 versucht wird einen Durschnittsaustoss von 95 g/km zu erzielen. \cite{SIMR.CH1-Fahrstil_Analyse.EUVerordCO2}
 
 Weil aber besonders Fahranfänger und Fahrer die eben genannte Analysefunktionalität möglicherweise gerne nutzen würden, wurde ebenfalls evaluiert ob es diese Möglichkeiten durch Zubehör bereits gibt.
 
@@ -41,5 +46,5 @@ Eine Analysefunktion in Form einer Webapplikation ist also insbesondere für die
 Andererseits kann solch eine Funktionalität auch von großer Hilfe als lernunterstützendes Medium sein, da momentan ein Fahrschüler nach seiner Fahrstunde nur ein subjektives Feedback seines Fahrlehrers bekommt. Wie ließe sich eine solche Lernunterstützung also umsetzen?
 Man könnte dem Fahrschüler am Ende der Fahrstunde eine faktenbasierte Übersicht über seine Leistung während der Fahrstunde geben, welche er dann auch mitnehmen kann. Mit dieser Information kann sich der Fahrschüler ohne Fahrlehrer mit der App selbst im Auto auf abgesperrtem Grund verbessern um sich so auf die nächste Fahrstunde vorzubereiten.
 
-Ein geübter, umweltfreundlicher Fahrer könnte mit der passenden Analysefunktion auch den produzierten CO2 Ausstoß messen und so seinen Bleifuß besser regulieren.
+Ein geübter, umweltfreundlicher Fahrer könnte mit der passenden Analysefunktion auch den produzierten \ce{CO2} Ausstoß messen und so seinen Bleifuß besser regulieren.
 \clearpage % DO NOT REMOVE
