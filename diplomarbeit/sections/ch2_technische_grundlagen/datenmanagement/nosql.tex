@@ -93,29 +93,20 @@ Brewer stellt den Vergleich zwischen ACID und BASE mit der Darstellung, welche m
 \caption{ACID vs BASE \cite{MELD.CH2-noSQL.capTheorem}}
 \end{table}
 
-\textbf{Partitionierung}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\textbf{Partitionierung\newline}
+Ab einer gewissen Menge an Daten werden die benötigten Ressourcen über die Kapazität einer einzelnen Maschine hinaus laufen. In diesem Fall müssen die Daten über mehrere Maschinen aufgeteilt werden – das nennt man \textit{Partitioning}. Hierbei gilt es auch zu beachten, dass  das System weiterhin funktionsfähig sein muss, wenn einer dieser Maschinen ausfällt. Es sollte auch beachtet werden, dass die Last der Ressourcen auf alle Server aufgeteilt ist (\textit{load balancing}).
 
-\textbf{Speicherungs Layouts}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Bei NoSQL Datenbanken gibt es hierfür verschiedene Konzepte um die Best möglichen Ergebnisse zu erhalten.
 
-\textbf{Query Models}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\begin{description}
+	\item[Memory Caches] können als separate Zwischenspeicher (z.B. RAM) Datenbanken geshene werden. Hierbei werden die am meist gebrauchten Daten mit einer hohen Frequenz in den Memory gespeichert und somit eine Art von Caching entwickelt. In den meisten Fällen hollt man sich dann die Daten über eine API und einen speziellen Key.
+
+	\item[Clustering] von Datenbanken ist eine weitere Möglichkeit. Hierbei ist es vor allem sehr wichtig, dass der Verwendet der Applikaion gar nicht mit bekommt mit wie vielen Servern er kommuniziert.
+
+	\item[Trennung von Read und Write] bedeutet, dass es spezifische Server gibt die nur Schreiben, bzw. nur Lesen dürfen. Durch die asynchrone Verarbeitung der Daten gibt es beinahe keinen lag zwischen den Servern und durch Replikation der Daten (Mehrfachspeicherung) ist es auch schwierig die Daten zu verlieren
+
+	\item[Sharding] ist ein Prinzip in welchem die Daten so gespeichert sind, dass die Antworten auf die Requests nahe zusammenliegen selbst auf einem einzigen Server. Auch hier spielt bei mehreren Servern die Verteilung eine große Rolle. Die konkrete Umsetzung von Sharding ist eine mathematisch sehr komplizierte und würde den Rahmen sprengen.
+\end{description}
 
 \textbf{Kritik\newline}
 Selbstverständlich gibt es nicht nur positive Dinge über NoSQL. Auch nicht relationale Systeme haben einige Punkte in welchen es noch Verbesserungsbedarf gibt \cite{MELD.CH2-noSQL.sqlvsnosql}. 
