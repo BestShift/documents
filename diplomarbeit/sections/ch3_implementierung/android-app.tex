@@ -1,89 +1,62 @@
 \lfoot{Autor: Fitim Faiku}
 \subsection{Android App}
 
-Die android App wir in Java erstellt wobei die Programmieroberflaeche Android Studio verwendet wird.
-Zu jeder Klasse wird ein XML layout als View angesetzt und somit besteht eine Verbindung zwischen Code und Layout.
+Die Android App wurde mittels Java erstellt wobei als Programmieroberfläche Android Studio verwendet wurde.
+Für jede Klasse wurde ein XML Layout als View generiert, wodurch eine Verbindung zwischen Code und Layout geschaffen wurde.
 
-
-\lstinputlisting[caption=A HelloWorld Example in Java, style=javastyle]{code/HelloWorld.java}
-
-
-\newpage
 \subsubsection{Code-Dokumetation}
-\lstinputlisting[caption=MyActivity, style=javastyle]{code/MyActivity.java}
- Um die Grafiken bestmoeglich darzustellen und dabei ein weites Spektrum an Usern zu erzielen, haben wir uns entschieden eine Android App zu erstellen.
- Dabei haben wir besonders auf die Benutzerfreundlichkeit der App geachtet.
- Die wichtigsten Kriterien dabei waren, dass es den Fahrer nicht zu viel an Konzentration abverlangt, dass er sehr leicht zwischen den einzelnen Feauters wechseln kann und das Design sehr Informant ist.
+\lstinputlisting[caption=Design-Beispiel, style=javastyle]{code/MyActivity.java}
+ Um die Grafiken bestmöglich darzustellen und dabei eine möglichst hohe Anzahl an Usern zu erreichen, entschieden wir uns eine Android App zu entwickeln.
+ Dabei achteten wir besonders auf die Benutzerfreundlichkeit der Applikation.
+ Die wichtigsten Kriterien waren, dass der Fahrer im Straßenverkehr nicht abgelenkt wird, er sehr leicht zwischen den einzelnen Features wechseln kann und die Informationen intuitiv aufbereitet sind.
  
- Um die App zu realisieren habe ich mehrere Fragments erstellt zwischen denen man hin und her wischen kann.
+ Um die App zu realisieren erstellten wir mehrere Fragments zwischen denen man hin und her wischen, \textit{swipen}, kann.
  
-\newline
 
- Es wird erstmal eine MainActivity Klasse erstellt, welche von FragementActivity erbt und von ActionTabListener implementieret, um die Methoden onTabReselected, onTabselected und onTabunselected zu Ueberschreiben.   
- \newline
+ Es wurde zuerst eine MainActivity Klasse erstellt, welche von FragementActivity erbt und von ActionTabListener implementiert, um die Methoden onTabReselected, onTabselected und onTabunselected zu überschreiben.   
+ 
             
-Nachher setzen wir die View der Klasse auf main mit:  
-\newline            
-setContentView(R.layout.main);
-\newline
-Wir erstellen ein Objekt von ActionBar und fuegen mehrere Tabs hinzu
-Wir setzen das Layout fuer die Navigation der Tabs mit
- 
-\newline
-$actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);$
-\newline
-Nachher werden  mehrere Tabs hinzugefuegt mit:
-\newline
-actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.verbrauchwolke));
-\newline
-actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.komfort), true);
-\newline
-// Setzen des Tabs auf angeklickt mit True
-\newline
-actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.schaltvorschlag));
-\newline
-// Weiters werden Icons zu den Tabs hinzugefuegt.
-\newline
+Im Anschluss setzten wir die View der Klasse auf main durch:  
 
-Nun gehen wir rueber zu unserem Design unter main.xml
-\lstinputlisting[caption=Design main, style=xml]{code/main.xml}
-Wir erstellen ein ViewPager Layout welches das Wischen erlaubt mit:
-\newline
-<android.support.v4.view.ViewPager> </android.support.v4.view.ViewPager>
-\newline
-Wir Uebergeben dem Layout ebenfalls eine id auf die wir von unserer main Activity zugreifen: 
-\newline
-android:id="@+id/pager"
+\lstinputlisting[firstline=1,lastline=1, style=javastyle]{code/examples.java}
 
-\newline
+Wir erstellten ein Objekt von ActionBar und fügten mehrere Tabs hinzu und setzten das Layout für die Navigation der Tabs mittels:
 
-Nun erstellen wir eine Fragementadapter Klasse um die einzelnen Tabs den Klassen zuzuteilen. 
-Die Klasse hat einen Kronstruktor welcher von der superklasse FragementManager Objekt Uebergeben bekommt.
-Weiters hat die Klasse eine getIem Methode mit dem Input eines int Wertes. 
+\lstinputlisting[firstline=2,lastline=2, style=javastyle]{code/examples.java}
+
+Anschließend wurden mehrere Tabs hinzugefügt mit der Methode:
+
+\lstinputlisting[linerange={4-8}, style=javastyle]{code/examples.java}
+
+
+Nun gehen wir über zu unserem Design unter main.xml
+\lstinputlisting[caption=Design main, style=xmlstyle]{code/main.xml}
+Es wurde ein ViewPager Layout erstellt welches das \textit{swipen} möglich macht:
+
+\lstinputlisting[firstline=10,lastline=10, style=xmlstyle]{code/examples.java}
+
+Wir übergeben dem Layout ebenfalls eine ID auf die wir von unserer main Activity aus zugreifen: 
+\lstinputlisting[firstline=12,lastline=12, style=xmlstyle]{code/examples.java}
+
+
+
+Nun erstellen wir eine Fragementadapter-Klasse um die einzelnen Tabs den Klassen zuzuteilen. 
+Die Klasse hat einen Konstruktor, welcher von der Superklasse das FragementManager Objekt übergeben bekommt.
+Weiters hat die Klasse eine getItem Methode mit dem Input eines int Wertes. 
 \lstinputlisting[caption=PageAdapter, style=javastyle]{code/FragementPageAdapter.java}
 
-Hier wird nur geprueft welcher Tab angecklickt wurde dem Teilt er eine Klasse auf welche eine eigene View hat.
-Sie hat noch eine getCount() Methode welches die Anzahl der Tabs zurueckgibt in unserem Fall 3.
-\newline
+Hierbei wird nur geprüft welcher Tab angeklickt wurde dem teilt er eine Klasse auf welche eine eigene View hat. \comment{SIMR: Es wird hierbei überprüft ob, welcher Tab aktiviert wurde, wessen Klasse retourniert wird. So vllt?}
+Sie hat noch eine getCount() Methode, welche die Anzahl der Tabs zurückgibt in unserem Fall 3.
 
-Wir erstellen auf der Main Klasse zwei Objekte 
-\newline
-ViewPager viewpager;
-\newline
-FragmentPagerAdapter ft;
-\newline
-viewpager =(ViewPager) findViewById(R.id.pager);
-\newline
-ft = new FragementPageAdapter(getSupportFragmentManager());
-\newline
-viewpager.setAdapter(ft);
-\newline
-Das wird gemacht um zwischen den Oberflaechen wechseln zu koennen.
-\newline
+
+Wir erstellen auf der Main Klasse zwei Objekte, nämlich:
+\lstinputlisting[linerange={14-18}, style=javastyle]{code/examples.java}
+
+Dies wird gemacht um zwischen den Oberflächen wechseln zu können.
+
  
 \subsubsection{MPAndroidchart als Tool}
-Um die zwei Grafiken fuer den Emissionsausschussund die Laengstbeschleunigung darzustellen haben wir uns fuer ein Framework entschieden welches uns diese Aufgabe erleichtern sollte.
-
+Um die zwei Grafiken für den Emissionsausstoss und die Längsbeschleunigung darzustellen, haben wir uns für ein Framework entschieden welches uns diese Aufgabe erleichtern sollte.
 
  \begin{table}[!htb]
  	\centering
@@ -103,13 +76,13 @@ Um die zwei Grafiken fuer den Emissionsausschussund die Laengstbeschleunigung 
  	}
  \end{table}
 
-Im Großenund Ganzen ist MPAndroidChart das Beste was man waehlen kann, da es eins der besten Dokumentationen hat, weiterhin hat es auch eine sehr gute Community, sehr viel gut gecodete und dokumentierte Beispiele und ist auch fuer Erweiterung gut, da die App auch auf einem IPhone aufgesetzt werden kann.
- \newline
-AChartEngine hat eine gute Dokumentation doch eine eher schwaechere Community und ist leider nicht sehr aktuell. \newline
-HelloChart hat eins der schlechtesten Dokumentationen, gar keine Community und sehr wenig gecodete Beispiele, sie sind aber sehr Aktuell wenn es um die Versionen geht .
+Im Großen und Ganzen ist MPAndroidChart die beste Option, da es eine der besten Dokumentationen hat, ferner hat es auch eine sehr hilfreiche Community, sehr viel gut gecodete und dokumentierte Beispiele und ist auch für Erweiterungen gut, da die Library auch auf einem iPhone benutzt werden kann.
+ 
+AChartEngine hat eine gute Dokumentation doch eine eher kleine Community und ist leider nicht sehr aktuell. 
+HelloChart hat eine der schlechtesten Dokumentationen, gar keine Community und sehr wenig gecodete Beispiele, dafür gibt es hiervon aktuelle Versionen.
 
 \subsubsection*{Implementierung von MPAndroidChart}
-Als naechstes habe ich mithile der MPAndroidchart Library einige Graphen erstellt und sie mit Daten befuellt 
+Als nächstes habe ich mithilfe der MPAndroidchart Library einige Graphen erstellt und sie mit Daten befüllt.
 
 \lstinputlisting[caption=Liniendiagramm Beispiel, style=javastyle]{code/Beschleunigungskraefte.java}
 
