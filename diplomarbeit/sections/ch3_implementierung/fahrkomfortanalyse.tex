@@ -1,11 +1,25 @@
 \lfoot{Autor: Fitim Faiku}
 \subsection{Fahrkomfortanalyse}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Dass die Bewertung der einzelnen Fahrer durch den Fahrgast erfolgt ist jedem klar.
+Diese Bewertung wird meist durch gewisse Faktoren bestimmt. Diese können wie stark ein Fahrer beschleunigt und welche Kurvengeschwindigkeit ein Fahrer anwendet.
+Um einen KFZ-Einsteiger mit möglichst informativen Daten zu \"bewerten\" habe ich mir einen Kamm'schen Kreis zur Hilfe genommen.
+
+\subsubsection{Kammscher Kreis}
+Ein Kamm'scher Kreis ist ein ein Kreis in dem durch Polarkoordinaten die Extremwerte einer Fahrt eingezeichnet sind.
+Der Kreis ist so aufgebaut, dass in der positiven vertikalen Achse alle Bremskräfte, in der negativen vertikalen Achse alle Beschleunigungskräfte,
+in der negative horizontalen Achse alle rechts Kurven, in der positiven horizontalen Achse alle Linkskurven eingezeichnet werden. \comment{SIMR: vllt. mit Himmelsrichtungen statt positiv und negativ + welche Achse}
+Es sind die eingezeichneten Werte also spiegelverkehrt zur Intuition.
+
+\subsubsection{Implementierung}
+Um diesen Kamm'schen Kreis richtig darzustellen habe ich mir die Klasse \textit{Canvas} als Hilfe genommen, wobei diese von \textit{Graphics} erbt.
+Mittels Canvas konnte ich zufällig generierte 0-360grad Winkel und Radien erstellen und die dann in Polarkoordinaten umrechnen.
+Somit konnte ich alle generierten Werte darstellen. 
+
+\lstinputlisting[caption=Runden-Methode, style=javastyle]{code/Runden.java}
+
+Bei der Methode Runden nehme ich alle Winkel auf und runde sie auf oder ab in 5er Schritten.
+
+
 
 \clearpage % DO NOT REMOVE

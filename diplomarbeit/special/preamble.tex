@@ -23,6 +23,8 @@
 \usepackage{filecontents}
 \usepackage{glossaries}
 \usepackage{titlesec}
+\usepackage{mhchem}
+\usepackage{accsupp}
 \usepackage[headsep=1cm,headheight=3cm,hmargin=2cm,vmargin=2.5cm]{geometry}
 \usepackage[nolist]{acronym}
 \usepackage[toc,page]{appendix}
@@ -47,10 +49,10 @@
 
 \iftoggle{devel} {
 	\newcommand{\comment}[1]{{\bf \colorbox{yellow}{\color{black}#1}}}
-	\newcommand{\todo}{{\bf \colorbox{red}{\color{white}TODO:}}}	
+	\newcommand{\todo}[1]{{\bf \colorbox{red}{\color{white}TODO: #1}}}	
 } {
 	\newcommand{\comment}[1]{{}}
-	\newcommand{\todo}{{}}
+	\newcommand{\todo}[1]{{}}
 }
 
 \newcommand{\ifreport}[1]{#1}
@@ -97,6 +99,7 @@
 %% python     for Python code
 %% xml        for XML code
 %% bash       for BASH code
+%% java       for Java code
 %%
 %% This style file is based on original work by Olivier Verdier,
 %% with contributions from Johan Hake.
@@ -120,6 +123,10 @@
 
 % Colors
 \definecolor{gray}{gray}{0.5}
+\definecolor{dkblue}{rgb}{0,0,0.5}
+\definecolor{comment}{rgb}{1,0,0}
+\definecolor{mauve}{rgb}{.627,.126,.941}
+\definecolor{purple}{rgb}{0.5, 0, 0.545098}
 \colorlet{commentcolour}{green!50!black}
 \colorlet{stringcolour}{red!60!black}
 \colorlet{keywordcolour}{magenta!90!black}
@@ -130,6 +137,40 @@
 \colorlet{promptcolour}{green!50!black}
 \colorlet{specmethodcolour}{violet}
 \colorlet{indendifiercolour}{green!70!white}
+
+%--- Typesetting Java ---
+
+\lstdefinestyle{javastyle}{
+  belowcaptionskip=1\baselineskip,
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                % sets automatic line breaking
+  xleftmargin=1cm,
+  language=Java,
+  tabsize=4, 
+  tabsize=4,
+  numbers=left,
+  showstringspaces=false,
+  keywordstyle=\color{keywordcolour}\bfseries,
+  commentstyle=\color{commentcolour}\slshape,
+  numberstyle=\tiny\noncopynumber,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color[rgb]{.133,.545,.133},
+  commentstyle=\itshape\color{blue},
+  stringstyle=\color{mauve},
+  %directivestyle=\bfseries\color{purple},
+  frame=single],
+  resetmargins=true,
+}
+
+\newcommand{\noncopynumber}[1]{%
+\BeginAccSupp{method=escape,ActualText={}}%
+#1%
+\EndAccSupp{}%
+}
+
+\newcommand{\inputjava}[1]{\lstinputlisting[style=javastyle,title={\codetitlestyle{Java code }},belowcaptionskip=\belowtitleskip]{#1}}
+\lstnewenvironment{java}[1][]{\lstset{style=javastyle,title={\codetitlestyle{Java code }},belowcaptionskip=\belowtitleskip}}{}
+\newcommand{\javac}{\lstinline[style=javastyle,basicstyle=\ttfamily]}
 
 %--- Typesetting Python ---
 

@@ -1,11 +1,97 @@
 \lfoot{Autor: Fitim Faiku}
 \subsection{Android App}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Die Android App wurde mittels Java erstellt wobei als Programmieroberfläche Android Studio verwendet wurde.
+Für jede Klasse wurde ein XML Layout als View generiert, wodurch eine Verbindung zwischen Code und Layout geschaffen wurde.
+
+\subsubsection{Code-Dokumetation}
+\lstinputlisting[caption=Design-Beispiel, style=javastyle]{code/MyActivity.java}
+ Um die Grafiken bestmöglich darzustellen und dabei eine möglichst hohe Anzahl an Usern zu erreichen, entschieden wir uns eine Android App zu entwickeln.
+ Dabei achteten wir besonders auf die Benutzerfreundlichkeit der Applikation.
+ Die wichtigsten Kriterien waren, dass der Fahrer im Straßenverkehr nicht abgelenkt wird, er sehr leicht zwischen den einzelnen Features wechseln kann und die Informationen intuitiv aufbereitet sind.
+ 
+ Um die App zu realisieren erstellten wir mehrere Fragments zwischen denen man hin und her wischen, \textit{swipen}, kann.
+ 
+
+ Es wurde zuerst eine MainActivity Klasse erstellt, welche von FragementActivity erbt und von ActionTabListener implementiert, um die Methoden onTabReselected, onTabselected und onTabunselected zu überschreiben.   
+ 
+            
+Im Anschluss setzten wir die View der Klasse auf main durch:  
+
+\lstinputlisting[firstline=1,lastline=1, style=javastyle]{code/examples.java}
+
+Wir erstellten ein Objekt von ActionBar und fügten mehrere Tabs hinzu und setzten das Layout für die Navigation der Tabs mittels:
+
+\lstinputlisting[firstline=2,lastline=2, style=javastyle]{code/examples.java}
+
+Anschließend wurden mehrere Tabs hinzugefügt mit der Methode:
+
+\lstinputlisting[linerange={4-8}, style=javastyle]{code/examples.java}
+
+
+Nun gehen wir über zu unserem Design unter main.xml
+\lstinputlisting[caption=Design main, style=xmlstyle]{code/main.xml}
+Es wurde ein ViewPager Layout erstellt welches das \textit{swipen} möglich macht:
+
+\lstinputlisting[firstline=10,lastline=10, style=xmlstyle]{code/examples.java}
+
+Wir übergeben dem Layout ebenfalls eine ID auf die wir von unserer main Activity aus zugreifen: 
+\lstinputlisting[firstline=12,lastline=12, style=xmlstyle]{code/examples.java}
+
+
+
+Nun erstellen wir eine Fragementadapter-Klasse um die einzelnen Tabs den Klassen zuzuteilen. 
+Die Klasse hat einen Konstruktor, welcher von der Superklasse das FragementManager Objekt übergeben bekommt.
+Weiters hat die Klasse eine getItem Methode mit dem Input eines int Wertes. 
+\lstinputlisting[caption=PageAdapter, style=javastyle]{code/FragementPageAdapter.java}
+
+Hierbei wird nur geprüft welcher Tab angeklickt wurde dem teilt er eine Klasse auf welche eine eigene View hat. \comment{SIMR: Es wird hierbei überprüft ob, welcher Tab aktiviert wurde, wessen Klasse retourniert wird. So vllt?}
+Sie hat noch eine getCount() Methode, welche die Anzahl der Tabs zurückgibt in unserem Fall 3.
+
+
+Wir erstellen auf der Main Klasse zwei Objekte, nämlich:
+\lstinputlisting[linerange={14-18}, style=javastyle]{code/examples.java}
+
+Dies wird gemacht um zwischen den Oberflächen wechseln zu können.
+
+ 
+\subsubsection{MPAndroidchart als Tool}
+Um die zwei Grafiken für den Emissionsausstoss und die Längsbeschleunigung darzustellen, haben wir uns für ein Framework entschieden welches uns diese Aufgabe erleichtern sollte.
+
+ \begin{table}[!htb]
+ 	\centering
+ 	\caption{Vergleich der Charting-Frameworks}
+ 	\label{comparisonCharting}
+ 	\resizebox{\columnwidth}{!}{%
+ 		\begin{tabular}{l|c|c|c|l|}
+ 			\cline{2-5}
+ 			& \begin{tabular}[c]{@{}c@{}}MPAndorid\\ Chart\end{tabular} & \begin{tabular}[c]{@{}c@{}}AChart\\ Engine\end{tabular} & HelloChart & ErklÃ€rung \\ \hline
+ 			\multicolumn{1}{|l|}{Performance} & Gut & Gut & Gut &  \\ \hline
+ 			\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Supported \\ Languages\end{tabular}} & \begin{tabular}[c]{@{}c@{}}iOS 7,8;\\ Java\end{tabular} & Java & Java & \begin{tabular}[c]{@{}l@{}}MPAC kann auch\\ weiterverwendet werden\\ fÃŒr eine iOS App\end{tabular} \\ \hline
+ 			\multicolumn{1}{|l|}{Documentation} & 85\% & 70\% & 50\% & \begin{tabular}[c]{@{}l@{}}MPAC hat eine sehr gute\\ in Kapiteln aufgelistete\\ Dokumentation, Tutorials\end{tabular} \\ \hline
+ 			\multicolumn{1}{|l|}{Recent activity} & 19.10.2015 & 26.07.2013 & 5.10.2015 & \begin{tabular}[c]{@{}l@{}}MPAC ist sehr aktuell\\ und bringt immer wieder \\ neue Bugfixes raus.\\ HelloChart ebenso.\end{tabular} \\ \hline
+ 			\multicolumn{1}{|l|}{Community} & 80\% & 60\% & 20\% & \begin{tabular}[c]{@{}l@{}}Bei MPAC und \\ AChartEngine wird eine\\ Antwort innerhalb von 7 \\ Tagen geliefert.\\ Eine Community bei Hello\\ Chart ist kaum vorhanden.\end{tabular} \\ \hline
+ 			\multicolumn{1}{|l|}{Usage examples} & 85\% & 70\% & 15\% & \begin{tabular}[c]{@{}l@{}}MPAC hat fÃŒr jeden Chart\\ ein eigenes Beispiel oder \\ auch Tutorials auf YouTube.\\ AChartEngine weniger \\ verwendbare Codebeispiele.\end{tabular} \\ \hline
+ 		\end{tabular}
+ 	}
+ \end{table}
+
+Im Großen und Ganzen ist MPAndroidChart die beste Option, da es eine der besten Dokumentationen hat, ferner hat es auch eine sehr hilfreiche Community, sehr viel gut gecodete und dokumentierte Beispiele und ist auch für Erweiterungen gut, da die Library auch auf einem iPhone benutzt werden kann.
+ 
+AChartEngine hat eine gute Dokumentation doch eine eher kleine Community und ist leider nicht sehr aktuell. 
+HelloChart hat eine der schlechtesten Dokumentationen, gar keine Community und sehr wenig gecodete Beispiele, dafür gibt es hiervon aktuelle Versionen.
+
+\subsubsection*{Implementierung von MPAndroidChart}
+Als nächstes habe ich mithilfe der MPAndroidchart Library einige Graphen erstellt und sie mit Daten befüllt.
+
+\lstinputlisting[caption=Liniendiagramm Beispiel, style=javastyle]{code/Beschleunigungskraefte.java}
+
+
+ 
+
+
+
+
+
 
 \clearpage % DO NOT REMOVE
