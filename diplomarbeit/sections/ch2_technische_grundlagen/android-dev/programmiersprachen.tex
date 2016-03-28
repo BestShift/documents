@@ -1,14 +1,171 @@
-\lfoot{Autor: Who?}
-\subsubsection{Android unterstütze Programmiersprachen}
+	\lfoot{Autor: Hüseyin Bozkurt}
+\subsubsection{Mitwirkende Programmiersprachen}
 \label{subsec:androidsprachen}
+\textbf{Entwicklungsumgebung}
+Android Studio ist die offizielle Entwicklungsumgebung für Android Applikationen.
+Android Studio basiert auf IntelliJ IDEA und ersetzt das Android Developer Tool für Eclipse, da dieses seit Ende
+2015 keinen Support mehr erhält.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\textbf{Programmiersprachen}
+Bei den Programmiersprachen bestand die Auswahl zwischen der Programmiersprache Python, 
+native Javaentwicklung und Hybrid Java in Verbindung mit HTML.
+Dabei fiel für uns vor allem aufgrund von der Verbindung mit einer Webapplikation die Wahl auf eine hybride Applikation. 
+Der Funktionsumfang des Android Studios sind: 
+\begin{itemize}
+\item Build-Management-Automatisierung: Basierend auf Gradle, Entwicklungsmöglichkeiten für verschiedene Gerätetypen (Tablets etc.)
+\item Android Wear/Android TV: Stets auf dem neuesten Stand der Technik können Applikationen für neue Geräte implementiert werden.
+\item Sourcecode-Editor(IntelliJ): Textbearbeitungsoberfläche mit einem Kompiliermechanismus
+\item Smart-Editing: Hilfreiche Vorschläge zur Vervollständigung von Quellcode
+\item Code-Refactoring: Formatiert den Quellcode
+\item Open-Source Entwicklung: Frei Verfügbarer Quellcode
+\item GUI-Builder: Einfache Graphische Oberflächenentwicklung mittels Drag & Drop
+\item Zugriff auf Google Dienste: Die Möglichkeit besteht, Google Dienste innerhalb der IDE zu konfigurieren und in der App anzuwenden
+\item ProGuard: Automatische App-Signierung
+\end{itemize}
 
-\comment{Native vs HTML5 vs Hybrid}
+\textbf{Systemvoraussetzungen}
+\begin{itemize}
+\item mind. 2GB RAM, 4 GB empfohlen
+\item mind. 400MB freien Speicherplatz (1GB für die Android SDK)
+\item Java Development Kit 7 oder höher
+\item mind. 1280*800 Pixel Bildschirmauflösung
+
+\end{itemize}
+
+\newpage
+\subsection{Vergleich Java und Python}
+\subsubsection{Java}
+\begin{itemize}
+\item Charakteristik: Mehrfachverwendung/Mehrfachvererbung eingeschränkt, stark typisiert
+\item Syntax: Vor der Kompilierung sehr streng, komplizierte Polymorphie
+\item Dokumentation: Ausführliche Dokumentation der Methoden in Form von Java API
+\item Community: Java ist sehr weit verbreitet, rund 3 Milliarden Geräte können Java auführen.
+\item Usage: plattformunabhängige Programme, FAT-Client-Anwendungen
+\item Können im Team: 5/5*, jahrelange Erfahrung innerhalb des Teams
+\end{itemize}
+
+\subsubsection{Python}
+\begin{itemize}
+\item Charakteristik: Erstellung von Variablen nicht Datentyp abhängig, dynamisch/schwach typisiert.
+\item Syntax: erhöhte Lesbarkeit im Vergleich zu allen anderen, aber ungewohnter zu schreiben als Java
+\item Dokumentation: innerhalb der Python API vorhanden.
+\item Community: Die Community von Python ist ständig am wachsen, ca. 5 Millionen Geräte verwenden Python.
+\item Usage: Back-End, äußerst schnelle Entwicklung(Rapid Application Development)
+\item Können im Team: 3/5*, Team konnte erst geringe Erfahrung mit Python sammeln
+\end{itemize}
+
+Aus den Oben genannten Punkten filtern wir heraus, dass Java die bessere Lösung für die Android App wäre. 
+Die komplette Beherrschung von Python würde einige Wochen dauern. 
+Da diese Zeit im Rahmen des Diplomprojektes nicht vorhanden ist, wäre die App-Entwicklung in Python nicht zielführend. 
+Außerdem benutzen Android-Smartphones die Dalvik-VM, welche Java Class Files exekutiert, 
+wodurch Java nativ auf Android realisiert wird im Gegensatz zu Python. 
+Dementsprechend wird hier massiv an Umkompilierungszeit gespart, welche für die Echtzeit-Darstellung des Verbrauchs, 
+Kamm'schen Kreises und Schaltvorschlags essentiell ist.
+\subsection{Java-Frameworks(APP)}
+\newline
+\begin{table}[!htb]
+\centering
+\caption{Vergleich der Charting-Frameworks}
+\label{comparisonCharting}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l|c|c|c|l|}
+\cline{2-5}
+ & \begin{tabular}[c]{@{}c@{}}MPAndorid\\ Chart\end{tabular} & \begin{tabular}[c]{@{}c@{}}AChart\\ Engine\end{tabular} & HelloChart & Erklärung \\ \hline
+\multicolumn{1}{|l|}{Performance} & Gut & Gut & Gut &  \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Supported \\ Languages\end{tabular}} & \begin{tabular}[c]{@{}c@{}}iOS 7,8;\\ Java\end{tabular} & Java & Java & \begin{tabular}[c]{@{}l@{}}MPAC kann auch\\ weiterverwendet werden\\ für eine iOS App\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Documentation} & 85\% & 70\% & 50\% & \begin{tabular}[c]{@{}l@{}}MPAC hat eine sehr gute\\ in Kapiteln aufgelistete\\ Dokumentation, Tutorials\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Recent activity} & 19.10.2015 & 26.07.2013 & 5.10.2015 & \begin{tabular}[c]{@{}l@{}}MPAC ist sehr aktuell\\ und bringt immer wieder \\ neue Bugfixes raus.\\ HelloChart ebenso.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Community} & 80\% & 60\% & 20\% & \begin{tabular}[c]{@{}l@{}}Bei MPAC und \\ AChartEngine wird eine\\ Antwort innerhalb von 7 \\ Tagen geliefert.\\ Eine Community bei Hello\\ Chart ist kaum vorhanden.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Usage examples} & 85\% & 70\% & 15\% & \begin{tabular}[c]{@{}l@{}}MPAC hat für jeden Chart\\ ein eigenes Beispiel oder \\ auch Tutorials auf YouTube.\\ AChartEngine weniger \\ verwendbare Codebeispiele.\end{tabular} \\ \hline
+\end{tabular}
+}
+\end{table}
+
+Im Großen und Ganzen ist MPAndroidChart das Beste was man wählen kann, da es eins der besten Dokumentationen hat, weiterhin hat es auch eine sehr gute Community, sehr viel gut gecodete und Dokumentierte Beispiele und ist auch für Erweiterung gut , da die App auch auf einem IPhone programmiert werden kann. 
+AChartEngine hat eine gute Dokumentation doch eine eher schwächere Community und ist leider nicht sehr aktuell. 
+HelloChart hat eins der schlechtesten Dokumentationen, gar keine Community und sehr wenig gecodete Beispiele, sie sind aber sehr Aktuell wenn es um die Versionen geht .
+ 
+\newpage
+
+\subsection{Python-Frameworks(Web-Applikation)}
+\newline
+\begin{table}[!htb]
+\centering
+\caption{Vergleich der Charting-Frameworks}
+\label{comparisonCharting}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l|c|c|c|l|}
+\cline{2-5}
+ & \begin{tabular}[c]{@{}c@{}}Plotly \end{tabular} & \begin{tabular}[c]{@{}c@{}}Chart.js\end{tabular} & HelloChart & Erklärung \\ \hline
+\multicolumn{1}{|l|}{Performance} & Gut & Gut & Gut &  \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Supported \\ Languages\end{tabular}} & \begin{tabular}[c]{@{}c@{}}
+Python \end{tabular} & Python & Python & \begin{tabular}[c]{@{}l@{}} \end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Documentation} & 90\% & 60\% & 70\% & \begin{tabular}[c]{@{}l@{}}Plotly hat die Beste Docu\\ von allen \\Von allen Chartarten bis Tutorials\\und Code\\ Chart.js hat eine\\ eher Mittelmäßige Docu \end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Recent activity} & Release 2.5 & Release 2.0 beta & Release 2.0 & \begin{tabular}[c]{@{}l@{}}Plotly hat \\ sehr viele \\ Releases rausgebracht.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Community} & 70\% & 50\% & 30\% & \begin{tabular}[c]{@{}l@{}}Plotly hat \\ eine sehr gute Community\\ in der erstellte Grafen\\hochgestellt werden\\ .\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Usage examples} & 90\% & 60\% & 15\% & \begin{tabular}[c]{@{}l@{}}Da Plotly eins der besten \\ Dokumentationen hat\\ ist es nicht sehr \\leicht zu erlernen.\end{tabular} \\ \hline
+\end{tabular}
+}
+\end{table}
+
+Plotly hat eins der Besten Dokumentationen die wir bis jetzt gesehen haben. Sie haben eine sehr große Auswahl an Charts, welche mittels Codesnippets zur Verfügung stehen. 
+Weiters haben sie Tutorials zur Verfügung gestellt, Dokumentationen unterteilt in Kapitel. Weiterhin ist das Framework sehr weit entwickelt worden.                  
+Eins der Nachteile wäre, dass wir keine SVG Images exportieren können. Für einen Betrag von 20euro Monatlich ist auch das möglich. 
+Wir sind zum Entschluss gekommen, dass Plotly das Beste Framework für unsere Webapplikation sein könnte, 
+da sehr viel Dokumentiert wurde, außerdem ist es das am leichtesten erlernbare Tool.
+
+
+\newpage
+
+\subsection{Hybrid-Frameworks}
+Es fällt die Auswahl auf eines der folgenden Frameworks:
+\begin{itemize}
+\item \hyperref[Codename One]{https://www.codenameone.com/pricing.html} Java
+\item \hyperref[Firebase]{https://www.firebase.com/pricing.html} Android/iOS/JavaScript SDK
+\item \hyperref[appmethod]{http://www.appmethod.com/de/pricing} C++
+\item \hyperref[ionic]{http://ionicframework.com/} HTML, CSS, JS; Built with Sass, optimized with AngularJS
+\end{itemize}
+
+\textbf{Dokumentation}
+Alle sind gut dokumentiert, Codename One und Firebase bieten sogar eine eingeschränkte kostenlose Option.
+ionic ist von sogar OpenSource und hat eine tolle einsteigerfreundliche Dokumentation
+
+\textbf{Usage/Charakteristika}
+\begin{itemize}
+\item Codename One bietet eine Java SDK um eine App welche auf iOS, Windows oder Android lauffähig ist
+\item Firebase bietet eine Android, iOS und JavaScript SDK um eine vielseitig kompatible mobile oder web Applikation zu entwickeln. 
+\item Mittels appmethod kann man mit einer C++ Codebasis eine Android, iOS, MacOSX und sogar eine Windows Applikation entwickeln.
+\item Bei ionic wird die App von einer mobil-freundlichen HTML, CSS und JS Library entwickelt, während sie dann mit Sass auf das jeweilige App Format konvertiert wird und mit Angular JS optimiert wird. 
+\end{itemize}
+
+\textbf{Community}
+\begin{itemize}
+\item Codename One bietet einen Blog, eine in die Webseite eingebundene Google Discussion und einen Stackoverflow codenameone-Tag.
+\item Firebase hat einen Blog und über 25000 Facebook likes, aber sonst leider nur ein GitHub um Issues zu publizieren und eigene Support Emails, also ist hier alles sehr zentralisiert gesteuert. 
+\item appmethod hat eine Github page, welche aber ebenfalls eher durch den Support mit Issues gefüllt wird und verlinkt für die Community auf die Homepage der Mutterfirma \"Embarcadero\", welche auch ein Forum anbieten
+\item ionic hat eine großes community-driven Forum, welches bei vielen Beiträgen mehrere hundert Antworten als Wissenserweiterung anbietet.
+\end{itemize}
+
+\newpage
+\textbf{Performance}
+\begin{itemize}
+\item Codename One verwendet SaaS für die Kompilierung der App und verwendet eine VM die Java zu C für iOS macht. Die Performance ist hoch da es die nativen gaming Plattformen des jeweiligen OS verwendet. 
+\item Firebase verwendet die Forge UI und ist dadurch auf große Datensätze sogar ausgelegt, nur muss man achten diese zu denormieren.
+\item Da appmethod C++ als Programmiersprache verwendet, welche direkt auf der CPU laufen kann, appmethod performant.
+\item In einem Post von Sep.2014 wird ionic als weniger performant gesehen. Document Object Model (DOM) sollten möglichst selten angezeigt werden um gute Performance und Seite zu Seite Wechsel sollten auch unterlassen werden. Allerdings scheint das ionic Team sehr Performance fokussiert zu sein.
+\end{itemize}
+
+\textbf{Last Update}
+\begin{itemize}
+\item Codename One: neuester Blogbeitrag: 14.10.2015
+\item Firebase: Github letzter Commit: vor 14 Stunden
+\item appmethod: Github letzter Commit: 21.09.2015
+\item ionic: Github letzter Commit: 14.10.2015
+\end{itemize}
+
+\textbf{Frameworks Conclusio}
+Es war grundsätzlich für uns bereits von Beginn an klar dass wir ein Framework verwenden würden, allerdings tendieren wir mittlerweile in die Richtung eines hybriden Frameworks. Codename One und appmethod fallen aufgrund ihrer mangelnden kostenfreien Option definitiv weg. Ionic und Firebase scheinen schon weit interessanter.
+Da muss man sich allerdings eine Grundsatzfrage stellen - möchten wir eine HTML hybride App bauen oder nur eine cross-platform App? Denn für eine HTML hybride App müssten wir Ionic verwenden, auch wenn einige von uns dafür definitiv AngularJS und JS im allgemeinen wiederholen müssten.
+
 
 \clearpage % DO NOT REMOVE
