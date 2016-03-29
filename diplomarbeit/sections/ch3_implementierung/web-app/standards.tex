@@ -1,0 +1,189 @@
+\subsubsection{Code Standards und Guidelines}
+\lfoot{Daniel Melichar}
+
+Für den weiteren Verlauf des Web-App mussten gewisse Standards für den Code gesetzt werden, damit alle auf die selbe Art und Weise programmieren. Das Ziel dieses Style Guides ist, eine Sammlung von Best Practices und Gestaltungsrichtlinien für AngularJS-Anwendungen aufzuzeigen. Sie wurden aus den folgenden Quellen zusammengestellt:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item AngularJS Dokumentation
+\item Quelltexte oder Artikel
+\item Erfahrung des Teams und Lehrer
+\end{enumerate}
+
+Für allgemeinen Richtlinien der JavaScript-Entwicklung sollte man folgende Guides begutachten:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item \href{http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml}{Googles JavaScript-Style-Guide (empfohlen)}
+\item \href{https://developer.mozilla.org/en-US/docs/Developer_Guide/Coding_Style}{Mozillas JavaScript-Style-Guide}
+\item \href{https://github.com/styleguide/javascript}{GitHubs JavaScript-Style-Guide}
+\item \href{http://javascript.crockford.com/code.html}{Douglas Crockfords JavaScript-Style-Guide}
+\item \href{https://github.com/airbnb/javascript}{Airbnb JavaScript-Style-Guide}
+\end{enumerate}
+
+Automatisierung des Workflows durch: 
+\begin{enumerate}
+\item Yeoman - \url{http://yeoman.io}
+\item Grunt - \url{http://gruntjs.com}
+\item Bower - \url{http://bower.io}
+\end{enumerate}
+
+\clearpage
+
+\textbf{Verzeichnisstruktur\newline}
+Da eine große AngularJS-Anwendung viele Komponenten hat, sollten diese mit Hilfe einer Verzeichnishierarchie strukturiert werden. Auf einer oberen Ebene eine Aufteilung nach Art der Komponenten und auf einer tieferen Ebene eine Aufteilung nach Funktionalität.
+
+Die Verzeichnisstruktur wird in diesem Fall folgendermaßen aussehen:\newline
+
+\dirtree{%
+.1 app .
+.2 app.js .
+.2 controllers .
+.3 page1 .
+.4 FirstCtrl.js .
+.4 SecondCtrl.js .
+.3 page2 .
+.4 ThirdCtrl.js .
+.2 directives .
+.3 page1 .
+.4 directive1.js .
+.3 page2 .
+.4 directive2.js .
+.4 directive3.js .
+.2 filters .
+.3 page1 .
+.3 page2 .
+.2 services .
+.3 CommonService.js .
+.3 cache .
+.4 Cache1.js .
+.4 Cache2.js .
+.3 models .
+.4 Model1.js .
+.4 Model2.js .
+.1 partials .
+.1 lib .
+.1 test .
+}
+
+\clearpage
+
+\textbf{Markup\newline}
+Auch der HTML-Markup ist wichtig und sollte in einem Team so geschrieben werden, als sei sie von derselben Person. Scripts sollten am Ende einer Seite eingefügt werden.
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Meine App</title>
+</head>
+<body>
+  <div ng-app="myApp">
+    <div ng-view></div>
+  </div>
+  <script src="angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+\end{lstlisting}
+
+
+Um den Code nicht unnötig zu verkomplizieren, fügt man AngularJS-spezifische Direktiven hinter Standard-Attributen ein. Dadurch ist es einfacher, sich den Code anzusehen und durch das Framework erweitertes HTML zu erkennen (was die Wartbarkeit verbessert).
+
+\begin{lstlisting}
+<form class="frm" ng-submit="login.authenticate()">
+<div>
+<input class="ipt" type="text" placeholder="name" require ng-model="user.name">
+</div>
+</form>
+\end{lstlisting}
+
+
+\textbf{Namensgebung\newline}
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Element} & \textbf{Style} & \textbf{Beispiel} & \textbf{Verwendung bei} \\ \hline
+Module & lowerCamelCase & angularApp &  \\ \hline
+Controller & funktionalität + \'Ctrl\' & adminCtrl &  \\ \hline
+Direktiven & lowerCamelCase & userInfo &  \\ \hline
+Filter & lowerCamelCase & userFilter &  \\ \hline
+Services & UpperCamelCase & User & Konstruktor \\ \hline
+Services & lowerCamelCase & dataFactory & sonstige \\ \hline
+\end{tabular}
+
+\textbf{Module\newline}
+Module sollten in lowerCamelCase benannt werden. Um deutlich zu machen, dass das Modul \textit{b} ein Untermodul von \textit{a} ist, kannst man sie durch Namespaces verschachteln, z. B.: \textit{a.b}.
+
+Es gibt zwei verbreitete Wege, nach denen Module strukturiert werden können: Nach Funktionalität
+oder nach Typ der Komponente. Derzeit gibt es keinen großen Unterschied, aber die erste Variante sieht sauberer aus. Außerdem wird - wenn lazy-loading für die Module implementiert ist - die Performance der verbessert.
+
+\textbf{Services\newline}
+Dieser Abschnitt enthält Informationen über AngularJS' Service-Komponente. Er bezieht sich nicht auf eine spezielle Definitionsweise (d.h. als Provider, Factory oder Service), falls nicht ausdrücklich genannt.
+
+Services in camelCase benennen, bzw UpperCamelCase (PascalCase), um Services zu benennen, die als Konstruktoren verwendet werden, d.h.:
+
+\begin{lstlisting}[language=JavaScript]
+module.controller('MainCtrl', function ($scope, User) {
+  $scope.user = new User('foo', 42);
+});
+
+module.factory('User', function () {
+  return function User(name, age) {
+    this.name = name;
+    this.age = age;
+  };
+});
+\end{lstlisting}
+
+Alle anderen Service in lowerCamelCase benennen. Kapsle die gesamte Anwendungslogik in Services.Services, die eine bestimmte Domäne abbilden, sollten bevorzugt als \textit{service} statt als \textit{factory} geschrieben werden. Auf diese Weise können die Vorteile der klassischen Vererbung einfacher genutzt werden:
+
+\begin{lstlisting}[language=JavaScript]
+function Human() {
+  // body
+}
+Human.prototype.talk = function() {
+  return "I'm talking";
+};
+
+function Developer() {
+  // body
+}
+Developer.prototype = Object.create(Human.prototype);
+Developer.prototype.code = function() {
+  return "I'm coding";
+};
+
+myModule.service('Human', Human);
+myModule.service('Developer', Developer);
+\end{lstlisting}
+
+Für einen sitzungsbezogenen Cache kannst du \textit{\$cacheFactory} verwenden. Diesen sollte man nutzen, um die Ergebnisse von Anfragen oder aufwändigen Berechnungen zwischenzuspeichern.Falls ein Service konfiguriert werden muss, definirt man ihn als Provider und konfiguriert im \textit{config}-Callback, wie hier:
+
+\begin{lstlisting}[language=JavaScript]
+angular.module('demo', [])
+.config(function ($provide) {
+  $provide.provider('sample', function () {
+    var foo = 42;
+    return {
+      setFoo: function (f) {
+        foo = f;
+      },
+      $get: function () {
+        return {
+          foo: foo
+        };
+      }
+    };
+  });
+});
+
+var demo = angular.module('demo');
+
+demo.config(function (sampleProvider) {
+  sampleProvider.setFoo(41);
+});
+\end{lstlisting}
+
+\clearpage

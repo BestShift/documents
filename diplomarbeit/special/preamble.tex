@@ -26,6 +26,7 @@
 \usepackage{mhchem}
 \usepackage{wrapfig}
 \usepackage{accsupp}
+\usepackage{dirtree}
 \usepackage[headsep=1cm,headheight=3cm,hmargin=2cm,vmargin=2.5cm]{geometry}
 \usepackage[nolist]{acronym}
 \usepackage[toc,page]{appendix}
@@ -101,6 +102,7 @@
 %% xml        for XML code
 %% bash       for BASH code
 %% java       for Java code
+%% javascript for javascript code
 %%
 %% This style file is based on original work by Olivier Verdier,
 %% with contributions from Johan Hake.
@@ -124,10 +126,13 @@
 
 % Colors
 \definecolor{gray}{gray}{0.5}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
 \definecolor{dkblue}{rgb}{0,0,0.5}
 \definecolor{comment}{rgb}{1,0,0}
 \definecolor{mauve}{rgb}{.627,.126,.941}
 \definecolor{purple}{rgb}{0.5, 0, 0.545098}
+
 \colorlet{commentcolour}{green!50!black}
 \colorlet{stringcolour}{red!60!black}
 \colorlet{keywordcolour}{magenta!90!black}
@@ -138,6 +143,36 @@
 \colorlet{promptcolour}{green!50!black}
 \colorlet{specmethodcolour}{violet}
 \colorlet{indendifiercolour}{green!70!white}
+
+
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=none,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
 
 %--- Typesetting Java ---
 
