@@ -2,13 +2,13 @@
 \subsection{Fahrkomfortanalyse}
 
 
-Da die bewertung der einzelnen Fahrer durch den Fahrgast erfolgt ist jedem klar.
-Diese Bewertung faellt meistens aus den Faktoren wie stark ein Fahrer beschleunigt und in welcher Geschwindigkeit er um eine Kurve faehrt.
-Um einen KFZ-Einsteiger mit mueglichst Informativen Daten zu \"bewerten\" habe ich mir einen Kammschen Kreis als Hilfe genommen.
+Da die Bewertung der einzelnen Fahrer durch den Fahrgast erfolgt ist jedem klar.
+Diese Bewertung fällt meistens aus den Faktoren wie stark ein Fahrer beschleunigt und in welcher Geschwindigkeit er um eine Kurve fährt.
+Um einen KFZ-Einsteiger mit möglichst Informativen Daten zu \"bewerten\" haben wir uns einen Kammschen Kreis als Hilfe genommen.
 
 \subsubsection{Kammscher Kreis }
 Ein Kammsher Kreis ist ein ein Kreis in dem durch Polarkoordinaten die Extremwerte einer Fahrt eingezeichnet sind.
-Der Kreis ist so aufgebaut, dass in Norden de Bremskraefte angezeigt werden, in Süden alle Beschleunigungen, im Westen die Rechtskurven und Osten die Linkskurven.
+Der Kreis ist so aufgebaut, dass in Norden de Bremskräfte angezeigt werden, in Süden alle Beschleunigungen, im Westen die Rechtskurven und Osten die Linkskurven.
 Es ist also alles verkehrt.
 \begin{figure}[!htb]\centering
 	\includegraphics[width=0.5\textwidth]{images/kammsherkreis}
@@ -16,13 +16,13 @@ Es ist also alles verkehrt.
 \end{figure}
 
 \subsubsection{Implementierung}
-Um diesen Kammschen Kreis richtig darzustellen habe ich mir die Klasse canvas als Hilfe genommen, wobei die von Graphics erbt.
-Mittels Canvas konnte ich zufaellig generierte 0-360grad Winkel und Radien erstellen und die dann in Polarkoordinaten umrechnen.
-Somit konnte ich alle generierten werte Darstellen. 
+Um diesen Kammschen Kreis richtig darzustellen haben wir uns die Klasse canvas als Hilfe genommen, wobei die von Graphics erbt und wir somit auf einer Fläche zeichnen können.
+Mittels Canvas konnten wir zufällig generierte 0-360grad Winkel und Radien erstellen und diese dann in Polarkoordinaten umrechnen.
+Somit konnten wir alle generierten werte Darstellen. 
 
 \lstinputlisting[caption=Runden-Methode, style=javastyle]{code/Runden.java}
 
-Bei der Methode Runden nehme ich alle Winkel auf und runde sie auf oder ab in 5er Schritten.
+Bei der Methode Runden nehmen wir alle Winkel auf und runde sie auf oder ab in 5er Schritten.
 \newline 
 
 
