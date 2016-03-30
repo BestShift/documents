@@ -2,30 +2,27 @@
 \subsection{Verbrauchsanalyse}
 
 Die Verbrauchsanalyse ist die Darstellung des momentanen Schadstoffausstoßes.
-Die dazugehörigen Werte kommen aus der OBD-Schnittstelle, genauer aus dem PID 5e.
+Die dazugehörigen Werte kommen aus der OBD-II Schnittstelle, genauer aus dem PID 5e.
 Diese wird \textit{engine fuel rate} genannt, und rechnet mit der 
-aktuellen Geschwindigkeit des Fahrzeugs, dividiert durch die Masse an Luft (in gramm)
-den aktuellen Verbrauch aus. Diesen Wert, kann man dann einfach mit einer Brennstoffspezifischen
-Konstante multiplizieren, um die aktuelle \ce{CO2} emission zu bekommen.
-Zum Beispiel geschieht die Umrechnung für Benzinbetriebene Kraftfahrzeuge so:
-1g/km \ce{CO2} ergibt eine equivalente Verbrennung von 0.0431 litern pro 100km. 
-Indem der Nutzer auf ein Schadstoffausstoß-Limit begrenzt wird, welcher der durchschn.
-Schadstoffausstoß während eines Betriebes ist, sollen starke Beschleunigungsmanöver 
-vermieden werden. Dieses Konzept funktioniert allerdings nur auf Kurzfahrtstrecken,
-wie zum Beispiel auf Fahrten innerhalb einer Stadt.
-Auf einer Langfahrtstrecke sollte man möglichst schnell auf die gewünschte Geschwindigkeit kommen
-und dort möglichst lange konstant bleiben, um auf die Dauer einen geringeren Schadstoffausstoß zu produzieren.
-Der größte Kohlenstoffdioxid-Ausstoß wird bei Beschleunigungsmanövern erzeugt.
-Natürlicherweise spielt Effizienz bei einer Verbrauchsanalyse auch eine große Rolle.
-Die Idee dahinter ist, möglichst effizient die selbe Menge an Arbeit zu verrichten und währenddessen einen Überbleib
-bei den eingesetzten Ressourcen zu fabrizieren. 
-
-\subsubsection{Implementierung}
-\begin{wrapfigure}{r}{0.6\textwidth}
+aktuellen Geschwindigkeit des Fahrzeugs, dividiert durch die Masse an Luft (in gramm) den aktuellen Verbrauch aus. 
+Diesen Wert, kann man dann einfach mit einer brennstoffspezifischen
+Konstante multiplizieren, um die aktuelle \ce{CO2} Emissionen zu bekommen.
+Zum Beispiel geschieht die Umrechnung für benzinbetriebene Kraftfahrzeuge so:
+1g/km \ce{CO2} ergibt eine equivalente Verbrennung von 0.0431 Litern pro 100km. 
+Indem der Nutzer auf ein Schadstoffausstoß-Limit begrenzt wird, welcher der durchschnittliche Schadstoffausstoß während eines Betriebes ist, sollen starke Beschleunigungsmanöver vermieden werden. 
+Dieses Konzept funktioniert allerdings nur auf Kurzstreckenfahrten, wie zum Beispiel auf Fahrten innerhalb einer Stadt.
+\begin{wrapfigure}{r}{0.5\textwidth}
     \centering
-    \includegraphics[width=0.6\textwidth]{images/verbrauch}
+    \includegraphics[width=0.5\textwidth]{images/verbrauch}
     \caption{Die implementierung der Verbrauchsanalyse \cite{BOZH.ch3-verbrauchsanalyse.verbrauch}}
 \end{wrapfigure}
+
+Auf einer Langstreckenfahrt sollte man möglichst schnell auf die gewünschte Geschwindigkeit kommen und dort möglichst lange konstant bleiben (siehe 2.1.2 Motorwirkungsgrad), um auf die Dauer einen geringeren Schadstoffausstoß zu produzieren.
+Der größte Kohlenstoffdioxid-Ausstoß wird bei Beschleunigungsmanövern erzeugt.
+Natürlich spielt Effizienz bei einer Verbrauchsanalyse auch eine große Rolle.
+Die Idee dahinter ist, möglichst effizient die selbe Menge an Arbeit zu verrichten und währenddessen einen Überschuss bei den eingesetzten Ressourcen zu erziehlen. 
+
+\subsubsection{Implementierung}
 
 Die Implementierung der Verbrauchsanalyse ist in Form eines dynamischen Liniendiagrammes erfolgt.
 Mit der Library MPAndroidChart, ist es uns gelungen, unser Liniendiagramm dynamisch zu gestalten.
