@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:gauge="http://schemas.android.com/apk/lib/com.example.bestshift_as"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bak"
+    android:background="@color/colorPrimary"
+    android:gravity="center">
+
+    <io.sule.gaugelibrary.GaugeView
+        android:id="@+id/gauge_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/colorPrimary"
+        gauge:showOuterShadow="false"
+        gauge:showOuterRim="false"
+        gauge:showInnerRim="false"
+        gauge:needleWidth="0.010"
+        gauge:needleHeight="0.40"
+        gauge:scaleStartValue="0"
+        gauge:scaleEndValue="150"
+        gauge:showNeedle="true"
+        android:layout_marginTop="30dp"
+    />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/shiftreq"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/ic_arrow_downward_black_48dp"
+        app:civ_border_width="10dp"
+        app:civ_border_color="@color/lightgrey"
+        android:layout_marginTop="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+</RelativeLayout>
+
+    <!--
+    <com.appyvet.rangebar.RangeBar
+        xmlns:custom="http://schemas.android.com/apk/lib/com.example.bestshift_as"
+        android:id="@+id/rangebar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        custom:tickStart="5"
+        custom:tickInterval="1"
+        custom:tickEnd="10"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Welcome To Schalt"
+            android:id="@+id/textView3" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+            android:layout_marginTop="260dp" android:textColor="#4bff31"/>
+
+
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/arrow_downward_black_48dp"
+        app:siBorderWidth="10dp"
+        app:siBorderColor="@color/lightgray"/>
+
+    <com.tr4android.support.extension.widget.CircleImageView
+        android:id="@+id/shiftreq"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerInside"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_arrow_downward_black_48dp"
+        android:layout_marginTop="300dp"
+    />
+    -->
