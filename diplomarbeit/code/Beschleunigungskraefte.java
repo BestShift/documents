@@ -1,31 +1,3 @@
-package com.example.bestshift_as.Kommfort;
-
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.example.bestshift_as.MyActivity;
-import com.example.bestshift_as.R;
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.components.YAxis;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.highlight.Highlight;
-import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.ColorTemplate;
-
 /**
  * Created by fitim on 09.12.2015.
  */
@@ -34,6 +6,7 @@ public class Beschleunigungskraefte extends Activity implements OnChartValueSele
     private LineChart mLineChart;
     private MediaPlayer mpAudio;
     private MediaPlayer mpAudio2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,7 +83,10 @@ public class Beschleunigungskraefte extends Activity implements OnChartValueSele
         });
 
     }
-
+	/**
+	*Zufaellige Daten werden dem Grafen hinzugefuegt 
+	*
+	*/
     private void addEntry() {
         LineData data=mLineChart.getData();
         if(data != null){
@@ -150,7 +126,9 @@ public class Beschleunigungskraefte extends Activity implements OnChartValueSele
 
     }
 
-
+	/**
+	*Eigenschaften der Daten also Linienfarbe werden eingestellt 
+	*/
     private LineDataSet createSet() {
 
         LineDataSet set = new LineDataSet(null, "Realtime Beschleunigungskraefte1");
@@ -167,70 +145,7 @@ public class Beschleunigungskraefte extends Activity implements OnChartValueSele
         set.setValueTextColor(Color.BLACK);
         set.setValueTextSize(10f);
         return set;
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_realtime_line, menu);
-        return true;
-    }
-    @Override
-    protected  void onResume() {
-        super.onResume();
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // add 100 entries
-                for(int i=0; i<10; i++) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            addEntry();
-
-                        }
-                    });
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }).start();
-    }
-
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case R.id.actionAdd: {
-                addEntry();
-                break;
-            }
-            case R.id.actionClear: {
-                mLineChart.clearValues();
-                Toast.makeText(this, "Chart cleared!", Toast.LENGTH_SHORT).show();
-                break;
-            }
-            case R.id.actionFeedMultiple: {
-                onResume();
-                break;
-            }
-        }
-        return true;
-    }
-
-    @Override
-    public void onValueSelected(Entry e, int i, Highlight highlight) {
-        Log.i("Entry selected", e.toString());
-    }
-
-    @Override
-    public void onNothingSelected() {
-        Log.i("Nothing selected", "Nothing selected.");
-    }
-
+    }  
 }
+   
+  

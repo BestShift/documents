@@ -1,53 +1,31 @@
 \lfoot{Autor: Fitim Faiku}
 \subsection{Fahrkomfortanalyse}
 
-<<<<<<< HEAD
-Da die bewertung der einzelnen Fahrer durch den Fahrgast erfolgt ist jedem klar.
-Diese Bewertung faellt meistens aus den Faktoren wie stark ein Fahrer beschleunigt und in welcher Geschwindigkeit er um eine Kurve faehrt.
-Um einen KFZ-Einsteiger mit mueglichst Informativen Daten zu \"bewerten\" habe ich mir einen Kammschen Kreis als Hilfe genommen.
+
+Da die Bewertung der einzelnen Fahrer durch den Fahrgast erfolgt ist jedem klar.
+Diese Bewertung fällt meistens aus den Faktoren wie stark ein Fahrer beschleunigt und in welcher Geschwindigkeit er um eine Kurve fährt.
+Um einen KFZ-Einsteiger mit möglichst Informativen Daten zu \"bewerten\" haben wir uns einen Kammschen Kreis als Hilfe genommen.
 
 \subsubsection{Kammscher Kreis }
 Ein Kammsher Kreis ist ein ein Kreis in dem durch Polarkoordinaten die Extremwerte einer Fahrt eingezeichnet sind.
-Der Kreis ist so aufgebaut, dass in der positiven y-Achse alle Bremskraefte eingezeichnet werden, negative y-Achse alle beschleunigen,
-negative x-Achse alle rechts Kurven, positiven x-Achse alle Linkskurven.
+Der Kreis ist so aufgebaut, dass in Norden de Bremskräfte angezeigt werden, in Süden alle Beschleunigungen, im Westen die Rechtskurven und Osten die Linkskurven.
 Es ist also alles verkehrt.
-\todo{Kammscher Kreis Foto}
+\begin{figure}[!htb]\centering
+	\includegraphics[width=0.5\textwidth]{images/kammsherkreis}
+	\caption{Kammsherkreis \cite{FAIF.CH3-fahrkomfortanalyse.KammscherKreis}}\label{Fig:Kammsher-Kreis}
+\end{figure}
 
 \subsubsection{Implementierung}
-Um diesen Kammschen Kreis richtig darzustellen habe ich mir die Klasse canvas als Hilfe genommen, wobei die von Graphics erbt.
-Mittels Canvas konnte ich zufaellig generierte 0-360grad Winkel und Radien erstellen und die dann in Polarkoordinaten umrechnen.
-Somit konnte ich alle generierten werte Darstellen. 
-
-public int runden(float roh){
-	float anzahl= round(roh/5);
-	System.out.println("Gerundet:" + anzahl);
-	int returnzahl=0;
-	returnzahl= (int) (anzahl*5);
-	return returnzahl;
-}
-
-Bei der Methode Runden nehme ich alle Winkel auf und Runde sie auf oder ab in 5er Schritten.
-=======
-Dass die Bewertung der einzelnen Fahrer durch den Fahrgast erfolgt ist jedem klar.
-Diese Bewertung wird meist durch gewisse Faktoren bestimmt. Diese können wie stark ein Fahrer beschleunigt und welche Kurvengeschwindigkeit ein Fahrer anwendet.
-Um einen KFZ-Einsteiger mit möglichst informativen Daten zu \"bewerten\" habe ich mir einen Kamm'schen Kreis zur Hilfe genommen.
-
-\subsubsection{Kammscher Kreis}
-Ein Kamm'scher Kreis ist ein ein Kreis in dem durch Polarkoordinaten die Extremwerte einer Fahrt eingezeichnet sind.
-Der Kreis ist so aufgebaut, dass in der positiven vertikalen Achse alle Bremskräfte, in der negativen vertikalen Achse alle Beschleunigungskräfte,
-in der negative horizontalen Achse alle rechts Kurven, in der positiven horizontalen Achse alle Linkskurven eingezeichnet werden. \comment{SIMR: vllt. mit Himmelsrichtungen statt positiv und negativ + welche Achse}
-Es sind die eingezeichneten Werte also spiegelverkehrt zur Intuition.
-
-\subsubsection{Implementierung}
-Um diesen Kamm'schen Kreis richtig darzustellen habe ich mir die Klasse \textit{Canvas} als Hilfe genommen, wobei diese von \textit{Graphics} erbt.
-Mittels Canvas konnte ich zufällig generierte 0-360grad Winkel und Radien erstellen und die dann in Polarkoordinaten umrechnen.
-Somit konnte ich alle generierten Werte darstellen. 
+Um diesen Kammschen Kreis richtig darzustellen haben wir uns die Klasse canvas als Hilfe genommen, wobei die von Graphics erbt und wir somit auf einer Fläche zeichnen können.
+Mittels Canvas konnten wir zufällig generierte 0-360grad Winkel und Radien erstellen und diese dann in Polarkoordinaten umrechnen.
+Somit konnten wir alle generierten werte Darstellen. 
 
 \lstinputlisting[caption=Runden-Methode, style=javastyle]{code/Runden.java}
 
-Bei der Methode Runden nehme ich alle Winkel auf und runde sie auf oder ab in 5er Schritten.
->>>>>>> f102cfafbe800ee589278cc79758ced24dc06232
+Bei der Methode Runden nehmen wir alle Winkel auf und runde sie auf oder ab in 5er Schritten.
+\newline 
 
 
-
+\lstinputlisting[caption=Draw, style=javastyle]{code/ChartView.java}
+Um den Kammshen-Kreis zu zeichnen habe ich die OnDraw Methode ueberschrieben, weiters speichere ich alle generierten Werte in einer Liste welche in einer For-Schleife gezeichnet werden.
 \clearpage % DO NOT REMOVE
