@@ -79,11 +79,15 @@ Ausserdem musste eine SettingsPane umgesetzt werden, in welcher man die maximale
 Es wurde die App mittels Gradle und der Android SDK 23 umgesetzt.
 
 Probleme kamen vor allem beim Aufbau der GaugeView Library auf, welche ich aufgrund eines doppelten XML attributes (showText) händisch zu einem Android Library Package (.aar) kompilieren musste, damit ich diesen Fehler umgehen konnte, eine schönere Lösung hierfür wurde bisweilen noch nicht vom Library-Ersteller bereitet. 
+\begin{figure}[!htb]\centering
+		\includegraphics[width=0.75\textwidth]{images/gaugeViewShowText}
+		\caption{Disqus Chat zu showText bei GaugeView} \label{fig:imgGaugeViewDisqus}
+\end{figure}
 
 \lstinputlisting[caption=shift XML design file,firstline=1,lastline=40,style=xmlstyle]{code/CH3/schalt.xml}
 
 \begin{figure}[!htb]\centering
-		\includegraphics[width=0.5\textwidth]{images/schalt}
+		\includegraphics[width=0.3\textwidth]{images/schalt}
 		\caption{finale Umsetzung der Android App beim Schaltvorschlag} \label{fig:imgShiftAndroidFinished}
 \end{figure}
 
