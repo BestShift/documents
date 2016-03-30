@@ -1,11 +1,41 @@
-\lfoot{Autor: Who?}
+\lfoot{Autor: Hüseyin Bozkurt}
 \subsection{Conclusio}
+Im Laufe des Projektes wurden fertiggestellt:
+\begin{itemize}
+\item Ein Car-PC, der in einen DIN-Slot eines PKW passt. Dieser enthält einen Raspberry PI 2B,
+einen Joy-It StromPI,
+einen USB-WLAN Adapter,
+einen USB-Bluetooth Adapter,
+ein GY521 Beschleunigungssensor und
+ein DS1621 Temperatursensor.
+\item Eine Android-App, die die Motordaten eines PKW und die Sensordaten des Car-PC aus dem Datenmanagementgraphisch in Echtzeit darstellt und aufnimmt, um sie am Ende der Fahrt in die Cloud zu laden.
+\item Ein Datenmanagement, die die Schnittstelle des Car-PC und des Motormanagement ausliest und der Android-App zur Verfügung stellt.
+\item Front-End einer Web-Applikation, welches die gesammelten Daten retrospektiv darstellt.
+\end{itemize}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\newline
+\section{Workflow des Projektes}
+	\subsection{Tobias Perny - Hardware und Sensorik}
+	Tobias Perny ist im Projekt wie bereits erwähnt für die Hardware und Sensorik zuständig. Er arbeitet mit einem Raspberry Pi2 Single Board Computer (SBC) auf welchem verschiedene Sensoren direkt montiert sind, welche dann interpretiert werden. Herr Perny verwendet die Programmiersprache Python um die Sensoren anzusprechen und diese mittels der Datenblätter der Sensoren in Informationen umzuwandeln. Diese Werte werden dann von Herrn Melichar endgültig in Einheiten umgesetzt.
+	Zusätzlich zu den eigenen Sensoren liest der Raspberry Pi2 außerdem die OBD-II Motordaten aus stellt diese zur Speicherung bereit. 
+	Die Auslesung aus dem Motormanagement wird mittels einer Bluetooth Schnittstelle mit einem ELM327-Chip für den OBD-II Port stattfinden.
+
+	\subsection{Daniel Melichar - Datenmanagement und Datenanalyse}
+	Die Speicherung der bereitgestellten Daten übernimmt Daniel Melichar, welcher diese weiterverarbeitet indem er die Daten strukturiert in einer Redis NoSQL Implementierung ablegt. Zudem stellt Herr Melichar dann Methoden zur Verfügung mit welchen die aktuellsten Daten und die Daten die in Ihrer Auflösung reduziert wurden bereit gestellt werden. Diese Methoden sind für die App Entwicklung von essenzieller Bedeutung, weil dadurch die Verbindung zur Datenbank für die Entwickler erleichtert wird.
+	Daniel Melichar ist außerdem für die Datenstrukturierung und das Account Management der geplanten Web-Applikation zuständig.Die Datenstrukturierung wird mittels eines Content Management Systems geschehen, für welches Herr Melichar sich um das Hosting und die Rechte auf dem Server kümmern wird. 
+
+	\subsection{Raphael Simsek - Schaltvorgangsvorschlag}
+	Raphael Simsek erstellt das Grundgerüst der App mittels dem Angular JS Framework ionic gemeinsam mit dem App-Team bestehend aus Hüseyin Bozkurt und Fitim Faiku.
+	Mit den von Daniel Melichar erstellten Methoden berechnet Raphael Simsek den effizientesten oder drehmomentintensivsten Gang mittels verschiedener Algorithmen. Diese Gang-Berechnung soll allerdings auf aktuelle Erkenntnisse aus dem Motormanagement eingehen, indem beispielsweise die Informationen des Gyroskops für die Erkenntnis ob der Nutzer sich auf einer steilen oder abfallenden Straße befindet um dadurch unnötige Falschangaben der App zu vermeiden. Die Erkennung ob ein Gang wirklich gewechselt wurde soll mittels der stark abfallenden Drehzahl oder der Fahrgeschwindigkeit passieren.
+	
+	\subsection{Hüseyin Bozkurt - Verbrauchsanalyse}
+	 Hüseyin Bozkurt ist für die Verbrauchsdarstellung während der Fahrt und für die retrospektive Verbrauchsanalyse nach der Fahrt zuständig.
+	 Diese wird hauptsächlich in Form von Liniendiagrammen geschehen, indem man den Schadstoffausstoß über eine bestimmte Zeit analysiert. In Verbindung mit der Webapplikation, werden diese Informationen mit OpenMap-Daten verbunden und zur schau gestellt.
+	 Somit soll eine umweltentlastende Fahrweise nach und nach gefördert werden. Demnach existiert die Option, die analysierte Fahrt auf Facebook mittels OAuth zu teilen, um Mitbenutzern der App einen Vergleich bieten zu können und - falls es Fragen wie zum Beispiel zu einer Strecke gibt, ihnen durch diese Vergleichswerte genügend Information zu bieten und eine offene Diskussionsrunde zu starten.
+	
+	\subsection{Fitim Faiku - Fahrkomfortanalyse}
+	 Fitim Faiku stellt die Fahrgastbequemlichkeit eines KFZ während der Fahrt dar.
+	 Dies geschieht in Form eines Kamm'schen Kreises, welches die Längs- und Querbeschleunigung anzeigt. Faiku wird für diese Aufgabe die Programmiersprache Java anwenden.
+	 Das Framework MPAndroidChart wird ihm dabei behilflich sein. Bei kurvigen Straßen schlägt der Kreis aus, wodurch der KFZ-Fahrer auf eine Geschwindigkeitsanpassung audiovisuell aufmerksam gemacht wird.
 
 \clearpage % DO NOT REMOVE
