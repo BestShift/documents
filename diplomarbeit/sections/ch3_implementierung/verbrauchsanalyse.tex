@@ -2,7 +2,7 @@
 \subsection{Verbrauchsanalyse}
 
 Die Verbrauchsanalyse ist die Darstellung des momentanen Schadstoffausstoßes.
-Die dazugehörigen Werte kommen aus der OBD-Schnittstelle, genauer aus dem PID 5e.
+Die dazugehörigen Werte kommen aus der OBD-II Schnittstelle, genauer aus dem PID 5e.
 Diese wird \textit{engine fuel rate} genannt, und rechnet mit der 
 aktuellen Geschwindigkeit des Fahrzeugs, dividiert durch die Masse an Luft(in gramm), 
 welche für den Verbrennungsvorgangim Motor benötigt wird,
@@ -21,12 +21,10 @@ Natürlicherweise spielt Effizienz bei einer Verbrauchsanalyse auch eine große 
 Die Idee dahinter ist, möglichst effizient die selbe Menge an Arbeit zu verrichten und währenddessen einen Überbleib
 bei den eingesetzten Ressourcen zu fabrizieren. 
 
+
+
+
 \subsubsection{Implementierung}
-\begin{wrapfigure}{r}{0.6\textwidth}
-    \centering
-    \includegraphics[width=0.6\textwidth]{images/verbrauch}
-    \caption{Die implementierung der Verbrauchsanalyse \cite{BOZH.ch3-verbrauchsanalyse.verbrauch}}
-\end{wrapfigure}
 
 Die Implementierung der Verbrauchsanalyse ist in Form eines dynamischen Liniendiagrammes erfolgt.
 Mit der Library MPAndroidChart, ist es uns gelungen, unser Liniendiagramm dynamisch zu gestalten.
@@ -35,7 +33,11 @@ Um den Benutzer während der Fahrt nicht mit unnötigen Informationen zu beladen
 Elemente innerhalb der Applikation schlicht gehalten.
 Während der Fahrt fokussiert sich der Benutzer von BestShift darauf, die rote Begrenzungslinie nicht zu überschreiten.
 Somit erzielt man auf kurzer Dauer einen geringeren Kraftstoffverbrauch.
-
+\begin{wrapfigure}{r}{0.6\textwidth}
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/verbrauch}
+    \caption{Die implementierung der Verbrauchsanalyse \cite{BOZH.ch3-verbrauchsanalyse.verbrauch}}
+\end{wrapfigure}
 
 
 \clearpage % DO NOT REMOVE
