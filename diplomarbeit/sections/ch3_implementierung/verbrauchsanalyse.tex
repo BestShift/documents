@@ -4,9 +4,10 @@
 Die Verbrauchsanalyse ist die Darstellung des momentanen Schadstoffausstoßes.
 Die dazugehörigen Werte kommen aus der OBD-Schnittstelle, genauer aus dem PID 5e.
 Diese wird \textit{engine fuel rate} genannt, und rechnet mit der 
-aktuellen Geschwindigkeit des Fahrzeugs, dividiert durch die Masse an Luft (in gramm)
+aktuellen Geschwindigkeit des Fahrzeugs, dividiert durch die Masse an Luft(in gramm), 
+welche für den Verbrennungsvorgangim Motor benötigt wird,
 den aktuellen Verbrauch aus. Diesen Wert, kann man dann einfach mit einer Brennstoffspezifischen
-Konstante multiplizieren, um die aktuelle \ce{CO2} emission zu bekommen.
+Konstante multiplizieren, um die aktuelle \ce{CO2}-Emission zu bekommen.
 Zum Beispiel geschieht die Umrechnung für Benzinbetriebene Kraftfahrzeuge so:
 1g/km \ce{CO2} ergibt eine equivalente Verbrennung von 0.0431 litern pro 100km. 
 Indem der Nutzer auf ein Schadstoffausstoß-Limit begrenzt wird, welcher der durchschn.
