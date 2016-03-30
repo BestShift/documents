@@ -57,7 +57,7 @@ Außerdem benutzen Android-Smartphones die Dalvik-VM, welche Java Class Files au
 Dementsprechend wird hier massiv an Umkompilierungszeit gespart, welche für die Echtzeit-Darstellung des Verbrauchs, Kamm'schen Kreises und Schaltvorschlags essentiell ist.
 
 \clearpage
-\subsection{Java-Frameworks (APP)}
+\subsubsection{Java-Frameworks(APP)}
 \textbf{Frameworks im Allgemeinen\newline}
 Ein Softwareentwickler stößt relativ schnell während seiner Ausbildung
 auf das Wort \"Framework\". Die Übersetzung ins Deutsche entspricht einem Bilderrahmen oder eines Gerüstes.
@@ -93,5 +93,53 @@ AChartEngine hat eine gute Dokumentation, doch eine eher schwache Community und 
 HelloChart hat eine der schlechtesten Dokumentationen, gar keine Community und sehr wenig gecodete Beispiele, diese sind aber sehr aktuell.
  
 
+\clearpage
+\subsubsection{Hybrid-Frameworks}
+Es fällt die Auswahl auf eines der folgenden Frameworks:
+\begin{itemize}
+\item \hyperref[Codename One]{https://www.codenameone.com/pricing.html} Java
+\item \hyperref[Firebase]{https://www.firebase.com/pricing.html} Android/iOS/JavaScript SDK
+\item \hyperref[appmethod]{http://www.appmethod.com/de/pricing} C++
+\item \hyperref[ionic]{http://ionicframework.com/} HTML, CSS, JS; Built with Sass, optimized with AngularJS
+\end{itemize}
 
+\textbf{Dokumentation}
+Alle sind gut dokumentiert, Codename One und Firebase bieten sogar eine eingeschränkte kostenlose Option.
+ionic ist von sogar OpenSource und hat eine tolle einsteigerfreundliche Dokumentation
+
+\textbf{Usage/Charakteristika}
+\begin{itemize}
+\item Codename One bietet eine Java SDK um eine App welche auf iOS, Windows oder Android lauffähig ist
+\item Firebase bietet eine Android, iOS und JavaScript SDK um eine vielseitig kompatible mobile oder web Applikation zu entwickeln. 
+\item Mittels appmethod kann man mit einer C++ Codebasis eine Android, iOS, MacOSX und sogar eine Windows Applikation entwickeln.
+\item Bei ionic wird die App von einer mobil-freundlichen HTML, CSS und JS Library entwickelt, während sie dann mit Sass auf das jeweilige App Format konvertiert wird und mit Angular JS optimiert wird. 
+\end{itemize}
+
+\textbf{Community}
+\begin{itemize}
+\item Codename One bietet einen Blog, eine in die Webseite eingebundene Google Discussion und einen Stackoverflow codenameone-Tag.
+\item Firebase hat einen Blog und über 25000 Facebook likes, aber sonst leider nur ein GitHub um Issues zu publizieren und eigene Support Emails, also ist hier alles sehr zentralisiert gesteuert. 
+\item appmethod hat eine Github page, welche aber ebenfalls eher durch den Support mit Issues gefüllt wird und verlinkt für die Community auf die Homepage der Mutterfirma \"Embarcadero\", welche auch ein Forum anbieten
+\item ionic hat eine großes community-driven Forum, welches bei vielen Beiträgen mehrere hundert Antworten als Wissenserweiterung anbietet.
+\end{itemize}
+
+\textbf{Performance}
+\begin{itemize}
+\item Codename One verwendet SaaS für die Kompilierung der App und verwendet eine VM die Java zu C für iOS macht. Die Performance ist hoch da es die nativen gaming Plattformen des jeweiligen OS verwendet. 
+\item Firebase verwendet die Forge UI und ist dadurch auf große Datensätze sogar ausgelegt, nur muss man achten diese zu denormieren.
+\item Da appmethod C++ als Programmiersprache verwendet, welche direkt auf der CPU laufen kann, appmethod performant.
+\item In einem Post von Sep.2014 wird ionic als weniger performant gesehen. Document Object Model (DOM) sollten möglichst selten angezeigt werden um gute Performance und Seite zu Seite Wechsel sollten auch unterlassen werden. Allerdings scheint das ionic Team sehr Performance fokussiert zu sein.
+\end{itemize}
+
+\textbf{Last Update}
+\begin{itemize}
+\item Codename One: neuester Blogbeitrag: 14.10.2015
+\item Firebase: Github letzter Commit: vor 14 Stunden
+\item appmethod: Github letzter Commit: 21.09.2015
+\item ionic: Github letzter Commit: 14.10.2015
+\end{itemize}
+
+\textbf{Frameworks Conclusio}
+Es war grundsätzlich für uns bereits von Beginn an klar dass wir ein Framework verwenden würden, allerdings tendieren wir mittlerweile in die Richtung eines hybriden Frameworks. Codename One und appmethod fallen aufgrund ihrer mangelnden kostenfreien Option definitiv weg. Ionic und Firebase scheinen schon weit interessanter.
+Da muss man sich allerdings eine Grundsatzfrage stellen - möchten wir eine HTML hybride App bauen oder nur eine cross-platform App? Denn für eine HTML hybride App müssten wir Ionic verwenden, auch wenn einige von uns dafür definitiv AngularJS und JS im allgemeinen wiederholen müssten.
 \clearpage % DO NOT REMOVE

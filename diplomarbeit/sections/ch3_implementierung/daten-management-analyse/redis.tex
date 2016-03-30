@@ -1,0 +1,82 @@
+\lfoot{Autor: Daniel Melichar}
+\subsubsection{Redis als Cache}
+
+Die Ursprünge der NoSQL Key-Value Datenbank Redis (Remote Dictionary Server) liegen bei einem Ein-Mann Projekt. Mittlerweile helfen viele bei der Entwicklung in der Programmiersprache C des Open-Source Projekt mit. 
+
+Redis ist ein so genannter in-memory Speicher. Das bedeutet, dass die Daten direkt im Arbeitsspeicher des Car-PCs liegen. Durch die Verwendung eines CLI-Tools kann man auch die Daten dann direkt am Car-PC sehen. Bei der Verwendung in weiteren Applikationen – in unserem Fall die Android-App – muss eine Libary, bzw. eine Schnittstelle eingebunden werden. Redis unterstützt einige abstrakte Datentypen: Lists, Sets, Sorted sets of strings, und Hashes. Mit diesen können wir die Sensordaten in einer guten Struktur abspeichern\cite{MELD.CH3-redis.mainWebsite}.
+
+\textbf{Mass Insertion\newline}
+Wir wollen eine Unmenge an Sensordaten in die am Car-PC vorhandene Redis Instanz speichern. Redis bietet hierfür Tools, die genau dies ermöglichen und Keys zu den Values (die Sensordaten) generiert\cite{MELD.CH3-redis.documentation}.
+
+Für die Speicherung von Daten muss im allgemeinen das \textbf{Redis Serialization Protocol} (RESP) integriert werden. Redis verwendet RESP als ein request-response protocol in folgender Hinsicht: 
+\begin{enumerate}
+\item Der Client schickt die Kommandos zu dem Redis Server als ein RESP Array von Bulk Strings
+\item Der Server antwortet mit einer der RESP Typen welche zum Command passen
+\end{enumerate}
+
+Bei RESP ist der Datentyp abhängig vom ersten byte
+\begin{enumerate}
+\item Für Simple Strings ist das erste Byte der Antwort gleich \textit{+}
+\item Für Errors ist das erste Byte der Antwort gleich \textit{–}
+\item Für Integer ist das erste Byte der Antwort gleich \textit{:}
+\item Für Bulk Strings ist das erste Byte der Antwort gleich \textit{\$}
+\item Für Arrays ist das erste Byte der Antwort gleich \textit{*}
+\end{enumerate}
+
+Um eine Mass Insertion durchzuführen muss das Redis Protokol nicht komplett verstanden werden, es ist aber wichtig zu wissen, dass die Daten in folgender Art und weise dargestellt werden müssen.
+
+\begin{lstlisting}[caption=RESP]
+*<args><cr><lf>
+$<len><cr><lf>
+<arg0><cr><lf>
+<arg1><cr><lf>
+...
+<argN><cr><lf>
+\end{lstlisting}
+
+Dies wird mittels einem Python Package (\url{https://github.com/youngking/redis_protocol}) realisiert.
+
+\textbf{Administration\newline}
+Aus der Dokumentation\cite{MELD.CH3-redis.mainWebsite} gehen folgende Tipps und Vorschläge für die Administration eines Redis Servers hervor.
+
+\begin{enumerate}
+\item We suggest deploying Redis using the Linux operating system. Redis is also tested heavily on OS X, and tested from time to time on FreeBSD and OpenBSD systems. However Linux is where we do all the major stress testing, and where most production deployments are working.
+\item Make sure to set the Linux kernel overcommit memory setting to one. Add \lstinline{vm.overcommit_memory = 1} to \lstinline{/etc/sysctl.conf} and then reboot or run the command sysctl \lstinline{vm.overcommit_memory=1} for this to take effect immediately.
+\item Make sure to disable Linux kernel feature transparent huge pages, it will affect greatly both memory usage and latency in a negative way. This is accomplished with the following command: \lstinline{echo never > /sys/kernel/mm/transparent_hugepage/enabled}
+\item Make sure to setup some swap in your system (we suggest as much as swap as memory). If Linux does not have swap and your Redis instance accidentally consumes too much memory, either Redis will crash for out of memory or the Linux kernel OOM killer will kill the Redis process.
+\item Set an explicit maxmemory option limit in your instance in order to make sure that the instance will report errors instead of failing when the system memory limit is near to be reached.
+\item If you are using Redis in a very write-heavy application, while saving an RDB file on disk or rewriting the AOF log Redis may use up to 2 times the memory normally used. The additional memory used is proportional to the number of memory pages modified by writes during the saving process, so it is often proportional to the number of keys (or aggregate types items) touched during this time. Make sure to size your memory accordingly.
+\item Use daemonize no when run under daemontools.
+\item Even if you have persistence disabled, Redis will need to perform RDB saves if you use replication, unless you use the new diskless replication feature, which is currently experimental.
+\item If you are using replication, make sure that either your master has persistence enabled, or that it does not automatically restarts on crashes: slaves will try to be an exact copy of the master, so if a master restarts with an empty data set, slaves will be wiped as well.
+\item By default Redis does not require any authentication and listens to all the network interfaces. This is a big security issue if you leave Redis exposed on the internet or other places where attackers can reach it. See for example this attack to see how dangerous it can be. Please check our security page and the quick start for information about how to secure Redis.
+\end{enumerate}
+
+\textbf{Security\newline}
+Die Redis Dokumentation\cite{MELD.CH3-redis.documentation} gibt auch Tipps um die Sicherheit der Datenbank möglichst hoch zu setzten. Unteranderem ist der Fokus der Dokumentation auf Zugriffskontrolle, Sicherheit des Codes, und Angriffe welche durch fälschliche inputs erstellt werden. Es wird auch geraten auftretende Probleme auf GitHub zu publizieren und somit die Open Source Community zu unterstützen. Diese wurden selsbtverständlich bei unserer Instanz durchgeführt.
+
+\begin{description}
+\item[Generäle Sicherheit - \newline]
+Redis ist nur für den Zugriff von bekannten und vertrauenswürdigen Clients in einer bekannten und vertrauenswürdigen Umgebung konzipiert. Das bedeutet, dass die Instanz nicht ins Internet verknüpft werden sollte. Aufgrund dessen entschließen wir uns, die Verbringung mittels eines lokalen Bluetooth Netzwerks aufzubauen.
+
+\item[Netzwerk Sicherheit - \newline]
+Der Zugriff von nicht vertrauenswürdigen Personen sollte nicht erlaubt werden. Dies kann durch eine Firewall oder durch die Redis-Konfiguration. Bei letzterer fügt man einfach im \textit{redis.conf} die Linie \textit{bind 127.0.0.1} hinzu.
+
+\item[Authentifizierung - \newline]
+Redis bietet nur einen kleinen Layer an Authentifizierung im \textit{redis.conf} und wenn diese aktiviert ist, wird der Redis Server keine Anfragen von authentifizierten Clients annehmen. Durch das Kommando \textit{AUTH} und dem Passwort, kann man sich identifizieren. Dieses Password ist im Konfigurationsfile von Redis zu mittels Klartextgespeichert, deswegen empfiehlt es sich ein möglichst langes zu verwenden um Brute-Froce angriffe zu vermeiden. Dies ist eines der größten Nachteile von Redis und ein großer Grund warum die Applikation nur bei speziellen Anwendungsfällen eingebaut werden sollte. In unserem Fall sind wir durch die Bluetooth-Verbindung zwischen dem Smartphone und dem Car-PC auf einer Frequenz die hoch genug ist um dies zu vermeiden. 
+
+\item[Encryption der Daten - \newline]
+Redis unterstützt keine Verschlüsselung. Um aber trotzdem einen gewissen Grad an Sicherheit zu erhalten sollte bei Internetverbindungen eine SSL Proxy implementiert werden. In unserem Fall ist das aber nicht von Bedeutung.
+
+\item[Spezifische Redis Kommandos deaktivieren - \newline]
+Redis bietet auch die Möglichkeit die Kommandos umzubenennen – nicht erkennbare Muster sind hier ein muss, so dass potentielle Angreifer die Befehle nicht verwenden kann.
+
+\lstinline{rename-command CONFIG b840fc02d524045429941cc15f59e41cb7be6c52}
+
+Im obrigen beispiel wird das CONFIG Kammando umbenannt in einen zufällige Menge. Es ist auch möglich Kommandos kommplett zu deaktivieren indem man dieses in einem leeren String umbenennt, wie hier angeführt:
+
+\lstinline{rename-command CONFIG ""}
+
+\item[String escaping und NoSQL injection - \newline]
+Das Redis Protokol (RESP) besitzt keine Konzepte von String escaping\cite{MELD.CH3-redis.mainWebsite}. Das bedeutet, dass Injection durchführbar ist. Hierfür ist auch wieder die Netzwerk Umgebung eine entscheidende Variable.
+\end{description}
