@@ -2,28 +2,27 @@
 \subsubsection{Relationale Datenbanken}
 \label{subsec:relationaleDB}
 
-Die relationale Datenbank ist seit dem ersten Erscheinen in 1970 weit gekommen und ist von den meisten Großkonzernen der Welt adaptiert worden. Mit der eigens dafür entwickelten \textit{Programmiersprache} SQL (Structured Query Langauge) war das umgehen mit Datenbanken und Tabellen und der darin gespeicherten Information so einfach wie noch nie. Es ist zu beachten, dass es ein wenig mehr zu NoSQL Datenbanken gibt, da wir mit einer solchen arbeiten (siehe \ref{subsec:datenmanagementimpl})
+Die relationale Datenbank ist seit dem ersten Erscheinen in den 1970er Jahren weit gekommen und ist von den meisten Großkonzernen der Welt adaptiert worden. Mit der eigens dafür entwickelten \textit{Abfragsprache} SQL (Structured Query Langauge) war das umgehen mit Datenbanken und Tabellen und der darin gespeicherten Information so einfach wie noch nie.
 
 \begin{figure}[!htb]\centering
 	\includegraphics[width=0.8\textwidth]{images/relationaleTabelle}
-	\caption{Beispiel einer relationalen Datenbank}
+	\caption{Beispiel einer relationalen Tabelle}
 \end{figure}
 
 Features von relationalen DBMS (Achtung: diese sind stark vom eigentlichem DBMS abhängig)
 \begin{itemize}
 \item Unterstützt eine große Menge an Daten
-\item Datensicherheit durch backups, permissions, etc.
+\item Datensicherheit durch Authentifizierung, Permissions, etc.
 \item Fehler Toleranz und Wiederherstellung
 \end{itemize}
 
-Hinter den Kulissen sorgt das Relational Database Management System (RDBMS) dafür das die Eigenschaften des ACID (Atomicity, Consistency, Isolation, Durability) Prinzips der Transaktionen so funktionieren wie sie sollen. Beachtet man nun auch die anderen Features der Sprache, so wie Constraints (primary and foreign keys, Datentype, etc.) oder Stored Procedures/Functions, erkennt man schnell, dass je mehr Information eine relationale Datenbank enthält, desto langsamer wird sie.
+Hinter den Kulissen sorgt das Relational Database Management System (RDBMS) dafür das die Eigenschaften des ACID Prinzips (Atomicity, Consistency, Isolation, Durability) eingehalten werden. Features der Abrfagsprache SQL, so wie Constraints (primary and foreign keys, Datentype, etc.) oder Stored Procedures/Functions, sorgen dafür, dass ein RDBMS die beste Performance bei simplen Abfragen von mittelgroßen Datemengen hat \cite{MELD.CH2-relationaleDB.performacne}.
 
-Einige der größten Limitierungen \cite{MELD.CH2-relationaleDB.rdbmsBuch} durch das relationale Datenbank Model sind
+Einige der größten Limitierungen \cite{MELD.CH2-relationaleDB.rdbmsBuch} durch das relationale Datenbankmodel sind
 \begin{itemize}
-\item Skalierbarkeit: ab einem gewissen Zeitpunkt muss die Datenbank über mehrere Server laufen da ein Server nicht mehr genügend Ressourcen verfügt um die Daten zu managen
+\item Skalierbarkeit: Bei komplexen Abfragen in großen Datenbanken sind RDBMS im Vergleich langsamer \cite{MELD.CH2-relationaleDB.performacne}.
 \item Komplexität: die Daten müssen zu Tabellen strukturiert werden; es ist also ein Schema notwendig
-\item Features: Meist für Datenintegrität aber nicht für Datenverarbeitung 
+\item Abfragesprache: Obwohl SQL ein ANSI (American National Standards Institute) Standard ist, gibt es verschiedne versionen der Sprache. Es müssen aber alle hauptfunktionen (wie SELECT; UPDATE, DELETE, INSERT, WHERE) gegeben sein um den ANSI Standard zu erfüllen.
 \end{itemize}
 
-
-Zusammenfassed kann man also sagen, dass die Verwendung eines RDBMS dann sinn macht, wenn man ein Datenschema erstellen kann. Das bedeutet konkret: wenn man weiß welche Daten man hat und haben wird, wie man diese in eine Tabellen Struktur einbauen kann, und man Anforderungen die sich nur im geringen Maß ändern können ist es sinnvoll ein RDBMS zu verwenden. Die zur Verfügung gestellten Features werden einen Administrator sehr gut unterstützen. 
+Die Verwendung eines relationalen Datenbankmanagementsystem macht also dann Sinn, wenn ein Datenschema erstellt werden kann, also wenn bekannt ist, welche konkreten Daten gesammelt werden und wie diese in Tabellen mit Beziehungen verarbeitet werden können. Durch die SQL Abfragesprache bekommt der Datenbank-Administrator alle Features die er braucht um das System in takt zu halten.
