@@ -3,10 +3,12 @@
 \label{subsec:I2C}
 I2C, Inter Integrated Circuit, ist ein Datenbus bestehend aus zwei Leitungen, einer Datenleitung und einer Taktleitung. Der I2C-Bus eignet sich zur Datenübertragung über kurze Entfernung, beispielsweise auf derselben Platine.
 
-\begin{figure}[!htb]\centering
-	\includegraphics[width=0.5\textwidth]{images/i2c}
-	\caption{Logo von i2c \cite{PERT.CH2-i2c.logo}}\label{Fig:imgi2cLogo}
-\end{figure}
+\begin{wrapfigure}{r}{0.2\textwidth}
+  \begin{center}
+    \includegraphics[width=0.2\textwidth]{images/i2c}
+  \end{center}
+  \caption{Logo von i2c \cite{PERT.CH2-i2c.logo}}\label{Fig:imgi2cLogo}
+\end{wrapfigure}
 
 \textbf{Grundlagen\newline}
 Der I2C-Bus baut auf einem Master-Slave System auf, dass bedeutet es existiert mindestens ein Master und bis zu 127 Slaves auf einem Bus. I2C ist unter anderem ein Multi-Master-Bus, was bedeuted es können mehrere Master zur selben Zeit existieren und der Bus ist noch Lauffähig.

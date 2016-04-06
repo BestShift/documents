@@ -18,25 +18,25 @@ Für jede Klasse wurde ein XML Layout als View generiert, wodurch eine Verbindun
             
 Im Anschluss setzten wir die View der Klasse auf main durch:  
 
-\lstinputlisting[firstline=1,lastline=1, style=javastyle]{code/examples.java}
+\lstinputlisting[firstline=1,lastline=1, style=javastyle, caption=Setzen der View]{code/examples.java}
 
 Wir erstellten ein Objekt von ActionBar und fügten mehrere Tabs hinzu und setzten das Layout für die Navigation der Tabs mittels:
 
-\lstinputlisting[firstline=2,lastline=2, style=javastyle]{code/examples.java}
+\lstinputlisting[firstline=2,lastline=2, style=javastyle, caption=ActionBar Objekt]{code/examples.java}
 
 Anschließend wurden mehrere Tabs hinzugefügt mit der Methode:
 
-\lstinputlisting[linerange={4-8}, style=javastyle]{code/examples.java}
+\lstinputlisting[linerange={4-8}, style=javastyle, caption=Mehrere Tabs]{code/examples.java}
 
 
 Nun gehen wir über zu unserem Design unter main.xml
 \lstinputlisting[caption=Design main, style=xmlstyle]{code/main.xml}
 Es wurde ein ViewPager Layout erstellt welches das \textit{swipen} möglich macht:
 
-\lstinputlisting[firstline=10,lastline=10, style=xmlstyle]{code/examples.java}
+\lstinputlisting[firstline=10,lastline=10, style=xmlstyle, caption=Swipe Funktion]{code/examples.java}
 
 Wir übergeben dem Layout ebenfalls eine ID auf die wir von unserer main Activity aus zugreifen: 
-\lstinputlisting[firstline=12,lastline=12, style=xmlstyle]{code/examples.java}
+\lstinputlisting[firstline=12,lastline=12, style=xmlstyle, caption=Activity und Layout]{code/examples.java}
 
 
 
@@ -51,7 +51,7 @@ Sie hat noch eine getCount() Methode, welche die Anzahl der Tabs zurückgibt in 
 
 
 Wir erstellen auf der Main Klasse zwei Objekte, nämlich:
-\lstinputlisting[linerange={14-18}, style=javastyle]{code/examples.java}
+\lstinputlisting[linerange={14-18}, style=javastyle, caption=Viewpager]{code/examples.java}
 
 Dies wird gemacht um zwischen den Oberflächen wechseln zu können.
 
