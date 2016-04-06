@@ -11,13 +11,13 @@ Dieses RDBMS wurde ursprünglich entwickelt als \textit{lightweight database-lik
 In den letzten Jahren hat MySQL die Ziele der Applikation geändert – es hat sich zu einem kompletten RDBMS entwickelt.  Trotz Bekanntheit wird MySQL immer noch nicht als die stabilste Datenbank, oder jene mit dem größten Feature-Set, angesehen.
 
 \textbf{Oracle\newline}
-Dieses DBMS ist bekannt für seine große Anzahl an Features. Beinahe jedes Betriebssystem wird unterstützt; für die gängisten Programmierstellen gibt es Kommunikationsschnittstellen; Server Programmierung hat viele Möglichkeiten; die Performance von Oracle Datenbanken ist exzellent; uvm.
+Dieses DBMS ist bekannt für seine große Anzahl an Features. Beinahe jedes Betriebssystem wird unterstützt; für die gängisten Programmierstellen gibt es Kommunikationsschnittstellen; es werden viele Server Programmiersprachen unterstützt hat viele Möglichkeiten; die Performance von Oracle Datenbanken ist exzellent; uvm.
 
 \textbf{PostgreSQL\newline}
 PostgreSQL, oder einfach nur Postgres, ist ein Open-Source Objekt relationales Datenbankmanagementsystem (ORDBMS). Es wird häufig für online Applikationen, Data Centers und für Domain Registrierung verwendet. PostgreSQL steht auch für viele Betriebssysteme zur Verfügung: Linux, Windows, FreeBSD, Solaris, etc.
 
 \textbf{SQL Server\newline}
-Microsoft's SQL Server wird in den meisten Fällen wird es für Webseiten, kommerzielle Applikationen, Netzwerk Applikationen, verwendet. Der SQL Server verfügt über Features wie z.B. eine 10GB große Speicherkapazität für Datenbanken, \textit{safe-store} von Daten mit hohen Sicherheitsniveau, Data warehousing. 
+Microsoft's SQL Server wird in den meisten Fällen wird es für Webseiten, kommerzielle Applikationen und Netzwerk Applikationen verwendet. Der SQL Server verfügt über Features wie z.B. eine 10GB große Speicherkapazität für Datenbanken, \textit{safe-store} von Daten mit hohen Sicherheitsniveau, Data warehousing.\nextline 
 
 In der folgenden Tabelle werden die System Eigenschaften der beschriebenen relationalen DBMS verglichen. Für eine genaue Übersicht bezüglich der unterstützten Features sollte folgende Website in Betracht gezogen werden \url{http://www.sql-workbench.net/dbms_comparison.html}
 
@@ -46,11 +46,11 @@ In der folgenden Tabelle werden die System Eigenschaften der beschriebenen relat
 
 \paragraph{NoSQL Datenbanken}\mbox{}\\
 
-Grundsätzlich gibt es vier große Gruppen von NoSQL Datenbanken\cite{MELD.CH2-dbms.compNoSQLInfo}: Key-Value Stores, Column-Oriented Databases, Document Databases und Graph Stores. Selbstverständlich gibt es auch eigens entwickelte Datenbanken die nicht in diese vier Kategorien eingeteilt werden können, diese vier sind aber jene die am meisten verwendet werden.
+Grundsätzlich gibt es vier große Gruppen von NoSQL Datenbanken \cite{MELD.CH2-dbms.compNoSQLInfo}: Key-Value Stores, Column-Oriented Databases, Document Databases und Graph Stores. Selbstverständlich gibt es auch eigens entwickelte Datenbanken die nicht in diese vier Kategorien eingeteilt werden können, diese vier sind aber jene die am meisten verwendet werden \cite{MELD.CH2-dbms.compNoSQLInfo}.
 
 \begin{itemize}
 	\item \textbf{Key-Value Stores\newline}
-	In einem Key-Value Store werden Daten in Form von eindeutigen Schlüsseln (Keys) und damit verknüpften Werten (Values) gespeichert (siehe Abbildung \ref{fig:keyvalue}). Diese Art von Datenbank ist prinzipiell ziemlich simple, aber dennoch effizient und schnell. In den meisten Fällen findet die Kommunikation mit der Datenbank mittels einer API, die für mehrere Programmiersprachen zur Verfügung gestellt wurde, statt. In den meisten Fällen wird der Key mittels Strings realisiert und dieser referenziert auf die Values (also die eigentlichen Daten). Diese Datenbanken sind Hash-Tabellen sehr ähnlich, da auch hier der Key als Index verwendet wird und somit schnelle Zugriffszeiten ermöglicht werden. Wie bei den meisten NoSQL Datenbanken ist auch bei Key-Value kein Schema aufzufinden.
+	In einem Key-Value Store werden Daten in Form von eindeutigen Schlüsseln (Keys) und damit verknüpften Werten (Values) gespeichert (siehe Abbildung \ref{fig:keyvalue}). Diese Art von Datenbank ist prinzipiell ziemlich simple, aber dennoch effizient und schnell. In den meisten Fällen findet die Kommunikation mit der Datenbank mittels einer API, die für mehrere Programmiersprachen zur Verfügung gestellt wurde, statt und der Key mittels Strings realisiert welche dann auf die Values (also die eigentlichen Daten) referenzieren. Diese Datenbanken sind Hash-Tabellen sehr ähnlich, da auch hier der Key als Index verwendet wird und somit schnelle Zugriffszeiten ermöglicht werden. Wie bei den meisten NoSQL Datenbanken ist auch bei Key-Value kein Schema aufzufinden.
 
 	Beispielhafte Anwendungen von Key-Value Datenbaken wären die Speicherung von Session Daten eines Users, die Speicherung der Artikel in einem Einkaufswagen, oder die Speicherung der beliebten Produkte.
 
@@ -63,7 +63,7 @@ Grundsätzlich gibt es vier große Gruppen von NoSQL Datenbanken\cite{MELD.CH2-d
 	\end{figure}
 
 	\item \textbf{Column-Oriented Databases\newline}
-	Relationale DBMS speichern die Daten in Form von Rows (Zeilen), bei Column Stores werden diese in Columns (Zellen) gespeichert (siehe Abbildung \ref{fig:columnstore}). Es herrscht zwar das selbe Konzept von von linearer Abspeicherung wie bei relationalen Datenbanken, aber diese werden nicht in Tabellen gespeichert, sondern in massiven, verteilten Architekturen. Jeder Key ist mit einer oder mehreren Attributen verknüpft. Diese Art von Datenbank ist grundsätzlich so aufgebaut das mit einem einzigen Befehl eine große Menge an Daten zurückgebracht werden kann. 
+	Relationale DBMS speichern die Daten in Form von Zeilen, bei Column Stores werden diese in Zellen gespeichert (siehe Abbildung \ref{fig:columnstore}). Es herrscht zwar das selbe Konzept der Abspeicherung mehrerer Objekte mit einer Referenz auf die selbe ID, wie bei relationalen Datenbanken, aber diese werden nicht in Tabellen gespeichert, sondern in massiven, verteilten Architekturen. Jeder Key ist mit einer oder mehreren Attributen verknüpft. Diese Art von Datenbank ist grundsätzlich so aufgebaut das mit einem einzigen Befehl eine große Menge an Daten zurückgebracht werden kann. 
 
 	Column Store Datenbanken werden sehr oft für Data Mining, Datawarehousing und im Allgemeinen für Business Analytics verwendet.
 
@@ -77,14 +77,14 @@ Grundsätzlich gibt es vier große Gruppen von NoSQL Datenbanken\cite{MELD.CH2-d
 
 
 	\item \textbf{Document Databases\newline}
-	Document Store Datenbanken sind jene Datenbanken bei welchen die Daten mittels einer quasi strukturiereten Datei gespeichert werden(siehe Abbildung \ref{ig:documentdb}). Oft werden sturkturen wie JSON, CSV, oder XML verwendet. Intern werden die Daten dann mittels der beeits bekannten Key-Value Methodik gespeichert - der einzige Unterschied liegt also in der Verarbeitungweise der Anfragen des Users. Hierbei ist vor allem auf die Performance und horizontale Skalierbarkeit zu achten. Die Files, oder Dokumente, in einer Document-Oriented Datenbank sind ähnlich zu jenen einer relationalen Datenbank, aber der große Unterschied hierbei ist, dass diese an kein Schema gebunden und somit um einiges flexibler sind. Es werden oftmals standardisierte Formate wie XML, PDF oder JSON verwendet. Diese Dokumente sind mittels einem eindeutigen Key adressiert, welcher das File auch repräsentiert. Diese Keys können einfache Strings oder ganze Pfade sein.
+	Document Store Datenbanken sind jene Datenbanken bei welchen die Daten mittels einer quasi strukturiereten Datei gespeichert werden (siehe Abbildung \ref{ig:documentdb}). Oft werden sturkturen wie JSON, CSV, oder XML verwendet. Intern werden die Daten dann mittels der bereits bekannten Key-Value Methodik gespeichert - der einzige Unterschied liegt also in der Verarbeitungweise der Anfragen des Users. Hierbei ist vor allem auf die Performance und horizontale Skalierbarkeit zu achten. Die Files, oder Dokumente, in einer Document-Oriented Datenbank sind ähnlich zu jenen einer relationalen Datenbank, aber der große Unterschied hierbei ist, dass diese an kein Schema gebunden und somit um einiges flexibler sind. Diese Dokumente sind mittels einem eindeutigen Key adressiert, welcher das File auch repräsentiert. Diese Keys können einfache Strings oder ganze Pfade sein.
 
 	Anwendungsgebiete von dieser Art von Datenbank sind Applikationen wie Content Management Systeme, Blog Software, usw. 
 
 	Die bekanntesten Document-oriented Datenbanken sind: MongoDB und CouchDB
 
 	\begin{figure}[h]\centering
-		\includegraphics[width=0.4\textwidth]{images/documentStore}
+		\includegraphics[width=0.3\textwidth]{images/documentStore}
 		\caption{Aufbau von Document Datenbanken}
 		\label{fig:documentdb}
 	\end{figure}

@@ -1,5 +1,6 @@
 \lfoot{Autor: Daniel Melichar}
 \subsubsection{Sammlung der Sensordaten}
+Die allgemeine Zielsetzung war es alle Sensordaten nach Beendingung des Boot-Vorgangs, bzw. beim Beginn einer Fahrt, für weitere Applikation zu verfügung zu stellen. Mittels einer sinnvollen Erst-Verarbeitung und Speicherung der Daten sollte außerdem die Möglichkeit geboten werden, zu jedem Zeitpunkt neue Sensoren in das Datenspektrum einzubinden.
 
 Zunächst wurde ein Datenmodell entwickelt in welchem beschrieben ist, wie die Daten abgespeichert werden müssen. In diesem wird der Sensor als eigene Entität definiert, die eigentlichen Sensoren erben von ihr. Die Umsetzung zeigt Listing \ref{lst:sensorsammlung}
 
@@ -214,3 +215,5 @@ esac
 
 exit 0
 \end{lstlisting}
+
+Die Skripte ermöglichen es neue Sensoren, im Form von Betriebssystem Updates, einzubinden. Diese Updates beinhalten neue Einträge im Sensorenmodel, sowie neue Init-Skripts für die konkrete Sammlung der Daten.

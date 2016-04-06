@@ -5,9 +5,9 @@
 In diesem Kapitel wird ein Einblick in das Konzept von nicht-relationalen Datenbanken gegeben. 
 
 \paragraph{Motive und Beweggründe}\mbox{}\\
-Der Term \textit{NoSQL} wurde erstmalig in 1998 für eine relationale Datenbank, welche ohne der SQL-Sprache funktioniert, verwendet\cite{MELD.CH2-noSQL.firstSQLNaming}. Der Term wurde dann wieder in über die Jahre von verschiedensten Leuten aufgenommen. Unglücklicherweise gab es keine definitive Beschränkung für welche Datenbanksysteme zur NoSQL-Bewegung gehören. Durch den Blogger und Rackspace Mitarbeiter, Eric Evans, ist der Term ganz besonders bekannt geworden – er sagte hierzu: \textit{“the whole point of seeking alternatives is that you need to solve a problem that relational databases are a bad fit for”}\cite{MELD.CH2-noSQL.whatsInAName}. NoSQL Datenbanken wurden hauptsächlich von Großkonzernen für den Eigenbedarf entwickelt (Amazon’s Dynamo, Google’s BigTable, LinkedIn’s Voldemort, Facebook’s Cassandra, Yahoo!’s PNUTS). Diese Großkonzerne haben den relationalen Ansatz nicht komplett verworfen, sie fanden lediglich, dass das Model nicht ihren Anforderungen entspricht\cite{MELD.CH2-noSQL.capTheoremComp}.
+Der Term \textit{NoSQL} wurde erstmalig 1998 für eine relationale Datenbank, welche ohne der SQL-Sprache funktioniert, verwendet \cite{MELD.CH2-noSQL.firstSQLNaming}. Der Term wurde dann immer wieder über die Jahre von verschiedensten Leuten aufgenommen. Unglücklicherweise gab es keine definitive Beschränkung für welche Datenbanksysteme zur NoSQL-Bewegung gehören. Durch den Blogger und Rackspace Mitarbeiter, Eric Evans, ist der Term ganz besonders bekannt geworden – er sagte hierzu: \textit{“the whole point of seeking alternatives is that you need to solve a problem that relational databases are a bad fit for”} \cite{MELD.CH2-noSQL.whatsInAName}. NoSQL Datenbanken wurden hauptsächlich von Großkonzernen für den Eigenbedarf entwickelt (Amazon’s Dynamo, Google’s BigTable, LinkedIn’s Voldemort, Facebook’s Cassandra, Yahoo!’s PNUTS). Diese Großkonzerne haben den relationalen Ansatz nicht komplett verworfen, sie fanden lediglich, dass das Model nicht ihren Anforderungen entspricht \cite{MELD.CH2-noSQL.capTheoremComp}.
 
-Das bekannte IT und Technologie Magazine \textit{Computerworld} hat in 2009 bei einer NoSQL Konferenz in San Franciso die dort vorhanden Developer befragt wieso NoSQL gegenüber relationalen Datenbanken im Vorteil liegt\cite{MELD.CH2-noSQL.whyItsBetter}.
+Das bekannte IT und Technologie Magazine \textit{Computerworld} hat im Jahre 2009 bei einer NoSQL Konferenz in San Franciso die dort vorhanden Developer befragt wieso NoSQL gegenüber relationalen Datenbanken im Vorteil liegt \cite{MELD.CH2-noSQL.whyItsBetter}.
 
 Die folgenden Erklärungen wurden von den Entwicklern gemacht.
 \begin{itemize}
@@ -18,13 +18,13 @@ Die folgenden Erklärungen wurden von den Entwicklern gemacht.
 	 Manche NoSQL Datenbanken erlaube einen höheren Datendurchsatz, bzw. eine schnelleren Verarbeitungsgeschwindigkeit. Die Möglichkeit, einfach und schnell eine neue Maschine in das System anzubinden, und somit mehr Rechenleistung zu erhalten, ist vom großen Vorteil.
 
 	\item \textbf{Horizontale Skalierbarkeit und geringe Hardware requirements}\newline
-	 Im Vergleich mit relationalen DBMS sind die meisten NoSQL Datenbanken konzipiert um horizontale Skalierung möglichst einfach durchzuführen. Horizontale Skalierung bedeutet prinzipiell mehr Server in den Pool der Ressourcen hinzuzufügen. Es gibt zwar auch eine äquivalente Verbesserungsmöglichkeitne für RDBMS, das so genannte \textit{sharding}, dies ist oft aber weit aus komplizierter als bei NoSQL.
+	 Im Vergleich mit relationalen DBMS sind die meisten NoSQL Datenbanken konzipiert um horizontale Skalierung möglichst einfach durchzuführen. Horizontale Skalierung bedeutet prinzipiell: mehr Server in den Pool der Ressourcen hinzuzufügen. Es gibt zwar auch eine äquivalente Verbesserungsmöglichkeitne für RDBMS, das so genannte \textit{sharding}, die Umsetzung ist aber, aus persönlicher Erfahrung, um einiges komplizierter als bei NoSQL.
 
 	\item \textbf{Object-Relational Mapping wird vermieden}\newline
-	 Auch hier verwenden die meisten NoSQL Datenbanken eine Struktur zur Speicherung der Daten die entweder sehr einfach oder sehr ähnlich zu jenen sind die auch bei Objekt-Orientierten-Programmiersprachen aufzufinden sind. Hierfür ist dann kein ressourcenintensives Object-Relational Mapping notwendig.
+	 Die meisten NoSQL Datenbanken verwenden eine Struktur zur Speicherung der Daten die entweder sehr einfach oder sehr ähnlich zu jenen sind, welche auch bei Objekt-Orientierten-Programmiersprachen aufzufinden sind. Hierfür ist dann kein ressourcenintensives Object-Relational Mapping notwendig.
 \end{itemize}
 
-Zu diesem Bericht gab es dann auch einen Blog-Eintrag von Nati Shalom, CTO und Gründer von GigaSpaces. Er hat die folgenden weiteren Punkte für die NoSQL-Bewegung aufgestellt\cite{MELD.CH2-noSQL.natiShalomlol}.
+Zu diesem Bericht gab es dann auch einen Blog-Eintrag von Nati Shalom, CTO und Gründer von GigaSpaces. Er hat die folgenden weiteren Punkte für die NoSQL-Bewegung aufgestellt \cite{MELD.CH2-noSQL.natiShalomlol}.
 
 \begin{itemize}
 	\item \textbf{Komplexität und benötigter Aufwand bei Datenbank Clustern}\newline
@@ -39,6 +39,7 @@ Zu diesem Bericht gab es dann auch einen Blog-Eintrag von Nati Shalom, CTO und G
 
 \paragraph{Techniken und Konzepte}\mbox{}\\
 \textbf{Das CAP-Theorem\newline}
+\label{subsec:captheor}
 Das von Eric Brewer im Jahre 2000 entwickelte CAP-Theorem stellt eine Behauptung über die möglichen Fähigkeiten eines DBMS auf. Der CAP Akronym steht für \cite{MELD.CH2-noSQL.capTheorem}:
 
 \begin{itemize}
@@ -49,7 +50,7 @@ Das von Eric Brewer im Jahre 2000 entwickelte CAP-Theorem stellt eine Behauptung
 	\item \textit{Partition Tolerance:} Anders als bei Availability geht es hier meistens um Netzwerk Partitionen und die Möglichkeit weiter Operationen durchzuführen, wenn zwei Netzwerke im System nicht miteinander kommunizieren können.
 \end{itemize}
 
- Brewer behauptet, dass nur zwei von diesen drei Eigenschaften in einem \textit{shared-data system} vorhanden sind \cite{MELD.CH2-noSQL.capTheorem}. In seiner Präsentation hat er über die Vor- und Nachteile von ACID und BASE Systemen (siehe nächsten Paragraphen) geredet und einige Entscheidungskriterien vorgestellt um sich für eine der beiden Modelle zu entscheiden: wenn ein System, oder Teile eines Systems, konsistent und partitionstolerant sein müssen, sind ACID Eigenschaften benötigt; wenn Verfügbarkeit und Partition-Tolerants benötigt werden, sollte das System mittels BASE Eigenschaften erstellt werden. Anhand folgender Tabelle lassen sich die Zusammenhänge am besten veranschaulichen.
+ Brewer behauptet, dass nur zwei von diesen drei Eigenschaften in einem \textit{shared-data system} vorhanden sind \cite{MELD.CH2-noSQL.capTheorem}. In seiner Präsentation hat er über die Vor- und Nachteile von ACID und BASE Systemen (siehe Paragraphe \ref{subsec:acidvsbase}) geredet und einige Entscheidungskriterien vorgestellt um sich für eine der beiden Modelle zu entscheiden: wenn ein System, oder Teile eines Systems, konsistent und partitionstolerant sein müssen, werden ACID Eigenschaften benötigt; wenn Verfügbarkeit und Toleranz gegenüber Teilung benötigt werden, sollte das System mittels BASE Eigenschaften erstellt werden. Anhand Tabelle \ref{table:capTheorChoice} lassen sich die Zusammenhänge am besten veranschaulichen.
 
 \begin{table}[!htb]
 \centering
@@ -61,20 +62,22 @@ Consistency + Partition tolerance & \begin{tabular}[c]{@{}l@{}}Pessimistic locki
 Availability   + Partition tolerance & \begin{tabular}[c]{@{}l@{}}expirations/leases\\ Conflict resolution\\ Optimistic\end{tabular} & \begin{tabular}[c]{@{}l@{}}Coda\\ Web caching\\ DNS\end{tabular} \\ \hline
 \end{tabular}
 \caption{CAP-Theorem – Alternatives, Traits, Examples \cite{MELD.CH2-noSQL.capTheorem}}
+\label{table:capTheorChoice}
 \end{table}
 
 Grundsätzlich kann gesagt werden, dass RDBMS besser Anforderungen nach Konsistenz und Teilungstoleranz abdecken und NoSQL-Systeme vornehmlich auf eine hohe Verfügbarkeit abzielen (siehe Abbildung \ref{fig:captheor}) \cite{MELD.CH2-noSQL.capTheoremComp}.
 
 \begin{figure}[!htb]\centering
 	\includegraphics[width=0.8\textwidth]{images/capTheorem}
-	\caption{CAP-Theorem bei RDBMS und NoSQL\cite{MELD.CH2-noSQL.capTheoremComp}}
+	\caption{CAP-Theorem bei RDBMS und NoSQL \cite{MELD.CH2-noSQL.capTheoremComp}}
 	\label{fig:captheor}
 \end{figure}
 
 \clearpage
 
+\label{subsec:acidvsbase}
 \textbf{ACID vs BASE\newline}
-Das Internet erzeugt Tag für Tag für eine enorme Menge an Daten welche verarbeitet, analysiert und bereitgestellt werden müssen. Die Applikationen in diesem Bereich müssen den individuellen Bedarf an Performance, Zuverlässigkeit, Betriebsbereitschaft, und Konsistenz feststellen. Wie bereits beim CAP-Theorem beschrieben können diese Applikationen nur zwei Optionen von Consistency, Availability, und Partition Tolerance genommen werden. Immer mehr Applikationen bevorzugen die Option von Availability und Partition Tolerance. Diese Eigenschaften sind schwer mit dem ACID Model erreichbar, jedoch wurde dafür das BASE Model entwickelt.
+Applikationen haben einen unterschiedlichen Bedarf an Performance, Zuverlässigkeit, Betriebsbereitschaft, und Konsistenz. Wie bereits beim CAP-Theorem beschrieben \ref{subsec:captheor} können diese Applikationen nur zwei Optionen von Consistency, Availability, und Partition Tolerance implementiert werden. Für die stetige weiterentwicklung von NoSQL-Systemen, welche die Option von Availability und Partition Tolerance implementieren, wurde ein ACID ähnliches Model entwickelt.
 
 Das Akronym BASE steht für folgende Eigenschaften
 \begin{itemize}
@@ -83,8 +86,7 @@ Das Akronym BASE steht für folgende Eigenschaften
 	\item Eventual consistency
 \end{itemize}
 
-Die folgende Tabelle stellt Brewers Vergleich zwischen ACID und BASE dar. 
-Brewer stellt den Vergleich zwischen ACID und BASE mit der Darstellung, welche man in der Tabelle sehen kann. Es ist jedoch zu beachten, dass diese beiden Konzepte sich nicht aufheben, sondern ein großes Spektrum an Möglichkeiten bieten sollen. 
+Tabelle \ref{table:acidvsbase} stellt Eric Brewers Vergleich zwischen ACID und BASE dar. Es ist jedoch zu beachten, dass diese beiden Konzepte sich nicht aufheben, sondern ein großes Spektrum an Möglichkeiten bieten sollen. 
 
 \begin{table}[!htb]
 \centering
@@ -94,39 +96,40 @@ Brewer stellt den Vergleich zwischen ACID und BASE mit der Darstellung, welche m
 \multicolumn{1}{|c|}{\textbf{ACID}} & \multicolumn{1}{c|}{\textbf{BASE}} \\ \hline
 \begin{tabular}[c]{@{}l@{}}Strong consistency \\ Isolation \\ Focus on “commit” \\ Nested transactions \\ Availability? \\ Conservative (pessimistic) \\ Difficult evolution (e.g. schema)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Weak consistency – stale data OK \\ Availability first\\ Best effort \\ Approximate answers OK \\ Aggressive (optimistic)\\ Simpler!\\ Faster \\ Easier evolution\end{tabular} \\ \hline
 \end{tabular}
-\caption{ACID vs BASE \cite{MELD.CH2-noSQL.capTheorem}}
+\caption{Eric Brewer:ACID vs BASE  \cite{MELD.CH2-noSQL.capTheorem}}
+\label{table:acidvsbase}
 \end{table}
 
 \textbf{Partitionierung\newline}
-Ein weiteres von relationalen DBMS abgeleitetes Konzept ist die gezielte Trennung der Daten auf mehreren Maschinen. Ab einer gewissen Menge an Daten werden die benötigten Ressourcen über die Kapazität einer einzelnen Maschine hinaus laufen. In diesem Fall müssen die Daten über mehrere Maschinen aufgeteilt werden – das nennt man \textit{Partitioning}. Hierbei gilt es auch zu beachten, dass  das System weiterhin funktionsfähig sein muss, wenn einer dieser Maschinen ausfällt. Es sollte auch beachtet werden, dass die Last der Ressourcen auf alle Server aufgeteilt ist (\textit{load balancing}).
+Ein weiteres, von relationalen DBMS abgeleitetes Konzept, ist die gezielte Trennung der Daten auf mehreren Maschinen. Ab einer gewissen Menge an Daten werden die benötigten Ressourcen über die Kapazität einer einzelnen Maschine hinaus laufen. In diesem Fall müssen die Daten über mehrere Maschinen aufgeteilt werden – dies ist als \textit{Partitioning} bekannt. Hierbei gilt es auch zu beachten, dass  das System weiterhin funktionsfähig sein muss, wenn einer dieser Maschinen ausfällt. Es sollte auch beachtet werden, dass die Last der Ressourcen auf alle Server aufgeteilt ist (\textit{load balancing}).
 
 Bei NoSQL Datenbanken gibt es hierfür verschiedene Konzepte um die bestmöglichen Ergebnisse zu erhalten.
 
 \begin{description}
 	\item[Memory Caches] können als separate Zwischenspeicher (z.B. RAM) Datenbanken gesehen werden. Hierbei werden die am meisten gebrauchten Daten mit einer hohen Frequenz in den Memory gespeichert und somit eine Art von Caching entwickelt. In den meisten Fällen werden die Daten über eine API und einen speziellen Key geholt.
 
-	\item[Clustering] von Datenbanken ist eine weitere Möglichkeit. Hierbei ist es vor allem sehr wichtig, dass der Verwender der Applikaion gar nicht mitbekommt mit wie vielen Servern er kommuniziert.
+	\item[Clustering] von Datenbanken ist eine weitere Möglichkeit. Es werden hier mehrere Server in komplexen Netzwerkstrukturen verknpft. Es vor allem sehr wichtig, dass der Verwender der Applikaion gar nicht mitbekommt mit wie vielen Servern er kommuniziert.
 
 	\item[Trennung von Read und Write] bedeutet, dass es spezifische Server gibt die nur schreibenden oder lesenden Zugriff erlauben. Durch die asynchrone Verarbeitung der Daten gibt es beinahe keine Verzögerungszeit zwischen den Servern und durch Replikation der Daten (Mehrfachspeicherung) ist es auch schwierig die Daten zu verlieren
 
-	\item[Sharding] ist ein Prinzip in welchem die Daten so gespeichert sind, dass die Antworten auf die Requests nahe zusammenliegen selbst auf einem einzigen Server. Auch hier spielt bei mehreren Servern die Verteilung eine große Rolle.
+	\item[Sharding] ist ein Prinzip in welchem die Daten so gespeichert sind, dass die Antworten auf die Anfragen von Daten nahe zusammenliegen selbst auf einem einzigen Server.
 \end{description}
 
 \textbf{Kritik\newline}
-Selbstverständlich gibt es nicht nur positive Dinge über NoSQL. Auch nicht relationale Systeme haben einige Punkte in welchen es noch Verbesserungsbedarf gibt \cite{MELD.CH2-noSQL.sqlvsnosql}. 
+Selbstverständlich gibt es nicht nur positive Aspekte über NoSQL. Auch nicht relationale Systeme haben einige Punkte in welchen es noch Verbesserungsbedarf gibt \cite{MELD.CH2-noSQL.sqlvsnosql}. 
 
 \begin{itemize}
 	\item \textbf{Fortschritt\\}
-	Relationale Datenbanken existierten schon um einige Jahre länger als die NoSQL Variante. Die Zielsetzung von RDBMS ist es stabil und verlässlich zu sein - was teilweise auch bedeutet, dass es wenige neue Innovationen gibt. Hingegen gibt es noch einige NoSQL Datenbanksysteme die ein Basis Feature-Set entwickeln müssen.
+	Relationale Datenbanken existierten schon um einige Jahre länger als die NoSQL Variante. Die Zielsetzung von RDBMS ist es stabil und verlässlich zu sein - was teilweise auch bedeutet, dass es wenige neue Innovationen gibt. Hingegen gibt es noch einige NoSQL Datenbanksysteme die ein Basis Feature-Set entwickeln müssen \cite{MELD.CH2-noSQL.maturity}\cite{MELD.CH2-noSQL.considerations}.
 
 	\item \textbf{Support\\}
-	Auch hier spielt die etwas längere Lebensdauer von RDBMS eine große Rolle. Solche Namen wie \textit{MySQL, PostgreSQL, Microsoft SQL Server} sind sehr bekannt in der IT Welt. Die Entwickler dieser Systeme setzen auch auf einen guten Support, wobei dieser oft nur for Enterprise Editions zur Verfügung steht. Hingegen sind die meisten NoSQL Datenbanken Open Source, und haben daher meist nur Community Support.
+	Auch hier spielt die etwas längere Lebensdauer von RDBMS eine große Rolle. Solche Namen wie \textit{MySQL, PostgreSQL, Microsoft SQL Server} sind sehr bekannt in der IT Welt. Die Entwickler dieser Systeme setzen auch auf einen guten Support, wobei dieser oft nur für Enterprise Editions zur Verfügung steht. Hingegen sind die meisten NoSQL Datenbanken Open Source, und haben daher meist nur Community Support\cite{MELD.CH2-noSQL.considerations}.
 
 	\item \textbf{Administration\\}
-	Der wahrscheinlich größte negative Aspekt von NoSQL ist die eigentliche Administration. Es wird zwar oft gesagt, dass NoSQL keine administrativen Tätigkeiten benötigt, in den meisten Fällen muss aber trotzdem hin und wieder an der Datenbank gefeilt werden. Bei relationalen Datenbanken gibt es durch Einsatz von Berechtigungseinstellungen, Rollen, und durch das ACID-Model weit aus zugriffssichere Möglichkeiten.
+	Der wahrscheinlich größte negative Aspekt von NoSQL ist die eigentliche Administration. Es wird zwar oft gesagt, dass NoSQL keine administrativen Tätigkeiten benötigt, in den meisten Fällen muss aber trotzdem hin und wieder an der Datenbank gefeilt werden. Bei relationalen Datenbanken gibt es durch Einsatz von Berechtigungseinstellungen, Rollen, und durch das ACID-Model weit aus zugriffssichere Möglichkeiten \cite{MELD.CH2-noSQL.administration}.
 
 	\item \textbf{Fehlende Standardisierung\\}
-	Bei RDBMS hat sich mit SQL eine einheitliche Sprache etabliert, die sogar genormt ist. Zwar fügen Hersteller für ihre Produkte spezifische Sprachfeatures hinzu, die wiederum zu Inkompatibilitäten von Skripten führen können, jedoch gestaltet sich eine grundlegende Bedienung für alle RDBMS durch den Einsatz von SQL gleich. Bei NoSQL-DBs gibt es solche eine standardisierte Abfragesprache nicht - in den meisten Fällen wird JavaScript verwendet, es kann aber auch eine eigene, komplett neue Programmier- oder Skriptsprache sein.
+	Bei RDBMS hat sich mit SQL eine einheitliche Sprache etabliert, die sogar genormt ist. Zwar fügen Hersteller für ihre Produkte spezifische Sprachfeatures hinzu, die wiederum zu Inkompatibilitäten von Skripten führen können, jedoch gestaltet sich eine grundlegende Bedienung für alle RDBMS durch den Einsatz von SQL gleich. Bei NoSQL-DBs gibt es solche eine standardisierte Abfragesprache nicht - in den meisten Fällen wird JavaScript verwendet, es kann aber auch eine eigene, komplett neue Programmier- oder Skriptsprache sein \cite{MELD.CH2-noSQL.maturity}\cite{MELD.CH2-noSQL.considerations}.
 \end{itemize}
 
 \clearpage

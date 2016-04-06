@@ -31,7 +31,23 @@ $<len><cr><lf>
 <argN><cr><lf>
 \end{lstlisting}
 
-Alle Redis Befehle werden als String Arrays geschickt. Zum Beipsiel würde der Befehl \lstinline{SET mykey 'my value'} folgendermaßen aussehen:
+Wobei \textit{<cr>} und \textit{<lf>} jeweils für die ASCII Character 13 und 10 stehen. Alle Redis Befehle werden als String Arrays geschickt. Zum Beipsiel würde der Befehl
+
+\tab\lstinline{SET mykey 'my value'} 
+
+folgendermaßen aussehen
+
+\begin{lstlisting}[caption=RESP Angewandt]
+*3<cr><lf>
+$3<cr><lf>
+SET<cr><lf>
+$3<cr><lf>
+mykey<cr><lf>
+$5<cr><lf>
+myvalue<cr><lf>
+\end{lstlisting}
+
+beziehungsweise in der Kurzformschreibweise
 
 \tab\lstinline{*3\r\n$3\r\nSET\r\n$5\r\nmykey\r\n$8\r\nmy value\r\n}
 
