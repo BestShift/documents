@@ -1,4 +1,6 @@
 /**
+ * Eine Klasse welches die Beschleunigungskraefte von den Sensoren ausliest und sie Grafisch
+ * in einem Liniendiagramm einzeichnet.
  * Created by fitim on 09.12.2015.
  */
 public class Beschleunigungskraefte extends Activity implements OnChartValueSelectedListener {
@@ -35,7 +37,9 @@ public class Beschleunigungskraefte extends Activity implements OnChartValueSele
         // set an alternative background color
         mLineChart.setBackgroundColor(Color.WHITE);
 
+		//Linedata Objekte werden erstellt
         LineData data = new LineData();
+		//Die Daten welche angezeigt werden haben eine schwarze Farbe
         data.setValueTextColor(Color.BLACK);
         LineData data2 = new LineData();
         data2.setValueTextColor(Color.RED);
@@ -51,9 +55,8 @@ public class Beschleunigungskraefte extends Activity implements OnChartValueSele
         Legend l = mLineChart.getLegend();
 
         // modify the legend ...
-        // l.setPosition(LegendPosition.LEFT_OF_CHART);
         l.setForm(Legend.LegendForm.LINE);
-
+		// Farbe zuteilen
         l.setTextColor(Color.BLACK);
 
         XAxis xl = mLineChart.getXAxis();
@@ -73,6 +76,7 @@ public class Beschleunigungskraefte extends Activity implements OnChartValueSele
 
         YAxis rightAxis = mLineChart.getAxisRight();
         rightAxis.setEnabled(false);
+		// Es wird auf ein TextView Atributt zugegriffen, das Atributt bekommt einen listener und gibt die MyActivity Klasse zurueck, wenn es angecklickt wird.
         TextView rl= (TextView) findViewById(R.id.frombeschtokommtext);
         rl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,14 +88,13 @@ public class Beschleunigungskraefte extends Activity implements OnChartValueSele
 
     }
 	/**
-	*Zufaellige Daten werden dem Grafen hinzugefuegt 
+	*Zufaellige Daten werden generiert und dem Grafen hinzugefuegt 
 	*
 	*/
     private void addEntry() {
         LineData data=mLineChart.getData();
+
         if(data != null){
-
-
             LineDataSet set= data.getDataSetByIndex(0);
             if(set == null){
 
@@ -100,6 +103,7 @@ public class Beschleunigungskraefte extends Activity implements OnChartValueSele
             }
             //add a new random value
             data.addXValue("" + set.getEntryCount());
+			// Werte werden zwischen 2 und 0.1 generiert
             float a=(float) Math.random() * 2 + 0.1f;
             if(a>1.8){
                 feedback1();
@@ -114,6 +118,11 @@ public class Beschleunigungskraefte extends Activity implements OnChartValueSele
             mLineChart.moveViewToX(data.getXValCount() -7);
         }
     }
+	/**
+	* Die Methode feedback gibt einen ton und eine Nachricht aus.
+	* Die Nachricht wird nicht sehr lange auf dem Device gezeigt da es nur anschlaegt wenn er 
+	*eine groessere Bescheunigungskraft als 1.8g erreicht hat .
+	*/
     private void feedback1(){
         Context context = getApplicationContext();
         CharSequence text = "Langsamer gehts auch";
@@ -128,6 +137,7 @@ public class Beschleunigungskraefte extends Activity implements OnChartValueSele
 
 	/**
 	*Eigenschaften der Daten also Linienfarbe werden eingestellt 
+	*Wie z.B liniendicke, von Punkt die groesse usw.
 	*/
     private LineDataSet createSet() {
 

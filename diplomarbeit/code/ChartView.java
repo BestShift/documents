@@ -1,4 +1,34 @@
+/**
+ * Eine Klasse welches einen Kreis zeichnet in dem fuer alle Richtungen die Beschleunigungskraefte angezeigt werden.
+ * Diese Punkte werden im 5 grad Bereich eingezeichnet und werden von neueren Extremwerten ueberschreben. 
+ * Created by fitim on 10.03.2016.
+ */
+public class ChartView extends View {
+	
+    float phi;
+    float y;
+    float x;
+    float radius=400;
+    float radiusgeneriert;
+    List<Float> xvalues = new ArrayList<Float>();
+    List<Float> yvalues = new ArrayList<Float>();
+    List<Float> mockdaten = new ArrayList<Float>();
+	/*
+	*Die Methode runden() nimmt alle phi Eintraege auf und rundet diese auf 5 er Schritten und gibt sie Zurueck.
+	*
+	*/
+    public int runden(float phi){
+        float anzahl= round(phi/5);
+        System.out.println("Gerundet:" + anzahl);
+        int returnzahl=0;
+        returnzahl= (int) (anzahl*5);
+        return returnzahl;
+    }
+
     @Override
+	/**
+	* Die Methode onDraw Zeichnet die Ganzen Kreise mittels Canvas.
+	*/
     protected void onDraw(Canvas canvas) {
         int w = getWidth() / 2;
         int h = getHeight() / 2;
@@ -50,6 +80,10 @@
             }
 
         }
+
+
+    }
+}
 
 
     
