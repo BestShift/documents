@@ -1,51 +1,78 @@
 \lfoot{Autor: Raphael Simsek}
 \subsection{Analyse und Verbesserung des Fahrstils}
 
-Leider kann nicht immer der Fahrlehrer einem Fahrschüler einen nachhaltigen oder wünschenswerten Fahrstil näher bringen, da dies oft auch ein zeitintensiver Prozess ist. Zu diesem Zweck machte man sich Gedanken wie man diese Situation verbessern kann.
+Häufig kann nicht immer der Fahrlehrer einem Fahrschüler einen nachhaltigen oder wünschenswerten Fahrstil näher bringen, da dies oft auch ein zeitintensiver Prozess ist. Aus diesem Grund machten wir uns Gedanken wie man diese Situation verbessern kann.
 
-Vor der Antragstellung wurde überlegt, ob es bereits bekannte Systeme gibt, um seinen Fahrstil nachhaltig zu verbessern. Man fand dabei heraus, dass es bereits in vielen anderen Bereichen Apps gibt, welche sich das \textit{Sharing}-Prinzip zu Nutze gemacht haben und so äußerst bekannt geworden sind. Eines der bekanntesten österreichischen Beispiele ist das, stetig erweiterte, App-System von Runtastic. \cite{SIMR.CH1-Fahrstil-Analyse.BusinessplanRuntastic}
+\subsubsection{Was möchten wir umgesetzt?}
+\begin{itemize}
+	\item Echtzeit Messung und Errechnung der Beschleunigungskräfte, des Schadstoffausstoßes und eines Schaltvorschlags mittels der OBD-II Schnittstelle
+	\item Darstellung des Schaltvorschlags, Fahrkomforts und Schadstoßes in einer Android Applikation
+	\item retrospektive Analyse der Fahrkomfortanalyse einer Fahrt
+	\item retrospektive Analyse des errechneten Verbrauchs einer Fahrt
+	\item Darstellung der retrospektiven Analyse mittels einer Web-Applikation
+	\item Sharing Möglichkeiten für die Analyse seiner Fahrt
+	\item Umsetzung eines Car-PC
+\end{itemize}
+
+\subsubsection{Sharing}
+Am Beginn des Projektes wurde überlegt, ob es bereits bekannte Systeme gibt, um seinen Fahrstil nachhaltig zu verbessern. Dabei stach der Fakt heraus, dass es bereits in vielen anderen Bereichen Apps gibt, welche sich das \textit{Sharing}-Prinzip zu Nutze machen und damit äußerst erfolgreich Ihre Kunden zu einer Veränderung Ihrer Gewohnheiten bringen \cite{SIMR.CH1-fahrstil-analyse.GewohnheitenLoslassen}. Eines der bekanntesten österreichischen Beispiele ist das, stetig erweiterte, App-System von Runtastic. \cite{SIMR.CH1-Fahrstil-Analyse.BusinessplanRuntastic}
 Nur in Bezug auf das Autofahren konnte kein System, das dieses Prinzip verfolgt, gefunden werden.
 
-\comment{MELD:Was hat das alles konkret mit Analyse und Verbesserung des Fahrstiles zu tun? - Element der Peer-Pressure erklärt und integriert, so besser?}
-Zu Beginn des Diplomprojektes gab es also keine Möglichkeiten für verbesserungswillige Autofahrer ihren Fahrstil zu verbessern und dies dann sogar zu teilen. Das Teilen der Fahrstilanalyse trägt aufgrund des \textit{Peer-Pressure}-Effekts dazu bei, dass die Nutzer ihren Fahrstil verbessern, da Sie andere Nutzer überbieten möchten. So versuchen sich die Fahrer dadurch also stetig zu verbessern.
-Dies hat unsere Marktumfeldanalyse ergeben, wobei uns besonders auffiel, dass eine Analyse-Funktion für die nachhaltige Verbesserung des Fahrstils nötig wäre. Es wurde für diese Analyse evaluiert, welche Funktionalitäten am wichtigsten sind, wobei diese auch innerhalb der Diplomarbeit realisierbar sein sollten. 
-\newline
+Zu Beginn des Diplomprojektes gab es also keine Möglichkeiten für verbesserungswillige Autofahrer ihren Fahrstil zu verbessern und dies dann sogar zu teilen. 
+\newpage
+\paragraph{Peer-Pressure} 
+\begin{wrapfigure}{r}{0.6\textwidth}\centering
+    \includegraphics[width=0.6\textwidth]{images/peerPressure}
+    \caption{Verhaltensanalyse von Kindern bei gegenseitigem Monitoring \cite{SIMR.CH1-fahrstil-analyse.PeerPressure}} \label{Fig:imgPeerPressure}
+\end{wrapfigure}
+Das Teilen der Fahrstilanalyse trägt aufgrund des \textit{Peer-Pressure}-Effekts dazu bei, dass die Nutzer ihren Fahrstil verbessern, da Sie andere Nutzer überbieten möchten. Diese Theorie bestätigt eine Studie, bei der sich Schüler gegenseitig beobachten. Die Studie zeigt,  dass Menschen, wenn Sie von gleichgesinnten umgeben sind (i.e. Social Network) sich selbst weit mehr beherrschen und sich auf Ihre Vernunft besinnen. \cite{SIMR.CH1-fahrstil-analyse.PeerPressure} So würden sich Fahrer dadurch  stetig zu verbessern.
 
+Bei der Evaluierung des Project Scope fiel uns besonders auf, dass eine Analyse-Funktion für die nachhaltige Verbesserung des Fahrstils behilflich sein könnte. Es wurde für diese Analyse evaluiert, welche Funktionalitäten am Wichtigsten sind, wobei diese auch innerhalb der Diplomarbeit realisierbar sein sollten. \newline
+
+\subsubsection{Fahrkomfortanalyse}
 Eine Analyse des Fahrstils, nach Parametern der Fahrgastbequemlichkeit, ist gar nur bei Sportwagen und Fahrzeugen, die für den Rennbetrieb gedacht sind, verbaut. Hierbei ist anzumerken, dass bei derartigen Fahrzeugen die Funktionalität nicht für das frühzeitige Verbessern des Fahrstils eines Fahrers verwendet wird, sondern für die Optimierung von Rundenzeiten auf einer Rennstrecke oder schier für das Ausreizen des Möglichen.
 
 \begin{figure}[!htb]\centering
 	\includegraphics[width=0.6\textwidth]{images/gtrMultifunc}
-	\caption{bisherige Analyse Möglichkeiten bei einem Nissan GT-R (R35) \cite{SIMR.CH1-Fahrstil-Analyse.GTRMultifunc}}\label{Fig:imgGTR}
+	\caption{Analyse Möglichkeiten bei einem Nissan GT-R (R35) \cite{SIMR.CH1-Fahrstil-Analyse.GTRMultifunc}}\label{Fig:imgGTR}
 \end{figure}
 
-\newpage
-Der bisherige Schaltvorschlag in einem Auto ist, insbesondere bei kostengünstigeren Fahrzeugen, oft äußerst simpel gehalten, wobei ab einer gewissen Drehzahl die darauffolgenden Gänge vorgeschlagen werden oder nur auf den Normzyklus optimiert wird. \cite{SIMR.CH1-Fahrstil-Analyse.Schaltempfehlung} Der Motorwirkungsgrad nach dem Carnot-Prozess, wird dabei aber kaum verwendet. Der Carnot-Prozess beschreibt die Errechnung des \textit{theoretisch möglichen} Motorwirkungsgrad, ohne hinzuziehen von Reibung, Temperatur und anderen natürlichen Einflussgrößen. \cite{SIMR.CH1-Fahrstil-Analyse.CarnotWirkungsgrad} Genauere Ausführungen zu diesem Thema finden Sie im Kaptiel 2.1.2 - Thermodynamik. 
-Bei folgendem Diagramm ist nach rechts ist die Drehzahl aufgespannt, nach oben sieht man die abgegebene Kraft. Man erkennt die niedrigen Verbrauchswerte vor allem bei Volllast.
+Im Kontrast zu bisherig etablierten Möglichkeiten, soll die Anzeige der Fahrgastbequemlichkeit, dem Fahrer eher zeigen welche Kurven dieser, anhand seiner Beschleunigungskräfte, zu schnell durchfahren hat. Genauere Ausführungen zu diesem Thema, können unter Kapitel 3.5 - Fahrkomfortanalyse gefunden werden.
 
-\begin{figure}[!htb]\centering
-	\includegraphics[width=0.6\textwidth]{images/motorkennfeld}
-	\caption{Diagramm des Energieverbrauchs beim Otto- und Dieselmotor. \cite{SIMR.CH1-Fahrstil-Analyse.Motorkennfeld}}\label{Fig:imgMotorkennfeld}
-\end{figure}
+\subsubsection{Schaltvorschlag}
+Der bisherige Schaltvorschlag in einem Auto ist, insbesondere bei kostengünstigeren Fahrzeugen, oft äußerst simpel gehalten, wobei ab einer gewissen Drehzahl die darauffolgenden Gänge vorgeschlagen werden oder auf den Normzyklus optimiert wird. \cite{SIMR.CH1-Fahrstil-Analyse.Schaltempfehlung} 
+\paragraph{Normzyklus}
+Der Normzyklus ist insbesondere aufgrund des VW-Skandals bekannt geworden, nämlich erkennt die Motorsteuerung, wenn ein Abgastest gefahren wird, welcher in der Fachsprache als Normzyklus bezeichnet wird. \cite{SIMR.CH1-fahrstil-analyse.Normzyklus} Der \textit{modifizierte neue europäische Fahrzyklus (MNEFZ)} ist der Normzyklus, der innerhalb der EU verwendet wird um den Normverbrauch eines Fahrzeuges zu errechnen. Dieser umfasst insgesamt 1180 Sekunden, also fast 20 Minuten, wovon 780 Sekunden unter Stadtbedingungen und 400 Sekunden über Land gefahren werden. Dieser wird hauptsächlich aufgrund der Tricks, die Autohersteller verwenden dürfen, kritisiert, denn die Angaben der Hersteller werden in Europa selten hinterfragt. \cite{SIMR.CH1-fahrstil-analyse.MNEFZ}
+\paragraph{Carnot-Prozess}
+Der Motorwirkungsgrad nach dem Carnot-Prozess, wird für den Schaltvorschlag meist nicht verwendet. Der Carnot-Prozess beschreibt die Errechnung des \textit{theoretisch möglichen} Motorwirkungsgrad, ohne hinzuziehen von Reibung, Temperatur und anderen natürlichen Einflussgrößen. \cite{SIMR.CH1-Fahrstil-Analyse.CarnotWirkungsgrad} Genauere Ausführungen zu diesem Thema können im Kaptiel 2.1.2 - Thermodynamik gefunden werden. 
 
-Eine Live-Messung von \ce{CO2} Werten während der Fahrt ist momentan eine Schätzung, welche durch die Fahrzeughersteller aufgrund der OBD-II Daten durchgeführt und bei sehr wenigen Modellen als Zusatz angezeigt wird. Echte Grenzwerte oder gar eine Analysefunktionalität gibt es in dieser Hinsicht aber nicht. Die \ce{CO2} Werte werden in Zukunft noch weitaus relevanter, weil, wie mein Kollege im folgenden Kapitel ausführlich beschreibt, bis 2020 versucht wird einen Durschnittsaustoss von 95 g/km zu erzielen. \cite{SIMR.CH1-Fahrstil_Analyse.EUVerordCO2}
+\subsubsection{Schadstoffausstoß}
+Eine Live-Messung von \ce{CO2} Werten während der Fahrt ist zumeist eine Schätzung, welche durch den Bordcomputer durchgeführt wird und noch bei wenigen Modellen Einsatz findet. Echte Grenzwerte oder gar eine Analysefunktionalität gibt es in dieser Hinsicht aber nicht. Die \ce{CO2} Werte werden in Zukunft allerdings noch weitaus relevanter, weil, wie im folgenden Kapitel (1.2 - Umweltbelastung durch \ce{CO2} Ausstoß) ausführlich beschrieben, bis 2020 versucht wird einen Durschnittsaustoß von 95 g/km zu erzielen. \cite{SIMR.CH1-Fahrstil_Analyse.EUVerordCO2} Deshalb ist uns diese Funktionalität besonders im Bezug auf Zukunftssicherheit bei bisherigen Bordcomputern als fehlend aufgefallen.
 
-Weil aber besonders Fahranfänger und Fahrer die eben genannte Analysefunktionalität möglicherweise gerne nutzen würden, wurde ebenfalls evaluiert ob es diese Möglichkeiten durch Zubehör bereits gibt.
+\subsubsection{Analysefunktion}
+Besonders für Fahranfänger kann solch eine Funktionalität von großer Hilfe als lernunterstützendes Medium sein, da momentan ein Fahrschüler nach seiner Fahrstunde nur ein subjektives Feedback seines Fahrlehrers bekommt. Wie ließe sich eine solche Lernunterstützung also umsetzen?
+Man könnte dem Fahrschüler am Ende der Fahrstunde eine faktenbasierte Übersicht über seine Leistung während der Fahrstunde geben, welche er dann auch mitnehmen kann und wodurch dieser weiß worauf er bei seiner nächsten Übungsmöglichkeit achten sollte. Diese Übersicht ist sowohl ausgedruckt, als auch, wie unterhalb erkennbar, mittels unserer Webapplikation denkbar.
 
-Bei der Evaluierung wurde ein Projekt entdeckt, welches die gelieferten Daten nur live per Computer auslesbar macht, die Programmierung ist dabei so anders dass man dies nicht auf Android portieren könnte. Das Projekt ist außerdem weitaus teurer als angedacht (Low Budget CarPC: €300-350,-, gewünschtes Budget: < €100,-) Daher wurden Überlegungen angestellt, wie man die Idee eines solchen Projektes massentauglicher machen kann und dabei trotz des niedrigeren Preises dem Nutzer ein wünschenswertes Erlebnis bieten kann. \cite{SIMR.CH1-Fahrstil-Analyse.LowBudgetCarPC} Dieses Projekt hat uns also geholfen in der Defintionsphase des Projektes Anpassungen vorzunehmen, da es bereits einen Maßstab gab, was im Bereich des Möglichen liegt.
+\todo{Insert image of web application}
+%\begin{figure}[!htb]\centering
+%	\includegraphics[width=0.6\textwidth]{images/}
+%	\caption{Beispiel Analyse mittels unserer Webapplikation}\label{Fig:imgWebapp}
+%\end{figure}
 
-Die Möglichkeit einer Analyse konnte aber bei der Evaluierung bei keiner der konkurrierenden Echtzeit-Anzeigen (wie. z.B. Torque Pro \cite{SIMR.CH1-Fahrstil-Analyse.TorquePro}) erkannt werden. 
+Besonders Fahranfänger und Fahrer mit Umweltinteresse könnten die entwickelte Analysefunktionalität gerne nutzen wollen. Die Analysefunktionalität soll besonders für die Zielgruppe eines Fahranfängers aufzeigen, wo der Verbrauch, die Kurvenbeschleunigung (G-Kraft) und die Drehzahl besonders hoch war, damit sich der Fahranfänger oder der interessierte Kunde zukünftig verbessern kann. Da uns noch kein derartiges System bekannt war, wurde ebenfalls evaluiert ob die Möglichkeiten einer retrospektiven Fahranalyse durch Anbauteile oder Zubehör bereits realisierbar sind.
+
+\paragraph{Car - PC}
+Bei der Evaluierung konnte ein Projekt gefunden werden, welches die gelieferten Daten nur in Echtzeit per Computer auslesbar macht. Die Daten werden aber sofort verworfen, weshalb keine retrospektive Analyse mehr möglich wäre. Überdies ist die Programmierung in einer anderen Programmiersprache umgesetzt, weshalb man dieses Projekt keinesfalls auf Android portieren könnte. Das Projekt ist außerdem weitaus teurer (geschätzt €300,-) als von uns gewünscht, denn es wurde überlegt bis zu welchem Preis man sich ein solches Zubehör, auch als normaler Anwender leisten würde, wobei für uns €100,- als Abgrenzung feststand. Daher wurden Überlegungen angestellt, wie man die Idee eines solchen Projektes massentauglicher machen kann und dabei bei geringen Kosten dem Nutzer ein wünschenswertes Erlebnis bieten kann. \cite{SIMR.CH1-Fahrstil-Analyse.LowBudgetCarPC} Dieses Projekt hat uns also geholfen in der Defintionsphase des Projektes Anpassungen vorzunehmen, da es bereits einen Maßstab gab, was im Bereich des Möglichen liegt. Weitere Ausführungen zu dieser Thematik sind unter Kapitel 2.2 - Hardware und Sensorik auffindbar.
+
+Es gibt bisher bei konkurrierenden Echtzeit-Anzeigen (wie. z.B. Torque Pro \cite{SIMR.CH1-Fahrstil-Analyse.TorquePro}) noch keine, wie beschriebene, Analysefunktionalität. Deshalb würde die Analysefunktionalität für einen Autofahrer ein noch nicht etabliertes Produkt darstellen.
 
 \begin{figure}[!htb]\centering
 	\includegraphics[width=0.6\textwidth]{images/torquePro}
 	\caption{Möglichkeiten mit der kostenpflichtigen Torque App  und der OBD Schnittstelle \cite{SIMR.CH1-Fahrstil-Analyse.TorquePro}}\label{Fig:imgGTR}
 \end{figure}
 
-Gerade diese Funktionalität würde aber von Fahranfängern benötigt werden um frühzeitig und selbstständig Fehler ihres Fahrstils zu erkennen und auszubessern zu können. Insbesondere konnten wir, unter anderem anhand unserer Erfahrungen, feststellen, dass das Schalten und das gleichmäßige und verbrauchsarme Fahren für viele Fahranfänger eine Herausforderung darstellt. Durch eine Analyse Funktion könnten motivierte Fahranfänger Anfangsschwieriegkeiten schneller ablegen und die schlechten Angewohnheiten würden sich nicht im  Gedächtnis eines Fahranfängers verankern, sondern es würden sich nur positive Charakteristika gemerkt werden. \comment{JOSC: Definiere bitte positive und schlechte Angewohnheiten oder formulier um - so?} 
+Gerade diese Funktionalität würde aber von Fahranfängern benötigt werden um frühzeitig und selbstständig Fehler ihres Fahrstils zu erkennen und auszubessern zu können. Insbesondere konnten wir, unter anderem anhand unserer Erfahrungen, feststellen, dass das Schalten und das gleichmäßige und verbrauchsarme Fahren für viele Fahranfänger eine Herausforderung darstellt. Durch eine Analysefunktion könnten motivierte Fahranfänger Anfangsschwieriegkeiten schneller ablegen und die schlechten Angewohnheiten würden sich nicht im  Gedächtnis eines Fahranfängers verankern. Stattdessen es würden sich, unter regelmäßiger Verwendung der Applikation, bei motivierten Fahrern nur positive Charakteristika gemerkt werden, wie wir bei regelmäßigem Fahren mit einer erfahrenen Person merken konnten.
 
-Eine Analysefunktion in Form einer Webapplikation ist also insbesondere für die Lernkurve bei einem noch ungeübten Kraftfahrzeug-Lenker von großem Vorteil, da diese oft noch nach dem Erhalt des Führerscheins unsicher bezüglich ihres Fahrstils sind und des öfteren wiederholt die selben, genannten, Fehler unbemerkt begehen.
+Eine Analysefunktion in Form einer Webapplikation ist also insbesondere für die Lernkurve bei einem noch ungeübten Kraftfahrzeug-Lenker von großem Vorteil, da diese oft noch nach dem Erhalt des Führerscheins unsicher bezüglich ihres Fahrstils sind und ihnen des Öfteren wiederholt die selben Fehler unterlaufen. Eine genauere Beschreibung der Umsetzung der Web Applikation ist unter Kapitel 3.7 - Web App auffindbar.
 
-Andererseits kann solch eine Funktionalität auch von großer Hilfe als lernunterstützendes Medium sein, da momentan ein Fahrschüler nach seiner Fahrstunde nur ein subjektives Feedback seines Fahrlehrers bekommt. Wie ließe sich eine solche Lernunterstützung also umsetzen?
-Man könnte dem Fahrschüler am Ende der Fahrstunde eine faktenbasierte Übersicht über seine Leistung während der Fahrstunde geben, welche er dann auch mitnehmen kann. Mit dieser Information kann sich der Fahrschüler ohne Fahrlehrer mit der App selbst im Auto auf abgesperrtem Grund verbessern um sich so auf die nächste Fahrstunde vorzubereiten.
-
-Ein geübter, umweltfreundlicher Fahrer könnte mit der passenden Analysefunktion auch den produzierten \ce{CO2} Ausstoß messen und so seinen Bleifuß besser regulieren.
 \clearpage % DO NOT REMOVE
