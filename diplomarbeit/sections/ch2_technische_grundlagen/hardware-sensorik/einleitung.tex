@@ -1,0 +1,27 @@
+\lfoot{Autor: Tobias Perny}
+\subsubsection{Einleitung}
+\label{subsec:Einleitung}
+
+Da das Projekt Bestshift auch die Darstellung von Beschleunigungsdaten, sowie der Innenraumtemperatur umfasst, ist es notwendig eigene Hardware in Form von Sensoren zum KFZ hinzuzufügen.
+Hierfür standen mehrere Varianten zur Auswahl:
+
+\begin{itemize}
+	\item Smartphone:
+	\begin{itemize}
+	\item Vorteile: \nextline
+	Grundvoraussetzung für den Anwender unseres Systems ist der Besitz eines Smartphones mit einem Android Betriebssystem.
+	Das bedeutet, in jedem KFZ unserer Anwender befindet sich ein Smartphone aus welchem Sensorenwerte ausgelesen werden könnten.
+	\item Nachteile: \nextline
+	Die Sensoren müssen an einer Position im KFZ still stehen und dürfen sich während der Fahrt nicht bewegen. Dies würde bedeuten, dass das Smartphone die gesamte Fahrt über, nicht verwendet werden kann.
+\nextline
+Desweiteren ist die Auflösung der Sensoren in verschiedenen Smartphones nicht ausreichend für den Anwendungsfall dieses Projektes.
+	\end{itemize}
+	\item Selbstgebauter Car-PC:
+	\begin{itemize}
+	\item Vorteile: \nextline
+	Einen eigenen PC zu bauen ermöglicht uns die Wahl der passenden Sensoren. Das bedeuted, in jedem Fahrzeug befinden sich der gleiche Car-PC, also dieselben Sensoren.
+	Zusätzlich dazu ist es nun bei dieser Variante auch möglich, eine Datenbank auf dem Car-PC zu installieren, und somit Speicher auf dem Smartphone des Benutzers zu sparen.
+	\item Nachteile: \nextline
+	Ein proprietärer Car-PC muss selbst im Fahrzeug eingebaut werden. Um diesen Nachteil auszugleichen, ist der PC so konzipiert, dass er möglichst einfach in einem DIN-Slot installiert werden kann.
+	\end{itemize}
+\end{itemize}
