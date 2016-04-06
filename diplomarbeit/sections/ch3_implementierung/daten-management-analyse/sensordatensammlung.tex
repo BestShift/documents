@@ -1,10 +1,24 @@
 \lfoot{Autor: Daniel Melichar}
 \subsubsection{Sammlung der Sensordaten}
 
-Zunächst wurde für ein Programmierdesign Modell entwickelt in welchem beschrieben ist wie die Daten abgespeichert werden müssen. In diesem wird der Sensor als eigene Entität definiert, die eigentlichen Sensoren erben von ihr. Die Umsetzung kann hier begutachtet werden:
+Zunächst wurde ein Datenmodell entwickelt in welchem beschrieben ist, wie die Daten abgespeichert werden müssen. In diesem wird der Sensor als eigene Entität definiert, die eigentlichen Sensoren erben von ihr. Die Umsetzung zeigt Listing \ref{lst:sensorsammlung}
 
-\begin{lstlisting}[language=Python, caption=Sensorenmodell]
+\begin{lstlisting}[style=pythonstyle, caption=Sensorenmodell, label={lst:sensorsammlung}]
 #!/usr/bin/env python
+
+# Die Umsetzung dieses Model ist basieren auf der Python Libary Redisco.
+# Diese erlaubt es Klassenobjekte zu erstellen, welche dann automatisch in 
+# die Datenbank gespeichert werden.
+# Redisco Library: https://github.com/kiddouk/redisco
+
+# Basis Klasse fuer den Gyroskop Sensor welche die fuer uns relevanten 
+# Daten eines Gyroskop Sensors beschreibt. Die konkreten Werte beziehen
+# sich auf die Werte in allen drei Achsen, dem Erstellungsdatum der Klasse 
+# (aquivalent zum Zeitpunkt des Auslesens der Werte), und einem Namen der 
+# als ID dient.
+# 
+# Die *_scaled Methoden der Achsen Rechnen den konkreten Wert der Binaerdaten aus.
+# 
 class Gyroscope(models.Model):
     name = models.Attribute(required=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -24,14 +38,28 @@ class Gyroscope(models.Model):
     def zout_scaled(self):
         return self.zout/131
 
+    # Liefert alle aktuellen Daten zurueck
     def get_all(self):
         return [self.xout, self.xout_scaled, self.yout, self.yout_scaled, self.zout, self.zout_scaled]
 
+# Basis Klasse fuerr den Temperatursensor welche sich hauptsaechlich
+# auf die Raumtemperatur fokusiert. Zusaetzlich dazu muss noch ein 
+# Name als ID und Erzeugungsdatum/Sensorlesezeitpunkt angegeben werden.
+# 
 class Temperature(models.Model):
     name = models.Attribute(required=True)
     created_at = models.DateTimeField(auto_now_add=True)
     temp = models.FloatField(required=True)
 
+
+# Basis Klasse fuer den Beschleunigungssensor welche die relevanten 
+# Information beschreibt. Auch hier muss ein Name als ID und ein 
+# Erzeugungsdatum/Sensorlesezeitpunkt angegeben werden. Weiters werden
+# die konkreten Werte, also jene der drei Achsen sowie die Rotation, bei
+# Angabe in die Datenbank gespeichert.
+# 
+# Die *_scaled Methoden der Achsen Rechnen den konkreten Wert der Binaerdaten aus.
+#
 class Accelerometer(models.Model):
     name = models.Attribute(required=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -53,13 +81,14 @@ class Accelerometer(models.Model):
     def zout_scaled(self):
         return self.zout/131
 
+    # Liefert alle aktuellen Daten zurueck
     def get_all(self):
         return [self.xout, self.xout_scaled, self.yout, self.yout_scaled, self.zout, self.zout_scaled, self.xrot, self.yrot]
 \end{lstlisting}
 
-Wie genau wir Daten erhalten wird hier beschrieben \todo{MELD: Referenz}. Der Car-PC musste aber auch so eingerichtet werden, so nach Bootende bereits anfängz zu lesen. Hierfür wurden so Service geschrieben (Bash Skripte im \lstinline{/etc/init.d/} Verzeichnis die sich automatisch ausführen) welche dann wiederum jene Python Skripte startet die für das Auslesen und Speichern (in die Redis Datenbank) durchführen. Anbei befindet sich das für den Beschleunigungssensor zuständigen Skript:
+Der Car-PC musste so eingerichtet werden, so dass nach Ende des Boot-Vorgange bereits anfängt zu lesen. Hierfür wurden Init-Skripte, also Skripte die beim Startvorgang ausgeführt werden, programmiert. Diese verwenden dann wiederum das oben angeführte Model um das Auslesen und Speichern (in die Redis Datenbank) durchführen. Listing \ref{lst:init} zeigt das für den Beschleunigungssensor zuständigen Skript:
 
-\begin{lstlisting}[language=Bash, caption=Beschleunigungssensor Service]
+\begin{lstlisting}[language=Bash, caption=Beschleunigungssensor Service, label={lst:init}]
 #!/bin/sh
 # /etc/init.d/bsdata-accel
 
@@ -96,10 +125,9 @@ esac
 exit 0
 \end{lstlisting}
 
-\clearpage
-Eines der größten Probleme die wir (Tobias Perny und Daniel Melichar) hatten war ein, rückblickend Betrachtet, banaler Fehler. Das Problem war, dass das Service an sich funktioniert. Wir haben getestet ob es sich starten lässt und ob es die Sensordaten in Redis gespeichert werden. Dies hat zwar prinzipiell funktioniert, aber nach einem Reboot des Car-PCs mussten die Sensorservice immer wieder neu gestartet werden. Uns war eine lange Zeit nicht bewusst wie dies Problem entsteht. Letztendlich sind wir dann durch einen Witz auf das Problem gekommen: \textit{„Hast du den Redis-Server überhaupt gestartet?“}. Danach gingen wir nochmals die Dokumentation durch und fanden heraus, dass Redis einen eigenen Service benötigt um den Server zu starten. Dies sah dann letztendlich wie folgt aus:
+Für den automatisierten Start des Redis-Services wird ebenfalls ein Init-Skript benötigt (Listing \ref{lst:redisinit}).
 
-\begin{lstlisting}[language=Bash, caption=Redis Server Service]
+\begin{lstlisting}[language=Bash, caption=Redis Server Service, label={lst:redisinit}]
 #! /bin/sh
 ### BEGIN INIT INFO
 # Provides:   redis-server
@@ -113,16 +141,18 @@ Eines der größten Probleme die wir (Tobias Perny und Daniel Melichar) hatten w
 # Description:    redis-server - Persistent key-value db
 ### END INIT INFO
 
-
+# Laufzeitvariablen
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 DAEMON=/usr/bin/redis-server
 DAEMON_ARGS=/etc/redis/redis.conf
 NAME=redis-server
 DESC=redis-server
 
+# Redis Ordner
 RUNDIR=/var/run/redis
 PIDFILE=$RUNDIR/redis-server.pid
 
+# Testen ob der Redis service laueft
 test -x $DAEMON || exit 0
 
 if [ -r /etc/default/$NAME ]
