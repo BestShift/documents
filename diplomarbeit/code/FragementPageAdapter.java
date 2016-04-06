@@ -8,9 +8,13 @@ import com.example.bestshift_as.Shift.Shift;
 import com.example.bestshift_as.Verbrauch.Verbrauch;
 
 /**
+ * Die Methode weisst den Tabs die Klasse zu. 
  * Created by Fitim on 23.11.2015.
  */
 public class FragementPageAdapter extends FragmentPagerAdapter{
+	/**
+	* Die Methode gibt den Entsprechenden Fragment aus.
+	*/
     public FragementPageAdapter(FragmentManager fm) {
         super(fm);
     }

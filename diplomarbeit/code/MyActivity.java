@@ -3,7 +3,7 @@ public class MyActivity extends FragmentActivity implements ActionBar.TabListene
     ViewPager viewpager;
     FragmentPagerAdapter ft;
     /**
-     * Called when the activity is first created.
+     * Das Hauptfenster der Android Applikation
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,24 +31,6 @@ public class MyActivity extends FragmentActivity implements ActionBar.TabListene
         actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.verbrauchwolke));
         actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.komfort), true);
         actionbar.addTab(actionbar.newTab().setTabListener(this).setIcon(R.drawable.schaltvorschlag));
-
-        viewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int i, float v, int i1) {
-
-
-            }
-
-            @Override
-            public void onPageSelected(int i) {
-                actionbar.setSelectedNavigationItem(i);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int i) {
-
-            }
-        });
 
     }
 }
