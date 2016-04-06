@@ -3,7 +3,7 @@
 \label{subsec:androidsprachen}
 \textbf{Entwicklungsumgebung\newline}
 Android Studio ist die offizielle Entwicklungsumgebung für Android\texttrademark Applikationen, welche direkt von Google\texttrademark unterstützt wird.
-Android Studio basiert auf IntelliJ IDEA und ersetzt das Android Developer Tool für Eclipse, da dieses seit Ende 2015 keinen Support mehr durch Google\texttrademark erhält. Der Funktionsumfang von Android Studio ist:
+Android Studio basiert auf IntelliJ IDEA und ersetzt das Android Developer Tool für Eclipse, da dieses seit Ende 2015 keinen Support mehr durch Google\texttrademark erhält. Der Funktionsumfang von Android Studio beinhaltet:
 \begin{itemize}
 	\item Build-Management-Automatisierung: Basierend auf Gradle, Entwicklungsmöglichkeiten für verschiedene Gerätetypen (Tablets etc.)
 	\item Android Wear/Android TV: Stets auf dem neuesten Stand der Technik können Applikationen für neue Geräte implementiert werden.
@@ -26,18 +26,22 @@ Android Studio basiert auf IntelliJ IDEA und ersetzt das Android Developer Tool 
 \textbf{Programmiersprachen\newline}
 Bei den Programmiersprachen bestand die Auswahl zwischen der Programmiersprache Python, 
 nativer Javaentwicklung und Hybrid-Java in Verbindung mit HTML5.
-Dabei fiel für uns vor allem aufgrund der Verbindung mit einer Webapplikation die Wahl auf eine hybride Applikation. 
+
 
 \clearpage
 \subsubsection{Vergleich Java und Python}
 \textbf{Java\newline}
+Im Laufe der schulischen Ausbildung im TGM, wird jedem Schüler in den unteren Jahrgängen das Programmieren mittels Java
+beigebracht. Somit fungieren wir im Team am Besten mit Java, da schon etwaige Projekte und kleinere Teamaufgaben mit Java
+realisiert worden sind. Von den insgesamt 5 Jahrgängen, haben wir 4 Jahre mit Java verbracht. Dementsprechend besitzt das Team
+angemessene Java-Kenntnisse, um das Projekt durchzuführen. Im 5.Jahrgang im TGM beginnt man mit dem Erlernen von Python.
 \begin{itemize}
-	\item Charakteristik: Mehrfachverwendung/Mehrfachvererbung eingeschränkt, stark typisiert
-	\item Syntax: Vor der Kompilierung sehr streng, komplizierte Polymorphie
+	\item Charakteristik: Mehrfachverwendung eingeschränkt, stark typisiert
+	\item Syntax: Vor der Kompilierung sehr streng
 	\item Dokumentation: Ausführliche Dokumentation der Methoden in Form von Java API
 	\item Community: Java ist sehr weit verbreitet, rund 3 Milliarden Geräte können Java ausführen.
 	\item Usage: plattformunabhängige Programme, FAT-Client-Anwendungen
-	\item Können im Team: 5/5*, jahrelange Erfahrung innerhalb des Teams
+	\item Können im Team: Jahrelange Erfahrung innerhalb des Teams
 \end{itemize}
 
 \textbf{Python\newline}
@@ -47,14 +51,14 @@ Dabei fiel für uns vor allem aufgrund der Verbindung mit einer Webapplikation d
 	\item Dokumentation: innerhalb der Python API vorhanden.
 	\item Community: Die Community von Python ist ständig am wachsen, ca. 5 Millionen Geräte verwenden Python.
 	\item Usage: Back-End, äußerst schnelle Entwicklung (Rapid Application Development)
-	\item Können im Team: 3/5*, Team konnte erst geringe Erfahrung mit Python sammeln
+	\item Können im Team: Das Team konnte erst geringe Erfahrung mit Python sammeln
 \end{itemize}
 
 Aus den oben genannten Punkten filtern wir heraus, dass Java die bessere Lösung für die Android App wäre. 
 Die komplette Beherrschung von Python würde einige Wochen dauern. 
 Da diese Zeit im Rahmen des Diplomprojektes nicht vorhanden ist, wäre die App-Entwicklung in Python nicht zielführend. 
 Außerdem benutzen Android-Smartphones die Dalvik-VM, welche Java Class Files ausführt, wodurch Java nativ auf Android realisiert wird im Gegensatz zu Python. 
-Dementsprechend wird hier massiv an Umkompilierungszeit gespart, welche für die Echtzeit-Darstellung des Verbrauchs, Kamm'schen Kreises und Schaltvorschlags essentiell ist.
+Da durch auf dem Android-Smartphone ein Interpreter laufen müsste, wird dementsprechend hier massiv an Zeit gespart, welche für die Echtzeit-Darstellung des Verbrauchs, Kamm'schen Kreises und Schaltvorschlags essentiell ist.
 
 \clearpage
 \subsubsection{Java-Frameworks(APP)}
@@ -69,10 +73,11 @@ Vorteile von Frameworks:
 	\item Erleichterung der Programmierarbeit
 	\item Einsparung von viel Zeit
 \end{itemize}
-
+Um unsere graphischen Elemente innerhalb der Android-Applikation darzustellen, benötigen wir ein Framework, welches unseren Vorstellungen genüge tut und
+sich nahe Echtzeit aktualisieren lässt. Im nächsten Absatz sehen Sie, an welchen Entscheidungskriterien wir uns orientiert haben. 
 \begin{table}[!htb]
 \centering
-\caption{Vergleich der Charting-Frameworks}
+
 \label{comparisonCharting}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{l|c|c|c|l|}
@@ -87,29 +92,35 @@ Vorteile von Frameworks:
 \end{tabular}
 }
 \end{table}
+\caption{Vergleich der Charting-Frameworks}
 
-Im Großen und Ganzen ist MPAndroidChart die beste Wahl, da es eine der besten Dokumentationen hat, weiterhin hat es auch eine sehr gute Community, sehr viel gut gecodete und dokumentierte Beispiele und kann  auch erweitert werden, da das Framework auch auf iOS verwendet werden kann. 
+Im Großen und Ganzen ist MPAndroidChart die beste Wahl, da es eine der besten Dokumentationen hat, weiterhin hat es auch eine sehr gute Community, sehr viel gut gecodete und dokumentierte Beispiele und bietet auch die Möglichkeit, das Projekt auf ein IOS-basierendes Gerät zu portieren. 
 AChartEngine hat eine gute Dokumentation, doch eine eher schwache Community und ist leider nicht aktuell. 
 HelloChart hat eine der schlechtesten Dokumentationen, gar keine Community und sehr wenig gecodete Beispiele, diese sind aber sehr aktuell.
  
 
 \subsubsection{Hybrid-Frameworks}
+Im Gegenteil zu nativer entwicklung von Applikationen, werden heutzutage
+mit HTML, CSS und Javascript Applikationen entwickelt. Diese Vorgehensweise
+ist sehr beliebt unter Programmierenden, welche kein großes Wissen über
+bekannte Programmiersprachen verfügen.
+Um dies umzusetzen, werden Hybrid-Frameworks benutzt.
 Es fällt die Auswahl auf eines der folgenden Frameworks:
 \begin{itemize}
-\item \hyperref[Codename One]{https://www.codenameone.com/pricing.html} Java
-\item \hyperref[Firebase]{https://www.firebase.com/pricing.html} Android/iOS/JavaScript SDK
-\item \hyperref[appmethod]{http://www.appmethod.com/de/pricing} C++
-\item \hyperref[ionic]{http://ionicframework.com/} HTML, CSS, JS; Built with Sass, optimized with AngularJS
+\item \hyperref[Codename One]{Codename One: https://www.codenameone.com/pricing.html} \newline Java
+\item \hyperref[Firebase]{Firebase: https://www.firebase.com/pricing.html} \newline Android/iOS/JavaScript SDK
+\item \hyperref[appmethod]{appmethod: http://www.appmethod.com/de/pricing} \newline C++
+\item \hyperref[ionic]{ionic: http://ionicframework.com/} \newline HTML, CSS, JS; Erstellt mittels Sass, optimisiert durch AngularJS
 \end{itemize}
 
 \textbf{Dokumentation}
 Alle sind gut dokumentiert, Codename One und Firebase bieten sogar eine eingeschränkte kostenlose Option.
-ionic ist von sogar OpenSource und hat eine tolle einsteigerfreundliche Dokumentation
+ionic ist OpenSource und hat eine tolle einsteigerfreundliche Dokumentation.
 
 \textbf{Usage/Charakteristika}
 \begin{itemize}
-\item Codename One bietet eine Java SDK um eine App welche auf iOS, Windows oder Android lauffähig ist
-\item Firebase bietet eine Android, iOS und JavaScript SDK um eine vielseitig kompatible mobile oder web Applikation zu entwickeln. 
+\item Codename One bietet eine Java SDK, welche auf iOS, Windows oder Android lauffähig ist
+\item Firebase bietet eine Android, iOS und JavaScript SDK um eine vielseitig kompatible mobile oder Web-Applikation zu entwickeln. 
 \item Mittels appmethod kann man mit einer C++ Codebasis eine Android, iOS, MacOSX und sogar eine Windows Applikation entwickeln.
 \item Bei ionic wird die App von einer mobil-freundlichen HTML, CSS und JS Library entwickelt, während sie dann mit Sass auf das jeweilige App Format konvertiert wird und mit Angular JS optimiert wird. 
 \end{itemize}
@@ -117,28 +128,28 @@ ionic ist von sogar OpenSource und hat eine tolle einsteigerfreundliche Dokument
 \textbf{Community}
 \begin{itemize}
 \item Codename One bietet einen Blog, eine in die Webseite eingebundene Google Discussion und einen Stackoverflow codenameone-Tag.
-\item Firebase hat einen Blog und über 25000 Facebook likes, aber sonst leider nur ein GitHub um Issues zu publizieren und eigene Support Emails, also ist hier alles sehr zentralisiert gesteuert. 
+\item Firebase hat einen Blog und über 25000 Facebook likes und ein GitHub-Account um Issues zu publizieren und eigene Support Emails, um alles zentralisiert zu steuern. 
 \item appmethod hat eine Github page, welche aber ebenfalls eher durch den Support mit Issues gefüllt wird und verlinkt für die Community auf die Homepage der Mutterfirma \"Embarcadero\", welche auch ein Forum anbieten
-\item ionic hat eine großes community-driven Forum, welches bei vielen Beiträgen mehrere hundert Antworten als Wissenserweiterung anbietet.
+\item ionic hat eine großes Community- betriebenes Forum, welches bei vielen Beiträgen mehrere hundert Antworten als Wissenserweiterung anbietet.
 \end{itemize}
 
 \textbf{Performance}
 \begin{itemize}
-\item Codename One verwendet SaaS für die Kompilierung der App und verwendet eine VM die Java zu C für iOS macht. Die Performance ist hoch da es die nativen gaming Plattformen des jeweiligen OS verwendet. 
-\item Firebase verwendet die Forge UI und ist dadurch auf große Datensätze sogar ausgelegt, nur muss man achten diese zu denormieren.
-\item Da appmethod C++ als Programmiersprache verwendet, welche direkt auf der CPU laufen kann, appmethod performant.
-\item In einem Post von Sep.2014 wird ionic als weniger performant gesehen. Document Object Model (DOM) sollten möglichst selten angezeigt werden um gute Performance und Seite zu Seite Wechsel sollten auch unterlassen werden. Allerdings scheint das ionic Team sehr Performance fokussiert zu sein.
+\item Codename One verwendet SaaS für die Kompilierung der App und verwendet eine VM die Java zu C übersetzt, um diese Benutzbar für iOS zu machen. Die Performance ist hoch da es die nativen gaming Plattformen des jeweiligen OS verwendet. 
+\item Firebase ist auf große Datensätze ausgelegt, jedoch ist diese ebenfalls stark typisiert.
+\item Da appmethod C++ als Programmiersprache verwendet, welche die zurzeit hardwarenäheste Programmiersprache ist, ist appmethod besonders performant.
+\item In einem Post von Sep.2014 wird ionic als weniger performant gesehen. Document Object Model (DOM) sollten möglichst selten angezeigt werden um gute Performance und Seite zu Seite Wechsel sollten auch unterlassen werden.
 \end{itemize}
 
 \textbf{Last Update}
 \begin{itemize}
-\item Codename One: neuester Blogbeitrag: 14.10.2015
-\item Firebase: Github letzter Commit: vor 14 Stunden
-\item appmethod: Github letzter Commit: 21.09.2015
-\item ionic: Github letzter Commit: 14.10.2015
+\item Codename One: letzter Github Commit: 06.04.2016 [zuletzt gesehen am 07.04.2016, 01:25 GMT]
+\item Firebase: letzter Github Commit: 29.03.2016 [zuletzt gesehen am 07.04.2016, 01:26 GMT]
+\item appmethod: letzter Github Commit: 22.09.2015 [zuletzt gesehen am 07.04.2016, 01:27 GMT]
+\item ionic: Github letzter Commit: 06.04.2016 [zuletzt gesehen am 07.04.2016, 01:27 GMT]
 \end{itemize}
 
 \textbf{Frameworks Conclusio}
-Es war grundsätzlich für uns bereits von Beginn an klar dass wir ein Framework verwenden würden, allerdings tendieren wir mittlerweile in die Richtung eines hybriden Frameworks. Codename One und appmethod fallen aufgrund ihrer mangelnden kostenfreien Option definitiv weg. Ionic und Firebase scheinen schon weit interessanter.
-Da muss man sich allerdings eine Grundsatzfrage stellen - möchten wir eine HTML hybride App bauen oder nur eine cross-platform App? Denn für eine HTML hybride App müssten wir Ionic verwenden, auch wenn einige von uns dafür definitiv AngularJS und JS im allgemeinen wiederholen müssten.
+Es war grundsätzlich für uns bereits von Beginn an klar dass wir ein Framework verwenden würden, allerdings tendieren wir mittlerweile in die Richtung eines hybriden Frameworks. Codename One und appmethod fallen aufgrund ihrer komplett kostenfreien Option definitiv weg. Ionic und Firebase scheinen schon weit interessanter.
+Da muss man sich allerdings eine Grundsatzfrage stellen - möchten wir eine HTML hybride App bauen oder nur eine cross-platform App? Für eine hybride Applikation bleibt nur das Framework ionic übrig. Dieses erfordert allerdings auch für die Projektgruppe das Erlernen von AngularJS.
 \clearpage % DO NOT REMOVE
