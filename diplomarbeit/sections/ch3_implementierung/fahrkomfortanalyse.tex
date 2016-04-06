@@ -2,11 +2,11 @@
 \subsection{Fahrkomfortanalyse}
 
 
-Da die Bewertung der einzelnen Fahrer durch den Fahrgast erfolgt ist jedem klar.
-Diese Bewertung fällt meistens aus den Faktoren wie stark ein Fahrer beschleunigt und in welcher Geschwindigkeit er um eine Kurve fährt.
-Um einen KFZ-Einsteiger mit möglichst Informativen Daten zu \"bewerten\" haben wir uns einen Kammschen Kreis als Hilfe genommen.
+Autofahrten werden durch die Bequemlichkeit der Fahrt bewertet. 
+Diese Bewertung fällt meistens aus den Faktoren wie stark ein Fahrer beschleunigt und in welcher Geschwindigkeit er um eine Kurve fährt. Je nach dem erhöhen sich die Beschleunigungskräfte und die Fahrt wird mit immer größeren Beschelunigungskräften unangenehmer.
+Um einen KFZ-Einsteiger mit möglichst Informativen Daten zu \"bewerten\" haben wir uns einen Kammshen Kreis als Hilfe genommen.
 
-\subsubsection{Kammscher Kreis }
+\subsubsection{Kammsher Kreis }
 Ein Kammsher Kreis ist ein ein Kreis in dem durch Polarkoordinaten die Extremwerte einer Fahrt eingezeichnet sind.
 Der Kreis ist so aufgebaut, dass in Norden de Bremskräfte angezeigt werden, in Süden alle Beschleunigungen, im Westen die Rechtskurven und Osten die Linkskurven.
 Es ist also alles verkehrt.
@@ -16,13 +16,12 @@ Es ist also alles verkehrt.
 \end{figure}
 
 \subsubsection{Implementierung}
-Um diesen Kammschen Kreis richtig darzustellen haben wir uns die Klasse canvas als Hilfe genommen, wobei die von Graphics erbt und wir somit auf einer Fläche zeichnen können.
-Mittels Canvas konnten wir zufällig generierte 0-360grad Winkel und Radien erstellen und diese dann in Polarkoordinaten umrechnen.
-Somit konnten wir alle generierten werte Darstellen. 
+Um diesen Kammschen Kreis richtig darzustellen haben wir uns die Klasse canvas als Hilfe genommen, wobei sie von Graphics erbt und wir somit auf einer Fläche zeichnen können.
+Um die Punkte des Kammshen Kreises zu zeichnen habe ich mir alle phi Winkel, welche zufällig generiert werden auf oder abgerundet. Das wird gemacht, um 72 Punkte in 5er Schritten zu Zeichnen.  
+
 
 \lstinputlisting[caption=Runden-Methode, style=javastyle]{code/Runden.java}
 
-Bei der Methode Runden nehmen wir alle Winkel auf und runde sie auf oder ab in 5er Schritten.
 \newline 
 
 
