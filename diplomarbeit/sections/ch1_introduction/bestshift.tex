@@ -1,31 +1,20 @@
-\lfoot{Autor: Faiku Fitim}
-\subsection{Das Projekt BestShift}
+\lfoot{Autor: Fitim Faiku \& Hüseyin Bozkurt}
+\section{Das Projekt BestShift}
+\label{sec:projektbestshift}
 
-BestShift ist ein Projekt, welches dem Faikuthrer Informationen während- und nach der Fahrt bieten soll. 
-Dazu werden in unterschiedlichen Teilen des Projektes 
-diverse einzelne Komponenten einer hybriden Android Applikation und einer Hardware Schnittstelle für das ODB-II 
-Interface entwickelt. 
-Eine zusätzliche Web-App ermöglicht es, Fahrten retrospektiv zu betrachten und während der Fahrt gesammelte Daten innerhalb eines sozialen Netzwerkes zu teilen.
- 
+An dieser Stelle kommt das Projekt BestShift ins Spiel. Das allgemeine Ziel ist es dem Verwender, als einem Kraftfahrzeugfahrer, während und nach der Fahrt Information anzubieten. Mittels der gesammelnten Information werden unter anderem die drei Hauptfeatures, ein Schaltvorschlag (Sektion \ref{subsec:schaltvorschlag}), eine Verbrauchsanalyse (Sektion \ref{subsec:verbrauchsanalyse}), und eine Fahrgastkomfortanalyse (Sektion \ref{subsec:fahrgastkomfortanalyse}), imlpementiert. Diese Features sollen auch eine längerfristige Verbesserung des Fahrstils bewirken.
+>>>>>>> Stashed changes
 
-Für die Smartphone Applikation wird ein Android Framework verwendet, 
-während die Hardware aus einem Single Board Computer (SBC) bestehen soll. 
-Mittels einem ODB-II zu Bluetooth Chip (ELM237) und Python, 
-werden Daten aus dem Motormanagement sowie eigene Sensordaten, welche in einem selbstgemachtem Car-PC eingebaut sind,
-gesammelt und aufbereitet. 
-Die gesammelten Daten können dann von dem Smartphone aus in die Cloud geladen werden, welche dann durch unsere
-Webapplikation genauer inspiziert werden können.
+Das Projekt besteht aus unterschiedlichen Komponenten die alle als ein System zusammenarbeiten (siehe Abbildung \ref{fig:konzept1}) und die drei Hauptfeatures realisieren. Diese Komponenten sind ein Car-PC (siehe Sektion \ref{subsec:carpc}) eine Android Applikation für die Darstellung während der Fahrt (siehe Sektion \ref{subsec:androidapp}) und eine Web-Applikation, welche für die retrospektive Darstellung und für Vergleiche zuständig ist (Sekton \ref{subsec:webapp}). Eine möglichst umweltschonende Implementierung war uns auch sehr wichtig.
 
-In diesem Projekt wird eine Applikation für das mobile Betriebssystem Android implementiert, 
-die dem Fahrer eines KFZ während der Fahrt Informationen zu Fahrgastbequemlichkeit und verbrauchseffizienter Fahrweise gibt. 
-Dazu werden Daten aus dem Motormanagement verwendet. 
-Für weitere benötigte Daten (z.B. Beschleunigungswerte) werden zusätzliche externe Sensoren in einem portablen CarPC integriert. 
-Das Herzstück des Projektes ist aber die Webapplikation, die die Retrospektive Fahrtenanalyse und eine Social Media implentierung beinhaltet.
-Diese Webapplikation wird die Möglichkeit bieten, die gesammelten Daten aller gespeicherten 
-Fahrten für spätere Analysen graphisch einfach aufbereitet anzuzeigen. 
-Die einzelnen Messwerte sollen dabei mit geographischen Informationen verknüpft werden, 
-um dem Fahrer zum Beispiel zu zeigen, welche Stellen der Strecke besonders verbrauchsintensiv oder unbequem für den Fahrgast waren. 
+\textbf{Projektmanagement\newline}
+Die Entwicklung und konkrete Umsetzung des Systems war nicht von Anfang an klar. Über die Zeit, in welcher das Projekt umgesetzt wurde, haben sich immer wieder neue Komponenten hinzugefügt oder wurden gelöscht. Es mussten daher kurzfristige Ändernungen schnell adaptiert werden. Glücklicherweise ist das Diplomprojekt BestShift aus der Idee eines Schülers entstanden, und es konnte daher der Rahmen der Umsetzung selber fest gelegt werden.
 
-Als weitere Funktion soll die Applikation aus den ermittelten Daten dem Fahrer den 
-momentan am energieeffizientesten oder leistungsstärksten Gang vorschlagen können.
-\clearpage % DO NOT REMOVE
+Aufgrund dessen haben wir uns für eine agile Projektmanagementmethode entschieden. Wir haben uns für SCRUM entschieden, da es zielführendes Arbeiten unterstützt und die inkrementelle Entwicklung von Software ermöglicht. Es ist damit auch sehr gut möglich die Schwachstellen im Projekt schnell aufzudecken - was wesentlich für die Produktivität ist. Gezieltes Risikomanagement kann durch SCRUM ebenfalls betrieben werden. 
+
+Unter agilem Projektmanagement, insbesondere SCRUM, gibt es den sogenannten
+Sprint; ein zeitlich begrenzter Arbeitsaufwand. Ein Sprint wird logischerweise im vorhinein geplant, wobei Wert auf den \textit{scope of work} (zu erledigende Arbeitspakete) gelegt wird. 
+Zusätzlich dazu, gibt es zum Beginn einer jeden
+Arbeitsphase ein kleines Meeting (Daily Scrum Meeting). In diesem Meeting erklärt jedes Mitglied was es in der letzten Arbeitsphase gearbeitet hat, was es in dieser Arbeitsphase tun wird und welche Probleme es beim Arbeiten gegeben hat.
+Anders als bei der traditionellen Variante hat SCRUM den großen Vorteil, dass neue User Stories, und damit neue Funktionen der Software, on-the-go, also während das Projekt bereits läuft, hinzugefügt werden können. 
+Grundsätzlich ist also SCRUM sinnvoll, wenn man mögliche Veränderungen erwartet. Jedoch sind die Grundelemente der erzeugten Software (und somit der Umfang der Userstories) sehr früh festgelegt.
