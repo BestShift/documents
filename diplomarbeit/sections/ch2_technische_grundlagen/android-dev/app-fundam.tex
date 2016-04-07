@@ -10,12 +10,6 @@ Die APK-Datei wird dann auf das Android-Gerät installiert.
 
 
 \textbf{Native vs HTML5 vs Hybrid}
-\todo{Überschrift anders?}
-\begin{wrapfigure}{r}{0.6\textwidth}
-	\centering
-	\includegraphics[width=0.3\textwidth]{images/HTML-vs-Native-vs-Hybrid}
-	\caption{Der Treibhauseffekt \cite{Faik.CH2-app-fundam}}
-\end{wrapfigure}
 Bei der Umsetzung unserer Android Applikation, hatten wir die Entscheidung, wie wir die Android App erstellen. 
 Da Android mehrere Programmierarten unterstützt musste evaluiert werden welche Programmiermodule für unsere App am Besten geeignet ist. \nextline
 
@@ -37,5 +31,31 @@ HTML5 Applikationen werden über Browser abgespielt, wobei jedes Gerät auf die 
 \textbf{Hybrid\newline} 
 Hybrid Apps sind eine Mischung aus nativ und HTML5 Apps. Hybrid bietet das Beste aus beiden Welten. Das Design wird mittels HTML5 und CSS erstellt, wobei sich dahinter ein JavaScript-Code befindet. Hybrid Apps sind genauso auf jede Plattform abspielbar, wobei sie für die Plattform entsprechend umprogrammiert müssten.    
 \nextline
+
+\subsubsection{Android Virtual Device}
+Ein Android Virtual Device(AVD) ist eine Emulator-Konfiguration, welche benutzt werden kann, um die Handysoftware darzustellen. 
+Der einfachste Weg, um ein AVD zu schaffen, ist, den AVD-Manager in Android-Studio zu nutzen. 
+Es kann auch auf performantere AVDs zugegriffen werden, um damit optimierte Applikationen zu schreiben.
+Diese externen AVDs bieten eine realitätsnahe Darstellung des verwendeten Devices.
+Zum Verwenden der AVD müssen System-image Packages runter geladen werden, wodurch die Software der AVD zugeordnet wird und mit verschiedenen API Versionen gearbeitet werden kann.
+Eine API(Application Programming Interface) ist die Version der Programmierstelle, wobei mehrere Feauters auf höheren Versionen möglich sind. 
+Eine Zuordnung zu einem System-Image: Sie können festlegen, welche Version der Android-Plattform auf dem virtuellen Gerät ausgeführt werden. Sie können eine Version der Standard-Android-Plattform oder das System-Image mit einem SDK Add-on verpackt wählen.
+
+Es können so viele AVDS erstellt werden, basierend auf das Devicetypen mit denen man arbeiten möchte.
+Beachten Sie folgende Punkte, wenn sie system images für ihre AVD auswählen:
+Der API level für das Device ist wichtig, da einige Applikationen auf niedrigeren API Level nicht laufen können. Wenn sie libarys verwenden müsste beachtet werden ab welche API Version die Libary verfügbar ist, da das Arbeiten damit nachher nicht mehr möglich ist.
+\textbf{Virtual-Device-erstellen}
+\begin{wrapfigure}{l}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.4\textwidth]{images/Create-virtual-device}
+	\caption{Erstellen einer AVD in Android Studio}
+\end{wrapfigure}
+
+\textbf{Android Virtual Device}
+\begin{wrapfigure}{r}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.4\textwidth]{images/AVD}
+	\caption{AVD}
+\end{wrapfigure}
 
 \clearpage % DO NOT REMOVE
