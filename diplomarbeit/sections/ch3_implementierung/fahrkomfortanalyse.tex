@@ -3,24 +3,29 @@
 
 
 Autofahrten werden durch die Bequemlichkeit der Fahrt bewertet. 
-Diese Bewertung fällt meistens aus den Faktoren wie stark ein Fahrer beschleunigt und in welcher Geschwindigkeit er um eine Kurve fährt. Je nach dem erhöhen sich die Beschleunigungskräfte und die Fahrt wird mit immer größeren Beschelunigungskräften unangenehmer.
-Um einen KFZ-Einsteiger mit möglichst Informativen Daten zu \"bewerten\" haben wir uns einen Kammshen Kreis als Hilfe genommen.
+Diese Bewertung fällt meistens aus den Faktoren wie stark ein Fahrer beschleunigt und in welcher Geschwindigkeit er um eine Kurve fährt. Eine Fahrt kann durch starke Beschleunigungen - verursacht durch zu  starkes Gas-geben oder Bremsen, als auch Kurvenfahrten mit zu hoher Geschwindigkeit - unbequem werden. Um Fahranfängern Informationen über ihre Fahrtverläufe zu geben, werden in diesem Projekt Beschleunigungswerte in der Fahrzeuglängs- und querachse ermittelt und gespeichert (siehe dazu auch Kapitel … *Car-PC*). Für eine übersichtliche Darstellung der gesammelten Daten wurde der Kammsche Kreis gewählt.
 
-\subsubsection{Kammsher Kreis }
-Ein Kammsher Kreis ist ein ein Kreis in dem durch Polarkoordinaten die Extremwerte einer Fahrt eingezeichnet sind.
+
+
+Jetzt ein wenig Text zum Hr. Kamm und warum dieser Darstellung gut ist und wie sie zu lesen ist
+
+\subsubsection{Kammscher Kreis }
+Ein Kammscher Kreis ist ein Kreisdiagramm, in dem die Richtung und der Betrag der Fahrzeugbeschleunigungen aufgetragen sind zur Fahrzeugrichtung, da die Beschleunigungskräfte in die entsprechenden Richtung wirken.
 Der Kreis ist so aufgebaut, dass in Norden de Bremskräfte angezeigt werden, in Süden alle Beschleunigungen, im Westen die Rechtskurven und Osten die Linkskurven.
 Es ist also alles verkehrt.
 \begin{figure}[!htb]\centering
 	\includegraphics[width=0.5\textwidth]{images/kammsherkreis}
-	\caption{Kammsherkreis \cite{FAIF.CH3-fahrkomfortanalyse.KammscherKreis}}\label{Fig:Kammsher-Kreis}
+	\caption{Beschleunigungswerte einer Autofahrt dargestellt als Kammscher Kreis} \cite{FAIF.CH3-fahrkomfortanalyse.KammscherKreis}}\label{Fig:Kammsher-Kreis}
 \end{figure}
 
 \subsubsection{Implementierung}
-Um diesen Kammschen Kreis richtig darzustellen haben wir uns die Klasse canvas als Hilfe genommen, wobei sie von Graphics erbt und wir somit auf einer Fläche zeichnen können.
-Um die Punkte des Kammshen Kreises zu zeichnen habe ich mir alle phi Winkel, welche zufällig generiert werden auf oder abgerundet. Das wird gemacht, um 72 Punkte in 5er Schritten zu Zeichnen.  
+
+Bei der Umsetzung des Kammschen Kreisdiagrammes habe ich erstmal die MPAndroidchart Libary verwendet.Da aber der Kammsche Kreis sich nicht mithilfe der Libary aktualisieren ließ wurde schnell die Lösung mittels canvas erstellt. 
+
+Bei canvas ist es so, dass die onDraw Methode überschrieben werden muss um auf einer Fläche zeichnen zu können. Weiters habe ich mir eine Näherungsmethode erstellt womit ich die Punkte in 5er Winkel auf oder abrunde.
 
 
 \lstinputlisting[caption=Runden-Methode, style=javastyle]{code/Runden.java}
 
 \lstinputlisting[caption=Draw, style=javastyle]{code/ChartView.java}
-Um den Kammshen-Kreis zu zeichnen habe ich die OnDraw Methode ueberschrieben, weiters speichere ich alle generierten Werte in einer Liste welche in einer For-Schleife gezeichnet werden.
+

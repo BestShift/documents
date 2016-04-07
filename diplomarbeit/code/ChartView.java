@@ -3,7 +3,6 @@
  * Diese Punkte werden im 5 grad Bereich eingezeichnet und werden von neueren Extremwerten ueberschreben. 
  * Created by fitim on 10.03.2016.
  */
-
     @Override
 	/**
 	* Die Methode onDraw Zeichnet die Ganzen Kreise mittels Canvas.
@@ -66,6 +65,7 @@
             p.setColor(Color.BLACK);
             p.setStyle(Paint.Style.FILL);
             canvas.drawCircle((getWidth() / 2) + xvalues.get(i), (getHeight() / 2) + yvalues.get(i), 3, p);
+			// Hier wird die Grafik aktuallisiert
             invalidate();
             postInvalidate();
             if (xvalues.get(i) == null) {

@@ -58,15 +58,29 @@ Dies wird gemacht um zwischen den Oberflächen wechseln zu können.
  
 
 \subsubsection*{Implementierung von MPAndroidChart}
-Als nächstes haben wir mithilfe der MPAndroidchart Library einige Graphen erstellt und sie mit Daten befüllt.
+MPAndroidChart ist eine Libary mittels der 8 verschieden Graphen erzeugt werden können. Weiterhin sind Animationen mittels der Libary möglich, das bearbeiten von x und y Achsen und das abspeichern von Grafiken als image Files.
+Das Liniendiagramm wurde mittels der MPAndroidchart Libary erstellt.
+
+
+
 
 \lstinputlisting[caption=Liniendiagramm Beispiel, style=javastyle]{code/Beschleunigungskraefte.java}
 
-\begin{wrapfigure}{r}{0.4\textwidth}
-	\centering
-	\includegraphics[width=0.5\textwidth]{images/Liniendiagramm}
-	\caption{Beschleunigungskräfte Längstrichtung }
-\end{wrapfigure}
-Das Liniendiagramm wurde mittels der MPAndroidChart Libary erstellt. Die Linien werden Blau gezeichnet und die einzelnen Punkte schwarz.
+
+Das Liniendiagramm wurde mittels der MPAndroidChart Libary erstellt. Die Linien werden Blau gezeichnet und die einzelnen Punkte schwarz. Das Liniendiagramm wurde zusätzlich zum Kammschen Kreis erstellt, da für den Endbenutzer die Längsbeschleunigung einen größeren Stellenwert hat, da wir in der Stadt viel mehr in die Länge beschleunigen, als in Kurven.
+ \newline
+\begin{figure}[!tbp]
+ 	\centering
+ 	\begin{minipage}[b]{0.4\textwidth}
+ 		\includegraphics[width=\textwidth]{images/Liniendiagramm}
+ 		\caption{Längstbeschleunigung mittels MPAndroidChart}
+ 	\end{minipage}
+ 	\hfill
+ 	\begin{minipage}[b]{0.4\textwidth}
+ 		\includegraphics[width=\textwidth]{images/Liniendiagramm}
+ 		\caption{Kammscher Kreis mittels ondraw() - canvas}
+ 	\end{minipage}
+\end{figure}
+ 
 
 \clearpage % DO NOT REMOVE
