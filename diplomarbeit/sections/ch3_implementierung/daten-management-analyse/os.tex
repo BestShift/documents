@@ -6,9 +6,9 @@ Der Car-PC muss gewisse Software Anforderungen erfüllen damit korrekt auf diese
 
 Da die Hardware und Sensorik des Car-PC während der Laufzeit des Projekts stetig in Entwicklung war, musste eine Lösung gefunden werden, mittels welcher die Verwendbarkeit des Betriebssystem getestet werden kann. Hierfür wurde das Tool Vagrant \cite{MELD.CH3-vagrant.website} verwendet. Damit kann man virtuelle Maschinen einfach erstellen und verwalten. 
 
-Für das Verwalten der virtuellen Maschinen wird ein so gennantes \textit{Vagrantfile} erstellt und in diesem definiert, wie die Maschine aussehen soll. Für unseren Fall, sieht dies so aus.
+Für das Verwalten der virtuellen Maschinen wird ein so gennantes \textit{Vagrantfile} erstellt und in diesem definiert, wie die Maschine aussehen soll. Für unseren Fall, sieht dies so aus wie bei Listing \ref{vagrantfile}.
 
-\begin{lstlisting}[language=Ruby, caption=Vagrantfile,numbers=left, xleftmargin=1cm, numberstyle=\tiny\noncopynumber]
+\begin{lstlisting}[language=Ruby, caption=Vagrantfile,numbers=left, xleftmargin=1cm, numberstyle=\tiny\noncopynumber, label={vagrantfile}]
 # Create a forwarded port mapping which allows access to a specific port
 # within the machine from a port on the host machine. In the example below 
 # accessing "localhost:8080" will access port 80 on the guest machine.
@@ -76,9 +76,9 @@ In den Zeilen 15-22 werden so genannte \textit{shared/synced folder} \cite{MELD.
 
 In den Zeilen 24-46 ist die Hostsystem spezifische Konfiguration zu finden. Hier ist zu beachten, dass wir mittels der kostenlosen Virtualisierungssoftware Oracle VirtualBox \cite{MELD.CH3-virtualbox.website} arbeiten - es sind aber auch andere Möglich \cite{MELD.CH3-vagrant.providers}. Wir definieren außerdem, dass wir die virtuelle Maschine ohne graphisches Interface starten, da wir nur über das CLI arbeiten. Ab der Zeile 32 werden die Hardware Spezifikationen der virtuellen Maschine beschrieben, diese sind abhängig vom Hostsystem. Allgemein werden 25\% des Arbeitsspeichers und alle CPU Kerne der Maschine zu verfügung gestellt. Diese Hardware Spezifikationen sind um einiges leistungsstärker als jene die dann letztendlich auf den Car-PC benötigt werden - sie wurden so hoch angesetzt um Leistungstests des Systems durchzuführen.
 
-In den Zeilen 52-58 definieren wir die Skripte welche die benötigte Software installieren. In dem \textit{provision.sh} File werden dann alle weitern Skripte aufgerufen und ausgeführt. Die benötigte Software wurde durch die Evaluation des Teams ermittelt. Bei Listing \ref{lst:provisionsh } kann ein Snippet betrachtet werden die zeigt welche Software installiert wird.
+In den Zeilen 52-58 definieren wir die Skripte welche die benötigte Software installieren. In dem \textit{provision.sh} File werden dann alle weitern Skripte aufgerufen und ausgeführt. Die benötigte Software wurde durch die Evaluation des Teams ermittelt. Bei Listing \ref{provisionsh} kann ein Snippet betrachtet werden die zeigt welche Software installiert wird.
 
-\begin{lstlisting}[language=bash, caption=provision.sh,label={lst:provisionsh}]
+\begin{lstlisting}[language=bash, caption=provision.sh,label={provisionsh}]
 pushd ~
 mkdir -p logs
 mkdir -p conf
