@@ -26,6 +26,7 @@ Für die Auswahl der Hardware für den Car-PC wurden folgende Kriterien in Betra
 
 
 \textbf{Realisierung\newline}
+\newline
 Lösungsansatz
 Es wurden grundsätzlich zwei Lösungsansätze in Betracht gezogen.
 
@@ -43,16 +44,18 @@ Der Raspberry PI 2B unterstützt weniger Programmiersprachen als der RED Brick v
 \end{itemize}
 
 \textbf{Umsetzung\newline}
+\newline
 Es wurde der Raspberry PI zum umsetzen des Projektes gewählt aufgrund folgender Tatsachen:
 Modularität:
-Wir sind dank der GPIO pins des Raspberry PI nicht auf andere Geräte derselben Firma angewiesen und können jeden Sensor verwenden, der mit diesen GPIO Pins kommunizieren kann.
+Wir sind dank der GPIO Pins des Raspberry PI nicht auf andere Geräte derselben Firma angewiesen und können jeden Sensor verwenden, der mit diesen GPIO Pins kommunizieren kann.
 Peripherie:
 Der Raspberry PI 2B besitzt 4 USB Ports. Mithilfe dieser Ports ist es möglich Bluetooth-Adapter und WLAN-Adapter, anzuschließen.
-
+\newpage
 \textbf{Wirtschaftlichkeit\newline}
-Der Raspberry PI 2B kostet 34,99€ bei einem offiziellen Anbieter der Firma.
+\newline
+Der Raspberry PI 2B kostet EUR 34,99 bei einem offiziellen Anbieter der Firma.
 https://www.element14.com/community/community/raspberry-pi
-Der Preis des „RED Brick“ beträgt 69,99€ beim Anbieter direkt.
+Der Preis des „RED Brick“ beträgt EUR 69,99 beim Anbieter direkt.
 https://www.tinkerforge.com/de/shop/bricks.html
 Das bedeutet der Raspberry PI 2B ist um fast die Häfte günstiger als der RED Brick, und aufgrund der
 Modularität des Raspberry PI können auch billigere Sensoren verwendet werden als beim tinkerforge
@@ -61,15 +64,19 @@ RED Brick.
 \subsubsection{Verbaute Sensoren}
 Nicht alle Daten die wir für unsere Android App benötigen, werden von der OBDII Schnittstelle
 zurückgegeben. Um diese zu erhalten müssen zusätzlich zum SBC (Single-Board-Computer) zwei Sensoren im fertig Car-PC enthalten sein.
-\newline
+\nextline
 \textbf{Ziele\newline}
+\newline
 Die Android App soll in der Lage sein die Beschleunigung in 3 Achsen darzustellen, und dem Benutzer
 die Innenraumtemperatur des Wagens mitzuteilen.
 Hierfür werden ein Beschleunigungssensor und ein Temperatursensor mit dem SBC kommunizieren
 um die gewünschten Werte zu erhalten.
-\newline
+\nextline
 \textbf{Realisierung\newline}
+\newline
 Da ein Raspberry PI 2B als Hauptplatine gewählt wurde, wissen wir welche Sensoren für dieses Projekt in Frage gekommen sind.
+\nextline
+\textbf{Umsetzung\newline}
 \newline
 Es wurden I2C fähige Sensoren zur Umsetzung des Projektes gewählt, weil der Raspberry Pi dank seiner gpio Pins in der Lage ist mit I2C fähigen Sensoren zu kommunizieren. Da dieser Bus sehr einfach zu konfigurieren ist und diese Art von Sensoren somit sehr leicht zu Handhaben sind.
 Bei dieser Art von Sensoren gibt es 2 Pins auf welche geachtet werden müssen. Diese haben die Bezeichnungen SDA und SCL. Sobald diese Pins mit denen des Raspberry PI verbunden sind bekommt der Sensor eine Slave Adresse zugewiesen. Mithilfe dieser kann man die Daten auslesen.
@@ -77,8 +84,10 @@ Bei dieser Art von Sensoren gibt es 2 Pins auf welche geachtet werden müssen. D
 	\includegraphics[width=0.5\textwidth]{images/sensorendetect}
 	\caption{Beispielhafte Ausgabe von am I2C-Bus erkannten Slave-Devices mit den Adressen 4f und 68}\label{Fig:imgSensorDetect}
 \end{figure}
-
-Konkret wurden ein GY521 Beschleunnigungssensor und ein DS1621 Temperatursensor im Car-PC verbaut. Diese beiden sind für insgesamt etwa 15€ (Stand 04 2016 [amazonquelle]) Online erhältlich.
+\newpage
+\textbf{Wirtschaftlichkeit\newline}
+\newline
+Konkret wurden ein GY521 Beschleunnigungssensor und ein DS1621 Temperatursensor im Car-PC verbaut. Diese beiden sind für insgesamt etwa EUR 15 (Stand 04 2016 [amazonquelle]) Online erhältlich.
 
 \begin{figure}[!htb]\centering
    \begin{minipage}{0.49\textwidth}
