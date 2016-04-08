@@ -25,16 +25,17 @@ Android Studio basiert auf IntelliJ IDEA und ersetzt das Android Developer Tool 
 \end{itemize}
 \textbf{Programmiersprachen\newline}
 Bei den Programmiersprachen bestand die Auswahl zwischen der Programmiersprache Python, 
-nativer Javaentwicklung und Hybrid-Java in Verbindung mit HTML5.
+nativer Javaentwicklung und Hybrid-Java in Verbindung mit HTML5. In dem Folgenden Kapitel
+sehen Sie, wofür wir uns im Endeffekt entschieden haben.
 
 
 \clearpage
 \subsubsection{Vergleich Java und Python}
 \textbf{Java\newline}
-Im Laufe der schulischen Ausbildung im TGM, wird jedem Schüler in den unteren Jahrgängen das Programmieren mittels Java
+Im Laufe der schulischen Ausbildung am TGM wird jedem Schüler in den unteren Jahrgängen das Programmieren mittels Java
 beigebracht. Somit fungieren wir im Team am Besten mit Java, da schon etwaige Projekte und kleinere Teamaufgaben mit Java
-realisiert worden sind. Von den insgesamt 5 Jahrgängen, haben wir 4 Jahre mit Java verbracht. Dementsprechend besitzt das Team
-angemessene Java-Kenntnisse, um das Projekt durchzuführen. Im 5.Jahrgang im TGM beginnt man mit dem Erlernen von Python.
+realisiert worden sind. Von den insgesamt 5 Jahrgängen haben wir 4 Jahre mit Java verbracht. Dementsprechend besitzt das Team
+angemessene Java-Kenntnisse, um das Projekt durchzuführen. Im 5.Jahrgang am TGM in der Abteilung Informationstechnologie beginnt man mit dem Erlernen von Python.
 \begin{itemize}
 	\item Charakteristik: Mehrfachverwendung eingeschränkt, stark typisiert
 	\item Syntax: Vor der Kompilierung sehr streng
@@ -58,18 +59,18 @@ Aus den oben genannten Punkten filtern wir heraus, dass Java die bessere Lösung
 Die komplette Beherrschung von Python würde einige Wochen dauern. 
 Da diese Zeit im Rahmen des Diplomprojektes nicht vorhanden ist, wäre die App-Entwicklung in Python nicht zielführend. 
 Außerdem benutzen Android-Smartphones die Dalvik-VM, welche Java Class Files ausführt, wodurch Java nativ auf Android realisiert wird im Gegensatz zu Python. 
-Da durch auf dem Android-Smartphone ein Interpreter laufen müsste, wird dementsprechend hier massiv an Zeit gespart, welche für die Echtzeit-Darstellung des Verbrauchs, Kamm'schen Kreises und Schaltvorschlags essentiell ist.
+Da auf dem Android-Smartphone ein Interpreter laufen müsste, wird dementsprechend hier massiv an Latenzzeit gespart, welche für die Echtzeit-Darstellung des Verbrauchs, Kamm'schen Kreises und Schaltvorschlags essentiell ist.
 
 \clearpage
 \subsubsection{Java-Frameworks(APP)}
 \textbf{Frameworks im Allgemeinen\newline}
 Ein Softwareentwickler stößt relativ schnell während seiner Ausbildung
-auf das Wort \"Framework\". Die Übersetzung ins Deutsche entspricht einem Bilderrahmen oder eines Gerüstes.
+auf das Wort \textit{Framework}. Die Übersetzung ins Deutsche entspricht einem Bilderrahmen oder eines Gerüstes.
 Ein Framework ist ein vorgefertigter Baustein, der das Programmieren erleichtern und dadurch Zeit sparen soll.
 Vorteile von Frameworks:
 \begin{itemize}
 	\item Ein Framework besitzt einheitliche Schnittstellen wie zum Beispiel zu Datenbanken, welche die Kommunikation vereinfachen. 
-	\item Wiederverwendung von Programmen 
+	\item Wiederverwendung von Programmteilen
 	\item Erleichterung der Programmierarbeit
 	\item Einsparung von viel Zeit
 \end{itemize}
@@ -94,22 +95,22 @@ sich nahe Echtzeit aktualisieren lässt. Im nächsten Absatz sehen Sie, an welch
 \caption{Vergleich der Charting-Frameworks}
 \end{table}
 
-Im Großen und Ganzen ist MPAndroidChart die beste Wahl, da es eine der besten Dokumentationen hat, weiterhin hat es auch eine sehr gute Community, sehr viel gut gecodete und dokumentierte Beispiele und bietet auch die Möglichkeit, das Projekt auf ein IOS-basierendes Gerät zu portieren. 
+Im Großen und Ganzen ist MPAndroidChart die beste Wahl, da es eine der besten Dokumentationen hat, weiterhin hat es auch eine sehr gute Community, sehr viel gut gecodete und dokumentierte Beispiele und bietet auch die Möglichkeit, das Projekt auf ein iOS-basierendes Gerät zu portieren. 
 AChartEngine hat eine gute Dokumentation, doch eine eher schwache Community und ist leider nicht aktuell. 
 HelloChart hat eine der schlechtesten Dokumentationen, gar keine Community und sehr wenig gecodete Beispiele, diese sind aber sehr aktuell.
  
 
 \subsubsection{Hybrid-Frameworks}
-Im Gegenteil zu nativer entwicklung von Applikationen, werden heutzutage
+Im Gegenteil zu nativer Entwicklung von Applikationen werden heutzutage
 mit HTML, CSS und Javascript Applikationen entwickelt. Diese Vorgehensweise
-ist sehr beliebt unter Programmierenden, welche kein großes Wissen über
+ist sehr beliebt unter Programmierenden, welche über kein großes Wissen über
 bekannte Programmiersprachen verfügen.
 Um dies umzusetzen, werden Hybrid-Frameworks benutzt.
-Es fällt die Auswahl auf eines der folgenden Frameworks:
+Es fiel die Auswahl auf eines der folgenden Frameworks:
 \begin{itemize}
-\item \hyperref[Codename One]{Codename One: https://www.codenameone.com/pricing.html} \newline Java
-\item \hyperref[Firebase]{Firebase: https://www.firebase.com/pricing.html} \newline Android/iOS/JavaScript SDK
-\item \hyperref[appmethod]{appmethod: http://www.appmethod.com/de/pricing} \newline C++
+\item \hyperref[Codename One]{Codename One: https://www.codenameone.com/} \newline Java
+\item \hyperref[Firebase]{Firebase: https://www.firebase.com/} \newline Android/iOS/JavaScript SDK
+\item \hyperref[appmethod]{appmethod: http://www.appmethod.com/de/} \newline C++
 \item \hyperref[ionic]{ionic: http://ionicframework.com/} \newline HTML, CSS, JS; Erstellt mittels Sass, optimisiert durch AngularJS
 \end{itemize}
 
@@ -124,6 +125,7 @@ ionic ist OpenSource und hat eine tolle einsteigerfreundliche Dokumentation.
 \item Mittels appmethod kann man mit einer C++ Codebasis eine Android, iOS, MacOSX und sogar eine Windows Applikation entwickeln.
 \item Bei ionic wird die App von einer mobil-freundlichen HTML, CSS und JS Library entwickelt, während sie dann mit Sass auf das jeweilige App Format konvertiert wird und mit Angular JS optimiert wird. 
 \end{itemize}
+\clearpage
 
 \textbf{Community}
 \begin{itemize}
@@ -150,6 +152,6 @@ ionic ist OpenSource und hat eine tolle einsteigerfreundliche Dokumentation.
 \end{itemize}
 
 \textbf{Frameworks Conclusio}
-Es war grundsätzlich für uns bereits von Beginn an klar dass wir ein Framework verwenden würden, allerdings tendieren wir mittlerweile in die Richtung eines hybriden Frameworks. Codename One und appmethod fallen aufgrund ihrer komplett kostenfreien Option definitiv weg. Ionic und Firebase scheinen schon weit interessanter.
+Es war grundsätzlich für uns bereits von Beginn an klar, dass wir ein Framework verwenden würden, allerdings tendieren wir mittlerweile in die Richtung eines hybriden Frameworks. Codename One und appmethod fallen aufgrund ihrer komplett kostenfreien Option definitiv weg. Ionic und Firebase scheinen schon weit interessanter.
 Da muss man sich allerdings eine Grundsatzfrage stellen - möchten wir eine HTML hybride App bauen oder nur eine cross-platform App? Für eine hybride Applikation bleibt nur das Framework ionic übrig. Dieses erfordert allerdings auch für die Projektgruppe das Erlernen von AngularJS.
 \clearpage % DO NOT REMOVE
