@@ -1,7 +1,30 @@
 \lfoot{Autor: Tobias Perny}
-\subsubsection{Single-Board-PC}
-\label{subsec:Single-Board-PC}
-Ein Single-Board-PC ist ein PC, welcher aus einer einzigen Platine besteht. Auf dieser Platine befinden sich alle Komponenten, die für einen PC als notwendig gelten, mindestens ein Prozessor, RAM. 
-\nextline
-\textbf{Unterschied zu Mikrocontroller\nextline}
-Der wohl größte Unterschied von SBC’s und Mikrokontrollern ist wohl der, dass Singleboard Computer in der Lage sind ein Betriebsystem auszuführen. Ein Mikrokontroller wird für weniger komplexe Aufgaben eingesetzt als ein Singleboard Computer.
+\subsubsection{Single-Board-Computer}
+\label{subsec:Single-Board-Computer}
+Ein Single-Board-Computer ist ein Computer, welcher aus einer einzigen Platine besteht. Auf dieser Platine befinden sich alle Komponenten, die für einen PC als notwendig gelten, mindestens ein Prozessor, RAM und verschiedene Anschlüsse für Peripheriegeräte zum Beispiel USB-Ports. \newline
+
+
+\textbf{Mikrocontroller \nextline}
+Es musste entschieden werden ob zur Umsetzung des Projektes ein Microkontroller oder ein Single-Board-Computer eingesetzt werden sollte. \newline
+
+\textbf{Warum ein Mikrocontroller? \nextline}
+Diese Wahl wurde getroffen indem, die Vorteile von beiden Varianten abgewägt wurden.
+\begin{itemize}
+\item Geschwindigkeit \newline
+Ein Programm, zum Beispiel die Abfrage von Sensordaten, wird auf einem Mikrocontroller viel schneller abgearbeitet als auf einem SBC. Eine solche Abfrage muss wenn sie auf einem Single-Board-Computer ausgeführt wird, immer "warten" bis vom Prozessor Rechenleistung zur verfügung gestellt wird.
+
+\item Kosten \newline
+Ein Microkontroller ist aufgrund der fehlenden Peripherie und Rechenleistung kostengünstiger, gegenüber einem SBC derselben Größe.
+\end{itemize}
+
+\textbf{Warum ein SBC? \nextline}
+Für das Projekt Bestshift wurde ein SBC aus verschiedenen Gründen einem Mikrokontroller vorgezogen.
+\begin{itemize}
+\item Betriebssystem \newline
+Es ist möglich ein Betriebssystem auf einem SBC zu installieren. Dies vereinfacht die Arbeit mit dem Gerät enorm, weil es so möglich ist, verschiedene Interpreter für Programmiersprachen zu verwenden. \newline
+\item Peripherie \newline
+Auf einem SBC befinden sich Schnittstellen, wie USB-Ports oder möglicherweise ein VGA-Anschluss. Diese sind auf einem Mikrocontroller, nicht zu finden.
+\end{itemize}
+
+\textbf{Entscheidung \nextline}
+Aufgrund der Tatsache, dass es für das Team einfacher ist mit einem SBC zu arbeiten viel die Entscheidung letztlich auf diesen.
