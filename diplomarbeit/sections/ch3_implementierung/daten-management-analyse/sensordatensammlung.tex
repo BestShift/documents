@@ -1,6 +1,6 @@
 \lfoot{Autor: Daniel Melichar}
 \subsubsection{Sammlung der Sensordaten}
-Die allgemeine Zielsetzung war es alle Sensordaten nach Beendingung des Boot-Vorgangs, bzw. beim Beginn einer Fahrt, für weitere Applikation zu verfügung zu stellen. Mittels einer sinnvollen Erst-Verarbeitung und Speicherung der Daten sollte außerdem die Möglichkeit geboten werden, zu jedem Zeitpunkt neue Sensoren in das Datenspektrum einzubinden.
+Die allgemeine Zielsetzung war es, alle Sensordaten nach Beendingung des Boot-Vorgangs, bzw. beim Beginn einer Fahrt, für weitere Applikation zu Verfügung zu stellen. Mittels einer sinnvollen Erst-Verarbeitung und Speicherung der Daten, sollte außerdem die Möglichkeit geboten werden, zu jedem Zeitpunkt neue Sensoren in das Datenspektrum einzubinden.
 
 Zunächst wurde ein Datenmodell entwickelt in welchem beschrieben ist, wie die Daten abgespeichert werden müssen. In diesem wird der Sensor als eigene Entität definiert, die eigentlichen Sensoren erben von ihr. Die Umsetzung zeigt Listing \ref{lst:sensorsammlung}
 
@@ -87,7 +87,7 @@ class Accelerometer(models.Model):
         return [self.xout, self.xout_scaled, self.yout, self.yout_scaled, self.zout, self.zout_scaled, self.xrot, self.yrot]
 \end{lstlisting}
 
-Der Car-PC musste so eingerichtet werden, so dass nach Ende des Boot-Vorgange bereits anfängt zu lesen. Hierfür wurden Init-Skripte, also Skripte die beim Startvorgang ausgeführt werden, programmiert. Diese verwenden dann wiederum das oben angeführte Model um das Auslesen und Speichern (in die Redis Datenbank) durchführen. Listing \ref{lst:init} zeigt das für den Beschleunigungssensor zuständigen Skript:
+Der Car-PC musste so eingerichtet werden, so dass er nach Ende des Boot-Vorganges anfängt zu lesen. Hierfür wurden Init-Skripte, also Skripte die beim Startvorgang ausgeführt werden, programmiert. Diese verwenden dann wiederum das oben angeführte Model, um das Auslesen und Speichern (in die Redis Datenbank) durchführen. Listing \ref{lst:init} zeigt das für den Beschleunigungssensor zuständige Skript:
 
 \begin{lstlisting}[language=Bash, caption=Beschleunigungssensor Service, label={lst:init}]
 #!/bin/sh

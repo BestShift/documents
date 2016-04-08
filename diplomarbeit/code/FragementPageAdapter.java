@@ -1,12 +1,3 @@
-package com.example.bestshift_as;
-
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import com.example.bestshift_as.Kommfort.Kommfort;
-import com.example.bestshift_as.Shift.Shift;
-import com.example.bestshift_as.Verbrauch.Verbrauch;
-
 /**
  * Die Methode weisst den Tabs die Klasse zu. 
  * Created by Fitim on 23.11.2015.
