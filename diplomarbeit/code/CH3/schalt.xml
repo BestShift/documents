@@ -39,43 +39,8 @@
 
 </RelativeLayout>
 
-    <!--
-    <com.appyvet.rangebar.RangeBar
-        xmlns:custom="http://schemas.android.com/apk/lib/com.example.bestshift_as"
-        android:id="@+id/rangebar"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        custom:tickStart="5"
-        custom:tickInterval="1"
-        custom:tickEnd="10"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
-
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Welcome To Schalt"
-            android:id="@+id/textView3" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
-            android:layout_marginTop="260dp" android:textColor="#4bff31"/>
-
-
-    <com.github.siyamed.shapeimageview.CircularImageView
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:src="@drawable/arrow_downward_black_48dp"
-        app:siBorderWidth="10dp"
-        app:siBorderColor="@color/lightgray"/>
-
-    <com.tr4android.support.extension.widget.CircleImageView
-        android:id="@+id/shiftreq"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerInside"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/ic_arrow_downward_black_48dp"
-        android:layout_marginTop="300dp"
-    />
-    -->
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //compile 'io.sule:gaugelibrary:1.0.0'
+    compile project(':gaugelibrary') //fixed by using self-compiled library
+}
