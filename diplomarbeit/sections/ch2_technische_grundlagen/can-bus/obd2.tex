@@ -73,15 +73,7 @@ Die OBD-II Schnittstelle muss laut Norm zur Verfügung stellen, welche Daten die
 	\item In eine Tabelle einfügen und überprüfen welche PID's unterstützt sind
 \end{enumerate}
 
-<<<<<<< HEAD
-\clearpage
-
-Man ließt zuerst den Code 0100 aus, nachdem man sich mit dem Bluetooth Dongle verbunden hat und eine Verbindung mit dem seriellen COM-Port, welchen man im Geräte Manager finden kann, mittels Putty oder iTerm aufgebaut wurde.
-Als Antwort auf seine Anfrage bekommt man 4 Byte Daten geliefert, die so \textit{BE1FA813} aussehen können. Danach muss man diese Daten, mit einem Umrechner, von Hexadezimal zu Binär umrechnen, zum Beispiel mittels diesem Umrechner \url{http://www.arndt-bruenner.de/mathe/scripts/Zahlensysteme.htm}. Wenn diese Abrechnung abgeschlossen ist bekommt man eine 32-stellige Zahlenkette, jeweils zwischen 0 und 1. 
-Diese kann man in folgende Tabelle einfügen und so erkennen welche PID's unterstützt werden.
-=======
 Jedes Bit entspricht einer unterstützten PID. In Tabelle 1 wird ein typisches Ergebnis einer PID-Abfrage „BE1FA813“ gezeigt.
->>>>>>> b1e780b28daabec7be0f70ac2157764929a5b3a3
 
 \begin{table}[!htb]
 \centering
@@ -100,14 +92,4 @@ PID number & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 1A & 1B & 1C & 1D & 1E
 }
 \caption{Tabelle zur bitweisen Verarbeitung der Hexadezimal Zeichenkette \cite{SIMR.CH2-obd2.HextoBinary}}
 \label{tableHextoPID}
-<<<<<<< HEAD
 \end{table}
-=======
-\end{table}
-
-Es wurden innerhalb des Projektes ausschließlich Daten des PID Mode 01 (Realtime Data) verwendet. Grundsätzlich sind alle Mode 01 PIDs zwischen 00 und 87 bezüglich ihrer Einheiten und Bereiche standardisiert. Die PIDs zwischen A0 und E0 sind komplett frei für Autohersteller verfügbar um abseits der Norm eigene Daten einzupflegen. 
-
-Während des Projektes wurden die PIDs 04 - Calculated engine load [\%] und 0C - Rotations per Minute [0-16.383,75] für den Schaltvorschlag verwendet, wozu im nächsten Abschnitt genauere Informationen gefunden werden können. Für die Errechnung des \ce{CO2}-Ausstoßes wurde PID 43 - absolute load value [0-25.700] und 5E - engine fuel rate [L/h] eingesetzt.
-\todo{Add PID's and what they are being used for}
-\clearpage % DO NOT REMOVE
->>>>>>> b1e780b28daabec7be0f70ac2157764929a5b3a3
