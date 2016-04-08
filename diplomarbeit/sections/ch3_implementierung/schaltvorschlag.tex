@@ -3,20 +3,19 @@
 \label{subsec:schaltvorschlag}
 
 \subsubsection{Prototyp}
-Für einen Prototyp wurden Schaltkriterien wie, in Kapitel 2.1.2 näher beschrieben, herangezogen.
-Zitat:
-\textit{
+Für einen Prototyp wurden Schaltkriterien herangezogen.
+
 \begin{itemize}
-	\item \glqq 90\% der max. Drehzahl oder Drehmoment --> hochschalten, wegen niedrigem Wirkungsgrad
-	\item niedrige Drehzahl \& hohe Last --> hinunterschalten, wegen Verschleiß durch Motorschwingungen\grqq
+	\item \glqq 90\% der max. Drehzahl oder Drehmoment erzeugt hochschalten, wegen niedrigem Wirkungsgrad
+	\item niedrige Drehzahl und hohe Last erzeugen hinunterschalten, wegen Verschleiß durch Motorschwingungen\grqq
 \end{itemize}
-}
+
 Abbildung \ref{fig:imgEngineEfficiencyGraph} zeigt die Umsetzungsüberlegungen am Beginn der Prototypenphase. Dabei ist auf der horizontalen Achse die Drehzahl und auf der vertikalen Achse das Drehmoment abgebildet.
 \begin{figure}[!htb]\centering
-		\includegraphics[width=0.8\textwidth]{images/motorkennfeldSkizze}
+		\includegraphics[width=0.75\textwidth]{images/motorkennfeldSkizze}
 		\caption{Skizze eines Motorkennfelds} \label{fig:imgEngineEfficiencyGraph}
 \end{figure}
-Auf dieser Abbildung ist der Grenzwertbereich für das Hinunterschalten links, welcher aufgrund des Abriebs des Getriebes ausgelöst wird, erkennbar. Außerdem sind die Grenzwerte für das Hochschalten oben, entlang 90\% des maximalen Drehmoments auf der Drehmomentkurve und rechts entlang 90\% der maximalen Drehzahl, ersichtlich.
+Auf Abbildung \ref{fig:imgEngineEfficiencyGraph} ist der Grenzwertbereich für das Hinunterschalten links in Rot, welcher aufgrund des Abriebs des Getriebes ausgelöst wird, erkennbar. Außerdem sind die Grenzwerte für das Hochschalten oben, entlang 90\% des maximalen Drehmoments auf der Drehmomentkurve und rechts entlang 90\% der maximalen Drehzahl in der Farbe Blau, ersichtlich.
 
 Zunächst wurde überprüft, welche PID's Informationen liefern, die für einen Schaltvorschlag notwendig sind. Dazu wird die ODB2-Schnittstelle des KFZ wie in Kapitel \ref{subsec:obd2} beschrieben abgefragt. In Tabelle \ref{tableMazda3} ist das Ergebnis dieser Abfrage für das verwendete Testfahrzeug, ein Mazda 3 BJ 2006, zu sehen. Interessant für einen Schaltvorschlag sind vor allem die PIDs OC - Engine rpm und 04 - calculated engine load, weil diese sich dann auf die Abbildung übertragen lassen und dadurch eine Herleitung zur Implementierung in der Programmierung ermöglichen.
 
@@ -47,7 +46,6 @@ Es wurde festgestellt, dass durch die fehlende Unterstützung für Schaltgetrieb
 \caption{Tabelle der verfügbaren PIDs eines Mazda3}
 \label{tableMazda3}
 \end{table}
-\todo{Rephrase if need be}
 Bei genauerer Betrachtung der PIDs wurde der ursprüngliche Plan, den aktuell eingelegten und den zu wählenden Gang anzuzeigen verworfen, da sich diese Informationen nur mit sehr hohem Aufwand, wenn überhaupt aus den vorhanden Daten ableiten lässt. Eine zusätzliche Sensorik am Getriebe wäre eine mögliche Option gewesen, widerspricht aber - neben rechtlichen Bedenken - dem Ziel des Projektes, die Integration des Car-PCs so einfach wie möglich zu gestalten. Stattdessen einigte sich das Team darauf, sich nur mit einem Vorschlag nach oben oder unten zufrieden zu geben. 
 
 Zum Zweck des Gangvorschlags werden 2 PID's benötigt.
@@ -64,17 +62,18 @@ Bei der Designüberlegung wurde vor allem beachtet, dass das Design so einfach z
 Trotzem viele Fahrzeuge einen Drehzahlmesser im Armaturenbrett integriert haben, wurde eine Drehzahlanzeige neben dem Schaltsymbol platziert. Dadurch bekommt ein Fahranfänger selbst ein Gefühl für das Schalten und sich auf Dauer merken wird in welchen Gang er wann schalten sollte. Ein Aufwärtspfeil symbolisiert einen Schaltvorschlag für einen höheren Gang, ein Abwärtspfeil rät zum Hinunterschalten. Ist keine Aktion gefordert wird eine X angezeigt.
 
 \subsubsection{Umsetzung}
-Der Stand der Technik ist nur bezüglich unserer eigenen Hardware äußerst modern, viele der ECUs sind 10 Jahre oder älter. Daher ist auch das Auslesen der Schnittstelle sehr einfach zu handhaben. Als direkte Konkurrenz innerhalb dieser Produktkategorie war kein Produkt auffindbar.
+Unsere verbaute Technik ist weitaus moderner als gängige ECUs, welche 10 Jahre oder älter sind. Daher ist auch das Auslesen der Schnittstelle sehr einfach zu handhaben. Als direkte Konkurrenz innerhalb dieser Produktkategorie war kein Produkt auffindbar.
 Im Bezug auf meinen Lösungsweg des Schaltvorschlags war ich sehr eingeschränkt, da ich nur den Lösungsweg, welchen mir Prof. Neuburger näher gebracht hat, einsetzen konnte. Dies ist vor allem meinen kaum vorhandenen Fahrzeugtechnik Kenntnissen zu verdanken. Daher habe ich mich dafür entschieden bei dem Ansatz, welchen mir Herr Prof. Neuburger mehr als nur einmal half zu verstehen, zu bleiben. Bezüglich der Android App hatte ich andererseits vollkommene gestalterische Freiheit, hier wurden die Ansätze gewählt, welche am besten dokumentiert sind.
 Um diese beiden Teile zu realisieren, wurden mehrere Libraries verwendet, die alle ausschließlich Android Studio verwenden.
 Einerseits wurde GaugeView for Lollipop \cite{SIMR.CH3-schaltvorschlag.GaugeView} verwendet, andererseits wurde mittels ImageCircleView \cite{SIMR.CH3-schaltvorschlag.CircleImageView} das Bild des Pfeils und des Kreuzes dargestellt.
 Ausserdem musste eine SettingsPane umgesetzt werden, in welcher man die maximale Drehzahl verstellen kann, implementiert werden.
 Es wurde die App mittels Gradle und der Android SDK 23 umgesetzt.
 
-Probleme kamen vor allem beim Aufbau der GaugeView Library auf, welche aufgrund eines doppelten XML attributes (showText) händisch zu einem Android Library Package (.aar) kompiliert werden musste, damit dieser Fehler umgangen werden konnte. Ein Patch für die Library wurde bisweilen noch nicht vom Library-Ersteller bereitet. 
+Probleme kamen vor allem beim Aufbau der GaugeView Library auf, welche aufgrund eines doppelten XML attributes (showText) händisch zu einem Android Library Package (.aar) kompiliert werden musste, damit dieser Fehler umgangen werden konnte. Ein Patch für die Library wurde bisweilen noch nicht vom Library-Ersteller bereitet (siehe Code Snippet \ref{codeShiftFile}).
 
-\lstinputlisting[caption=shift XML design file,firstline=11,lastline=26,style=xmlstyle]{code/CH3/schalt.xml}
-\todo{Meinen Lösungsansatz im Gegensatz zum Tutorial -> Unterschied zeigen}
+\lstinputlisting[caption={Implementierung der GaugeView Library im design.xml},label={codeShiftFile},firstline=11,lastline=26,style=xmlstyle]{code/CH3/schalt.xml}
+
+\lstinputlisting[caption={Implementierung der GaugeView Library im build.gradle},label={codeGradleFile},firstline=42,lastline=46,style=javastyle]{code/CH3/schalt.xml}
 
 \begin{figure}[!htb]\centering
 		\includegraphics[width=0.3\textwidth]{images/schalt}
