@@ -1,20 +1,26 @@
-\lfoot{Autor: Faiku Fitim}
+\lfoot{Autor: Fitim Faiku}
 \subsection{Android App}
+<<<<<<< HEAD
+Die Android App ist dazu da, um den Usern die Generierten Daten möglichst Aufschlussreich darzustellen.
+Bei der Android App werden erstmal die drei Seiten(Tabs) erstellt. Die Tabs werden den drei Hauptfeauters zugeordnet(Verbrauchsanalyse-Fahrgastkommfort-Schaltvorschlag). 
+=======
 \label{subsec:androidapp}
 
+>>>>>>> aca00159eb7a63f092a2c4b8c38e908b9a2a051b
 Die Android App wurde mittels Java erstellt wobei als Programmieroberfläche Android Studio verwendet wurde.
 Für jede Klasse wurde ein XML Layout als View generiert, wodurch eine Verbindung zwischen Code und Layout geschaffen wurde.
 
 \subsubsection{Code-Dokumetation}
-\lstinputlisting[caption=Design-Beispiel, style=javastyle]{code/MyActivity.java}
  Um die Grafiken bestmöglich darzustellen und dabei eine möglichst hohe Anzahl an Usern zu erreichen, entschieden wir uns eine Android App zu entwickeln.
  Dabei achteten wir besonders auf die Benutzerfreundlichkeit der Applikation.
  Die wichtigsten Kriterien waren, dass der Fahrer im Straßenverkehr nicht abgelenkt wird, er sehr leicht zwischen den einzelnen Features wechseln kann und die Informationen intuitiv aufbereitet sind.
  
  Um die App zu realisieren erstellten wir mehrere Fragments zwischen denen man hin und her \textit{swipen} kann.
- 
+  Es wurde zuerst eine MainActivity Klasse erstellt, welche von FragementActivity erbt und von ActionTabListener implementiert, um die Methoden onTabReselected, onTabselected und onTabunselected zu überschreiben. 
+\lstinputlisting[caption=Design-Beispiel, style=javastyle]{code/MyActivity.java}
 
- Es wurde zuerst eine MainActivity Klasse erstellt, welche von FragementActivity erbt und von ActionTabListener implementiert, um die Methoden onTabReselected, onTabselected und onTabunselected zu überschreiben.   
+
+  
  
             
 Im Anschluss setzten wir die View der Klasse auf main durch:  
@@ -41,14 +47,14 @@ Wir übergeben dem Layout ebenfalls eine ID auf die wir von unserer main Activit
 
 
 
-Nun erstellen wir eine Fragementadapter-Klasse um die einzelnen Tabs den Klassen zuzuteilen. 
+Es wird eine Fragementadapter-Klasse erstellt um die einzelnen Seiten den Klassen zuzuteilen. 
 Die Klasse hat einen Konstruktor, welcher von der Superklasse das FragementManager Objekt übergeben bekommt.
 Weiters hat die Klasse eine getItem Methode mit dem Input eines int Wertes. 
 \lstinputlisting[caption=PageAdapter, style=javastyle]{code/FragementPageAdapter.java}
 
 
 Es wird hierbei überprüft ob, welcher Tab aktiviert wurde, und der wird der entsprechenden Klasse eingeteilt. 
-Sie hat noch eine getCount() Methode, welche die Anzahl der Tabs zurückgibt in unserem Fall 3.
+Sie hat noch eine getCount() Methode, welche die Anzahl der Tabs zurückgibt in unserem Fall drei für die Hauptfeauters.
 
 
 Wir erstellen auf der Main Klasse zwei Objekte, nämlich:
@@ -60,11 +66,17 @@ Dies wird gemacht um zwischen den Oberflächen wechseln zu können.
 
 \subsubsection*{Implementierung von MPAndroidChart}
 MPAndroidChart ist eine Libary mittels der 8 verschieden Graphen erzeugt werden können. Weiterhin sind Animationen mittels der Libary möglich, das bearbeiten von x und y Achsen und das abspeichern von Grafiken als image Files.
-Das Liniendiagramm wurde mittels der MPAndroidchart Libary erstellt.
 
+Das Liniendiagramm wurde mittels der MPAndroidChart Libary erstellt. Die Linien werden Blau gezeichnet und die einzelnen Punkte schwarz. Das Liniendiagramm wurde zusätzlich zum Kammschen Kreis erstellt, da für den Endbenutzer die Längsbeschleunigung einen größeren Stellenwert hat, da in der Stadt viel mehr in die Länge beschleunigt wird als in Kurven.
 
 \lstinputlisting[caption=Liniendiagramm Beispiel, style=javastyle]{code/Beschleunigungskraefte.java}
 
+<<<<<<< HEAD
+
+
+ \newline
+=======
+>>>>>>> aca00159eb7a63f092a2c4b8c38e908b9a2a051b
 \begin{figure}[!tbp]
  	\centering
  	\begin{minipage}[b]{0.4\textwidth}
@@ -77,5 +89,12 @@ Das Liniendiagramm wurde mittels der MPAndroidchart Libary erstellt.
  		\caption{Kammscher Kreis mittels ondraw() - canvas}
  	\end{minipage}
 \end{figure}
+<<<<<<< HEAD
+
+Das Liniendiagramm stellt die Längstbeschleunigungen da, wobei die Grenzen hierbei von 1.6 bis -1.6 g sind.
+Bei der anderen Abbildung kann ein Kammscher-Kreis betrachtet werden, wobei hier die einzelnen Punkte miteinander verbunden wurden und somit eine Grafik entsteht welche anzeigt, dass auf der x-Achse sehr viel Beschleunigt wurde.
+
+=======
  
+>>>>>>> aca00159eb7a63f092a2c4b8c38e908b9a2a051b
 \clearpage % DO NOT REMOVE
