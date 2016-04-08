@@ -3,32 +3,25 @@
 \label{subsec:schaltvorschlag}
 
 \subsubsection{Prototyp}
-Für den Prototyp wurde zuerst überlegt, wie man am den Schaltvorschlag umsetzen kann. Dafür wurden die Überlegungen aus dem Kapitel 2.1.2 Motorwirkungsgrad herangezogen:
+Für einen Prototyp wurden Schaltkriterien wie, in Kapitel 2.1.2 näher beschrieben, herangezogen.
 Zitat:
 \textit{
-Also kurz:
 \begin{itemize}
-	\item 90\% der max. Drehzahl oder Drehmoment --> hochschalten, wegen niedrigem Wirkungsgrad
-	\item niedrige Drehzahl \&\& hohe Last --> hinunterschalten, wegen Verschleiß durch Motorschwingungen
+	\item \glqq 90\% der max. Drehzahl oder Drehmoment --> hochschalten, wegen niedrigem Wirkungsgrad
+	\item niedrige Drehzahl \& hohe Last --> hinunterschalten, wegen Verschleiß durch Motorschwingungen\grqq
 \end{itemize}
 }
-Diese Skizze beschreibt die Umsetzungsüberlegungen am Beginn der Prototypenphase. Dabei ist auf der horizontalen Achse die Drehzahl und auf der vertikalen Achse das Drehmoment angeschlagen.
+Abbildung \ref{fig:imgEngineEfficiencyGraph} zeigt die Umsetzungsüberlegungen am Beginn der Prototypenphase. Dabei ist auf der horizontalen Achse die Drehzahl und auf der vertikalen Achse das Drehmoment abgebildet.
 \begin{figure}[!htb]\centering
 		\includegraphics[width=0.8\textwidth]{images/motorkennfeldSkizze}
-		\caption{Motorkennfeld mit hochschalten und hinunterschalten schattiert eingetragen} \label{fig:imgEngineEfficiencyGraph}
+		\caption{Skizze eines Motorkennfelds} \label{fig:imgEngineEfficiencyGraph}
 \end{figure}
-Auf dieser Skizze erkennen Sie den Grenzwertbereich für das Hinunterschalten links, welcher aufgrund des Abriebs des Getriebes ausgelöst wird. Außerdem können Sie die Grenzwerte für das Hochschalten oben, entlang 90\% des maximalen Drehmoments auf der Drehmomentkurve und rechts entlang 90\% der maximalen Drehzahl, erkennen.
+Auf dieser Abbildung ist der Grenzwertbereich für das Hinunterschalten links, welcher aufgrund des Abriebs des Getriebes ausgelöst wird, erkennbar. Außerdem sind die Grenzwerte für das Hochschalten oben, entlang 90\% des maximalen Drehmoments auf der Drehmomentkurve und rechts entlang 90\% der maximalen Drehzahl, ersichtlich.
 
-Zunächst wurde folglich überprüft, welche PID's als Basis für die weiteren Überlegungen verwendet werden könnten, um möglichst nahe an die Vorgaben aus dem Motorkennfeld zu kommen.
+Zunächst wurde überprüft, welche PID's Informationen liefern, die für einen Schaltvorschlag notwendig sind. Dazu wird die ODB2-Schnittstelle des KFZ wie in Kapitel \ref{subsec:obd2} beschrieben abgefragt. In Tabelle \ref{tableMazda3} ist das Ergebnis dieser Abfrage für das verwendete Testfahrzeug, ein Mazda 3 BJ 2006, zu sehen. Interessant für einen Schaltvorschlag sind vor allem die PIDs OC - Engine rpm und 04 - calculated engine load, weil diese sich dann auf die Abbildung übertragen lassen und dadurch eine Herleitung zur Implementierung in der Programmierung ermöglichen.
 
-\lstinputlisting[caption=Output OBD-II COM-Port,firstline=1,lastline=16]{code/CH3/output.txt}
-Dies ist der Output, welcher aus der OBD-II Schnittstelle erlangt wurde. Er outputted zuerst OK, dann die Nummer des PID's, das man auslesen will und darauf folgend das Ergebnis, wessen Output, wie folglich zu sehen, in einem Converter umgewandelt wird.
-\begin{figure}[!htb]\centering
-		\includegraphics[width=0.8\textwidth]{images/hextoBinary}
-		\caption{Umrechnung von hexadezimal zu binär\cite{SIMR.CH3-schaltvorschlag.hextoBinaryConverter}} \label{fig:imghextoBinary}
-\end{figure}
+Es wurde festgestellt, dass durch die fehlende Unterstützung für Schaltgetriebe, händisch in einer Settingpane eingegeben werden muss wie hoch die maximale Drehzahl des Motors ist. (Diesel und Benzin stark unterschiedliche maximale Drehzahlen!)
 
-Dieser binäre Code wurde, wie bereits bei 2.1.1 OBD-II, beschrieben, wird diese nun in eine Tabelle eingetragen. 
 \begin{table}[!htb]
 \centering
 \resizebox{\columnwidth}{!}{%
@@ -51,45 +44,41 @@ Dieser binäre Code wurde, wie bereits bei 2.1.1 OBD-II, beschrieben, wird diese
 \cellcolor[HTML]{9B9B9B}Mode 01: 60-100 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ \cline{1-1}
 \multicolumn{1}{|l|}{NO DATA} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ \cline{1-1}
 \end{tabular}}
-\caption{Tabelle der verfügbaren PID's unseres Mazda3}
+\caption{Tabelle der verfügbaren PIDs eines Mazda3}
 \label{tableMazda3}
 \end{table}
+\todo{Rephrase if need be}
+Bei genauerer Betrachtung der PIDs wurde der ursprüngliche Plan, den aktuell eingelegten und den zu wählenden Gang anzuzeigen verworfen, da sich diese Informationen nur mit sehr hohem Aufwand, wenn überhaupt aus den vorhanden Daten ableiten lässt. Eine zusätzliche Sensorik am Getriebe wäre eine mögliche Option gewesen, widerspricht aber - neben rechtlichen Bedenken - dem Ziel des Projektes, die Integration des Car-PCs so einfach wie möglich zu gestalten. Stattdessen einigte sich das Team darauf, sich nur mit einem Vorschlag nach oben oder unten zufrieden zu geben. 
 
-Durch die Tabelle war es uns erstmals möglich zu erkennen, welche Daten wir auslesen können. Bei genauerer Betrachtung der OBD-II PID's schlussfolgerten wir, dass es keine Möglichkeit geben wird den Gang auszulesen, ohne dabei unverhältnismäßige Aufwände aufzuwenden. Diese Aufwände wären von komplexen mathematischen Schlussfolgerungen, bis hin zur Modifikation unseres Testfahrzeugs gegangen. Stattdessen einigte sich das Team darauf, sich nur mit einem Vorschlag nach oben oder unten zufrieden zu geben. 
-
-Zum Zweck des Gangvorschlags werden 2 PID's benötigt. Diese findet man perfekt in Wikipedia's OBD-II PID'-spage aufgeschlüsselt wieder, wofür das Geld weiter verwendet wird.
+Zum Zweck des Gangvorschlags werden 2 PID's benötigt.
 \begin{itemize}
-	\item Mode 01 PID 04: calculated engine load [0-100[\%]], auf der vertikalen Achse
-	\item Mode 01 PID 0C: engine rpm [[0-16,383.75]rpm], auf der horizontalen Achse
+	\item Mode 01 PID 04: calculated engine load [\%]
+	\item Mode 01 PID 0C: engine rpm [0-16.383,75]
 \end{itemize} 
 
-Durch diese Variablen muss eine Klassenbildung für das herunterschalten umgesetzt werden, da es hier kein einzelnes Maß gibt auf welches man ein überschreiten des Maximums schließen könnte. Beim heraufschalten Wiederrum, wird keine Klassenbildung benötigt da hier entweder zuerst 90\% des möglichen Drehmoments oder der nötigen Drehzahl getroffen werden. Ausserdem ist die calculated engine load eine Prozentzahl. 
+Durch diese Variablen muss eine Klassenbildung für das herunterschalten umgesetzt werden, da es hier kein einzelnes Maß gibt auf welches man ein überschreiten des Maximums schließen könnte. Beim Heraufschalten, wird keine Klassenbildung benötigt da hier immer entweder zuerst 90\% des möglichen Drehmoments oder der nötigen Drehzahl eintreffen. Der vom Fahrzeug gesammelte Wert der calculated engine load (PID 04) wird bereits als Prozentsatz geliefert.
+\subsubsection{Optisches Design der App} 
+Bei der Designüberlegung wurde vor allem beachtet, dass das Design so einfach zu bedienen sein sollte. Dies hatte den Zweck möglichst wenig des Fahrers Aufmerksamkeit zu benötigen. Weiters müssen durch die fehlende Unterstützung für Schaltgetriebe der OBD-II Schnittstelle, händisch manche Konstanten in einer Settingpane eingegeben werden. Zusätzlich dazu wurde überlegt, wie man am intuitivsten hinauf oder hinunterschalten anzeigt.
 
-\subsubsection{Designüberlegung}
-Zuerst wurde überlegt wie man einen Schaltvorschlag designen kann. 
-Bei der Designüberlegung kam vor allem zu tragen, dass das Design so einfach zu bedienen sein sollte, dass es den Fahrer möglichst gar nicht ablenkt. Weiters muss durch die fehlende Unterstützung für Schaltgetriebe, händisch in einer Settingpane eingegeben werden wie hoch die maximale Drehzahl des Motors ist. (Diesel und Benzin stark unterschiedliche maximale Drehazahlen!) Zusätzlich dazu wurde überlegt, wie man am intuitivsten hinauf oder hinunterschalten anzeigt.
 
-Für das Design wurde überlegt ob ein Drehzahlmesser auf der Android Applikation klug wäre, wofür sich letztendlich doch entschieden wurde. Denn man bekommt mit diesem auch selbst ein Gefühl für das Schalten bekommen kann und sich mit der Zeit merken wird, wann man in welchen Gang schalten sollte. Ausserdem wird ein Pfeil eingesetzt, welcher die Richtung wechselt oder komplett auf ein X wechselt, so keine Aktion ergriffen werden soll. Dies haben alle Probanden ohne weiterer Erklärung als dem Kontext unserer App auf Anhieb verstanden. Es wurden folglich also Gauge Libraries evaluiert, um möglichst die perfekte Library zu benutzen.
+Trotzem viele Fahrzeuge einen Drehzahlmesser im Armaturenbrett integriert haben, wurde eine Drehzahlanzeige neben dem Schaltsymbol platziert. Dadurch bekommt ein Fahranfänger selbst ein Gefühl für das Schalten und sich auf Dauer merken wird in welchen Gang er wann schalten sollte. Ein Aufwärtspfeil symbolisiert einen Schaltvorschlag für einen höheren Gang, ein Abwärtspfeil rät zum Hinunterschalten. Ist keine Aktion gefordert wird eine X angezeigt.
 
 \subsubsection{Umsetzung}
-Der Stand der Technik ist nur bezüglich unserer eigenen Hardware äußerst modern, viele der ECU's sind 10 Jahre oder älter. Daher ist auch das Auslesen der Schnittstelle sehr einfach zu handhaben. Als direkte Konkurrenz war kein Produkt auffindbar.
-Im Bezug auf meinen Lösungsweg des Schaltvorschlags war ich sehr eingeschränkt, da ich nur den Lösungsweg, welchen mir Prof. Neuburger näher gebracht hat, einsetzen konnte. Bezüglich der Android App hatte ich andererseits vollkommene gestalterische Freiheit, hier wurden die Ansätze gewählt, welche am besten dokumentiert sind.
+Der Stand der Technik ist nur bezüglich unserer eigenen Hardware äußerst modern, viele der ECUs sind 10 Jahre oder älter. Daher ist auch das Auslesen der Schnittstelle sehr einfach zu handhaben. Als direkte Konkurrenz innerhalb dieser Produktkategorie war kein Produkt auffindbar.
+Im Bezug auf meinen Lösungsweg des Schaltvorschlags war ich sehr eingeschränkt, da ich nur den Lösungsweg, welchen mir Prof. Neuburger näher gebracht hat, einsetzen konnte. Dies ist vor allem meinen kaum vorhandenen Fahrzeugtechnik Kenntnissen zu verdanken. Daher habe ich mich dafür entschieden bei dem Ansatz, welchen mir Herr Prof. Neuburger mehr als nur einmal half zu verstehen, zu bleiben. Bezüglich der Android App hatte ich andererseits vollkommene gestalterische Freiheit, hier wurden die Ansätze gewählt, welche am besten dokumentiert sind.
 Um diese beiden Teile zu realisieren, wurden mehrere Libraries verwendet, die alle ausschließlich Android Studio verwenden.
 Einerseits wurde GaugeView for Lollipop \cite{SIMR.CH3-schaltvorschlag.GaugeView} verwendet, andererseits wurde mittels ImageCircleView \cite{SIMR.CH3-schaltvorschlag.CircleImageView} das Bild des Pfeils und des Kreuzes dargestellt.
 Ausserdem musste eine SettingsPane umgesetzt werden, in welcher man die maximale Drehzahl verstellen kann, implementiert werden.
 Es wurde die App mittels Gradle und der Android SDK 23 umgesetzt.
 
-Probleme kamen vor allem beim Aufbau der GaugeView Library auf, welche ich aufgrund eines doppelten XML attributes (showText) händisch zu einem Android Library Package (.aar) kompilieren musste, damit ich diesen Fehler umgehen konnte, eine schönere Lösung hierfür wurde bisweilen noch nicht vom Library-Ersteller bereitet. 
-\begin{figure}[!htb]\centering
-		\includegraphics[width=0.75\textwidth]{images/gaugeViewShowText}
-		\caption{Disqus Chat zu showText bei GaugeView} \label{fig:imgGaugeViewDisqus}
-\end{figure}
+Probleme kamen vor allem beim Aufbau der GaugeView Library auf, welche aufgrund eines doppelten XML attributes (showText) händisch zu einem Android Library Package (.aar) kompiliert werden musste, damit dieser Fehler umgangen werden konnte. Ein Patch für die Library wurde bisweilen noch nicht vom Library-Ersteller bereitet. 
 
-\lstinputlisting[caption=shift XML design file,firstline=1,lastline=40,style=xmlstyle]{code/CH3/schalt.xml}
+\lstinputlisting[caption=shift XML design file,firstline=11,lastline=26,style=xmlstyle]{code/CH3/schalt.xml}
+\todo{Meinen Lösungsansatz im Gegensatz zum Tutorial -> Unterschied zeigen}
 
 \begin{figure}[!htb]\centering
 		\includegraphics[width=0.3\textwidth]{images/schalt}
-		\caption{finale Umsetzung der Android App beim Schaltvorschlag} \label{fig:imgShiftAndroidFinished}
+		\caption{finale Optik der Android App beim Schaltvorschlag} \label{fig:imgShiftAndroidFinished}
 \end{figure}
 
 
