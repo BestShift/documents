@@ -66,12 +66,12 @@ Das bei der OBD-II Schnittstelle verwendete Datenübertragungsprotokoll basiert 
 Das Datenprotokoll des CAN Bus ist das \textit{Standard Frame CAN 2.0A}. Dieses ist, wie in \ref{table:CANProtokoll} erkennbar, so definiert:
 \begin{table}[!htb]
 \centering
-\caption{CAN Protokoll Aufbau}
-\label{table:CANProtokoll}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
 \begin{tabular}[c]{@{}l@{}}Start\\ 1 Bit\end{tabular} & \begin{tabular}[c]{@{}l@{}}Identifier\\ 11 Bit\end{tabular} & \begin{tabular}[c]{@{}l@{}}RTR\\ 1 Bit\end{tabular} & \begin{tabular}[c]{@{}l@{}}IDE\\ 1 Bit\end{tabular} & \begin{tabular}[c]{@{}l@{}}r0\\ 1 Bit\end{tabular} & \begin{tabular}[c]{@{}l@{}}DLC\\ 4 Bit\end{tabular} & \begin{tabular}[c]{@{}l@{}}DATA\\ 0...8 Byte\end{tabular} & \begin{tabular}[c]{@{}l@{}}CRC\\ 15 Bit\end{tabular} & \begin{tabular}[c]{@{}l@{}}ACK\\ 2 Bit\end{tabular} & \begin{tabular}[c]{@{}l@{}}EOF+IFS\\ 10 Bit\end{tabular} \\ \hline
 \end{tabular}
+\caption{CAN Protokoll Aufbau}
+\label{table:CANProtokoll}
 \end{table}
 Genauer beschrieben bedeuten die Standards folgendes:
 \begin{itemize}

@@ -18,18 +18,17 @@ Das Teilen der Fahrstilanalyse trägt durch \textit{Peer-Pressure}  dazu bei, da
 Bei der Evaluierung fiel uns besonders auf, dass eine Analyse-Funktion für die nachhaltige Verbesserung des Fahrstils behilflich sein könnte. Insbesondere ist aufgefallen, dass Fahranfänger und Auto Hobbyisten dieses Produkt interessant finden könnten.
 
 \subsubsection{Fahrkomfortanalyse}
-Eine Analyse der Wirkung von Beschleunigungskräften auf den Fahrer, ist üblicherweise nur bei Sportwagen verbaut. Bei derartigen Fahrzeugen wird die Funktionalität nicht für das frühzeitige Verbessern des Fahrstils eines Fahrers verwendet, sondern für die Optimierung von Rundenzeiten auf einer Rennstrecke.
-
 \begin{wrapfigure}{r}{0.6\textwidth}\centering
 	\includegraphics[width=0.6\textwidth]{images/gtrMultifunc}
 	\caption{Analyse Möglichkeiten bei einem Nissan GT-R (R35) \cite{SIMR.CH1-Fahrstil-Analyse.GTRMultifunc}}\label{Fig:imgGTR}
 \end{wrapfigure}
+Eine Analyse der Wirkung von Beschleunigungskräften auf den Fahrer, ist üblicherweise nur bei Sportwagen verbaut. Bei derartigen Fahrzeugen wird die Funktionalität nicht für das frühzeitige Verbessern des Fahrstils eines Fahrers verwendet, sondern für die Optimierung von Rundenzeiten auf einer Rennstrecke.
 
 Gegensätzlich zu bisheriger Möglichkeiten, soll die implementierte Anzeige der Fahrgastbequemlichkeit anders aufgebaut sein.
 Sie soll dem Fahrer aufzeigen welche Kurven dieser zu schnell durchfahren hat. Als Maß für die Bequemlichkeit wird dabei die Beschleunigungskraft in g [Kraft/Masse] herangezogen. Genauere Ausführungen zu diesem Thema, können unter Kapitel \ref{subsec:fahrgastkomfortanalyse} gefunden werden.
 
 \subsubsection{Schaltvorschlag}
-Der bisherige Schaltvorschlag in einem kostengünstigen, gebrauchten Auto ist oft äußerst simpel gehalten. Es wird hierbei ab einer gewissen Drehzahl der darauffolgende Gang vorgeschlagen oder nur auf den Normzyklus optimiert \cite{SIMR.CH1-Fahrstil-Analyse.Schaltempfehlung}. Zu diesem Thema kann mehr unter Kapitel \ref{subsec:schaltvorschlag} - Schaltvorschlag gefunden werden.
+Der bisherige Schaltvorschlag in einem kostengünstigen, gebrauchten Auto ist oft äußerst simpel gehalten. Es wird hierbei ab einer gewissen Drehzahl der darauffolgende Gang vorgeschlagen oder nur auf den Normzyklus optimiert \cite{SIMR.CH1-Fahrstil-Analyse.Schaltempfehlung}. Zu diesem Thema kann mehr unter Kapitel \ref{subsec:schaltvorschlag} gefunden werden.
 \paragraph{Normzyklus}
 Der Normzyklus ist eine Abgasmessung, bei der über die Euro-Abgasnorm Einstufung und über die offiziellen Verbrauchswerte  entschieden wird.
 Der Normzyklus ist insbesondere aufgrund des VW-Skandals \cite{SIMR.CH1-fahrstil-analyse.VWSkandal} bekannt geworden. Es erkennt die Motorsteuerung, wenn ein Abgastest gefahren wird. Dieser Abgastest wird in der Fachsprache als Normzyklus bezeichnet, ausserdem gibt es hierbei erneut unterschiedliche Normen je nach Kontinent \cite{SIMR.CH1-fahrstil-analyse.Normzyklus}. Der \textit{modifizierte neue europäische Fahrzyklus (MNEFZ)} ist der Normzyklus, der innerhalb der EU verwendet wird um den Normverbrauch eines Fahrzeuges zu errechnen. Dieser umfasst insgesamt 1180 Sekunden, wovon 780 Sekunden unter Stadtbedingungen und 400 Sekunden über Land gefahren werden. Der MNEFZ wird häufig wegen spritsparender Maßnahmen, vor dem Test, kritisiert. Diese Tricks dürfen von den Autoherstellern eingesetzt werden und umfassen die Erhöhung des Reifendrucks oder das Abklemmen der Lichtmaschine. Ferner wird der Test ohne eingeschalteter Klimaanlage oder anderer \textit{Creature-Comforts} gefahren. Herstellerangaben werden in Europa nämlich selten hinterfragt \cite{SIMR.CH1-fahrstil-analyse.MNEFZ}. In den USA mussten, im Gegensatz dazu, Automobilhersteller bereits in vielen Fällen hohe Entschädigungen zahlen für falsche Verbrauchsangaben bezahlen \cite{SIMR.CH1-fahrstil-analyse.falscherVerbrauchUS}.
