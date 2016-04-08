@@ -34,20 +34,14 @@ Exemplarisch können Sie hier die Lokalisierung der OBD II Schnittstelle an eine
 	\caption{OBD II Konnektor bei einem Golf VI \cite{SIMR.CH2-obd2.GolfOBD}}\label{Fig:Data3}
 \end{figure}
 
+\clearpage
+
 \textbf{Kleinwagen: Volkswagen Polo}
 Erwartungsgemäß befindet sich der OBD Konnektor bei einem Fahrzeug des selben Herstellers an einer sehr ähnlichen Position, im Fußraum links der Pedale.
 
 \begin{figure}[!htb]\centering
 	\includegraphics[width=0.25\textwidth]{images/poloobd}
 	\caption{OBD II Konnektor bei einem Polo IV (Typ 9N3) \cite{SIMR.CH2-obd2.PoloOBD}}\label{Fig:Data3}
-\end{figure}
-
-\textbf{Mittelklasse: BMW 3er}
-Bei einem BMW 3er E90 ist der OBD Konnektor auf der linken Fußraumverkleidung der Fahrerseite zu finden. Er wurde unter einer kleinen Abdeckung, welche mit \"OBD\" beschriftet ist, verdeckt. Die OBD Schnittstelle ist hier vertikal angeordnet, wie sie auf dem angeführten Bild sehen können.
-
-\begin{figure}[!htb]\centering
-	\includegraphics[width=0.6\textwidth]{images/3erobd}
-	\caption{OBD II Konnektor bei einem BMW 3er E90 \cite{SIMR.CH2-obd2.3erOBD}}\label{Fig:Data3}
 \end{figure}
 
 \textbf{Auslesen und Verarbeiten\nextline}
@@ -63,6 +57,8 @@ Die OBD Schnittstelle muss natürlich, für eine weitere Verwendung,  ausgelesen
 	\item Zurückgegebene 4 Byte von Hexadezimal zu Binär umrechnen
 	\item In eine Tabelle einfügen und überprüfen welche PID's unterstützt sind
 \end{enumerate}
+
+\clearpage
 
 Man ließt zuerst den Code 0100 aus, nachdem man sich mit dem Bluetooth Dongle verbunden hat und eine Verbindung mit dem seriellen COM-Port, welchen man im Geräte Manager finden kann, mittels Putty oder iTerm aufgebaut wurde.
 Als Antwort auf seine Anfrage bekommt man 4 Byte Daten geliefert, die so \textit{BE1FA813} aussehen können. Danach muss man diese Daten, mit einem Umrechner, von Hexadezimal zu Binär umrechnen, zum Beispiel mittels diesem Umrechner \url{http://www.arndt-bruenner.de/mathe/scripts/Zahlensysteme.htm}. Wenn diese Abrechnung abgeschlossen ist bekommt man eine 32-stellige Zahlenkette, jeweils zwischen 0 und 1. 
@@ -86,5 +82,3 @@ PID number & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 1A & 1B & 1C & 1D & 1E
 \caption{Tabelle zur bitweisen Verarbeitung der Hexadezimal Zeichenkette \cite{SIMR.CH2-obd2.HextoBinary}}
 \label{tableHextoPID}
 \end{table}
-
-\clearpage % DO NOT REMOVE
