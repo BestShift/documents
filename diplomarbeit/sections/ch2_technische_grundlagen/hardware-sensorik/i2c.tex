@@ -17,7 +17,19 @@ Alle Teilnehmer am Bus erhalten eine eindeutige Adresse. Ein Master kann mithilf
 \textbf{Beispiel\nextline}
 Eine Beispielhafte Kommunikation könnte folgendermaßen aussehen:
 \nextline
-Auf einem I2C-Bus liegt ein Mikrocontroller mit der Adresse 00 und ein Beschleunigungssensor mit der Adresse 01. Der Mikrocontroller übernimmt die Rolle des Masters und der Sensor ist der sogenannte Slave. Nun möchte man Daten aus dem Sensor auslesen. Der Microkontroller prüft ob der Bus „frei“ ist, also ob niemand anderer die Leitung belegt. Dies ist nicht der Fall also sendet der Master eine Nachricht bestehend aus der Zieladresse (in diesem Fall „01“) und teilt dem Slave mit ob Daten gesendet oder empfangen werden sollen. Nun sendet der Slave die Daten an den Controller bis die kommunikation vom Master beendet wird.
+Auf einem I2C-Bus liegt ein Mikrocontroller mit der Adresse 00 und ein Beschleunigungssensor mit der Adresse 01. Der Mikrocontroller übernimmt die Rolle des Masters und der Sensor ist der sogenannte Slave. Nun möchte man Daten aus dem Sensor auslesen. Der Microkontroller prüft ob der Bus „frei“ ist, also ob niemand anderer die Leitung belegt. Dies ist nicht der Fall also sendet der Master eine Nachricht bestehend aus der Zieladresse (in diesem Fall „01“) und teilt dem Slave mit ob Daten gesendet oder empfangen werden sollen. Nun sendet der Slave die Daten an den Controller bis die kommunikation vom Master beendet wird.\newline
 
+
+\textbf{Vorteile von I2C\nextline}
+Was sind die Vorteile von I2c gegenüber anderen Übertragungsprotokollen?
+
+\begin{itemize}
+\item Wenige Leitungen \newline
+I2C benötigt nur zwei Leitungen, eine Daten- und eine Taktleitung. Alle Geräte liegen auf diesen Leitungen und es bleibt bei eben diesen Zwei. \newline
+Andere Verbindungen, wie zum Beispiel SPI, benötigen 3 oder mehr Leitungen, und es werden stettig mehr, je mehr Geräte hinzugefügt werden.
+
+\item Adressen \newline
+Ein weiterer Vorteil gegenüber anderen Protokollen ist, dass Chip-Adressen vergeben werden. Dies macht es einfach neue Geräte zum Bus hinzuzufügen.
+\end{itemize}
 
 \clearpage % DO NOT REMOVE

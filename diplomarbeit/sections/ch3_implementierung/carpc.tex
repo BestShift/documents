@@ -102,6 +102,57 @@ Konkret wurden ein GY521 Beschleunnigungssensor und ein DS1621 Temperatursensor 
 \end{figure}
 
 
+\subsubsection{Konstruktion des Car-PC}
+Es folgt eine Schritt für Schritt Anleitung zum Bau des Car-PC.
 
+\begin{figure}[!htb]\centering
+	\includegraphics[width=0.5\textwidth]{images/raspi}
+	\caption{Der im Car-PC verbaute Raspberry PI 2B}\label{Fig:raspi}
+\end{figure}
+Alles beginnt mit dem Raspberry PI als Grundplatine. Hier ist die PIN-Belegung des Raspberry PI zu beachten. Auf der Rückseite der PIN-Leiste ist eine quadratische Lötstelle zu erkennen. Mithilfe dieser Markierung kann man die alle notwendigen Pins zum Anschließen der restlichen Komponenten finden.
 
+\begin{figure}[!htb]\centering
+	\includegraphics[width=0.5\textwidth]{images/strompi}
+	\caption{Der JoyIT StromPI als Ausfallschutz des Raspberry PI 2B}\label{Fig:strompi}
+\end{figure}
+Die nächste Komponente ist der JoyIT StromPI. Dieser dient als USV ("Unterbrechungsfreie Stromversorgung") für den Raspberry PI. Das bedeutet, dass falls der Raspberry PI einen Stromasfall erleiden sollte, der StromPI diesen geregelt abschalten kann.
+Die PIN-Leiste ist so aufgebaut, dass man den StromPI einfach auf den Raspberry PI stecken kann und die PINS weiterhin verwendet werden können.
+
+\begin{figure}[!htb]\centering
+	\includegraphics[width=0.5\textwidth]{images/sensoren}
+	\caption{Der GY521 Beschleunigunssensor und DS1621 Temperatursensor wie sie im Car-PC verbaut wurden}
+	\label{Fig:sensoren}
+\end{figure}
+Da fest stand, welche Sensoren verwendet wurden, mussten diese auf eine gemeinsame Platine gelötet werden, damit sie vom Raspberry PI ausgelesen werden können. Es wurden folgende PINs verwendet:
+\begin{itemize}
+\item 3.3 V Power \newline
+Für die beiden verwendeten Sensoren waren 3.3 Volt vollkommen ausreichend. Falls in Zukunft notwendig, könnte hier ein 5V PIN verwendet werden.
+\item Ground \newline
+Um den Stromkreis zu schließen befinden sich auf dem Raspberry PI 2B insgesamt sechs PIN's zum Erden.
+\item GPIO 8 SDA1 \newline
+Dieser PIN ist die Datenleitung des I2C-Busses. Alle Sensoren besitzen einen PIN mit derselben Bezeichnung und alle Sensoren müssen an diesen Angeschlossen werden.
+\item GPIO 9 SCL1 \newline
+Der letzte verwendete PIN ist die Taktleitung des I2C-Busses. Wie schon beim SDA1 PIN erklärt, müssen alle Sensoren auch mit diesem PIN verbunden sein.
+\end{itemize}
+
+\begin{figure}[!htb]\centering
+	\includegraphics[width=0.5\textwidth]{images/usb-adapter}
+	\caption{Ein USB-WiFi Adapter und USB-Bluetooth Adapter}
+	\label{Fig:usb-adapter}
+\end{figure}
+Die Letzten Komponenten des PC's sind die USB-Adapter.
+Insgesamt benötigt der PC zwei USB-Adapter.
+\begin{itemize}
+\item Bluetooth \newline
+Der Bluetooth-Adapter dient als Schnittstelle für den OBD2-Bluetooth-Dongle und erhält Motordaten von diesem.
+\item WiFi \newline
+Über den WiFi-Adapter wird die Verbindung mit dem Smartphone, also mit der BestShift, hergestellt. Über ihn werden die Daten aus der Datenbank gesendet.
+\end{itemize}
+
+\begin{figure}[!htb]\centering
+	\includegraphics[width=0.5\textwidth]{images/assembled-pc}
+	\caption{Der fertiggestellte Protoyp}
+	\label{Fig:assembled-pc}
+\end{figure}
+Dies ist der BestShift Car-PC Prototyp. Aufgrund des Gehäuses ist es möglich, den PC in einen DIN-Slot in die Mittelkonsole eines KFZ zu schieben.
 \clearpage % DO NOT REMOVE
