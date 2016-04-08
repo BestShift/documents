@@ -3,12 +3,12 @@
 Redis ist ein so genannter in-memory Key-Value-Store. Das bedeutet, dass die Daten direkt im Arbeitsspeicher des Car-PCs abgelegt werden. Durch die Verwendung eines CLI-Tools können die Daten direkt am Car-PC abgerufen werden. Bei der Verwendung in weiteren Applikationen – in unserem Fall die Android-App – muss eine Libary, bzw. eine Schnittstelle eingebunden werden. Redis unterstützt einige abstrakte Datentypen: Lists, Sets, Sorted sets of strings, und Hashes. Mit diesen können wir die Sensordaten in einer guten Struktur abspeichern \cite{MELD.CH3-redis.mainWebsite}.
 
 \textbf{Mass Insertion\newline}
-Wir wollen eine Unmenge an Sensordaten in die am Car-PC vorhandene Redis Instanz speichern. Redis bietet hierfür Tools, die genau dies ermöglichen und Keys zu den Values (die Sensordaten) automatisch generiert \cite{MELD.CH3-redis.documentation}.
+Wir wollen eine Menge an Sensordaten in die am Car-PC vorhandene Redis Instanz speichern. Redis bietet hierfür Tools, die genau dies ermöglichen und Keys zu den Values (die Sensordaten) automatisch generiert \cite{MELD.CH3-redis.documentation}.
 
 Für die Speicherung von Daten muss im Allgemeinen das Redis Serialization Protocol (RESP) integriert werden. Redis verwendet RESP als ein request-response protocol in folgender Hinsicht: 
 \begin{enumerate}
 \item Der Client schickt die Kommandos zu dem Redis Server als ein RESP Array von Strings
-\item Der Server antwortet mit einer der RESP Typen welche zum Command passen
+\item Der Server antwortet mit einer der RESP Typen, welche zum Command passen
 \end{enumerate}
 
 Bei RESP ist der Datentyp abhängig vom ersten byte
@@ -20,7 +20,7 @@ Bei RESP ist der Datentyp abhängig vom ersten byte
 \item Für Arrays ist das erste Byte der Antwort gleich \textit{*}
 \end{enumerate}
 
-Um eine Mass Insertion durchzuführen muss das Redis Protokol nicht komplett verstanden werden, es ist aber erwähnenswert, dass die Daten in folgender Art und Weise dargestellt werden müssen.
+Um eine Mass Insertion durchzuführen, muss das Redis Protokol nicht komplett verstanden werden, es ist aber erwähnenswert, dass die Daten in folgender Art und Weise dargestellt werden müssen.
 
 \begin{lstlisting}[caption=RESP]
 *<args><cr><lf>
@@ -31,7 +31,7 @@ $<len><cr><lf>
 <argN><cr><lf>
 \end{lstlisting}
 
-Wobei \textit{<cr>} und \textit{<lf>} jeweils für die ASCII Character 13 und 10 stehen. Alle Redis Befehle werden als String Arrays geschickt. Zum Beipsiel würde der Befehl
+Wobei \textit{<cr>} und \textit{<lf>} jeweils für die ASCII Character 13 und 10 stehen. Alle Redis Befehle werden als String Arrays geschickt. Zum Beipiel würde der Befehl
 
 \tab\lstinline{SET mykey 'my value'} 
 
@@ -57,33 +57,33 @@ Dies wird mittels einem Python Package (\url{https://github.com/youngking/redis_
 Aus der Dokumentation \cite{MELD.CH3-redis.mainWebsite} gehen folgende Tipps und Vorschläge für die Administration eines Redis Servers hervor, diese wurden bei der Aufsetzung des Systems berücksichtigt.
 
 \begin{enumerate}
-\item \textit{We suggest deploying Redis using the Linux operating system}.\nextline Wir arbeiten auf einen Linux basierenden Betriebssystem (siehe Sektion \ref{subsec:oscarpc}).
-\item \textit{Make sure to disable Linux kernel feature transparent huge pages, it will affect greatly both memory usage and latency in a negative way}.\nextline Der Sinn dahinter ist grundsätzlich eine Veringerung des Verwendeten Arbeitsspeichers. Unter Linux Betriebssystemen wird der Arbeitsspeicher in so gennante \textit{pages} eingeteilt - eine page ist gleich 2M virtueller Arbeitsspeicher \cite{MELD.CH3-redis.transhuge}. Für die deaktivierung wurde folgende Zeile in den Setup Scripts definiert. \lstinline{echo never > /sys/kernel/mm/transparent_hugepage/enabled}
+\item \textit{We suggest deploying Redis using the Linux operating system}.\nextline Wir arbeiten auf einem Linux basierenden Betriebssystem (siehe Sektion \ref{subsec:oscarpc}).
+\item \textit{Make sure to disable Linux kernel feature transparent huge pages, it will affect greatly both memory usage and latency in a negative way}.\nextline Der Sinn dahinter ist grundsätzlich eine Reduktion des Verwendeten Arbeitsspeichers. Unter Linux Betriebssystemen wird der Arbeitsspeicher in so gennante \textit{pages} eingeteilt - eine page ist gleich 2M virtueller Arbeitsspeicher \cite{MELD.CH3-redis.transhuge}. Für die Deaktivierung wurde folgende Zeile in den Setup Scripts definiert. \lstinline{echo never > /sys/kernel/mm/transparent_hugepage/enabled}
 \item \textit{By default Redis does not require any authentication and listens to all the network interfaces. This is a big security issue if you leave Redis exposed on the internet or other places where attackers can reach it.}\nextline Für unseren speziellen Fall, in welchem Bluetooth verwendet wird, wurde dies durch setzung eines Passwords für die Verwendung der Datenbank gelöst.
 \end{enumerate}
 
 \textbf{Security\newline}
-Die Redis Dokumentation \cite{MELD.CH3-redis.documentation} gibt auch Tipps um die Sicherheit der Datenbank möglichst hoch zu setzten. Der Fokus der Dokumentation liegt auf Zugriffskontrolle, Sicherheit des Codes, und Angriffe welche durch fälschliche Eingaben erstellt werden.
+Die Redis Dokumentation \cite{MELD.CH3-redis.documentation} gibt auch Tipps, um die Sicherheit der Datenbank möglichst hoch zu setzten. Der Fokus der Dokumentation liegt auf Zugriffskontrolle, Sicherheit des Codes, und Angriffe welche durch fälschliche Eingaben erstellt werden.
 
 \begin{description}
 \item[Generelle Sicherheit - \newline]
-Redis ist nur für den Zugriff von bekannten und vertrauenswürdigen Clients in einer bekannten und vertrauenswürdigen Umgebung konzipiert. Das bedeutet, dass die Instanz nicht ins Internet verknüpft werden sollte. Aufgrund dessen entschließen wir uns, die Verbindung mittels Bluetooth aufzubauen.
+Redis ist nur für den Zugriff von bekannten und vertrauenswürdigen Clients in einer bekannten und vertrauenswürdigen Umgebung konzipiert. Das bedeutet, dass die Instanz nicht ins Internet verknüpft werden sollte. Aufgrund dessen entschloßen wir uns, die Verbindung mittels Bluetooth aufzubauen.
 
 \item[Netzwerk Sicherheit - \newline]
-Der Zugriff von nicht vertrauenswürdigen Personen sollte nicht erlaubt werden. Dies kann durch eine Firewall oder durch die Redis-Konfiguration. Für letztereres muss \textit{bind 127.0.0.1} in \textit{redis.conf} hinzugefügt werden.
+Der Zugriff von nicht vertrauenswürdigen Personen sollte nicht erlaubt werden. Dies kann durch eine Firewall oder durch die Redis-Konfiguration realisiert werden. Für letztereres muss \textit{bind 127.0.0.1} in \textit{redis.conf} hinzugefügt werden.
 
 \item[Authentifizierung - \newline]
-Redis bietet nur einen kleinen Layer an Authentifizierung und wenn diese aktiviert ist, wird der Redis Server keine Anfragen von authentifizierten Clients annehmen. Durch das Kommando \textit{AUTH} und dem Passwort, können Identifikationen statt finden. Dieses Password ist im Klartext gespeichert, daher muss besonders auf die Dateisystemrechte der Konfigurationsdatei geachtet werden. Es empfiehlt es sich ein möglichst langes Passwort zu verwenden um Brute-Froce angriffe zu vermeiden. Dies ist eines der größten Nachteile von Redis und ein großer Grund warum die Applikation nur bei speziellen Anwendungsfällen eingebaut werden sollte. In unseren Fall sind wir durch die Bluetooth-Verbindung zwischen dem Smartphone und dem Car-PC auf einer Frequenz die hoch genug ist um dies zu vermeiden. 
+Redis bietet nur einen kleinen Layer an Authentifizierung und wenn diese aktiviert ist, wird der Redis Server keine Anfragen von authentifizierten Clients annehmen. Durch das Kommando \textit{AUTH} und dem Passwort, können Identifikationen statt finden. Dieses Password ist im Klartext gespeichert, daher muss besonders auf die Dateisystemrechte der Konfigurationsdatei geachtet werden. Es empfiehlt sich ein möglichst langes Passwort zu verwenden, um Brute-Force Angriffe zu vermeiden. Dies ist eines der größten Nachteile von Redis und ein großer Grund, warum die Applikation nur bei speziellen Anwendungsfällen eingebaut werden sollte. In unseren Fall sind wir durch die Bluetooth-Verbindung zwischen dem Smartphone und dem Car-PC auf einer Frequenz, die hoch genug ist, um dies zu vermeiden. 
 
 \item[Encryption der Daten - \newline]
-Redis unterstützt keine Verschlüsselung. Um aber trotzdem einen gewissen Grad an Sicherheit zu erhalten sollte bei Internetverbindungen eine SSL Proxy implementiert werden. In unseren Fall ist das aber nicht von Bedeutung.
+Redis unterstützt keine Verschlüsselung. Um aber trotzdem einen gewissen Grad an Sicherheit zu erhalten, sollte bei Internetverbindungen eine SSL Proxy implementiert werden. In unserem Fall ist das aber nicht von Bedeutung.
 
 \item[Spezifische Redis Kommandos deaktivieren - \newline]
-Redis bietet auch die Möglichkeit die Kommandos umzubenennen – nicht erkennbare Muster sind hier ein muss, so dass potentielle Angreifer die Befehle nicht verwenden können.
+Redis bietet auch die Möglichkeit, die Kommandos umzubenennen – nicht erkennbare Muster sind hier ein Muss, so dass potentielle Angreifer die Befehle nicht verwenden können.
 
 \lstinline{rename-command CONFIG b840fc02d524045429941cc15f59e41cb7be6c52}
 
-Im obrigen Beispiel wird das CONFIG Kommando umbenannt in einen zufällige Zeichenfolge. Es ist auch möglich Kommandos kommplett zu deaktivieren. Dafür werden die Kommandos in einem leeren String umbenennt, wie hier angeführt:
+Im obigen Beispiel wird das CONFIG Kommando umbenannt in eine zufällige Zeichenfolge. Es ist auch möglich, Kommandos kommplett zu deaktivieren. Dafür werden die Kommandos in einem leeren String umbenannt, wie hier angeführt:
 
 \lstinline{rename-command CONFIG ""}
 \end{description}
