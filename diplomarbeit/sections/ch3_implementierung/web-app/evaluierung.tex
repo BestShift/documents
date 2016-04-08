@@ -1,20 +1,20 @@
 \subsubsection{Technologien und Modelle}
 \lfoot{Autor: Daniel Melichar}
 
-Die Technologien und Konzepte der Web-Applikation sollen den benötigten Aufwand bei Weiterentwicklung der Applikation, sowie beim hinzufügen von neuen Features, möglichst reduzieren. Grundsätzlich besteht jegliche Website (bei Web2.0 \cite{MELD.CH3-web-app.web2}) aus den folgenden Technologien.
+Die Technologien und Konzepte der Web-Applikation sollen den benötigten Aufwand bei Weiterentwicklung der Applikation, sowie beim Hinzufügen von neuen Features, möglichst reduzieren. Grundsätzlich besteht jegliche Website (bei Web2.0 \cite{MELD.CH3-web-app.web2}) aus den folgenden Technologien.
 
 \begin{description}
-\item[HTML Markup \newline] definiert den Inhalt eines Dokuments und gibt eine Struktur vor mittels dem Einsatz von Sektionen, Überschriften, Paragraphe, Listen, Menüs, und Formulare \cite{MELD.CH3-web-app.html}.
+\item[HTML Markup \newline] definiert den Inhalt eines Dokuments und gibt eine Struktur vor mittels des Einsatzes von Sektionen, Überschriften, Paragraphe, Listen, Menüs, und Formularen \cite{MELD.CH3-web-app.html}.
 
-Eine konsequente, saubere, und ersichtliche Struktur ist wichtig da durch den Einsatz von Ankern \textit{(engl.: Hooks)} die weitere Verarbeitung durch CSS und JavaScript passiert. Die Struktur hat auch eine große Wirkung auf die Flexibilität und zuverlässige Bereitstellung der Website.
+Eine konsequente, saubere, und ersichtliche Struktur ist wichtig, da durch den Einsatz von Ankern \textit{(engl.: Hooks)} die weitere Verarbeitung durch CSS und JavaScript passiert. Die Struktur hat auch eine große Wirkung auf die Flexibilität und zuverlässige Bereitstellung der Website.
 
-Durch die Verwendung von Templates, und Standards in einem Projekt, ist es einfacher gewisse Teile einer Web Applikation mehrmals zu verwenden ohne die selbe Arbeit nochmals zu tätigen (siehe Seite \pageref{subsec:jsframeworks}).
+Durch die Verwendung von Templates und Standards in einem Projekt ist es einfacher, gewisse Teile einer Web Applikation mehrmals zu verwenden, ohne die selbe Arbeit nochmals zu tätigen (siehe Seite \pageref{subsec:jsframeworks}).
 
-\item[Cascading Style Sheets\newline] oder CSS, ist jener Teil einer Applikation in welcher die visuelle Repräsentation und Design Regeln beschrieben werden. Ein gut geschriebenes CSS verwendet das kaskadenförmige Prinzip der Sprache – generelle Regeln werden zuerst inkludiert und danach die überschreibenden für spezifische Instanzen \cite{MELD.CH3-web-app.css}.
+\item[Cascading Style Sheets\newline] oder CSS, ist jener Teil einer Applikation, in welcher die visuelle Repräsentation und Design Regeln beschrieben werden. Ein gut geschriebenes CSS verwendet das kaskadenförmige Prinzip der Sprache – generelle Regeln werden zuerst inkludiert und danach die überschreibenden für spezifische Instanzen \cite{MELD.CH3-web-app.css}.
 
-Es ist sehr einfach mit CSS inkonsistenten und unnötigen Code zu schreiben, welcher dann so fragil ist, so dass es auf der Webseite immer wieder kleine Unterschiede gibt. Aufgrund dessen sollte CSS immer \cite{MELD.CH3-web-app.css2}
+Es ist sehr einfach, mit CSS inkonsistenten und unnötigen Code zu schreiben, welcher dann so fragil ist, so dass es auf der Webseite immer wieder kleine Unterschiede gibt. Aufgrund dessen sollte CSS immer \cite{MELD.CH3-web-app.css2}
 \begin{enumerate}
-\item einfach zu Verwalten sein
+\item einfach zu verwalten sein
 \item klar ersichtliche Patterns haben
 \item das Einfügen von neuen Stilvorgaben ermöglichen
 \item nicht verwendete Stilvorgaben weglassen
@@ -57,6 +57,7 @@ Viel zu oft vergessen Entwickler von Web-Applikationen das Gesamtkonzept und fok
 \end{description}
 
 \textbf{Verwendung und Anwendung\newline}
+\lfoot{Autor: Hüseyin Bozkurt}
 \label{subsec:jsframeworks}
 Für die konkrete Umsetzung einer Web-Applikation wird in den meisten Fällen ein Framework gewählt, welches die Möglichkeit bietet, alle Eigenschaften einer Webseite zu erstellen (HTML für die Struktur, CSS für das Aussehen, JavaScript für Funktionalität). Mittels dem MVC-Konzept \cite{MELD.CH3-web-app.js4} wird dem Entwickler des Systems die Arbeit leichter gemacht.
 
@@ -107,7 +108,7 @@ Für die konkrete Umsetzung einer Web-Applikation wird in den meisten Fällen ei
 \caption{Ember 2.0 \url{http://emberjs.com/}}
 \end{table}
 
-\textbf{Ember.js 2.0} ähnelt sehr stak dem Angulars Architektur Konzept. Der Grund wieso wir uns Ember nicht verwenden basiert auf der simpleren, etwas schöneren API von Angular, und den Fakten, dass Angular keine weiteren Dependencies hat (Ember.js verwendet jQuery und Handlebars) und dass Angular eine viel geringere Filegröße hat \cite{MELD.CH3-web-app.ember}.
+\textbf{Ember.js 2.0} ähnelt sehr stark dem Angulars Architektur Konzept. Der Grund wieso wir Ember nicht verwenden basiert auf der simplen, etwas schöneren API von Angular. Fakt ist, dass Angular keine weiteren Dependencies hat (Ember.js verwendet jQuery und Handlebars) und dass Angular eine viel geringere Filegröße hat \cite{MELD.CH3-web-app.ember}.
 
 \begin{figure}[!htb]\centering
 	\includegraphics[width=0.6\textwidth]{images/ember}
@@ -134,7 +135,7 @@ Für die konkrete Umsetzung einer Web-Applikation wird in den meisten Fällen ei
 \caption{React 1.0 \url{https://facebook.github.io/react/}}
 \end{table}
 
-Das von Facebook entwickelte \textbf{React.js} ist ein eher spezielles Framework, oftmals wird gesagt, dass React.js das \textbf{V} im MVC-Konzept (Model-View-Control) da bietet. Aufgrund dessen ist die Filegröße des Frameworks um einiges kleiner als bei den anderen beiden, bietet aber dennoch viele der Basis Features an \cite{MELD.CH3-web-app.react}. Leider bietet React nicht alles an was für unsere Applikation benötigt wird, daher ging es rasch aus der ängeren Auswall raus.
+Das von Facebook entwickelte \textbf{React.js} ist ein eher spezielles Framework, oftmals wird gesagt, dass React.js das \textbf{V} im MVC-Konzept (Model-View-Control) da bietet. Aufgrund dessen ist die Filegröße des Frameworks um einiges kleiner als bei den anderen beiden, bietet aber dennoch viele der Basis Features an \cite{MELD.CH3-web-app.react}. Leider bietet React nicht alles an, was für unsere Applikation benötigt wird, daher ging es rasch aus der ängeren Auswahl raus.
 
 \begin{figure}[!htb]\centering
 	\includegraphics[width=0.8\textwidth]{images/react}
